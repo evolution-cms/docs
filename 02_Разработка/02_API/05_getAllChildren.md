@@ -59,4 +59,4 @@ $modx->getActiveChildren(1); //вернет информацию о докуме
 
 ````
 
-*Смотрите также: getAllChildren*
+*Смотрите также: getActiveChildren*
