@@ -5,7 +5,9 @@ mixed changeWebUserPassword(string $oldPwd, string $newPwd);
 **$oldPwd** - старый пароль
 **$newPwd** - новый пароль
 
-Пример:
+***
+
+####Пример:
 
 ````php
 $txt = $modx->changeWebUserPassword('oldpassword','newpassword');
