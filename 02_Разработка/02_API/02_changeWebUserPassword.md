@@ -16,3 +16,5 @@ $txt = $modx->changeWebUserPassword('oldpassword','newpassword');
 print_r($txt);
 // полученный результат: true
 ````
+
+
