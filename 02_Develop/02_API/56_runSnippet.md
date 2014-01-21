@@ -1,12 +1,24 @@
-Возвращает результат выполнения сниппета с заданными параметрами
+###Возвращает результат выполнения сниппета с заданными параметрами
 
 string runSnippet(string $snippetName [, array $params]);
 
-$snippetName - название сниппета (чувствительно к регистру!)
-$params - массив со значениями параметров
-Пример
+**$snippetName** - название сниппета (чувствительно к регистру!)
 
-$txt = $modx->runSnippet('Ditto', array( 'startID' => 2, 'summarize' => 2, 'removeChunk' => 'Comments', 'tpl' => 'ditto_blog', 'paginate' => 1, 'extenders' => 'summary,dateFilter', 'paginateAlwaysShowLinks' => 1, 'tagData' => 'documentTags' ));
-вернет результат работы сниппета Ditto, который идентичен вызову:
+**$params** - массив со значениями параметров
 
-[[Ditto? &startID=`2` &summarize=`2` &removeChunk=`Comments` &tpl=`ditto_blog` &paginate=`1` &extenders=`summary,dateFilter` &paginateAlwaysShowLinks=`1` &tagData=`documentTags`]]
+***
+
+####Пример
+
+	$txt = $modx->runSnippet('Ditto', 	array( 'startID' => 2, 
+					'summarize' => 2, 
+					'removeChunk' => 'Comments', 
+					'tpl' => 'ditto_blog', 
+					'paginate' => 1, 
+					'extenders' => 'summary,dateFilter', 
+					'paginateAlwaysShowLinks' => 1, 
+					'tagData' => 'documentTags' 
+					));
+
+	//вернет результат работы сниппета Ditto, который идентичен вызову:
+	[[Ditto? &startID=`2` &summarize=`2` &removeChunk=`Comments` &tpl=`ditto_blog` &paginate=`1` &extenders=`summary,dateFilter` &paginateAlwaysShowLinks=`1` &tagData=`documentTags`]]
