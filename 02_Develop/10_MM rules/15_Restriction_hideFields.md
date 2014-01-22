@@ -1,18 +1,26 @@
-Описание
-Виджет для плагина ManagerManager, позволяющий скрывать поля документа или TV.
-Список изменений
-Добавлена обработка значения hide_menu.
-Документация
-Для установки распакуйте архив в /assets/plungins/managermanager/widgets/. Смотрите также документацию ManagerManager 0.4 и модуль ddMMEditor.
-Описание параметров
-Название	Описание	Допустимые значения	Значение по умолчанию	Обязателен?
-fields	Поля документа (или TV), которые необходимо скрыть.	{comma separated string}	—	true
-roles	Роли, для которых необходимо применить виждет, пустое значение — все роли.	{comma separated string}	—	false
-templates	Id шаблонов, для которых необходимо применить виджет, пустое значение — все шаблоны.	{comma separated string}	—	false
-Примеры
+###mm_hideFields
+
+*Виджет для плагина ManagerManager, позволяющий скрывать поля документа или TV.*
+
+mm_hideFields(string $fields, string $roles, string $templates);
+
+
+####Описание параметров
+Название|Описание|Допустимые значения|Значение по умолчанию|Обязателен?
+--------|--------|---------|-----------
+fields|Поля документа (или TV), которые необходимо скрыть.|{comma separated string}|—|true
+roles|Роли, для которых необходимо применить виждет, пустое значение — все роли.|{comma separated string}|—|false
+templates|Id шаблонов, для которых необходимо применить виджет, пустое значение — все шаблоны.|{comma separated string}|—|false
+
+####Примеры
 Скрыть поле «атрибуты ссылки» для всех пользователей
-mm_hideFields('link_attributes');
+	
+	mm_hideFields('link_attributes');
+
 Скрыть поле «псевдоним» у документов с id шаблона = 3 для пользователей с id роли = 1
-mm_hideFields('alias', '1', '3');
+
+	mm_hideFields('alias', '1', '3');
+
 Скрыть TV «myVar» для пользователей с id роли = 2
-mm_hideFields('myVar', '2');
+	
+	mm_hideFields('myVar', '2');
