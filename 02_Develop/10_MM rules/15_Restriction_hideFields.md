@@ -1,6 +1,4 @@
-###mm_hideFields
-
-*Виджет для плагина ManagerManager, позволяющий скрывать поля документа или TV.*
+###Виджет для плагина ManagerManager, позволяющий скрывать поля документа или TV.
 
 mm_hideFields(string $fields, string $roles, string $templates);
 

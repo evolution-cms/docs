@@ -1,6 +1,4 @@
-###mm_ddNumericFields
-
-*Виджет для плагина ManagerManager, позволяющий сделать возможным ввод в TV только цифр.*
+###Виджет для плагина ManagerManager, позволяющий сделать возможным ввод в TV только цифр.
 
 mm_ddNumericFields(string $tvs, string $roles, string $templates, bool $allowFloat, int $decimals);
 

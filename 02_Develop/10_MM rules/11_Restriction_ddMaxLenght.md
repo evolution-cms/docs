@@ -1,5 +1,4 @@
-###mm_ddMaxLength
-*Виджет для плагина ManagerManager, позволяющий ограничить количество вводимых символов в TV.*
+###Виджет для плагина ManagerManager, позволяющий ограничить количество вводимых символов в TV.
 
 mm_ddMaxLength(string $fields, string $roles, string $templates, int $length);
 
