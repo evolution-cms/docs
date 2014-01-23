@@ -1,21 +1,25 @@
-Описание
-Виджет для плагина ManagerManager, позволяющий показать превьюшки изображений, выбранных в TV на странице редактирования документа.
-Аналогичен плагину ShowImageTVs, который не совместим с ManagerManager.
+###Виджет для плагина ManagerManager, позволяющий показать превьюшки изображений, выбранных в TV на странице редактирования документа.
+*Аналогичен плагину ShowImageTVs, который не совместим с ManagerManager.*
+
+mm_widget_showimagetvs($fields, $w, '$h, $thumbnailerUrl, $roles, $templates);
 
 ####Описание параметров
 Название|Описание|Допустимые значения|Значение по умолчанию|Обязателен?
 --------|--------|---------|-----------
+fields|TV, для которых необходимо отобразить превьюшки.|{comma separated string}|—|false
+w|Максимальная ширина превьюшки в px.|{integer}|300|false
+h|Максимальная высота превьюшки в px.|{integer}|100|false
+thumbnailerUrl|Если у вас установлен PHPThumb, вы можете указать url, где он находится, адрес превью будет обращён к нему с передачей url исходной картинки, ширины и высоты.|{string}|—|false
+roles|Роли, для которых необходимо применить виждет, пустое значение — все роли.|{comma separated string}|—|false
+templates|Id шаблонов, для которых необходимо применить виджет, пустое значение — все шаблоны.|{comma separated string}|—|false
 
-fields	TV, для которых необходимо отобразить превьюшки.	{comma separated string}	—	false
-w	Максимальная ширина превьюшки в px.	{integer}	300	false
-h	Максимальная высота превьюшки в px.	{integer}	100	false
-thumbnailerUrl	Если у вас установлен PHPThumb, вы можете указать url, где он находится, адрес превью будет обращён к нему с передачей url исходной картинки, ширины и высоты.	{string}	—	false
-roles	Роли, для которых необходимо применить виждет, пустое значение — все роли.	{comma separated string}	—	false
-templates	Id шаблонов, для которых необходимо применить виджет, пустое значение — все шаблоны.	{comma separated string}	—	false
-Примеры
+####Примеры
 Показать превью для всех TV-изображений
-mm_widget_showimagetvs();
+	
+	mm_widget_showimagetvs();
 Показать превью для всех TV-изображений, максимальным размером 150×150 px
-mm_widget_showimagetvs('', 150, 150);
+	
+	mm_widget_showimagetvs('', 150, 150);
 Показать превью для TV «mypic» у документов с id шаблона = 2 и отправить за одно на генерацию в phpThumb для получения превьюшек размером 300×200 px
-mm_widget_showimagetvs('mypic', '300', '200', '/assets/snippets/phpthumb/phpThumb.php', '', '2');
+	
+	mm_widget_showimagetvs('mypic', '300', '200', '/assets/snippets/phpthumb/phpThumb.php', '', '2');
