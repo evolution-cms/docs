@@ -92,6 +92,6 @@ onReturnOutput,onSetDefaultOutput,onBeforeGetUserPostCount,onSetFormOutput,onSet
 * Всякие мелочи, типа граватаров
 
 ### Полезные ссылки
-https://github.com/Temus/JotX  - основной репозиторий
-http://community.modx-cms.ru/blog/addons/8080.html - обсуждение JotX на сообщесве
-http://extras.evolution-cms.com/packages/users/jotx.html - страничка в репозитории
+[основной репозиторий](https://github.com/Temus/JotX)
+[обсуждение JotX на сообщесве](http://community.modx-cms.ru/blog/addons/8080.html)
+[страничка в репозитории](http://extras.evolution-cms.com/packages/users/jotx.html)
