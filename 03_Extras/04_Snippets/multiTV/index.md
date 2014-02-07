@@ -90,7 +90,8 @@ type | type of the input (could be set to all MODX input types - without url and
 elements | could be set according to the input option values of a normal MODX template variable i.e. for a dropdown with all documents in the MODX root: ``@SELECT `pagetitle`, `id` FROM `modx_site_content` WHERE parent = 0 ORDER BY `menuindex` ASC`` | -
 default | default value for the input. This value could contain calculated parts. There are two placeholders available: `{i}` contains an autoincremented index, `{alias}` contains the alias of the edited document. | -
 thumbof | name of an image input. a thumbnail of the selected image will be rendered into this area | -
-width | the width of the input (only used if the display of the list element is horizontal) | 100
+width | the width of the input (only used if the display of the list element is horizontal). В 1.8 версии также доступен для horizontal ориентации  | 100
+font-weight | возможность задать жирность шрифта (доступно в 1.8).Варианты: `bold,bolder,lighter,normal,100,200,300,400,500,600,700,800,900` | - 
 
 * Supported MODX input types: text, rawtext, email, number, textareamini, textarea, rawtextarea, htmlarea, date, dropdown, listbox, listbox-multiple, checkbox, option, image, file
 
