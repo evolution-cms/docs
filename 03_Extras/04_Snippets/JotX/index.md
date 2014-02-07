@@ -62,7 +62,7 @@ onValidateFormFieldFail,onBeforePOSTProcess,onProcessForm,onBeforeProcessPassive
 onProcessPassiveActions,onBeforeGetCommentCount,onBeforeGetComments,onGetComments,
 onReturnOutput,onSetDefaultOutput,onBeforeGetUserPostCount,onSetFormOutput,onSetCommentsOutput
 
-### Плагины на события. 
+### Плагины на события.
 Их можно подгружать как из сниппетов, так и из файлов. Можно прописывать через запятую.
 
 ```php
