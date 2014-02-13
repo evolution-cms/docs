@@ -7,7 +7,7 @@ mixed changeWebUserPassword(string $oldPwd, string $newPwd);
 **$oldPwd** - старый пароль
 **$newPwd** - новый пароль
 
-***
+
 
 ####Пример:
 
