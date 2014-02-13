@@ -31,3 +31,26 @@ string parseChunk(string $chunkName, array $chunkArr[, string $prefix[, string $
 
 	$txt = $modx->parseChunk('ditto_blog', array( 'name' => 'Spros66.ru', 'type' => 'site', 'url' => 'http://spros66.ru' ), '[+', '+]' );
 	//вернет содержимое чанка ditto_blog, в котором будут заменены плейсхолдеры [+name+], [+type+] и [+url+] на значения.
+	
+####Исходный код функции
+	/**
+	 * parseChunk
+	 * @version 1.1 (2013-10-17)
+	 * 
+	 * @desc Replaces placeholders in a chunk with required values.
+	 * 
+	 * @param $chunkName {string} - Name of chunk to parse. @required
+	 * @param $chunkArr {array} - Array of values. Key — placeholder name, value — value. @required
+	 * @param $prefix {string} - Placeholders prefix. Default: '{'.
+	 * @param $suffix {string} - Placeholders suffix. Default: '}'.
+	 * 
+	 * @return {string; false} - Parsed chunk or false if $chunkArr is not array.
+	 */
+	function parseChunk($chunkName, $chunkArr, $prefix = '{', $suffix = '}'){
+		//TODO: Wouldn't it be more practical to return the contents of a chunk instead of false?
+		if (!is_array($chunkArr)){
+			return false;
+		}
+		
+		return $this->parseText($this->getChunk($chunkName), $chunkArr, $prefix, $suffix);
+	}	
