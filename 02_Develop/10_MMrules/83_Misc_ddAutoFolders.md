@@ -4,7 +4,7 @@ mm_ddAutoFolders($ddRoles, $ddTemplates, $ddParent, $ddDateSource, $ddYearTpl, $
 
 ####Описание параметров
 Название|Описание|Допустимые значения|Значение по умолчанию|Обязателен?
---------|--------|---------|-----------
+--------|--------|---------|--------|--------
 ddRoles|Роли, для которых необходимо применить виждет, пустое значение — все роли.|{comma separated string}|—|false
 ddTemplates|Id шаблонов, для которых необходимо применить виджет.|{comma separated string}|—|true
 ddParent|ID корневого родителя.	|{integer}|—|true
