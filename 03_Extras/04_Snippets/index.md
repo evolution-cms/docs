@@ -48,7 +48,7 @@ print $dogName; // выведет 'Альфа'
 print_r( $modx->event->params ); // выведет array('dogName' => 'Альфа', 'dogBreed' => 'дворняга');
 ```
 
-Примечание: переменные для пар ключ/значение из массива параметров создаются [PHP-функцией extract](http://php.net/manual/ru/function.extract.php)
+Примечание: переменные для пар ключ/значение из массива параметров создаются [PHP-функцией extract](http://php.net/manual/ru/function.extract.php) с флагом EXTR_SKIP
 
 ##Также смотрите
 
