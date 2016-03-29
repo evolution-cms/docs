@@ -10,7 +10,7 @@
 
 Плагины могут применяться во множестве случае, ниже даны несколько примеров:
 
-###Фильтр слов
+###Пример 1: Фильтр слов
 
 **Описание:** Фильтрует слова в документе перед его отображением 
 **Системное событие:** OnWebPagePrerender
@@ -33,14 +33,14 @@ switch ($e->name) {
 }
 ```
 
-###Перенаправление, если страница не существует
+###Пример 2: Перенаправление, если страница не существует
 
 **Описание:** Перенаправляет посетителя на выбранный документ и отправляет сообщение менеджеру 
 **Системное событие:** OnPageNotFound 
 
 **Конфигурация плагина:** 
 ```
-&pg=Error Page;int; &mid=Mail To;string;
+&pg=ErrorPage;int; &mid=MailTo;string;
 ```
 
 ####Код плагина
@@ -55,9 +55,9 @@ switch ($e->name) {
       if ($mid) {
         // отправляет сообщение в локальный ящик менеджера
         $docid = $modx->documentIdentifier;
-        $subject = "Page not found";
-        $msg = "Someone tried to access document id $docid";
-        $modx->sendAlert("Error",$mid,0,$subject,$msg,0);
+        $subject = "Страница не найдена";
+        $msg = "Кто-то пытался получить доступ к документу с id $docid";
+        $modx->sendAlert("Ошибка",$mid,0,$subject,$msg,0);
       }
       $url=$this->makeUrl($pg);
       $this->sendRedirect($url, 1);
