@@ -9,7 +9,7 @@
 - возможность «ручной» вставки произвольного кода в начало и конец конфигурационного файла.
 
 #### Скачать:
-[http://code.divandesign.ru/ajax/download?id=290](http://code.divandesign.ru/ajax/download?id=290) - Прямая ссылка на скачивание
+[http://code.divandesign.ru/ajax/download?id=326](http://code.divandesign.ru/api/download?id=326) - Прямая ссылка на скачивание
 
 [http://code.divandesign.ru/modx/ddmmeditor](http://code.divandesign.ru/modx/ddmmeditor) - Ссылка на страничку модуля
 
