@@ -1,4 +1,4 @@
-Данные текущего ресурса
+###Данные текущего ресурса
 
 array documentObject
 
@@ -6,6 +6,8 @@ array documentObject
 
 Подходящего метода API для получения данных из documentObject нет.
 
-Пример
-
-<?php  echo $modx->documentObject['pagetitle'];  // Выведет заголовок страницы  ?>
+####Пример
+    <?php  
+        echo $modx->documentObject['pagetitle'];  
+        // Выведет заголовок страницы  
+    ?>
