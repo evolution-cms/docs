@@ -7,6 +7,7 @@ float tstart
 ####Пример
 
     <?php  
-    $time = $modx->tstart;  echo strftime("%H,%M,%S", $time);  
+    $time = $modx->tstart;  
+    echo strftime("%H:%M:%S", $time);  
     // выведет что-то вроде "17:56:10"  
     ?>
