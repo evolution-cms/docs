@@ -71,7 +71,7 @@ assets/templates/
 </tr>
 </table>
 
-#### Структура массива для описания поля
+##Структура массива для описания поля
 
 <table>
 <tr><th>Ключ</th><th>Значение</th></tr>
@@ -90,7 +90,7 @@ assets/templates/
 Возможно указание в формате "1||2||3", и использование привязок @SELECT, @EVAL и пр.</td></tr>
 </table>
 
-#### Типы полей
+##Типы полей
 
 <table>
 <tr><th>Значение</th><th>Описание</th></tr>
@@ -105,6 +105,6 @@ assets/templates/
 <tr><td>group</td><td>Группа полей, обязательно должны быть определены вложенные поля в ключе "fields"</td></tr>
 </table>
 
-#### Примеры конфигурации
+##Примеры конфигурации
 
 Примеры конфигурации можно найти <a href="https://github.com/sunhaim/contentblocks/tree/master/assets/plugins/contentblocks/config" target="_blank">здесь</a>
