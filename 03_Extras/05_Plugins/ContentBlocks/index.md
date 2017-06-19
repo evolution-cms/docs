@@ -104,7 +104,3 @@ assets/templates/
 <tr><td>radio</td><td>Переключатели, позволяют выбрать только один вариант</td></tr>
 <tr><td>group</td><td>Группа полей, обязательно должны быть определены вложенные поля в ключе "fields"</td></tr>
 </table>
-
-##Примеры конфигурации
-
-Примеры конфигурации можно найти <a href="https://github.com/sunhaim/contentblocks/tree/master/assets/plugins/contentblocks/config" target="_blank">здесь</a>
