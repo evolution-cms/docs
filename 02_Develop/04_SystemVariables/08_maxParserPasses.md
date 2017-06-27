@@ -5,4 +5,5 @@ int maxParserPasses
 Содержит максимальное число обработки парсером содержимого.
 
 ####Пример
+
     <?php  echo $modx->maxParserPasses;  ?>
