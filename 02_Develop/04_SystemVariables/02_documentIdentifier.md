@@ -1,9 +1,9 @@
-Идентификатор текущего ресурса
+###Идентификатор текущего ресурса
 
 int documentIdentifier
 
 Содержит ID документа на котором был вызван код.
 
-Пример
+####Пример
 
-<?php  echo "ID ресурса: " . $modx->documentIdentifier;  ?>
+    <?php  echo "ID ресурса: " . $modx->documentIdentifier;  ?>
