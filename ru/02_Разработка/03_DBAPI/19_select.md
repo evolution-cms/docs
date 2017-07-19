@@ -14,7 +14,8 @@ resource select($fields , $from [, $where [, $orderby [, $limit]]])
 
 ####Пример
 
-	function login($username, $password) {  
+```php
+function login($username, $password) {  
 		global $modx;  
 		// предполагается, что эти значения были получены
 		// с помощью POST до вызова функции   
@@ -34,3 +35,4 @@ resource select($fields , $from [, $where [, $orderby [, $limit]]])
 			// подходящей записи не нашлось  
 		}  
 	}
+```
