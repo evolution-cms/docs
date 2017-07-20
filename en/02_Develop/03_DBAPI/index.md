@@ -1,1 +1,1 @@
-Документация по различным интерфейсам, которые можно использовать для разработки сайтов на MODx.
+Documentation of various interfaces that can be used to develop sites on Evolution CMS.
