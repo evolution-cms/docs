@@ -181,7 +181,7 @@ CSS-класс активного (текущего) пункта меню и е
 
 **Значение по умолчанию:**
 
-```
+```html
 @CODE:<li id="menu-item-[+id+]" class="menu-item [+dl.class+]">
    <a href="[+url+]" title="[+e.title+]">[+title+]</a>
    [+dl.submenu+]
