@@ -7,14 +7,14 @@
 
 ## Параметры
 ### Базовые параметры
-#### &amp;idType (hardcoded)
+####:triangular_flag_on_post: &amp;idType (hardcoded)
 Тип выборки аналогично DocLister.
 
 **Возможные значения:**&nbsp;`parents`
 
 **Примечание:**&nbsp;значение параметра _&amp;idType_ жестко записано в коде как _parents_.
 
-#### &amp;parents
+####:triangular_flag_on_post: &amp;parents
 Родительская (начальная) папка.
 
 **Возможные значения:**&nbsp;_ID_ родителя, либо список _ID_ родителей через запятую.
@@ -23,28 +23,28 @@
 
 **Примечание:** Обратите внимание, что в DLBuildMenu значение _&amp;parents_ по умолчанию равно _0_, что означает &laquo;выводить начиная с корня сайта&raquo;. Это отличается от дефолтного значения _&amp;parents_ параметра в ДокЛистере.
 
-:triangular_flag_on_post:#### &amp;currentDepth
+####:triangular_flag_on_post: &amp;currentDepth
 Исходный уровень вложенности (глубина).
 
 **Возможные значения:** целое число от _1_ и больше.
 
 **Значение по умолчанию:** `1`
 
-#### &amp;maxDepth
+####:triangular_flag_on_post: &amp;maxDepth
 Макс. глубина
 
 **Возможные значения:** целое число от 1 и больше.
 
 **Значение по умолчанию:** `5`
-#### &amp;BeforePrepare и&nbsp;&amp;AfterPrepare
 
+####:triangular_flag_on_post: &amp;BeforePrepare и&nbsp;&amp;AfterPrepare
 Обработка данных через prepare аналогично DocLister.
 
 **Возможные значения:**&nbsp;задаются по правилам ДокЛистера. Могут быть списком имен сниппетов и вызовов методов ренее загруженных классов, либо анонимной функцией.
 
 **Примечание:** для prepare в DLBuildMenu уже имеется встроенный обязательный вызов _DLFixedPrepare::buildMenu_. Обработчики из _&amp;BeforePrepare_ вызываются перед встроенным, из _&amp;AfterPrepare_ - после встроенного вызова.
 
-#### &amp;activeClass
+####:triangular_flag_on_post: &amp;activeClass
 CSS-класс активного (текущего) пункта меню и его родительских элементов всех уровней.
 
 **Возможные значиения:** Имя CSS-класса, или несколько имён CSS-классов, заданные как в HTML-теге (через пробел).
@@ -54,14 +54,14 @@ CSS-класс активного (текущего) пункта меню и е
 **Примечание:**&nbsp;этот CSS-класс и &nbsp;этот параметр существуют в дополнение к уже имеющимся в ДокЛистере классам _first_, _last_, _odd_, _even_ и _current_&nbsp;и соответствующим параметрам для них (см. документацию по DocLIster).
 
 ### Параметры условий выборки
-#### &amp;addWhereList
+####:triangular_flag_on_post: &amp;addWhereList
 Условия выборки документов для всех уровней.
 
 **Возможные значения:** задаются как в DocLister (по правилам MySQL для условия WHERE).
 
 **Значение по умолчанию:**&nbsp;`c.hidemenu = 0`
 
- :arrow_forward: ####&amp;addWhereListN
+####:triangular_flag_on_post: &amp;addWhereListN
 Условия выборки документов N-го уровня, для соответствующих уровней&nbsp;_&amp;addWhereListN_&nbsp;имеет приоритет над _&amp;addWhereList_.
 
 **Возможные значения:** задаются по правилам MySQL для условия WHERE.
@@ -71,14 +71,14 @@ CSS-класс активного (текущего) пункта меню и е
 **Примечание:** Если _&amp;addWhereListN_ не задан, для всех уровней используется _&amp;addWhereList_.
 
 ### Параметры сортировки
-#### &amp;orderBy
+####:triangular_flag_on_post: &amp;orderBy
 Условия сортировки документов всех уровней
 
 **Возможные значения:** задаются как в DocLister (по правилам MySQL для ORDER BY).
 
 **Значение по умолчанию:** &nbsp;`menuindex ASC, id ASC`
 
-#### &amp;orderByN
+####:triangular_flag_on_post: &amp;orderByN
 Условия сортировки документов N-го уровня вложенности, для соответствующих уровней&nbsp;_&amp;orderBy_&nbsp;имеет приоритет над _&amp;orderBy_.
 
 **Возможные значения:** задаются по правилам MySQL для ORDER BY.
@@ -88,14 +88,14 @@ CSS-класс активного (текущего) пункта меню и е
 **Примечание:**&nbsp;Если _&amp;orderByN_&nbsp;не задан, для всех уровней используется _&amp;orderBy_.
 
 ### Параметр &laquo;список TV&raquo;
-#### &amp;tvList
+####:triangular_flag_on_post: &amp;tvList
 Список TV-параметров, которые участвуют в выборке (как в DocLister).
 
 **Возможные значения:** список имён TV-параметров через запятую.
 
 **Значение по умолчанию:**&nbsp;нет
 
-#### &amp;tvListN
+####:triangular_flag_on_post: &amp;tvListN
 Список TV-параметров в выборке для N-го уровня вложенности, для соответствующих уровней&nbsp;_&amp;tvListN_&nbsp;имеет приоритет над&nbsp;_&amp;tvList_.
 
 **Возможные значения:** список имён TV-параметров через запятую.
