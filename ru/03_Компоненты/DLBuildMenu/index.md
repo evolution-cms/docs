@@ -6,7 +6,7 @@
 
 Применяя _prepare_, мы получаем неограниченные возможности подготовки данных. А развитая _система шаблонизации_ ДокЛистер, дополненная в DLBuildMenu новыми параметрами, даёт в руки, на мой взгляд, даже чрезмерно богатый инструментарий.
 
-**Разработчик:** :man: [Agel_Nash](https://github.com/AgelxNash)
+**Разработчик:** :bust_in_silhouette: [Agel_Nash](https://github.com/AgelxNash)
 
 
 ### :pushpin: Зависимости и требования
@@ -46,14 +46,14 @@
 
 ## Параметры
 ### :pushpin: Базовые параметры
-#### :point_right: &amp;idType (hardcoded)
+#### :small_red_triangle: &amp;idType (hardcoded)
 Тип выборки аналогично DocLister.
 
 **Возможные значения:**&nbsp;`parents`
 
 **Примечание:**&nbsp;значение параметра _&amp;idType_ жестко записано в коде как _parents_.
 
-#### :point_right: &amp;parents
+#### :small_red_triangle: &amp;parents
 Родительская (начальная) папка.
 
 **Возможные значения:**&nbsp;_ID_ родителя, либо список _ID_ родителей через запятую.
@@ -62,28 +62,28 @@
 
 **Примечание:** Обратите внимание, что в DLBuildMenu значение _&amp;parents_ по умолчанию равно _0_, что означает &laquo;выводить начиная с корня сайта&raquo;. Это отличается от дефолтного значения _&amp;parents_ параметра в ДокЛистере.
 
-#### :point_right: &amp;currentDepth
+#### :small_red_triangle: &amp;currentDepth
 Исходный уровень вложенности (глубина).
 
 **Возможные значения:** целое число от _1_ и больше.
 
 **Значение по умолчанию:** `1`
 
-#### :point_right: &amp;maxDepth
+#### :small_red_triangle: &amp;maxDepth
 Макс. глубина
 
 **Возможные значения:** целое число от 1 и больше.
 
 **Значение по умолчанию:** `5`
 
-#### :point_right: &amp;BeforePrepare и&nbsp;&amp;AfterPrepare
+#### :small_red_triangle: &amp;BeforePrepare и&nbsp;&amp;AfterPrepare
 Обработка данных через prepare аналогично DocLister.
 
 **Возможные значения:**&nbsp;задаются по правилам ДокЛистера. Могут быть списком имен сниппетов и вызовов методов ренее загруженных классов, либо анонимной функцией.
 
 **Примечание:** для prepare в DLBuildMenu уже имеется встроенный обязательный вызов _DLFixedPrepare::buildMenu_. Обработчики из _&amp;BeforePrepare_ вызываются перед встроенным, из _&amp;AfterPrepare_ - после встроенного вызова.
 
-#### :point_right: &amp;activeClass
+#### :small_red_triangle: &amp;activeClass
 CSS-класс активного (текущего) пункта меню и его родительских элементов всех уровней.
 
 **Возможные значиения:** Имя CSS-класса, или несколько имён CSS-классов, заданные как в HTML-теге (через пробел).
@@ -93,14 +93,14 @@ CSS-класс активного (текущего) пункта меню и е
 **Примечание:**&nbsp;этот CSS-класс и &nbsp;этот параметр существуют в дополнение к уже имеющимся в ДокЛистере классам _first_, _last_, _odd_, _even_ и _current_&nbsp;и соответствующим параметрам для них (см. документацию по DocLIster).
 
 ### :pushpin: Параметры условий выборки
-#### :point_right: &amp;addWhereList
+#### :small_red_triangle: &amp;addWhereList
 Условия выборки документов для всех уровней.
 
 **Возможные значения:** задаются как в DocLister (по правилам MySQL для условия WHERE).
 
 **Значение по умолчанию:**&nbsp;`c.hidemenu = 0`
 
-#### :point_right: &amp;addWhereListN
+#### :small_red_triangle: &amp;addWhereListN
 Условия выборки документов N-го уровня, для соответствующих уровней&nbsp;_&amp;addWhereListN_&nbsp;имеет приоритет над _&amp;addWhereList_.
 
 **Возможные значения:** задаются по правилам MySQL для условия WHERE.
@@ -110,14 +110,14 @@ CSS-класс активного (текущего) пункта меню и е
 **Примечание:** Если _&amp;addWhereListN_ не задан, для всех уровней используется _&amp;addWhereList_.
 
 ### :pushpin: Параметры сортировки
-#### :point_right: &amp;orderBy
+#### :small_red_triangle: &amp;orderBy
 Условия сортировки документов всех уровней
 
 **Возможные значения:** задаются как в DocLister (по правилам MySQL для ORDER BY).
 
 **Значение по умолчанию:** &nbsp;`menuindex ASC, id ASC`
 
-#### :point_right: &amp;orderByN
+#### :small_red_triangle: &amp;orderByN
 Условия сортировки документов N-го уровня вложенности, для соответствующих уровней&nbsp;_&amp;orderBy_&nbsp;имеет приоритет над _&amp;orderBy_.
 
 **Возможные значения:** задаются по правилам MySQL для ORDER BY.
@@ -127,14 +127,14 @@ CSS-класс активного (текущего) пункта меню и е
 **Примечание:**&nbsp;Если _&amp;orderByN_&nbsp;не задан, для всех уровней используется _&amp;orderBy_.
 
 ### :pushpin: Параметр &laquo;список TV&raquo;
-#### :point_right: &amp;tvList
+#### :small_red_triangle: &amp;tvList
 Список TV-параметров, которые участвуют в выборке (как в DocLister).
 
 **Возможные значения:** список имён TV-параметров через запятую.
 
 **Значение по умолчанию:**&nbsp;нет
 
-#### :point_right: &amp;tvListN
+#### :small_red_triangle: &amp;tvListN
 Список TV-параметров в выборке для N-го уровня вложенности, для соответствующих уровней&nbsp;_&amp;tvListN_&nbsp;имеет приоритет над&nbsp;_&amp;tvList_.
 
 **Возможные значения:** список имён TV-параметров через запятую.
@@ -147,7 +147,7 @@ CSS-класс активного (текущего) пункта меню и е
 Шаблоны DLBuildMenu задаются по правилам DL, то есть&nbsp;могут быть и _инлайн-шаблонами_, и&nbsp;_именами чанков_,&nbsp;или загружаться из _файла_,&nbsp;из _документа_ MODx,&nbsp;из _конфига_,&nbsp;из _глобального плейсхолдера_.
 
 ### :pushpin: Шаблоны-обёртки
-#### :point_right: &amp;TplMainOwner
+#### :small_red_triangle: &amp;TplMainOwner
 Основной шаблон-обертка (для уровня глубины _1_).
 
 **Значение по умолчанию:**
@@ -157,7 +157,7 @@ CSS-класс активного (текущего) пункта меню и е
 ```
 **Примечание:**&nbsp;у вас должен быть задан шаблон _&amp;TplMainOwner_или _&amp;TplOwner1_, иначе будет использовано дефолтное значение шаблона&nbsp;_&amp;TplMainOwner_.
 
-#### :point_right: &amp;TplSubOwner
+#### :small_red_triangle: &amp;TplSubOwner
 Шаблон-обертка для вложенных уровней (для субменю).
 
 **Значение по умолчанию:**
@@ -168,7 +168,7 @@ CSS-класс активного (текущего) пункта меню и е
 
 **Примечание:**&nbsp;для вывода N-уровневого меню у вас в дополнение к основной обёртке должен быть задан по крайней мере&nbsp;_&amp;TplSubOwner_&nbsp;и/или шаблоны&nbsp;_&amp;TplOwnerN_. Иначе будет использовано дефолтное значение&nbsp;_&amp;TplSubOwner_.
 
-#### :point_right: &amp;TplOwnerN 
+#### :small_red_triangle: &amp;TplOwnerN 
 Шаблон-обертка для субменю N-го уровня вложенности, для соответствующих уровней&nbsp;_&amp;TplOwnerN_&nbsp;имеет приоритет над _&amp;TplMainOwner_ и _&amp;TplSubOwner_&nbsp;(см. Примечание).
 
 **Значение по умолчанию:** нет
@@ -176,7 +176,7 @@ CSS-класс активного (текущего) пункта меню и е
 **Примечание:**&nbsp;Если заданы и _&amp;TplOwner1_, и _&amp;TplMainOwner_, то будет использован _&amp;TplOwner1_. &nbsp;Если заданы и&nbsp;_&amp;TplOwner2_&nbsp;и _&amp;TplSubOwner_, то для уровня 2 будет использован _&amp;TplOwner2_, а для уровней начиная с 3-го &mdash;&nbsp;_&amp;TplSubOwner_.
 
 ### :pushpin: Шаблоны пункта меню
-#### :point_right: &amp;TplOneItem
+#### :small_red_triangle: &amp;TplOneItem
 Основной шаблон для каждого пункта меню всех уровней.
 
 **Значение по умолчанию:**
@@ -190,7 +190,7 @@ CSS-класс активного (текущего) пункта меню и е
 
 **Примечание:**&nbsp;у вас должны быть заданы все нужные вам шаблоны пунктов меню, по крайней мере _&amp;TplOneItem_. Иначе для пунктов, у которых шаблон не определен вами, будет использовано дефолтное значение _&amp;TplOneItem_.
 
-#### :point_right: &amp;TplDepthN
+#### :small_red_triangle: &amp;TplDepthN
 Шаблон пункта меню вложенности N, для соответствующих уровней&nbsp;_&amp;TplDepthN_&nbsp;имеет приоритет над _&amp;TplOneItem_.
 
 **Значение по умолчанию:** нет
@@ -198,12 +198,12 @@ CSS-класс активного (текущего) пункта меню и е
 **Примечание:**&nbsp;Например, если задан _&amp;TplDepth3_, он заменит собой шаблон _&amp;TplOneItem_ на 3-м уровне вложенности.
 
 ### :pushpin: Шаблоны пункта без дочерних элементов
-#### :point_right: &amp;noChildrenRowTPL
+#### :small_red_triangle: &amp;noChildrenRowTPL
 Основной шаблон пункта меню без дочерних элементов для всех уровней.
 
 **Значение по умолчанию:**&nbsp;нет
 
-#### :point_right: &amp;TplNoChildrenDepthN
+#### :small_red_triangle: &amp;TplNoChildrenDepthN
 Шаблон пункта меню без дочерних элементов&nbsp;вложенности N. Для соответствующих уровней _&amp;TplNoChildrenDepthN_&nbsp;имеет приоритет над _&amp;noChildrenRowTpl_.
 
 **Значение по умолчанию:** нет
@@ -211,17 +211,17 @@ CSS-класс активного (текущего) пункта меню и е
 **Примечание:** если для пункта меню не задан ни&nbsp;_&amp;noChildrenRowTPL_, ни&nbsp;_&amp;TplNoChildrenDepthN_, то в качестве шаблона для &laquo;бездетных&raquo; пунктов будет использован шаблон, заданный вами в других параметрах (_&amp;TplOneItem_ или _&amp;TplDepthN_).
 
 ### :pushpin: Шаблоны текущего пункта
-#### :point_right: &amp;TplCurrent
+#### :small_red_triangle: &amp;TplCurrent
 Шаблон текущего пункта меню с дочерними, имеет приоритет перед всеми шаблонами пунктов меню, кроме&nbsp;_&amp;TplCurrentN_.
 
 **Значение по умолчанию:** нет
 
-#### :point_right: &amp;TplCurrentN
+#### :small_red_triangle: &amp;TplCurrentN
 Шаблон текущего пункта меню вложенности N с дочерними&nbsp;, для N-го уровня шаблон&nbsp;_&amp;TplCurrentN_&nbsp;имеет приоритет перед всеми шаблонами пунктов меню&nbsp;с дочерними, включая _&amp;TplCurrent_.
 
 **Значение по умолчанию:** нет.
 
-#### :point_right: &amp;TplCurrentNoChildrenN
+#### :small_red_triangle: &amp;TplCurrentNoChildrenN
 Шаблон текущего пункта меню без дочерних элементов, где N &mdash; номер уровня вложенности. Для уровня N имеет приоритет перед любыми другими шаблонами &laquo;бездетных&raquo; пунктов меню.
 
 **Значение по умолчанию:** нет.
