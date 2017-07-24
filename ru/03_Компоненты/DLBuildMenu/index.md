@@ -277,5 +277,5 @@ _ID_ ресурса аналогично ДокЛистеру.
 |Текущий пункт меню без дочерних&nbsp;(любой уровень N)|&amp;TplCurrentNoChildrenN|&amp;TplNoChildrenDepthN|&amp;noChildrenRowTPL|&amp;TplDepthN|&amp;TplOneItem|дефолтное значение&nbsp;&amp;TplOneItem| 
 
  	
-:open_file_folder: Анализ исходников и написание доков DLBuildMenu: :bust_in_silhouette: [Aharito](http://aharito.ru/modx-evolution/dlbuildmenu-parametry-i-shablony)
+:open_file_folder: **Анализ исходников** && **написание доков** DLBuildMenu: :bust_in_silhouette: [Aharito](http://aharito.ru/modx-evolution/dlbuildmenu-parametry-i-shablony)
 
