@@ -1,12 +1,12 @@
 # DLBuildMenu: параметры и шаблоны
 ## Краткое описание
-### :checkered_flag: Зависимости и требования
-### :checkered_flag: Установка
-### :checkered_flag: Файлы
-### :checkered_flag: Преимущества DLBuildMenu
+### :triangular_flag_on_post: Зависимости и требования
+### :triangular_flag_on_post: Установка
+### :triangular_flag_on_post: Файлы
+### :triangular_flag_on_post: Преимущества DLBuildMenu
 
 ## Параметры
-### :checkered_flag: Базовые параметры
+### :triangular_flag_on_post: Базовые параметры
 #### :heavy_check_mark: &amp;idType (hardcoded)
 Тип выборки аналогично DocLister.
 
@@ -53,7 +53,7 @@ CSS-класс активного (текущего) пункта меню и е
 
 **Примечание:**&nbsp;этот CSS-класс и &nbsp;этот параметр существуют в дополнение к уже имеющимся в ДокЛистере классам _first_, _last_, _odd_, _even_ и _current_&nbsp;и соответствующим параметрам для них (см. документацию по DocLIster).
 
-### :checkered_flag: Параметры условий выборки
+### :triangular_flag_on_post: Параметры условий выборки
 #### :heavy_check_mark: &amp;addWhereList
 Условия выборки документов для всех уровней.
 
@@ -70,7 +70,7 @@ CSS-класс активного (текущего) пункта меню и е
 
 **Примечание:** Если _&amp;addWhereListN_ не задан, для всех уровней используется _&amp;addWhereList_.
 
-### :checkered_flag: Параметры сортировки
+### :triangular_flag_on_post: Параметры сортировки
 #### :heavy_check_mark: &amp;orderBy
 Условия сортировки документов всех уровней
 
@@ -87,7 +87,7 @@ CSS-класс активного (текущего) пункта меню и е
 
 **Примечание:**&nbsp;Если _&amp;orderByN_&nbsp;не задан, для всех уровней используется _&amp;orderBy_.
 
-### :checkered_flag: Параметр &laquo;список TV&raquo;
+### :triangular_flag_on_post: Параметр &laquo;список TV&raquo;
 #### :heavy_check_mark: &amp;tvList
 Список TV-параметров, которые участвуют в выборке (как в DocLister).
 
