@@ -262,4 +262,19 @@ _ID_ ресурса аналогично ДокЛистеру.
 
 Например, плейсхолдеры вида&nbsp;_[+tvPrefix.tvName+]_, плейсхолдеры экранированных значений вида _[+e.fieldName+]_ (где _fieldName_ - это имя поля таблицы _site_content_), _[+date+]_ и другие (см. документацию к DocLister).
 
+## Шпаргалка по приоритетам шаблонов
+Система шаблонов DLBuildMenu действительно очень гибкая, но к ней нужно привыкнуть. Для упрощения задачи ниже привожу cheatsheet (шпаргалку) по приоритетам шаблонов.
+
+В левой колонке перечислены _типы элементов_ меню, а справа от каждого элемента идут применяемые для него _шаблоны_ в порядке _убывания_ приоритета.
+
+|Тип&nbsp;элемента&nbsp;меню|Высший&nbsp;приоритет|Приоритет&nbsp;1|Приоритет 2|Приоритет&nbsp;3|Приоритет&nbsp;4|Приоритет&nbsp;5|
+|---|---|---|---|---|---|---|
+|Обёртка для всего меню (уровень 1)|&amp;TplOwner1|&amp;TplMainOwner|дефолтное значение&nbsp;&amp;TplMainOwner| | | |
+|Обёртка для суб-меню (уровень N равен 2 и более)|&amp;TplOwnerN|&amp;TplSubOwner|дефолтное значение&nbsp;&amp;TplSubOwner| | | |			
+|Не текущий пункт меню с дочерними (любой уровень N)|&amp;TplDepthN|&amp;TplOneItem|дефолтное значение&nbsp;&amp;TplOneItem| | | |			
+|Не текущий пункт меню без дочерних (любой уровень N)|&amp;TplNoChildrenDepthN|&amp;noChildrenRowTPL|&amp;TplDepthN|&amp;TplOneItem|дефолтное значение&nbsp;&amp;TplOneItem| |			
+|Текущий пункт меню с дочерними&nbsp;(любой уровень N)|&amp;TplCurrentN|&amp;TplCurrent|&amp;TplDepthN|&amp;TplOneItem|дефолтное значение&nbsp;&amp;TplOneItem| |			
+|Текущий пункт меню без дочерних&nbsp;(любой уровень N)|&amp;TplCurrentNoChildrenN|&amp;TplNoChildrenDepthN|&amp;noChildrenRowTPL|&amp;TplDepthN|&amp;TplOneItem|дефолтное значение&nbsp;&amp;TplOneItem| 
+			
+
 
