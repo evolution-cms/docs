@@ -153,7 +153,7 @@ CSS-класс активного (текущего) пункта меню и е
 **Значение по умолчанию:**
 
 ```
-@CODE:&lt;ul id="nav" class="menu level-1"&gt;[+dl.wrap+]&lt;/ul&gt;
+@CODE:<ul id="nav" class="menu level-1">[+dl.wrap+]</ul>
 ```
 **Примечание:**&nbsp;у вас должен быть задан шаблон _&amp;TplMainOwner_или _&amp;TplOwner1_, иначе будет использовано дефолтное значение шаблона&nbsp;_&amp;TplMainOwner_.
 
@@ -163,7 +163,7 @@ CSS-класс активного (текущего) пункта меню и е
 **Значение по умолчанию:**
 
 ```
-@CODE:&lt;ul class="sub-menu level-[+dl.currentDepth+]"&gt;[+dl.wrap+]&lt;/ul&gt;
+@CODE:<ul class="sub-menu level-[+dl.currentDepth+]">[+dl.wrap+]</ul>
 ```
 
 **Примечание:**&nbsp;для вывода N-уровневого меню у вас в дополнение к основной обёртке должен быть задан по крайней мере&nbsp;_&amp;TplSubOwner_&nbsp;и/или шаблоны&nbsp;_&amp;TplOwnerN_. Иначе будет использовано дефолтное значение&nbsp;_&amp;TplSubOwner_.
@@ -182,10 +182,10 @@ CSS-класс активного (текущего) пункта меню и е
 **Значение по умолчанию:**
 
 ```
-@CODE:&lt;li id="menu-item-[+id+]" class="menu-item [+dl.class+]"&gt;
-   &lt;a href="[+url+]" title="[+e.title+]"&gt;[+title+]&lt;/a&gt;
+@CODE:<li id="menu-item-[+id+]" class="menu-item [+dl.class+]">
+   <a href="[+url+]" title="[+e.title+]">[+title+]</a>
    [+dl.submenu+]
-&lt;/li&gt;
+</li>
 ```
 
 **Примечание:**&nbsp;у вас должны быть заданы все нужные вам шаблоны пунктов меню, по крайней мере _&amp;TplOneItem_. Иначе для пунктов, у которых шаблон не определен вами, будет использовано дефолтное значение _&amp;TplOneItem_.
