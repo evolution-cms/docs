@@ -71,7 +71,7 @@ CSS-класс активного (текущего) пункта меню и е
 **Примечание:** Если _&amp;addWhereListN_ не задан, для всех уровней используется _&amp;addWhereList_.
 
 ### Параметры сортировки
-####:triangular_flag_on_post: &amp;orderBy
+#### :triangular_flag_on_post: &amp;orderBy
 Условия сортировки документов всех уровней
 
 **Возможные значения:** задаются как в DocLister (по правилам MySQL для ORDER BY).
