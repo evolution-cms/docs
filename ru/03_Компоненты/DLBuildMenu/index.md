@@ -152,7 +152,7 @@ CSS-класс активного (текущего) пункта меню и е
 
 **Значение по умолчанию:**
 
-```
+```phtml
 @CODE:<ul id="nav" class="menu level-1">[+dl.wrap+]</ul>
 ```
 **Примечание:**&nbsp;у вас должен быть задан шаблон _&amp;TplMainOwner_или _&amp;TplOwner1_, иначе будет использовано дефолтное значение шаблона&nbsp;_&amp;TplMainOwner_.
@@ -162,7 +162,7 @@ CSS-класс активного (текущего) пункта меню и е
 
 **Значение по умолчанию:**
 
-```
+```phtml
 @CODE:<ul class="sub-menu level-[+dl.currentDepth+]">[+dl.wrap+]</ul>
 ```
 
