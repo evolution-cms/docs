@@ -9,7 +9,7 @@
 **Разработчик:** :godmode: [Agel_Nash](https://github.com/AgelxNash)
 
 
-### :large_orange_diamond: Зависимости и требования
+### :star: Зависимости и требования
 
 - Для работы DLBuildMenu у вас должен быть установлен _DocLister_ (есть в последних релизах MODx Evo _по умолчанию_).
 - Требуется PHP не ниже _версии 5.4_ (в новых версиях Evo CMS лучше использовать _версию 5.6_ и выше).
@@ -17,7 +17,7 @@
 
 
 
-### :large_orange_diamond: Установка
+### :star: Установка
 
 - DLBuildMenu входит _по умолчанию_ во все новые версии Evo CMS, начиная со сборки MODx Evo 1.2.1-d9.1.2 от 21.03.2017.
 - На более старых сборках для его установки нужно _установить_ или _переустановить_ ДокЛистер из Extras, при этом&nbsp;нужно, чтобы DLBuildMenu был&nbsp;_отмечен_&nbsp;галочкой в списке при установке.
@@ -25,7 +25,7 @@
 
 
 
-### :large_orange_diamond: Файлы
+### :star: Файлы
 
 - assets/snippets/DocLister/snippet.DLBuildMenu.php
 - assets/snippets/DocLister/lib/DLFixedPrepare.class.php (метод buildMenu)
@@ -33,7 +33,7 @@
 
 
 
-### :large_orange_diamond: Преимущества DLBuildMenu
+### :star: Преимущества DLBuildMenu
 
 - есть возможность применения _prepare_&nbsp;для обработки данных перед выводом.
 - _богатый выбор_ способов задания шаблонов, в том числе _инлайн-шаблоны_.
@@ -45,15 +45,15 @@
 
 
 ## Параметры
-### :large_orange_diamond: Базовые параметры
-#### :small_orange_diamond: &amp;idType (hardcoded)
+### :star: Базовые параметры
+#### :point_right: &amp;idType (hardcoded)
 Тип выборки аналогично DocLister.
 
 **Возможные значения:**&nbsp;`parents`
 
 **Примечание:**&nbsp;значение параметра _&amp;idType_ жестко записано в коде как _parents_.
 
-#### :small_orange_diamond: &amp;parents
+#### :point_right: &amp;parents
 Родительская (начальная) папка.
 
 **Возможные значения:**&nbsp;_ID_ родителя, либо список _ID_ родителей через запятую.
@@ -62,28 +62,28 @@
 
 **Примечание:** Обратите внимание, что в DLBuildMenu значение _&amp;parents_ по умолчанию равно _0_, что означает &laquo;выводить начиная с корня сайта&raquo;. Это отличается от дефолтного значения _&amp;parents_ параметра в ДокЛистере.
 
-#### :small_orange_diamond: &amp;currentDepth
+#### :point_right: &amp;currentDepth
 Исходный уровень вложенности (глубина).
 
 **Возможные значения:** целое число от _1_ и больше.
 
 **Значение по умолчанию:** `1`
 
-#### :small_orange_diamond: &amp;maxDepth
+#### :point_right: &amp;maxDepth
 Макс. глубина
 
 **Возможные значения:** целое число от 1 и больше.
 
 **Значение по умолчанию:** `5`
 
-#### :small_orange_diamond: &amp;BeforePrepare и&nbsp;&amp;AfterPrepare
+#### :point_right: &amp;BeforePrepare и&nbsp;&amp;AfterPrepare
 Обработка данных через prepare аналогично DocLister.
 
 **Возможные значения:**&nbsp;задаются по правилам ДокЛистера. Могут быть списком имен сниппетов и вызовов методов ренее загруженных классов, либо анонимной функцией.
 
 **Примечание:** для prepare в DLBuildMenu уже имеется встроенный обязательный вызов _DLFixedPrepare::buildMenu_. Обработчики из _&amp;BeforePrepare_ вызываются перед встроенным, из _&amp;AfterPrepare_ - после встроенного вызова.
 
-#### :small_orange_diamond: &amp;activeClass
+#### :point_right: &amp;activeClass
 CSS-класс активного (текущего) пункта меню и его родительских элементов всех уровней.
 
 **Возможные значиения:** Имя CSS-класса, или несколько имён CSS-классов, заданные как в HTML-теге (через пробел).
@@ -92,15 +92,15 @@ CSS-класс активного (текущего) пункта меню и е
 
 **Примечание:**&nbsp;этот CSS-класс и &nbsp;этот параметр существуют в дополнение к уже имеющимся в ДокЛистере классам _first_, _last_, _odd_, _even_ и _current_&nbsp;и соответствующим параметрам для них (см. документацию по DocLIster).
 
-### :large_orange_diamond: Параметры условий выборки
-#### :small_orange_diamond: &amp;addWhereList
+### :star: Параметры условий выборки
+#### :point_right: &amp;addWhereList
 Условия выборки документов для всех уровней.
 
 **Возможные значения:** задаются как в DocLister (по правилам MySQL для условия WHERE).
 
 **Значение по умолчанию:**&nbsp;`c.hidemenu = 0`
 
-#### :small_orange_diamond: &amp;addWhereListN
+#### :point_right: &amp;addWhereListN
 Условия выборки документов N-го уровня, для соответствующих уровней&nbsp;_&amp;addWhereListN_&nbsp;имеет приоритет над _&amp;addWhereList_.
 
 **Возможные значения:** задаются по правилам MySQL для условия WHERE.
@@ -109,15 +109,15 @@ CSS-класс активного (текущего) пункта меню и е
 
 **Примечание:** Если _&amp;addWhereListN_ не задан, для всех уровней используется _&amp;addWhereList_.
 
-### :large_orange_diamond: Параметры сортировки
-#### :small_orange_diamond: &amp;orderBy
+### :star: Параметры сортировки
+#### :point_right: &amp;orderBy
 Условия сортировки документов всех уровней
 
 **Возможные значения:** задаются как в DocLister (по правилам MySQL для ORDER BY).
 
 **Значение по умолчанию:** &nbsp;`menuindex ASC, id ASC`
 
-#### :small_orange_diamond: &amp;orderByN
+#### :point_right: &amp;orderByN
 Условия сортировки документов N-го уровня вложенности, для соответствующих уровней&nbsp;_&amp;orderBy_&nbsp;имеет приоритет над _&amp;orderBy_.
 
 **Возможные значения:** задаются по правилам MySQL для ORDER BY.
@@ -126,15 +126,15 @@ CSS-класс активного (текущего) пункта меню и е
 
 **Примечание:**&nbsp;Если _&amp;orderByN_&nbsp;не задан, для всех уровней используется _&amp;orderBy_.
 
-### :large_orange_diamond: Параметр &laquo;список TV&raquo;
-#### :small_orange_diamond: &amp;tvList
+### :star: Параметр &laquo;список TV&raquo;
+#### :point_right: &amp;tvList
 Список TV-параметров, которые участвуют в выборке (как в DocLister).
 
 **Возможные значения:** список имён TV-параметров через запятую.
 
 **Значение по умолчанию:**&nbsp;нет
 
-#### :small_orange_diamond: &amp;tvListN
+#### :point_right: &amp;tvListN
 Список TV-параметров в выборке для N-го уровня вложенности, для соответствующих уровней&nbsp;_&amp;tvListN_&nbsp;имеет приоритет над&nbsp;_&amp;tvList_.
 
 **Возможные значения:** список имён TV-параметров через запятую.
@@ -146,8 +146,8 @@ CSS-класс активного (текущего) пункта меню и е
 ## Шаблоны
 Шаблоны DLBuildMenu задаются по правилам DL, то есть&nbsp;могут быть и _инлайн-шаблонами_, и&nbsp;_именами чанков_,&nbsp;или загружаться из _файла_,&nbsp;из _документа_ MODx,&nbsp;из _конфига_,&nbsp;из _глобального плейсхолдера_.
 
-### :large_orange_diamond: Шаблоны-обёртки
-#### :small_orange_diamond: &amp;TplMainOwner
+### :star: Шаблоны-обёртки
+#### :point_right: &amp;TplMainOwner
 Основной шаблон-обертка (для уровня глубины _1_).
 
 **Значение по умолчанию:**
@@ -157,7 +157,7 @@ CSS-класс активного (текущего) пункта меню и е
 ```
 **Примечание:**&nbsp;у вас должен быть задан шаблон _&amp;TplMainOwner_или _&amp;TplOwner1_, иначе будет использовано дефолтное значение шаблона&nbsp;_&amp;TplMainOwner_.
 
-#### :small_orange_diamond: &amp;TplSubOwner
+#### :point_right: &amp;TplSubOwner
 Шаблон-обертка для вложенных уровней (для субменю).
 
 **Значение по умолчанию:**
@@ -168,15 +168,15 @@ CSS-класс активного (текущего) пункта меню и е
 
 **Примечание:**&nbsp;для вывода N-уровневого меню у вас в дополнение к основной обёртке должен быть задан по крайней мере&nbsp;_&amp;TplSubOwner_&nbsp;и/или шаблоны&nbsp;_&amp;TplOwnerN_. Иначе будет использовано дефолтное значение&nbsp;_&amp;TplSubOwner_.
 
-#### :small_orange_diamond: &amp;TplOwnerN 
+#### :point_right: &amp;TplOwnerN 
 Шаблон-обертка для субменю N-го уровня вложенности, для соответствующих уровней&nbsp;_&amp;TplOwnerN_&nbsp;имеет приоритет над _&amp;TplMainOwner_ и _&amp;TplSubOwner_&nbsp;(см. Примечание).
 
 **Значение по умолчанию:** нет
 
 **Примечание:**&nbsp;Если заданы и _&amp;TplOwner1_, и _&amp;TplMainOwner_, то будет использован _&amp;TplOwner1_. &nbsp;Если заданы и&nbsp;_&amp;TplOwner2_&nbsp;и _&amp;TplSubOwner_, то для уровня 2 будет использован _&amp;TplOwner2_, а для уровней начиная с 3-го &mdash;&nbsp;_&amp;TplSubOwner_.
 
-### :large_orange_diamond: Шаблоны пункта меню
-#### :small_orange_diamond: &amp;TplOneItem
+### :star: Шаблоны пункта меню
+#### :point_right: &amp;TplOneItem
 Основной шаблон для каждого пункта меню всех уровней.
 
 **Значение по умолчанию:**
@@ -190,38 +190,38 @@ CSS-класс активного (текущего) пункта меню и е
 
 **Примечание:**&nbsp;у вас должны быть заданы все нужные вам шаблоны пунктов меню, по крайней мере _&amp;TplOneItem_. Иначе для пунктов, у которых шаблон не определен вами, будет использовано дефолтное значение _&amp;TplOneItem_.
 
-#### :small_orange_diamond: &amp;TplDepthN
+#### :point_right: &amp;TplDepthN
 Шаблон пункта меню вложенности N, для соответствующих уровней&nbsp;_&amp;TplDepthN_&nbsp;имеет приоритет над _&amp;TplOneItem_.
 
 **Значение по умолчанию:** нет
 
 **Примечание:**&nbsp;Например, если задан _&amp;TplDepth3_, он заменит собой шаблон _&amp;TplOneItem_ на 3-м уровне вложенности.
 
-### :large_orange_diamond: Шаблоны пункта без дочерних элементов
-#### :small_orange_diamond: &amp;noChildrenRowTPL
+### :star: Шаблоны пункта без дочерних элементов
+#### :point_right: &amp;noChildrenRowTPL
 Основной шаблон пункта меню без дочерних элементов для всех уровней.
 
 **Значение по умолчанию:**&nbsp;нет
 
-#### :small_orange_diamond: &amp;TplNoChildrenDepthN
+#### :point_right: &amp;TplNoChildrenDepthN
 Шаблон пункта меню без дочерних элементов&nbsp;вложенности N. Для соответствующих уровней _&amp;TplNoChildrenDepthN_&nbsp;имеет приоритет над _&amp;noChildrenRowTpl_.
 
 **Значение по умолчанию:** нет
 
 **Примечание:** если для пункта меню не задан ни&nbsp;_&amp;noChildrenRowTPL_, ни&nbsp;_&amp;TplNoChildrenDepthN_, то в качестве шаблона для &laquo;бездетных&raquo; пунктов будет использован шаблон, заданный вами в других параметрах (_&amp;TplOneItem_ или _&amp;TplDepthN_).
 
-### :large_orange_diamond: Шаблоны текущего пункта
-#### :small_orange_diamond: &amp;TplCurrent
+### :star: Шаблоны текущего пункта
+#### :point_right: &amp;TplCurrent
 Шаблон текущего пункта меню с дочерними, имеет приоритет перед всеми шаблонами пунктов меню, кроме&nbsp;_&amp;TplCurrentN_.
 
 **Значение по умолчанию:** нет
 
-#### :small_orange_diamond: &amp;TplCurrentN
+#### :point_right: &amp;TplCurrentN
 Шаблон текущего пункта меню вложенности N с дочерними&nbsp;, для N-го уровня шаблон&nbsp;_&amp;TplCurrentN_&nbsp;имеет приоритет перед всеми шаблонами пунктов меню&nbsp;с дочерними, включая _&amp;TplCurrent_.
 
 **Значение по умолчанию:** нет.
 
-#### :small_orange_diamond: &amp;TplCurrentNoChildrenN
+#### :point_right: &amp;TplCurrentNoChildrenN
 Шаблон текущего пункта меню без дочерних элементов, где N &mdash; номер уровня вложенности. Для уровня N имеет приоритет перед любыми другими шаблонами &laquo;бездетных&raquo; пунктов меню.
 
 **Значение по умолчанию:** нет.
