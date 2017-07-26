@@ -1,159 +1,171 @@
-## Основные параметры
-Для сортировки и ограничения выборки следует использовать параметры DocLister (sortBy, sortDir, orderBy, addWhereList и т.д.) По умолчанию выполняется сортировка по возрастанию значения поля menuindex, документы с hidemenu=1 не выводятся.
+## Overview
+DLMenu is DocLister based replacement of Wayfinder. Among perfomance and flexibility, the main features are:
+* templates and classes are similar to Wayfinder;
+* the amount of DB queries is equal to the number of menu levels (except the queries to append tv-paremeters and count children);
+* the ability to count child resources (for their direct parents);
+* almost all parameters are possible to apply to the particular menu level, as well as for all levels;
+* prepare-snippets to post-process data and change templates on the fly; it's also possible to exclude documents from output using prepare-snippets, like in DocLister;
+* menu can be built from several parents;
+* it'possible to keep some menu branches always opened;
+* ability to output menu in json format;
 
-Параметр prepare нельзя задать для определенного уровня (например, prepare2). Но в самом prepare-сниппете узнать уровень можно из значения  $data['level']. Параметр tvList также применяется ко всем уровням.
+## General parameters
+Use DocLister parameters to sort and to limit data selections (sortBy, sortDir, orderBy, addWhereList and so on). The results are sorted by menuindex field in ascending order by default, documents having hidemenu=1 are ignored.
 
-В параметрах шаблонов следует указывать уровень на 1 меньше (например, rowTpl2 будет применен к документам третьего уровня, а rowTpl0 - первого).
+Prepare parameter is impossible to set for particular menu level (for example, prepare2). But you can get level value from $data['level'] inside of snippet. tvList parameter is applied to all levels as well.
+
+Level number should be decreased by 1 in template parameters (for example, rowTpl2 will be applied to  documents of the third level, and rowTpl0 - of the first one).
 
 ### parents
-Список id документов, от которых строится меню, через запятую. Если у указанных документов разные родители, то будет построено несколько меню. Чтобы вывести в том порядке, в котором перечислены родители, следует использовать параметр sortType1 со значением "doclist". 
+List of document ids to build menu from, comma separated. If these documents have different parents, then several menus will be built.  To keep parents order provided in this parameter, set the value of sortType1 parameter to "doclist".
 
-Возможные значения - список id через запятую.
+Possible values - comma separated ids.
 
-Значение по умолчанию - id ресурса, в котором вызван сниппет.
+Default - id of the resource, where the snippet has been called.
 
 ### maxDepth
-Максимальное количество уровней в меню.
+Maximum level of the menu.
 
-Возможные значения - число от 1.
+Possible values - number starting from 1.
 
-Значение по умолчанию - 10.
+Default - 10.
 
 ### showParent
-Если значение параметра равно 1, то будут показаны документы, указанные в параметре parents.
+If the value is 1, then documents provided in parents parameter will be shown.
 
-Возможные значения - 0 или 1.
+Possible values - 0 or 1.
 
-Значение по умолчанию - 0.
+Default - 0.
 
 ### api
-Если значение параметра равно 1, то результаты будут выведены в виде json-массива.
+Set to 1 to output results as json array.
 
-Возможные значения - 0 или 1.
+Possible values - 0 or 1.
 
-Значение по умолчанию - 0.
+Default - 0.
 
 ### hideSubMenus
-Если значение параметра равно 1, то неактивные ветки меню не показываются.
+Set to 1 to hide inactive brances.
 
-Возможные значения - 0 или 1.
+Possible values - 0 or 1.
 
-Значение по умолчанию - 0.
+Default - 0.
 
 ### openIds
-Результат аналогичен вызову с включенным параметром hideSubMenus, но можно указать через запятую id родительских документов, чьи непосредственные потомки будут всегда видны. 
+When hideSubMenus parameter is set, it's possible to provide parent document ids to make their direct descendants always visible. 
 
-Возможные значения - список id через запятую.
+Possible values - comma separated ids.
 
-Значение по умолчанию - не задано.
+Default - not defined.
 
 ### countChildren
-Если значение параметра равно 1, то будет вычислено количество непосредственных дочерних документов для каждого ресурса в меню.
+If the value is 1, then the amount of the direct children of all the resources in the menu will be counted.
 
-Возможные значения - 0 или 1.
+Possible values - 0 or 1.
 
-Значение по умолчанию - 0.
+Default - 0.
 
 ### titleField 
-Имя плейсхолдера, в котором задается название документа.
+Placeholder name to store document title.
 
-Значение по умолчанию - title.
+Default - title.
 
 ### joinMenus
-Если задано несколько родителей и отключен параметр showParent, то сниппет выведет столько же меню. С помощью этого параметра их можно объединить в одно.
+If several parents are provided showParent parameter if off, then snippet outputs several menus. This parameter allows to join them.
 
-Возможные значения - 0 или 1.
+Possible values - 0 or 1.
 
-Значение по умолчанию - 0.
+Default - 0.
 
-## Шаблоны
+## Templates
 ### outerTpl
-Обертка всего меню.
+Wraps the whole menu.
 
-Возможные значения - имя шаблона, указанное по правилам задания шаблонов в DocLister.
+Possible values - name of a template given according to the DocLister template setting rules.
 
-Значение по умолчанию:
+Default:
 ```
 @CODE:<ul[+classes+]>[+wrap+]</ul>
 ```
 
 ### rowTpl, rowHereTpl
-Шаблон для вывода пункта меню первого уровня без потомков. Для текущего документа может быть задан шаблон rowHereTpl.
+Template to output a document of the first level without chilrden. rowHereTpl is applied to the current document.
 
-Возможные значения - имя шаблона, указанное по правилам задания шаблонов в DocLister.
+Possible values - name of a template given according to the DocLister template setting rules.
 
-Значение по умолчанию:
+Default:
 ```
 @CODE:<li[+classes+]><a href="[+url+]">[+title+]</a></li>
 ```
 
 ### parentRowTpl, parentRowHereTpl, parentRowActiveTpl
-Шаблон для вывода документа, у которого есть потомки. Для текущего документа может быть задан шаблон parentRowHereTpl, для активного - parentRowActiveTpl.
+Template to output a document having children. Use parentRowHereTpl for the current parent document or parentRowActiveTpl - for the active one.
 
-Возможные значения - имя шаблона, указанное по правилам задания шаблонов в DocLister.
+Possible values - name of a template given according to the DocLister template setting rules.
 
-Значение по умолчанию:
+Default:
 ```
 @CODE:<li[+classes+]><a href="[+url+]">[+title+]</a>[+wrap+]</li>
 ```
 
 ### innerTpl
-Обертка блока дочерних документов.
+Wraps child elements.
 
-Возможные значения - имя шаблона, указанное по правилам задания шаблонов в DocLister.
+Possible values - name of a template given according to the DocLister template setting rules.
 
-Значение по умолчанию - значение параметра outerTpl.
+Default - outerTpl value.
 
 ### innerRowTpl, innerRowHereTpl
-Шаблон для вывода дочернего документа. Для текущего документа может быть задан шаблон innerRowHereTpl.
+Template to output a child document. innerRowHereTpl template can be set for the current document.
 
-Возможные значения - имя шаблона, указанное по правилам задания шаблонов в DocLister.
+Possible values - name of a template given according to the DocLister template setting rules.
 
-Значение по умолчанию - значение параметра rowTpl.
+Default - rowTpl value.
 
 ### categoryFolderTpl
-Шаблон для вывода категории (документа с полем isfolder=1 и шаблоном _blank или значением поля link_attributes содержащим слово category).
+Template to output category (the document having isfolder=1 and \_blank template or if its link_attributes field value contains "category").
 
-Возможные значения - имя шаблона, указанное по правилам задания шаблонов в DocLister.
+Possible values - name of a template given according to the DocLister template setting rules.
 
-Значение по умолчанию - значение параметра parentRowTpl.
+Default - parentRowTpl value.
 
 ## Классы
-Задаются для документов:
-* __rowClass__ - класс документа, задается значением параметра innerClass;
-* __firstClass__ - класс первого документа в группе, задается значением параметра firstClass (по умолчанию - first);
-* __lastClass__ - класс последнего документа в группе, задается значением параметра lastClass (по умолчанию - last);
-* __levelClass__ - класс уровня меню, задается значением параметра lastClass, к которому добавляется номер уровня (по умолчанию - level);
-* __webLinkClass__ - класс документа-ссылки, задается значением параметра webLinkClass;
-* __parentClass__ - класс документа-родителя, задается значением параметра parentClass;
-* __hereClass__ - класс текущего документа, задается значением параметра hereClass (по умолчанию - current);
-* __activeClass__ - класс активного документа, задается значением параметра activeClass (по умолчанию - active);
-* __oddClass__ - класс нечетного документа в группе, задается значением параметра oddClass (по умолчанию - odd);
-* __evenClass__ - класс четного документа в группе, задается значением параметра evenClass (по умолчанию - even);
-* __stateClass__ - задается значением плейсхолдера __[+state+]__.
+Document classes:
+* __rowClass__ - document class, provided by innerClass parameter;
+* __firstClass__ - first document class, provided by firstClass parameter (default - first);
+* __lastClass__ - last document class, provided by lastClass parameter (default - last);
+* __levelClass__ - menu level class, provided by levelClass parameter, with level number appended (default - level);
+* __webLinkClass__ - web link class, provided by webLinkClass parameter;
+* __parentClass__ - parent document class, provided by parentClass parameter;
+* __hereClass__ - current document class, provided by hereClass parameter (default - current);
+* __activeClass__ - active document class, provided by activeClass parameter (default - active);
+* __oddClass__ - odd document class, provided by oddClass parameter(default - odd);
+* __evenClass__ - even document class, provided by evenClass parameter (default - even);
+* __stateClass__ - provided by __[+state+]__ placeholder value.
 
-Можно также добавить свои классы в prepare-сниппете:
+It's possible to define your own classes using prepare-snippet:
 ```
 $data['classes'] = array('myClass'=>'my');
 ```
 
-Задаются для оберток:
-* __innerClass__ - класс обертки дочерних документов, задается значением параметра innerClass;
-* __outerClass__ - класса обертки всего меню, задается значением параметра outerClass.
+Wrapper classes:
+* __innerClass__ - class of the children wrapper, provided by innerClass parameter;
+* __outerClass__ - class of the whole menu wrapper, provided by outerClass parameter.
 
-## Плейсходеры
-* __[+wrap+]__ - вывод дочерних документов (в api-режиме - children); если значение плейсхолдера - массив, то он преобразуется в строку с применением соответствующих шаблонов, если строка - остается без изменений;
-* __[+classNames+]__ - список классов, доступных в шаблоне (только имена); 
-* __[+classes+]__ - список классов, доступных в шаблоне (включая class=" ");
-* __[+maxLevel+]__ - если установлен, то указывает на то, что документ находится в самом низу ветки, к которой принадлежит;
-* __[+iteration+]__ - порядковый номер документа в группе;
-* __[+here+]__ - если установлен, то документ является текущим документов;
-* __[+active+]__ - если установлен, то документ является активным документов;
-* __[+state+]__ - если задан параметр hideSubMenus, то плейсхолдер содержит значение open для развернутой ветви и closed для свернутой;
-* __[+title+]__ - название документа, равно полю menutitle, если оно не пустое, или pagetitle;
-* __[+url+]__ - ссылка на документ;
-* __[+count+]__ - количество непосредственных потомков;
-* __[+\_renderRowTpl+]__ - если установлен, то его значение будет использовано в качестве шаблона при выводе документов;
-* __[+\_renderOuterTpl+]__ - если установлен, то его значение будет использовано в качестве шаблона при выводе обертки дочерних документов.
+## Placeholders
+* __[+wrap+]__ - child documents output (children in api mode); if the value of the placeholder is an array, then it's converted to a string with according templates applied, is it's string then it stays unchanged;
+* __[+classNames+]__ - the list of classes available in template (only names); 
+* __[+classes+]__ - the list of classes available in template (including class=" ");
+* __[+level+]__ - document level;
+* __[+maxLevel+]__ - if it's set, then the document is in the bottom of its branch;
+* __[+iteration+]__ - index number of a document;
+* __[+here+]__ - if it's set then the document is current;
+* __[+active+]__ - if it's set then the document is active;
+* __[+state+]__ - if hideSubMenus parameter is set, then its value is open for the opened branch or closed for the closed one;
+* __[+title+]__ - document title, it's equal to menutitle, if menutitle is not empty, or pagetitle;
+* __[+url+]__ - document url;
+* __[+count+]__ - the amount of the direct document children;
+* __[+\_renderRowTpl+]__ - set this placeholder if you need to change template for documents ouput;
+* __[+\_renderOuterTpl+]__ - set this placeholder if you need to change template for wrapper output.
 
-Также доступны плейсхолдеры, устанавливаемые экстендером e, и плейсхолдеры отдельных классов: __[+oddClass+]__, __[+rowClass+]__ и т.д.
+It's also possible to use placeholders set by e extender, and placeholders of particular classes: __[+oddClass+]__, __[+rowClass+]__ and so on.
