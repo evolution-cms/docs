@@ -158,7 +158,8 @@ Wrapper classes:
 * __[+classes+]__ - the list of classes available in template (including class=" ");
 * __[+level+]__ - document level;
 * __[+maxLevel+]__ - if it's set, then the document is in the bottom of its branch;
-* __[+iteration+]__ - index number of a document;
+* __[+iteration+]__ - ordinal number of a document in its branch;
+* __[+\_display+]__ - amount of documents in branch;
 * __[+here+]__ - if it's set then the document is current;
 * __[+active+]__ - if it's set then the document is active;
 * __[+state+]__ - if hideSubMenus parameter is set, then its value is open for the opened branch or closed for the closed one;
