@@ -1,11 +1,11 @@
-##calback
+## calback
 
-###afterFilterSend(msg)
+### afterFilterSend(msg)
 
-###afterFilterComplete(_form)
+### afterFilterComplete(_form)
 
 beforeFilterSend(_form)
 
 
-##Внимание
+## Внимание
 Для работы ajax форма и блок товаров не должны быть в самом корне документа тоесть body.
