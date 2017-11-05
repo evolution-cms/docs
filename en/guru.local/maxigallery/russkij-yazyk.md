@@ -1,0 +1,26 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h2>MaxiGallery: Русский язык</h2>
+
+<p>Изначально в MaxiGallery русский язык не входит, поэтому, необходимо создать собственный файл с переводом. Но так как MaxiGallery состоит из нескольких галерей, которые дополнительно используют скрипты и картинки, общий перевод галереи на русский язык будет состоять из нескольких шагов.</p>
+<h3 class="sub-header text-bold">Создаем файл lang_ru-utf8.php</h3>
+<p>Все файлы с языковыми пакетами находятся в папке <em><span class="text-bold">/assets/snippets/maxigallery/lang/</span></em>. Создаем файл <span class="text-bold">lang_ru-utf8.php</span> в этой же папке на основе одного из существующих языковых пакетов, например, <span class="text-bold">lang_en.php</span> и переводим все необходимые строки. Либо скачиваем готовый файл:</p>
+<p><a href="assets/files/MaxiGallery/lang_ru-utf8.zip.html" target="_blank">lang_ru-utf8.php</a></p>
+<p>Не забудьте, что кодировка файла должна быть utf-8.</p>
+<h3 class="sub-header text-bold">Создаем файл slidebox_lang_ru-utf8.js</h3>
+<p>Вы наверняка обратили внимание на строчки в языковом файле:</p>
+<pre class="brush: html;">// If you are going to make your own language file and are usign the lighbox,<br>// make a language file for it too, f.ex. /maxigallery/slidebox/slidebox_lang_en.js</pre>
+<p>Т.е. если мы собираемся создавать собственный языковой файл, нам рекомендуют также перевести и <span class="text-bold">slidebox_lang_en.js</span>. Действуем по тому же принципу, создаем в папке новый файл <span class="text-bold">slidebox_lang_ru-utf8.js</span> на основе файла <span class="text-bold">slidebox_lang_en.js</span> и переводим его. Либо скачиваем готовый файл:</p>
+<p><a href="assets/files/MaxiGallery/slidebox_lang_ru-utf8.js.html" target="_blank">slidebox_lang_ru-utf8.js</a></p>
+<p>Не забудьте, что и в этом случае кодировка файла должна быть utf-8.</p>
+<h3 class="sub-header text-bold">Создаем картинки для галерей slimbox и lightboxv2</h3>
+<p>Галереи <span class="text-bold">slimbox</span> и <span class="text-bold">lightboxv2</span> в качестве навигации используют картинки <span class="text-bold">closelabel.gif</span>, <span class="text-bold">nextlabel.gif</span> и <span class="text-bold">prevlabel.gif</span>. Эти картинки находятся в папках:</p>
+<pre class="brush: html;">/assets/snippets/maxigallery/lightboxv2/images/  для lightboxv2
+/assets/snippets/maxigallery/slimbox/images/  для slimbox</pre>
+<p>Чтобы и в этих галереях навигация стала на русском языке, создаем собственные картинки и заменяем ими картинки с английским языком. Вы можете создать собственные картинки или скачать готовые:</p>
+<div><a href="assets/files/MaxiGallery/closelabel.gif.html" target="_blank">closelabel.gif</a></div>
+<div><a href="assets/files/MaxiGallery/nextlabel.gif.html" target="_blank">nextlabel.gif</a></div>
+<div><a href="assets/files/MaxiGallery/prevlabel.gif.html" target="_blank">prevlabel.gif</a></div>
+<h3 class="sub-header text-bold">Вызов русифицированной MaxiGallery</h3>
+<p>Чтобы подключить русский языковой файл, не забудьте при вызове <span class="text-bold">MaxiGallery</span> использовать следующий параметр:</p>
+<pre class="brush: html;">&lang=`ru-utf8`</pre>

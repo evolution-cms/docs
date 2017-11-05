@@ -1,0 +1,130 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h2>AnythingRating: Примеры</h2>
+
+<h3 class="sub-header text-bold">Использование</h3>
+<p><span class="text-bold">Добавьте первый вызов в начале страницы , для определения группы рейтинга:</span></p>
+<pre class="brush: html;">[!AnythingRating? &define=`1` &atrGrp=`grpName`!]</pre>
+<p>где:</p>
+<ul>
+<li><code>&define=`1`</code> - указываем, что данный вызов сниппета предназначен для определения группы рейтинга</li>
+<li><code>&atrGrp=`grpName`</code> - имя группы рейтинга. Любая комбинация символов AZ, подчеркивания и цифр 0-9</li>
+</ul>
+<p><span class="text-bold">Возле предмета (изображения, статьи и т.д.), к которому добавляем голосование размещаем такой вызов сниппета:</span></p>
+<pre class="brush: html;">[!AnythingRating? &atrGrp=`grpName` &atrId=`idItem`!]</pre>
+<p>где:</p>
+<ul>
+<li><code>&atrGrp=`grpName`</code> - определяем, к какой группе относится наш рейтинг</li>
+<li><code>&atrId=`idItem`</code> - уникальный идентификатор предмета рейтинга. Может быть [*id*] или [+maxigallery.picture.id+] в чанке <span class="text-bold">maxigallery</span> или каким либо другим id.</li>
+</ul>
+<p><span class="text-bold">Для вывода ТОП рейтинга используем следующий вызов сниппета:</span></p>
+<pre class="brush: html;">[!AnythingRating? &getTopRated=`1` &atrGrp=`grpName` &topTable=`site_content` &topTitleField=`pagetitle`!]</pre>
+<p>где:</p>
+<ul>
+<li><code>&getTopRated=`1`</code> - указываем, что данный вызов предназначен для вывода результатов голосования</li>
+<li><code>&atrGrp=`grpName`</code> - определяем группу по которой будем выводить результаты</li>
+<li><code>&topTable=`site_content`</code> - указываем имя таблицы, которая содержит данные предметов рейтинга. Имя таблицы указывается без префикса MODX</li>
+<li><code>&topTitleField=`pagetitle`</code> - поле, используемое в качестве названия предмета рейтинга</li>
+</ul>
+<p>Вы можете настроить внешний вид результатов голосования с помощью CSS в файле <em><span class="text-bold">css/anythingRating.css</span></em>. Так же вы можете настроить форму для голосования в шаблоне <em><span class="text-bold">templates/anythingRating.tpl.html</span></em> или форму вывода результатов голосования в шаблоне <em><span class="text-bold">templates/topRated.tpl.html</span></em>. Смотрите возможные плэйсхолдеры для использования в шаблонах.</p>
+
+
+<h3 class="sub-header text-bold">Определение рейтинга группы</h3>
+<p><span class="text-bold">Это простейший пример вызова определяет рейтинг группы 'photos':</span></p>
+<pre class="brush: html;">[!AnythingRating? &define=`1` &atrGrp=`photos`!]</pre>
+<ul>
+<li>хранение всех IP-адресов проголосовавших по каждому пункту</li>
+<li>виджет из 5 звезд (определено по умолчанию файлом CSS)</li>
+<li>дата проведения рейтинга неограничена</li>
+<li>язык установлен в качестве языка менеджера MODX</li>
+</ul>
+<p><span class="text-bold">Этот вызов сниппета определяет рейтинг группы 'travelbook':</span></p>
+<pre class="brush: html;">
+[!AnythingRating?
+&define=`1`
+&atrGrp=`travelbook`
+&language=`francais-utf8`
+&canVote=`travel`
+&nbIP=`200`
+&nbStars=`10`
+&endDate=`2014-06-30`
+&atrTpl=`@FILE:assets/snippets/anythingRating/templates/travelBookTpl.tpl.html`
+&atrCss=`@FILE:assets/snippets/anythingRating/css/travelBookCss.css`!]
+</pre>
+<ul>
+<li><code>&language=`francais-utf8`</code> - языковой пакет Francais-utf8</li>
+<li><code>&canVote=`travel`</code> - проголосовать могут только веб-пользователи из веб-группы "travel"</li>
+<li><code>&nbIP=`200`</code> - хранение до 200 IP-адресов проголосовавших по каждому пункту</li>
+<li><code>&nbStars=`10`</code> - виджет и 10 звезд (определяется CSS-файлом)</li>
+<li><code>&endDate=`2014-06-30`</code> - дата окончания конкурса</li>
+<li><code>travelBookTpl.tpl.html</code> - как файл шаблона</li>
+<li><code>travelBookCss.css</code> - как CSS-файл</li>
+</ul>
+
+<h3 class="sub-header text-bold">Пункт голосования</h3>
+<pre class="brush: html;">[!AnythingRating? &atrGrp=`travelbook` &atrId=`[*id*]`!]</pre>
+<p>где:</p>
+<ul>
+<li><code>&atrGrp=`travelbook`</code> - группа рейтинга</li>
+<li><code>&atrId=[*id*]</code> - уникальный идентификатор текущего документа</li>
+</ul>
+<p><span class="text-bold">Этот пример вызова сниппета может использоваться, например в шаблоне для Ditto:</span></p>
+<pre class="brush: html;">[[AnythingRating? &atrGrp=`travelbooks` &atrId=`[+id+]` &init=`opinion:[+id+]`]]</pre>
+<p>где:</p>
+<ul>
+<li><code>&atrGrp=`travelbook`</code> - группа рейтинга</li>
+<li><code>&atrId=[+id+]</code> - уникальный идентификатор текущего документа</li>
+<li><code>&init=`opinion:[+id+]`</code> - начальное значение рейтинга из TV 'opinion' документа [+id+]</li>
+</ul>
+<p><span class="text-bold">Этот сниппет вызывается в шаблоне изображения maxigallery:</span></p>
+<pre class="brush: html;">[!AnythingRating? &atrGrp=`photos` &atrId=`[+maxigallery.picture.id+]`!]</pre>
+<p>где:</p>
+<ul>
+<li><code>&atrGrp=`photos`</code> - группа рейтинга</li>
+<li><code>&atrId=[+maxigallery.picture.id+]</code> - уникальный идентификатор изображения, которое вы хотите оценить</li>
+</ul>
+<pre class="brush: html;">[!AnythingRating? &atrGrp=`products` &atrId=`[*id*]` &noVotes=`1` &init=`opinion`!]</pre>
+<p>где:</p>
+<ul>
+<li><code>&atrGrp=`products`</code> - группа рейтинга</li>
+<li><code>&atrId=[*id*]</code> - уникальный идентификатор текущего документа</li>
+<li><code>&noVotes=`1`</code> - голосование не разрешается, отображается только результат</li>
+<li><code>&init=`opinion`</code> - инициализация голосов от TV 'opinion'</li>
+</ul>
+
+<h3 class="sub-header text-bold">Лучшие по рейтингу</h3>
+<p><span class="text-bold">Этот сниппет выведет рейтинг документов в конкурсе `travelbook`:</span></p>
+<pre class="brush: html;">[[AnythingRating? &getTopRated=`1` &atrGrp=`travelbook` &topTable=`site_content` &topTitleField=`pagetitle` &topLabel=`travelbooks`]]</pre>
+<ul>
+<li>отображение 5 лучших по рейтингу</li>
+<li>идентификатор, название и описание в рейтинге берется из таблицы "site_content"</li>
+<li>поле идентификатора используется как "ID" по умолчанию</li>
+<li>название блока с результатми рейтинга "travelbooks"</li>
+<li>имя поля для названия pagetitle из таблицы "site_content"</li>
+<li>поля с описанием, изображением и ссылкой по умолчанию не используются</li>
+<li>шаблон по умолчанию: assets/snippets/anythingRating/templates/topRated.tpl.html</li>
+</ul>
+<p><span class="text-bold">Этот сниппет выведет рейтинг изображений в конкурсе `photos`:</span></p>
+<pre class="brush: html;">
+[!AnythingRating?
+&getTopRated=`1`
+&topDir=`worst`
+&atrGrp=`photos`
+&topNb=`3`
+&topTpl=`@FILE:assets/snippets/anythingRating/templates/anotherTopRated.tpl.html`
+&topTable=`maxigallery`
+&topDescrField=`descr`
+&topImageField=`filename`
+&topLinkField=`gal_id`
+&topLabel=`photos`!]
+</pre>
+<ul>
+<li>отображение 3 худших по рейтингу!</li>
+<li>идентификатор, название и описание в рейтинге берется из таблицы "maxigallery"</li>
+<li>поля для идентификатора и названия используется как 'id' и 'title' по умолчанию</li>
+<li>название блока с результатми рейтинга "photos"</li>
+<li>имя поля для описания 'descr' берется из таблицы "maxigallery"</li>
+<li>для ссылки используется поле 'gal_id'</li>
+<li>для изображения используется поле 'filename'</li>
+<li>шаблон по умолчанию: assets/snippets/anythingRating/templates/anotherTopRated.tpl.html</li>
+</ul>

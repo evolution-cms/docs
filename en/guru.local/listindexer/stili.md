@@ -1,0 +1,11 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h2>ListIndexer: Стили</h2>
+
+<div><code>div.LIn_title {}</code> Стиль заголовка</div>
+<div><code>ul.LIn_fullMode {}</code> Класс для списка в full режиме</div>
+<div><code>ul.LIn_shortMode {}</code> Класс для списка в short режиме</div>
+<div><code>span.LIn_date {}</code> Класс для даты</div>
+<div><code>span.LIn_desc {}</code> Класс оформляющий описание</div>
+<div><code>div.LIn_pagination {}</code> Стиль для ссылок на следующие страницы (пагинация)</div>
+<div><code>span.LIn_currentPage {}</code> Класс для текущей страницы</div>

@@ -1,0 +1,663 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h2>eForm: Остальные параметры</h2>
+
+<div class="panel-group accordion">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="861"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse861"><span class="text-bold">&to</span> - Адрес Email для отправки информации</a></h4>
+</div>
+<div id="collapse861" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> email<br>
+<span class="text-bold">Значение по умолчанию:</span> системный адрес<br>
+<span class="text-bold">Примечание:</span> Можно использовать несколько адресов разделяя их запятой (,). Если не указано, то будет использован системный адрес.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&to=`mail_1@ваш-домен.ru,mail_2@ваш-домен.ru`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="862"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse862"><span class="text-bold">&from</span> - Адрес отправителя письма</a></h4>
+</div>
+<div id="collapse862" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> email<br>
+<span class="text-bold">Значение по умолчанию:</span> системный адрес<br>
+<span class="text-bold">Примечание:</span> Устанавливает адрес отправителя письма.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&from=`mail@ваш-домен.ru`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="863"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse863"><span class="text-bold">&fromname</span> - Имя отправителя письма</a></h4>
+</div>
+<div id="collapse863" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> строка<br>
+<span class="text-bold">Значение по умолчанию:</span> site_name<br>
+<span class="text-bold">Примечание:</span> <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&fromname=`Администратор`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="864"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse864"><span class="text-bold">&replyto</span> - Адрес для ответа</a></h4>
+</div>
+<div id="collapse864" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> email<br>
+<span class="text-bold">Значение по умолчанию:</span> &to<br>
+<span class="text-bold">Примечание:</span> Электронный адрес или поле содержащее адрес, который будет использован вписьме для ответа.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&replyto=`mail@ваш-домен.ru`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="865"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse865"><span class="text-bold">&sendirect</span> - Поле формы для получения адреса отправки</a></h4>
+</div>
+<div id="collapse865" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> Включает возможность использовать поле формы для определения адреса, по которому будет послано письмо.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&sendirect=`1`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="866"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse866"><span class="text-bold">&cc</span> - Также как &email но для Cc</a></h4>
+</div>
+<div id="collapse866" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> email<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&cc=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="867"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse867"><span class="text-bold">&bcc</span> - Также как &email но для Bcc</a></h4>
+</div>
+<div id="collapse867" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> email<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&bcc=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="868"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse868"><span class="text-bold">&ccsender</span> - Послать копию данных формы пользователю</a></h4>
+</div>
+<div id="collapse868" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> По умолчанию установлено в 0. eForm ищет адрес пользователя в поле с названием email.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&ccsender=`1`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="869"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse869"><span class="text-bold">&subject</span> - Тема сообщения</a></h4>
+</div>
+<div id="collapse869" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> строка<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Тема сообщения, которая может включать поля формы. Может включать ((поля формы)).<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&subject=`Спасибо за ваш заказ ((firstname)) ((lastname))`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="870"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse870"><span class="text-bold">&noemail</span> - Запретить отправку писем</a></h4>
+</div>
+<div id="collapse870" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> 1 - отключить отправку писем<br>0 - включить отправку писем<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&noemail=`1`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="871"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse871"><span class="text-bold">&mailselector</span> - Определение адресата по значению поля</a></h4>
+</div>
+<div id="collapse871" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> список email<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Устанавливает поле формы, которое будет использоваться при выборе единственного адреса из списка адресов разделенных запятой (,) для использования в параметре &to. Значения поля будет определять номер используемого почтового адреса. Номер 1 соответствует первому адресу и N - последнему. В форме используется поле topic в виде выпадающего списка. Когда пользователь выбирает значение, то тем самым он определяет один адрес, по которому будут посланы данные формы.<br>
+<pre class="brush: html;">&to=`sales@me.com,support@me.com,billing@me.com` &mailselector=`topic`</pre><br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&mailselector=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="872"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse872"><span class="text-bold">&mobile</span> - Адрес почты мобильного устройства</a></h4>
+</div>
+<div id="collapse872" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> email<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Адрес почты мобильного устройства. Используется для отсылки короткого сообщения.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&mobile=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="873"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse873"><span class="text-bold">&mobiletext</span> - Сообщение для отправки на мобильное устройство</a></h4>
+</div>
+<div id="collapse873" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> Строка (чувствительна к регистру)<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Сообщение для отправки на мобильное устройство. Может содержать поля формы.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&mobiletext=`Заказ для [+firstname+]`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="874"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse874"><span class="text-bold">&thankyou</span> - Сообщение выводимое после отправки данных</a></h4>
+</div>
+<div id="collapse874" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> чанк | документ<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Имя чанка (не число) или идентификатор документа (число) дляи спользуемого шаблона сообщения выводимого пользователю после отправки данных формы.<br>
+<span class="text-bold">Доступны плэйсхолдеры:</span><br>
+<pre class="brush: html;">[+validationmessage+]
+[+postdate+]
+[+verimageurl+]
+[+debugText+]
+</pre><br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&thankyou=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="875"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse875"><span class="text-bold">&gotoid</span> - Переход на документ после отправки формы</a></h4>
+</div>
+<div id="collapse875" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> id документа<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Идентификатор документа на который будет совершен переход после отправкиданных формы. Смотрите также &thankyou.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&gotoid=`34`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="876"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse876"><span class="text-bold">&category</span> - Название категории</a></h4>
+</div>
+<div id="collapse876" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> строка | категория<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Название или идентификатор категории используемый для категоризации eForm. Если категория не найдена, то она автоматически будет создана. Это используется в теме сообщения.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&category=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="877"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse877"><span class="text-bold">&keywords</span> - Ключевые слова или поля для поиска</a></h4>
+</div>
+<div id="collapse877" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> список ключевых слов | список полей<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Разделяемые запятой (,) ключевые слова или поле формы используемое при поиске банка данных.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&keywords=`[+firstname+],[+lastname+], [+email+]`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="878"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse878"><span class="text-bold">&autosender</span> - Адрес автоответчика</a></h4>
+</div>
+<div id="collapse878" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> email<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Адрес электронной почты, который показывается при отправке сообщения автоответчика.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&autosender=`no-reply@mydomain.com`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="879"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse879"><span class="text-bold">&autoSenderName</span> - Имя для автоответчика</a></h4>
+</div>
+<div id="collapse879" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> строка<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Имя, используемое в сообщении автоответчика.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&autoSenderName=`name`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="880"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse880"><span class="text-bold">&automessage</span> - Сообщение автоответчика</a></h4>
+</div>
+<div id="collapse880" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> чанк | документ<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Название чанка (не число) или идентификатор документа (число) для используемого шаблона в сообщении автоответчика. Может содержать поля формы.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&automessage=`messageForm`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="881"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse881"><span class="text-bold">&allowhtml</span> - Использовать HTML в письме</a></h4>
+</div>
+<div id="collapse881" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> Включает использование пользователями HTML в сообщении. 1 - включено, 0 - выключено. <span class="label label-danger">Возможны XSS атаки, например если раззрешено в чанке thankyou.</span><br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&allowhtml=`1`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="882"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse882"><span class="text-bold">&language</span> - Язык сообщений и проверки</a></h4>
+</div>
+<div id="collapse882" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> название языка<br>
+<span class="text-bold">Значение по умолчанию:</span> english<br>
+<span class="text-bold">Примечание:</span> Устанавливает используемый язык сообщений и проверки. Название языков совпадает с MODX.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&language=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="883"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse883"><span class="text-bold">&vericode</span> - Использование капчи</a></h4>
+</div>
+<div id="collapse883" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> Включает код проверки. Шаблон должен содержать поле для проверки и плэйсхолдер [+vericode+].<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&vericode=`1`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="884"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse884"><span class="text-bold">&debug</span> - Режим отладки</a></h4>
+</div>
+<div id="collapse884" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> Включает расширенные сообщения об ошибках в проверке формы. В основном для отладки #LIST и #SELECT. 1 - включено, 0 - выключено.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&debug=`1`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="885"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse885"><span class="text-bold">&sendAsHtml</span> - Какие сообщения используют HTML</a></h4>
+</div>
+<div id="collapse885" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 1 | report, autotext, mobile<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Определяет, какие сообщения будут использовать формат html. <br>1 - все сообщения<br>report, autotext, mobile - конкретные типы сообщений.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&sendAsHtml=`report`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="886"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse886"><span class="text-bold">&sendAsText</span> - Какие сообщения используют текстовый формат</a></h4>
+</div>
+<div id="collapse886" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 1 | report, autotext, mobile<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Определяет, какие сообщения будут использовать текстовый формат. <br>1 - все сообщения<br>report, autotext, mobile - конкретные типы сообщений.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&sendAsText=`report`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="887"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse887"><span class="text-bold">&sessionVars</span> - Названия переменных сессии</a></h4>
+</div>
+<div id="collapse887" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> список переменных сессии<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Названия переменных сессии $_SESSION, разделенные запятой (,). Они будут добавлены в список значений полей перед отображением формы и могут быть использованы в качестве скрытых полей. Если вы используете этот параметр, то убедитесь, что вы не раскрываете важную информацию сессии (скрытые поля не защищают информацию!).<br>
+Так как eForm не выполняет самостоятельную обработку таких значений, то вам необходимо включить их в шаблон. <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">[!eForm &sessionVars=`jobID` ... !]
+<input type="hidden" value="[+jobID+]"> </pre><br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&sessionVars=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="888"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse888"><span class="text-bold">&postOverides</span> - Приоритет получаемых данных над сессионными</a></h4>
+</div>
+<div id="collapse888" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> Используется в комбинации с &sessionVars. Переменные сессии будут переписаны введенными в форму значениями. При установке значения 1 полученные в форме данные получают приоритет.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&postOverides=`1`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="889"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse889"><span class="text-bold">&reportAbuse</span> - Оповещение о попытках инъекции</a></h4>
+</div>
+<div id="collapse889" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> При установке значения `1` будут посылаться сообщения на специальный электронный адрес если будет замечена попытка инъекции eForm (используйте умеренно).<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&reportAbuse=`1`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="890"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse890"><span class="text-bold">&cssStyle</span> - Добавление CSS-стилей на страницу</a></h4>
+</div>
+<div id="collapse890" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> чанк | файл<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Добавляет определение стиля в область &lt;head&gt; страницы, на которой располагается форма или сообщение для пользователя показываемое после отправки (только если параметр &thankyou установлен). Значения могут быть в виде идентификатора документа (число), имени чанка или ссылки на таблицу стилей (относительная или абсолютная). Можно использовать несколько значений разделяя их запятыми (,) (фактически можно комбинировать все три вида значений). <br>
+<p><span class="text-bold">Пример:</span></p><br>
+<pre class="brush: html;">[!eForm &cssStyle=`assets/site/forms.css,chunkName` ... !]<br>[!eForm &cssStyle=`chunkName` ... !]<br>[!eForm &cssStyle=`http://saniock.com/css/forms.css` ... !] </pre>
+<span class="text-bold">Примечание.</span> Чанки (и документы, если установлен идентификатор документа) могут использовать значения в форме:<br>
+1. как встроенный блок:
+<pre class="brush: html;">&lt;style&gt;: &lt;style type="text/css"&gt;/*какие-то стили*/&lt;/style&gt;</pre>
+2. как ссылка на таблицу стилей: 
+<pre class="brush: html;">&lt;link href="assets/site/forms.css" rel="stylesheet" type="text/css"&gt;</pre>
+3. как разделенный запятой (,) список ссылок на таблицы стилей: 
+<pre class="brush: html;">assets/site/forms.css,assets/site/more.css,assets/site/gone_overboard.css </pre><br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&cssStyle=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="891"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse891"><span class="text-bold">&jScript</span> - Добавление JavaSript на страницу</a></h4>
+</div>
+<div id="collapse891" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> чанк | файл<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Аналогично параметру cssStyle.
+<pre class="brush: html;">[!eForm &jScript=`assets/site/forms.js,chunkName` ... !]<br>[!eForm &jScript=`chunkName` ... !]<br>[!eForm &jScript=`http://saniock.com/js/forms.js` ... !] </pre><br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&jScript=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="892"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse892"><span class="text-bold">&protectSubmit</span> - Защита от повторной отправки</a></h4>
+</div>
+<div id="collapse892" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1 | список полей<br>
+<span class="text-bold">Значение по умолчанию:</span> 1<br>
+<span class="text-bold">Примечание:</span> Защита формы от повторной отправки с теми же данными. Отправка данных формы автоматически отключается после первой успешной попытки пока ключ формы является одним и тем же. Для этого используется переменная сеанса с md5 хэшем в качестве ключа. Какие поля используются для сравнения задается в параметре &protectSubmit. Возможные значения: <br>
+0 - выключено <br>
+1 - используются все поля `required`<br>
+Список полей - список используемых полей через запятую.<br>
+Чтобы гарантировать, что используются соответствующие поля для разных форм переменная сессии основана на &formid({formid}_hash). <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&protectSubmit=`0`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="893"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse893"><span class="text-bold">&submitLimit</span> - Лимит времени на повторную отправку формы</a></h4>
+</div>
+<div id="collapse893" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | минуты<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> Устанавливает лимит времени (в минутах) между отправками данных формы. После первой успешной отправки данных запрещает отправку других данных наопределенное время. При использовании совместно с &protectSubmit этот параметр имеет приоритет, позволяя повторную отправку данных независимо от установки &protectSubmit (будет сброшена сессионная переменная). Как и &protectSubmit этот параметр использует сессионную переменную основанную на &formid.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&submitLimit=`10`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="894"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse894"><span class="text-bold">&requiredClass</span> - Добавление CSS-класса к обязательным полям при проверке</a></h4>
+</div>
+<div id="collapse894" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> CSS-класс<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Название класса. Добавляет класс в определенные поля формы при проверке. Существующие классы будут сохранены.<br>
+Если вы уже определили класс для полей или меток (label) и получили неожиданные результаты, то проверьте порядок определения классов. &requiredClass устанавливается в начало любых классов, которые уже установлены.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&requiredClass=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="895"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse895"><span class="text-bold">&invalidClass</span> - Добавление CSS-класса к неправильно заполненным полям</a></h4>
+</div>
+<div id="collapse895" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> CSS-класс<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Название класса. Добавляет класс к неправильно заполненным полям формы, которые выявились при проверке. Существующие классы будут сохранены.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&invalidClass=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="896"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse896"><span class="text-bold">&runSnippet</span> - Сниппет выполняемый перед работой eForm (v. 1.4.5)</a></h4>
+</div>
+<div id="collapse896" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> сниппет<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Определяет имя сниппета. Сниппет будет выполнен перед всеми обработками eForm. Один параметр &formid, будет опущен для сниппета. Любые возвращенные значения из сниппета не будут учитываться. Это может быть использовано как альтернатива использования функций в документе. К сожалению eForm молча проигнорирует результат работы сниппета, так как &<span class="text-bold">modx</span>-&gt;runSnippet не возвращает никаких значений.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&runSnippet=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="897"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse897"><span class="text-bold">&snipFolder</span> - Путь к папке сниппета eForm (v. 1.4.5)</a></h4>
+</div>
+<div id="collapse897" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> путь от папки 'assets/snippets/'<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Для тех кто хочет оставить другие версии eForm активными. Теперь вы можете сохранить все файлы eForm и соответственно установить &snipFolder. Например вы можете сохранить версию 1.4.4 в папку assets/snippets/eform/1.4.4 и установить параметр:
+<pre class="brush: html;">&snipFolder=`eform/1.4.4`</pre>
+К значению автоматически добавится путь 'assets/snippets/'. Не нужно использовать закрывающий слэш (/)! <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&snipFolder=`eform/1.4.4`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="905"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse905"><span class="text-bold">&attachmentField</span> - Имя поля формы со списком имен прикрепленных файлов (v. 1.4.5)</a></h4>
+</div>
+<div id="collapse905" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> имя поля<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Имя поля формы, которое содержит список имен файлов, разделенных запятыми. Эти файлы должны быть расположены в &attachmentFolder.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&attachmentField=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="906"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse906"><span class="text-bold">&attachmentFolder</span> - Путь к папке с прикрепленными файлами (v. 1.4.5)</a></h4>
+</div>
+<div id="collapse906" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> путь<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Путь к папке (относительно MODX basepath), которая содержит файлы, указанные в &attachmentField. Не нужно использовать закрывающий слэш (/)! <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&attachmentFolder=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="908"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse908"><span class="text-bold">&errorTpl</span> - Шаблон для ошибок (v. 1.4.6)</a></h4>
+</div>
+<div id="collapse908" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> чанк | строка<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Имя чанка или текст, используемый в качестве шаблона для ошибок. Доступные плейсхолдеры:<br>[+ef_message_text+]<br>[+ef_wrapper+]<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&errorTpl=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="909"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse909"><span class="text-bold">&errorRequiredTpl</span> - Шаблон для списка необходимых полей (v. 1.4.6)</a></h4>
+</div>
+<div id="collapse909" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> чанк | строка<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Имя чанка или текст, используемый в качестве шаблона для списка необходимых полей. Доступные плейсхолдеры:<br>[+ef_required_list+]<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&errorRequiredTpl=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="910"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse910"><span class="text-bold">&errorRequiredSeparator</span> - Шаблон разделитяле в списке необходимых полей (v. 1.4.6)</a></h4>
+</div>
+<div id="collapse910" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> чанк | строка<br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> Имя чанка или текст, используемый в качестве разделителя между двумя элементами в списке необходимых полей.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&errorRequiredSeparator=`, `</pre>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,155 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h2>Wayfinder: Классы</h2>
+
+<div class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse769"><span class="text-bold">&amp;firstClass</span> - CSS-класс первого пункта меню на данном уровне</a></h4>
+</div>
+<div id="collapse769" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> название CSS класса<br>
+<span class="text-bold">Значение по умолчанию:</span> нет<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&amp;firstClass=`firstClass`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse771"><span class="text-bold">&amp;hereClass</span> - CSS-класс текущей цепочки пунктов меню</a></h4>
+</div>
+<div id="collapse771" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> название CSS класса<br>
+<span class="text-bold">Значение по умолчанию:</span> active<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&amp;hereClass=`hereClass`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse777"><span class="text-bold">&amp;innerClass</span> - CSS-класс для подпунктов меню</a></h4>
+</div>
+<div id="collapse777" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> название CSS класса<br>
+<span class="text-bold">Значение по умолчанию:</span> нет<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&amp;innerClass=`innerClass`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse770"><span class="text-bold">&amp;lastClass</span> - CSS-класс последнего пункта меню</a></h4>
+</div>
+<div id="collapse770" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> название CSS класса<br>
+<span class="text-bold">Значение по умолчанию:</span> last<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&amp;lastClass=`lastClass`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse775"><span class="text-bold">&amp;levelClass</span> - CSS-класс для каждого уровня меню</a></h4>
+</div>
+<div id="collapse775" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> название CSS класса<br>
+<span class="text-bold">Значение по умолчанию:</span> нет<br>
+<span class="text-bold">Примечание:</span> Число уровня будет добавлено к указанному классу (то есть level1, level2, level3, и т.д... )<br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&amp;levelClass=`level`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse776"><span class="text-bold">&amp;outerClass</span> - CSS-класс для контейнера меню</a></h4>
+</div>
+<div id="collapse776" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> название CSS класса<br>
+<span class="text-bold">Значение по умолчанию:</span> нет<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&amp;outerClass=`outerClass`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse773"><span class="text-bold">&amp;parentClass</span> - CSS-класс документов-контейнеров</a></h4>
+</div>
+<div id="collapse773" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> название CSS класса<br>
+<span class="text-bold">Значение по умолчанию:</span> нет<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&amp;parentClass=`parentClass`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse774"><span class="text-bold">&amp;rowClass</span> - CSS-класс для всех пунктов меню</a></h4>
+</div>
+<div id="collapse774" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> название CSS класса<br>
+<span class="text-bold">Значение по умолчанию:</span> нет<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&amp;rowClass=`rowClass`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse772"><span class="text-bold">&amp;selfClass</span> - CSS-класс текущего пункта меню</a></h4>
+</div>
+<div id="collapse772" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> название CSS класса<br>
+<span class="text-bold">Значение по умолчанию:</span> нет<br>
+<span class="text-bold">Примечание:</span> Определяет только текущий документ.<br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&amp;selfClass=`selfClass`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse778"><span class="text-bold">&amp;webLinkClass</span> - CSS-класс для пунктов меню - ссылок</a></h4>
+</div>
+<div id="collapse778" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> название CSS класса<br>
+<span class="text-bold">Значение по умолчанию:</span> нет<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&amp;webLinkClass=`webLinkClass`</pre>
+</div>
+</div>
+</div>
+</div>

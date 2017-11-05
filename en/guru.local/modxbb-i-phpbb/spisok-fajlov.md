@@ -1,0 +1,182 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h2>MODxBB и phpBB: Список файлов</h2>
+
+<h2 class="page-header">Полный список файлов MODxBB</h2>
+<p>Ниже приведен список всех файлов, которые изменяются при установке MODxBB (первая таблица) или создаются (вторая таблица).</p>
+<p>Список является полным, т.е. он справедлив для неограниченной полной установки.</p>
+<h2 class="page-header">Файлы, которые были изменены во время полной установки MODxBB</h2>
+<div class="flip-scroll">
+	<table class="table table-bordered table-vcenter flip-content">
+		<thead class="flip-content bordered-palegreen">
+			<tr><th>ИМЯ ФАЙЛА</th><th>ПУТЬ</th><th>ЧАСТЬ</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>index.php</td>
+				<td>./</td>
+				<td>MODx</td>
+			</tr>
+			<tr>
+				<td>actionlist.inc.php</td>
+				<td>./manager/includes</td>
+				<td>MODx</td>
+			</tr>
+			<tr>
+				<td>jot.class.inc.php</td>
+				<td>./assets/snippets/jot</td>
+				<td>JOT</td>
+			</tr>
+			<tr>
+				<td>jot.db.class.inc.php</td>
+				<td>./assets/snippets/jot/includes</td>
+				<td>JOT</td>
+			</tr>
+			<tr>
+				<td>chunk.comment.inc.html</td>
+				<td>./assets/snippets/jot/templates</td>
+				<td>JOT</td>
+			</tr>
+			<tr>
+				<td>chunk.form.inc.html</td>
+				<td>./assets/snippets/jot/templates</td>
+				<td>JOT</td>
+			</tr>
+			<tr>
+				<td>chunk.moderate.inc.html</td>
+				<td>./assets/snippets/jot/templates</td>
+				<td>JOT</td>
+			</tr>
+			<tr>
+				<td>chunk.subscribe.inc.html</td>
+				<td>./assets/snippets/jot/templates</td>
+				<td>JOT</td>
+			</tr>
+			<tr>
+				<td>jot.css</td>
+				<td>./assets/snippets/jot/templates</td>
+				<td>JOT</td>
+			</tr>
+			<tr>
+				<td>common.php</td>
+				<td>./forum</td>
+				<td>phpBB</td>
+			</tr>
+			<tr>
+				<td>ucp.php</td>
+				<td>./forum</td>
+				<td>phpBB</td>
+			</tr>
+			<tr>
+				<td>ucp_activate.php</td>
+				<td>./forum/includes/ucp</td>
+				<td>phpBB</td>
+			</tr>
+			<tr>
+				<td>ucp_remind.php</td>
+				<td>./forum/includes/ucp</td>
+				<td>phpBB</td>
+			</tr>
+			<tr>
+				<td>ucp_profile.php</td>
+				<td>./forum/includes/ucp</td>
+				<td>phpBB</td>
+			</tr>
+			<tr>
+				<td>functions_user.php</td>
+				<td>./forum/includes</td>
+				<td>phpBB</td>
+			</tr>
+			<tr>
+				<td>overall_header</td>
+				<td>./forum/styles/proglass/template</td>
+				<td>phpBB</td>
+			</tr>
+			<tr>
+				<td>overall_footer</td>
+				<td>./forum/styles/proglass/template</td>
+				<td>phpBB</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<h2 class="page-header">Файлы и элементы, относящиеся к MODxBB</h2>
+<div class="flip-scroll">
+	<table class="table table-bordered table-vcenter flip-content">
+		<thead class="flip-content bordered-palegreen">
+			<tr><th>ИМЯ ФАЙЛА</th><th>ПУТЬ</th><th>ТИП</th></tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>login.php</td>
+				<td>./modxbb</td>
+				<td>php file</td>
+			</tr>
+			<tr>
+				<td>signup.php</td>
+				<td>./modxbb</td>
+				<td>php file</td>
+			</tr>
+			<tr>
+				<td>edit.php</td>
+				<td>./modxbb</td>
+				<td>php file</td>
+			</tr>
+			<tr>
+				<td>delete.</td>
+				<td>./modxbb</td>
+				<td>php file</td>
+			</tr>
+			<tr>
+				<td>poll.php</td>
+				<td>./modxbb</td>
+				<td>php file</td>
+			</tr>
+			<tr>
+				<td>vote.php</td>
+				<td>./modxbb</td>
+				<td>php file</td>
+			</tr>
+			<tr>
+				<td>onlinelist.php</td>
+				<td>./modxbb</td>
+				<td>php file</td>
+			</tr>
+			<tr>
+				<td>LoginBB</td>
+				<td></td>
+				<td>snippet</td>
+			</tr>
+			<tr>
+				<td>PrevPollsBB</td>
+				<td></td>
+				<td>snippet</td>
+			</tr>
+			<tr>
+				<td>SitePollBB</td>
+				<td></td>
+				<td>snippet</td>
+			</tr>
+			<tr>
+				<td>LatestTopicsBB</td>
+				<td></td>
+				<td>snippet</td>
+			</tr>
+			<tr>
+				<td>OnlineListBB</td>
+				<td></td>
+				<td>snippet</td>
+			</tr>
+			<tr>
+				<td>PluginBB</td>
+				<td></td>
+				<td>plug-in</td>
+			</tr>
+			<tr>
+				<td>MODxBB</td>
+				<td></td>
+				<td>module</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

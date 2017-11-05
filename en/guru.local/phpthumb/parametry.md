@@ -1,0 +1,35 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h2>phpthumb: Параметры</h2>
+
+<div class="panel-group accordion">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="1591"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1591"><span class="text-bold">&input</span> - исходное изображение</a></h4>
+</div>
+<div id="collapse1591" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> путь к изображению<br>
+<span class="text-bold">Значение по умолчанию:</span> assets/snippets/phpthumb/noimage.png<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&input=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="1592"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1592"><span class="text-bold">&options</span> - список опций для обработки изображений</a></h4>
+</div>
+<div id="collapse1592" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> f=jpg,q=96<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&options=`w=150,h=76,far=C,bg=FFFFFF`</pre>
+</div>
+</div>
+</div>
+</div>

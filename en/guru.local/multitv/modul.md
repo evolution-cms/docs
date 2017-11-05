@@ -1,0 +1,258 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h2>multiTV: Модуль</h2>
+
+<p>Модуль multiTV <span class="text-bold">Database Manager</span> обеспечивает почти те же параметры, как и переменная шаблона multiTV в режиме datatable. Главное отличие - это прямой доступ к таблицам базы данных MODX Evolution.</p>
+<p>С Database Manager можно управлять (CRUD) собственными таблицами базы данных.</p>
+<h3 class="sub-header text-bold">Конфигурация</h3>
+<p>Каждый файл конфигурации создаст соответствующую вкладку в модуле Database Manager. Файлы конфигурацйии находятся в папке <code>assets/tvs/multitv/moduleconfigs</code>. Смотрите пример файла конфигурации <code>event_log.moduleconfig.json</code></p>
+<p>Каждый файл конфигурации содержит JSON массив со следующими параметрами:</p>
+<h3 class="sub-header text-bold">Таблица</h3>
+<p>таблица базы данных с ключем <code>table</code>. Имя таблицы будет служить префиксом таблицы MODX.</p>
+<h3 class="sub-header text-bold">Заголовок</h3>
+<p>Название вкладки в модуле Database Manager с ключем <code>caption</code>.</p>
+<h3 class="sub-header text-bold">Процессоры</h3>
+<p>Путь к папке с процессорами можно установить в ключе <code>processors</code>. Если не задано, то по умолчанию используются процессоры <code>assets/tvs/multitv/processors</code>. Если задано, то процессоры извлекаются из вложенной папки <code>assets/tvs/multitv/processors</code> названой по значению ключа. If that subfolder does not exist, the value points to a subfolder of the MODX base path.</p>
+<p>Существует пять процессоров, используемых в данный момент. </p>
+<div class="flip-scroll">
+<table class="table table-bordered table-vcenter flip-content">
+<thead class="flip-content bordered-palegreen">
+<tr><th>Процессоры</th><th>Описание</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>loadtable</td>
+<td>Загружает в текущую таблицу с limit и offset в datatable</td>
+</tr>
+<tr>
+<td>loadrecord</td>
+<td>Загружает строки таблицы в редактирование слоя</td>
+</tr>
+<tr>
+<td>createrecord</td>
+<td>Создает новую строку таблицы для редактирования слоя</td>
+</tr>
+<tr>
+<td>deleterecord</td>
+<td>Удаляет строку таблицы</td>
+</tr>
+<tr>
+<td>saverecord</td>
+<td>Сохраняет значения редактируемого слоя в строке таблицы</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 class="sub-header text-bold">Поля</h3>
+<p>Поля таблицы базы данных могут быть определены в ключе <code>fields</code>. Этот ключ содержит массив fieldnames и каждый fieldname содержит массив свойств поля.</p>
+<div class="flip-scroll">
+<table class="table table-bordered table-vcenter flip-content">
+<thead class="flip-content bordered-palegreen">
+<tr><th>Свойство</th><th>Описание</th><th>Значение по умолчанию</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>caption</td>
+<td>Заголовок (при horizontal) или лейбл (при vertical) для поля ввода</td>
+<td>-</td>
+</tr>
+<tr>
+<td>type</td>
+<td>Тип поля ввода (используются все типы ввода MODX кроме url и richtext, добавлен thumb для отображения эскизов изображений) и <code>unixtime</code> для конвертации datetime таблицы данных в unixtime и наоборот</td>
+<td>text</td>
+</tr>
+<tr>
+<td>elements</td>
+<td>Для ввода возможных значений переменной, например, для выпадающего списка всех дочерних документов корневой папки сайта: <code>@SELECT `pagetitle`, `id` FROM `modx_site_content` WHERE parent = 0 ORDER BY `menuindex` ASC</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>default</td>
+<td>Значение по умолчанию. Это значение может содержать вычисления. Может содержать два плэйсхолдера: <code>{i}</code> - автоматически увеличивающийся индекс, <code>{alias}</code> - псевдоним редактируемого документа.</td>
+<td>-</td>
+</tr>
+<tr>
+<td>thumbof</td>
+<td>Имя переменной для миниатюры изоображения. Миниатюра будет отображена в этой области.</td>
+<td>-</td>
+</tr>
+<tr>
+<td>width</td>
+<td>Ширина поля ввода</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>During adding/editing one row a layer is displayed. In this editing layer the MODX input type richtext is not usable at the moment (degrades to textarea).</p>
+<h3 class="sub-header text-bold">Столбцы</h3>
+<p>Видимые столбцы datatable могут быть определены в ключе <code>columns</code>. Этот ключ содержит массив параметров столбцов. Каждый параметр столбца содержит массив свойств. Если свойство не задано, используется свойство ключа <code>fields</code>.</p>
+<div class="flip-scroll">
+<table class="table table-bordered table-vcenter flip-content">
+<thead class="flip-content bordered-palegreen">
+<tr><th>Свойство</th><th>Описание</th><th>Значение по умолчанию</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>fieldname</td>
+<td><span class="text-bold">(обязательный параметр)</span> Имя свойства</td>
+<td>-</td>
+</tr>
+<tr>
+<td>caption</td>
+<td>Заголовок столбца</td>
+<td>Заголовок для <code>fields</code></td>
+</tr>
+<tr>
+<td>width</td>
+<td>Ширина столбца</td>
+<td>Ширина дял <code>fields</code></td>
+</tr>
+<tr>
+<td>render</td>
+<td>Enable rengering of the column content with this PHx capable string</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 class="sub-header text-bold">Редактирование слоев</h3>
+<p>Содержимое редактируемого слоя во время добавления/редактирования одной строки может быть определено в ключе <code>form</code>. Этот ключ содержит массив параметров вкладки form.</p>
+<div class="flip-scroll">
+<table class="table table-bordered table-vcenter flip-content">
+<thead class="flip-content bordered-palegreen">
+<tr><th>Свойство</th><th>Описание</th><th>Значение по умолчанию</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>caption</td>
+<td><span class="text-bold">(обязательный параметр)</span> Заголовок вкладки form</td>
+<td>-</td>
+</tr>
+<tr>
+<td>content</td>
+<td><span class="text-bold">(обязательный параметр)</span> Ассоциативный массив параметров полей</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Each form tab setting contains an associative array of field properties (the key contains the fieldname in <code>fields</code>). If a field property is not set, the field property in <code>fields</code> is used.</p>
+<div class="flip-scroll">
+<table class="table table-bordered table-vcenter flip-content">
+<thead class="flip-content bordered-palegreen">
+<tr><th>Свойство</th><th>Описание</th><th>Значение по умолчанию</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>caption</td>
+<td>Заголовок для ввода</td>
+<td>Заголовок для <code>fields</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 class="sub-header text-bold">Кнопки</h3>
+<p>Кнопки для модуля Database Manager могут быть определены в ключе <code>buttons</code>. Этот ключ содержит ассоциативный массив конфигурации кнопок.</p>
+<div class="flip-scroll">
+<table class="table table-bordered table-vcenter flip-content">
+<thead class="flip-content bordered-palegreen">
+<tr><th>Свойство</th><th>Описание</th><th>Значение по умолчанию</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>position</td>
+<td><span class="text-bold">(обязательный параметр)</span> Положение кнопок (может быть <code>topleft</code>, <code>topright</code>, <code>bottomleft</code> or <code>bottom right</code>)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>buttons</td>
+<td><span class="text-bold">(обязательный параметр)</span> Ассоциативный массив конфигурации кнопок</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Каждая конфигурация конопок содержит ассоциативный массив параметров кнопок.</p>
+<div class="flip-scroll">
+<table class="table table-bordered table-vcenter flip-content">
+<thead class="flip-content bordered-palegreen">
+<tr><th>Property</th><th>Description</th><th>Default</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>caption</td>
+<td>текст на кнопке</td>
+<td>-</td>
+</tr>
+<tr>
+<td>icon</td>
+<td>иконка для кнопки, расположенная в <code>assets/tvs/multitv/css/images</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>processor</td>
+<td>имя обработчика файла <em>assets/tvs/multitv/processors/[key]</em> (key contains the group config key)</td>
+<td>-</td>
+</tr>
+<tr>
+<td>form</td>
+	<td>Массив параметров вкладки form (см. редактирование слоев)</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Пример генерации кнопки.</p>
+<pre class="brush: php;">
+"buttons": {
+	"coupons": {
+		"position": "topright",
+		"buttons": {
+			"generate": {
+				"caption": "Generate",
+				"icon": "wand.png",
+				"processor": "generate",
+				"form": [{
+						"caption": "Coupon",
+						"content": {
+							"count": {},
+							"discount": {},
+							"validuser": {},
+							"validgroup": {},
+							"validuntil": {},
+							"maxuse": {}
+						}
+					}
+				]
+			}
+		}
+	}
+},
+</pre>
+<h3 class="sub-header text-bold">Другие опции</h3>
+<p>Другие опции могут быть определены в ключе <code>configuration</code>.</p>
+<div class="flip-scroll">
+<table class="table table-bordered table-vcenter flip-content">
+<thead class="flip-content bordered-palegreen">
+<tr><th>Свойство</th><th>Описание</th><th>Значение по умолчанию</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>radioTabs</td>
+<td>Tabs in the datatable editing layer are displayed as radio buttons. The button state is saved in <em>fieldTab</em> column of each table row (this column has to exist).</td>
+<td>false</td>
+</tr>
+<tr>
+<td>sorting</td>
+<td>Enable sorting by column header.</td>
+<td>false</td>
+</tr>
+<tr>
+<td>sortindex</td>
+<td>Column name that ist used as sorting index. The column type has to be integer and it should contain an autoincremented index (see in <a href="http://jako.github.io/multiTV/module.html#fields" rel="nofollow">Fields</a>) as default value.</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+</div>

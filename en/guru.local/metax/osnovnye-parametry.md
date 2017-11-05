@@ -1,0 +1,245 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h2>MetaX: Основные параметры</h2>
+
+<div class="panel-group accordion">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a id="408"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse408"><span class="text-bold">&html</span> - Синтаксис документа</a></h4>
+		</div>
+		<div id="collapse408" class="panel-collapse collapse">
+			<div class="panel-body">
+				<span class="text-bold">Формат:</span> 0 | 1<br>
+				<span class="text-bold">Значение по умолчанию:</span> 0<br>
+				<span class="text-bold">Примечание:</span> Если 1, будет использоваться HTML синтаксис . Если 0, будет использоваться XHTML синтаксис .<br>
+				<span class="text-bold">Пример:</span>
+				<pre class="brush: html;">&html=`1`</pre>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a id="409"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse409"><span class="text-bold">&tabs</span> - Количество отступов Tab перед каждым элементом</a></h4>
+		</div>
+		<div id="collapse409" class="panel-collapse collapse">
+			<div class="panel-body">
+				<span class="text-bold">Формат:</span> int&gt;=0<br>
+				<span class="text-bold">Значение по умолчанию:</span> 1<br>
+				<span class="text-bold">Примечание:</span> <br>
+				<span class="text-bold">Пример:</span>
+				<pre class="brush: html;">&tabs=`3`</pre>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a id="410"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse410"><span class="text-bold">&spaces</span> - Количество пробелов перед каждым элементом</a></h4>
+		</div>
+		<div id="collapse410" class="panel-collapse collapse">
+			<div class="panel-body">
+				<span class="text-bold">Формат:</span> int&gt;=0<br>
+				<span class="text-bold">Значение по умолчанию:</span> 0<br>
+				<span class="text-bold">Примечание:</span> Контролирует количество пробелов перед каждым элементом, добавляется после Tab.<br>
+				<span class="text-bold">Пример:</span>
+				<pre class="brush: html;">&spaces=`2`</pre>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a id="411"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse411"><span class="text-bold">&language</span> - Управление содержанием content-language мета-тегов и тега языка Dublin Core.</a></h4>
+		</div>
+		<div id="collapse411" class="panel-collapse collapse">
+			<div class="panel-body">
+				<span class="text-bold">Формат:</span> 2 символа<br>
+				<span class="text-bold">Значение по умолчанию:</span> en<br>
+				<span class="text-bold">Примечание:</span> <br>
+				<span class="text-bold">Пример:</span>
+				<pre class="brush: html;">&language=`ru`</pre>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a id="412"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse412"><span class="text-bold">&keywords</span> - Название TV-параметра, содержащего ключевые слова.</a></h4>
+		</div>
+		<div id="collapse412" class="panel-collapse collapse">
+			<div class="panel-body">
+				<span class="text-bold">Формат:</span> TV-параметр<br>
+				<span class="text-bold">Значение по умолчанию:</span> keywords<br>
+				<span class="text-bold">Примечание:</span> <br>
+				<span class="text-bold">Пример:</span>
+				<pre class="brush: html;">&keywords=`mykeys`</pre>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a id="413"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse413"><span class="text-bold">&allkeywords</span> - Имя чанка, содержащего ключевые слова для использования на всех страницах.</a></h4>
+		</div>
+		<div id="collapse413" class="panel-collapse collapse">
+			<div class="panel-body">
+				<span class="text-bold">Формат:</span> Chunk<br>
+				<span class="text-bold">Значение по умолчанию:</span> AllKeywords<br>
+				<span class="text-bold">Примечание:</span> <br>
+				<span class="text-bold">Пример:</span>
+				<pre class="brush: html;">&allkeywords=`allkeys`</pre>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a id="414"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse414"><span class="text-bold">&abstract</span> - Имя поля или TV-параметра для Meta Abstract</a></h4>
+		</div>
+		<div id="collapse414" class="panel-collapse collapse">
+			<div class="panel-body">
+				<span class="text-bold">Формат:</span> имя поля | TV-параметр<br>
+				<span class="text-bold">Значение по умолчанию:</span> longtitle<br>
+				<span class="text-bold">Примечание:</span> <br>
+				<span class="text-bold">Пример:</span>
+				<pre class="brush: html;">&abstract=`description`</pre>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a id="415"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse415"><span class="text-bold">&favicon</span> - Путь к значку favicon</a></h4>
+		</div>
+		<div id="collapse415" class="panel-collapse collapse">
+			<div class="panel-body">
+				<span class="text-bold">Формат:</span> URI<br>
+				<span class="text-bold">Значение по умолчанию:</span> favicon.ico<br>
+				<span class="text-bold">Примечание:</span> <br>
+				<span class="text-bold">Пример:</span>
+				<pre class="brush: html;">&favicon=`path/icon1.ico`</pre>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a id="416"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse416"><span class="text-bold">&mobile</span> - Путь к значку для мобильных устройств</a></h4>
+		</div>
+		<div id="collapse416" class="panel-collapse collapse">
+			<div class="panel-body">
+				<span class="text-bold">Формат:</span> URI<br>
+				<span class="text-bold">Значение по умолчанию:</span> mobile.png<br>
+				<span class="text-bold">Примечание:</span> <br>
+				<span class="text-bold">Пример:</span>
+				<pre class="brush: html;">&mobile=`path/mob.png`</pre>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a id="417"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse417"><span class="text-bold">&author</span> - Имя автора сайта для Meta Author</a></h4>
+		</div>
+		<div id="collapse417" class="panel-collapse collapse">
+			<div class="panel-body">
+				<span class="text-bold">Формат:</span> строка<br>
+				<span class="text-bold">Значение по умолчанию:</span> site_name<br>
+				<span class="text-bold">Примечание:</span> <br>
+				<span class="text-bold">Пример:</span>
+				<pre class="brush: html;">&author=`Имен Отчествович Фамилиев`</pre>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a id="418"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse418"><span class="text-bold">&copyholder</span> - Владелец авторских прав для Meta Copyright</a></h4>
+		</div>
+		<div id="collapse418" class="panel-collapse collapse">
+			<div class="panel-body">
+				<span class="text-bold">Формат:</span> строка<br>
+				<span class="text-bold">Значение по умолчанию:</span> site_name<br>
+				<span class="text-bold">Примечание:</span> <br>
+				<span class="text-bold">Пример:</span>
+				<pre class="brush: html;">&copyholder=`Имен Отчествович Фамилиев`</pre>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a id="419"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse419"><span class="text-bold">&copyfrom</span> - Год начала авторских прав</a></h4>
+		</div>
+		<div id="collapse419" class="panel-collapse collapse">
+			<div class="panel-body">
+				<span class="text-bold">Формат:</span> Год<br>
+				<span class="text-bold">Значение по умолчанию:</span> Нет<br>
+				<span class="text-bold">Примечание:</span> <br>
+				<span class="text-bold">Пример:</span>
+				<pre class="brush: html;">&copyfrom=`2007`</pre>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a id="420"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse420"><span class="text-bold">&copytill</span> - Год окончания авторских прав</a></h4>
+		</div>
+		<div id="collapse420" class="panel-collapse collapse">
+			<div class="panel-body">
+				<span class="text-bold">Формат:</span> Год<br>
+				<span class="text-bold">Значение по умолчанию:</span> Текущий год<br>
+				<span class="text-bold">Примечание:</span> <br>
+				<span class="text-bold">Пример:</span>
+				<pre class="brush: html;">&copytill=`2013`</pre>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a id="421"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse421"><span class="text-bold">&ietool</span> - Включение панели IE Image Toolbar</a></h4>
+		</div>
+		<div id="collapse421" class="panel-collapse collapse">
+			<div class="panel-body">
+				<span class="text-bold">Формат:</span> 1 | 0<br>
+				<span class="text-bold">Значение по умолчанию:</span> 1<br>
+				<span class="text-bold">Примечание:</span> Если 1, то панель IE Image Toolbar отключена, если 0 - включена.<br>
+				<span class="text-bold">Пример:</span>
+				<pre class="brush: html;">&ietool=`0`</pre>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a id="422"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse422"><span class="text-bold">&rss</span> - Разделенный запятыми список ID документов с RSS лентой</a></h4>
+		</div>
+		<div id="collapse422" class="panel-collapse collapse">
+			<div class="panel-body">
+				<span class="text-bold">Формат:</span> URI<br>
+				<span class="text-bold">Значение по умолчанию:</span> Нет<br>
+				<span class="text-bold">Примечание:</span> <br>
+				<span class="text-bold">Пример:</span>
+				<pre class="brush: html;">&rss=`20,21,22`</pre>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h4 class="panel-title"><a id="423"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse423"><span class="text-bold">&css</span> - Список CSS файлов</a></h4>
+		</div>
+		<div id="collapse423" class="panel-collapse collapse">
+			<div class="panel-body">
+				<span class="text-bold">Формат:</span> URI<br>
+				<span class="text-bold">Значение по умолчанию:</span> Нет<br>
+				<span class="text-bold">Примечание:</span> Разделенный запятыми список URL-адресов CSS файлов. В случае необходимости, можно добавить условные комментарии для IE<br>
+				<span class="text-bold">Пример:</span>
+				<pre class="brush: html;">&css=`c1.css,c2.css:lt IE 7`</pre>
+			</div>
+		</div>
+	</div>
+</div>

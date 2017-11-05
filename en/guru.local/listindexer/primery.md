@@ -1,0 +1,26 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h2>ListIndexer: Примеры</h2>
+
+<p>Формируем вывод ленты новостей:</p>
+<pre class="brush: html;">
+[!ListIndexer?
+&LIn_root=`26`
+&LIn_sQty=`5`
+&LIn_sDesc=`0`
+&LIn_title=`Новости компании`
+&LIn_fDesc=`0`
+&LIn_link=`26`
+&LIn_indexText=`Все новости`
+&LIn_dateFormat=`d.m.Y`!]
+</pre>
+<p>где:</p>
+<ul>
+	<li><code>&LIn_root=`26`</code> - папка с новостями компании</li>
+	<li><code>&LIn_sQty=`5`</code> - количество отображаемых новостей</li>
+	<li><code>&LIn_sDesc=`0`</code> - скрываем краткое описание новости</li>
+	<li><code>&LIn_title=`Новости компании`</code> - устанавливаем заголовок для списка новостей</li>
+	<li><code>&LIn_link=`26`</code> - ссылка на корневой документ</li>
+	<li><code>&LIn_indexText=`Все новости`</code> - текст ссылки на корневой документ</li>
+	<li><code>&LIn_dateFormat=`d.m.Y`</code> - формат даты</li>
+</ul>

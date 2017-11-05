@@ -1,0 +1,82 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h2>GetField: Параметры</h2>
+
+<div class="panel-group accordion">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="305"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse305"><span class="text-bold">&docid</span> - ID документа, поле или TV-параметр которого необходимо получить</a></h4>
+</div>
+<div id="collapse305" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> ID документа<br>
+<span class="text-bold">Значение по умолчанию:</span> текущий документ<br>
+<span class="text-bold">Примечание:</span> <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&docid=`25`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="306"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse306"><span class="text-bold">&field</span> - Имя поля или TV-параметра, значение которого необходимо получить</a></h4>
+</div>
+<div id="collapse306" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> имя поля | TV-параметр<br>
+<span class="text-bold">Значение по умолчанию:</span> pagetitle<br>
+<span class="text-bold">Примечание:</span> <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&field=`content`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="307"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse307"><span class="text-bold">&parent</span> - Искать в родительском документе</a></h4>
+</div>
+<div id="collapse307" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> При значении 0 будет выведено поле или TV-параметр из родительского документа. При значении 1 из корневого каталога.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&parent=`1`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="308"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse308"><span class="text-bold">&parentLevel</span> - Уровень вложенности</a></h4>
+</div>
+<div id="collapse308" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> число<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> 0 - возвращает самый верхний документ (корневой)<br>
+1 - возращает прямого родителя<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&parentLevel=`1`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="309"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse309"><span class="text-bold">&topid</span> - ID самого верхнего документа</a></h4>
+</div>
+<div id="collapse309" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> ID документа<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> ID самого верхнего документа в дереве документа, в котором можно искать родителя. Используется только с параметром parent =1.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&topid=`3`</pre>
+</div>
+</div>
+</div>
+
+</div>

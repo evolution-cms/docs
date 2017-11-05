@@ -1,0 +1,7 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h2>MetaX: Особенности</h2>
+
+<p>MetaX (Meta Tags Extended) представляет собой сниппет, который автоматически генерирует HTML теги base, meta и link в заголовке вашего сайта. Убедитесь, что ваш сайт содержит все элементы, в которых он нуждается.</p>
+<p>Автор: Salvatore Sodano</p>
+<p>Сайт автора проекта: <!--noindex--><a rel="nofollow" href="http://salscode.com/modx-extras/metax" target="_blank">salscode.com</a><!--/noindex--></p>

@@ -1,0 +1,533 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h2>Jot: Основные параметры</h2>
+
+<div class="panel-group accordion">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="327"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse327"><span class="text-bold">&action</span> - Управление отображением</a></h4>
+</div>
+<div id="collapse327" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> default | count-comments | count-subscriptions | comments | form<br>
+<span class="text-bold">Значение по умолчанию:</span> default<br>
+<span class="text-bold">Примечание:</span> <br>default - форма и коментарии<br>
+count-comments - счетчик-коментариев<br>
+count-subscriptions - счетчик-подписок<br>
+comments - комментарии<br>
+form - форма<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&action=`count-comments`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="328"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse328"><span class="text-bold">&docid</span> - Ссылка на документ</a></h4>
+</div>
+<div id="collapse328" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> ID документа<br>
+<span class="text-bold">Значение по умолчанию:</span> родительский документ<br>
+<span class="text-bold">Примечание:</span> <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&docid=`23`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="329"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse329"><span class="text-bold">&tagid</span> - Дополнительные тег для использования в случаях, когда один и тот же docid используется два раза</a></h4>
+</div>
+<div id="collapse329" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> строка [A-Za-z0-9]<br>
+<span class="text-bold">Значение по умолчанию:</span> <br>
+<span class="text-bold">Примечание:</span> <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&tagid=`tag`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="330"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse330"><span class="text-bold">&subscribe</span> - Оповещение по электронной почте</a></h4>
+</div>
+<div id="collapse330" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> <br>0 - отключить возможность оповещения по эл.почте<br>
+1 - включить возможность оповещения по эл.почте.
+<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&subscribe=`1`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="331"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse331"><span class="text-bold">&moderated</span> - Модерация комментариев</a></h4>
+</div>
+<div id="collapse331" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> <br>Модератор может просматривать комментарии до публикации<br>
+0 - новые комментарии будут опубликованы<br>
+1 - новые комментарии будут не опубликованы <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&moderated=`1`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="332"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse332"><span class="text-bold">&amp;notify</span> - Оповещение модераторов</a></h4>
+</div>
+<div id="collapse332" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1 | 2<br>
+<span class="text-bold">Значение по умолчанию:</span> 1<br>
+<span class="text-bold">Примечание:</span> <br>Веб-группы модераторов указываются в параметре canmoderate<br>
+0 = без оповещений<br>
+1 = оповещать о новых не опубликованных комментариях<br>
+2 = оповещать о всех новых комментариях
+<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&amp;notify=`2`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="333"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse333"><span class="text-bold">&subjectSubscribe</span> - Тема в оповещении на эл.почту для подписчиков</a></h4>
+</div>
+<div id="collapse333" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> строка<br>
+<span class="text-bold">Значение по умолчанию:</span> нет<br>
+<span class="text-bold">Примечание:</span> <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&subjectSubscribe=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="334"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse334"><span class="text-bold">&subjectModerate</span> - Тема письма для оповещения модератора</a></h4>
+</div>
+<div id="collapse334" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> строка<br>
+<span class="text-bold">Значение по умолчанию:</span> нет<br>
+<span class="text-bold">Примечание:</span> <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&subjectModerate=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="335"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse335"><span class="text-bold">&captcha</span> - Использование CAPTCHA кода</a></h4>
+</div>
+<div id="collapse335" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1 | 2<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> <br>0 = отключение<br>
+1 = включение<br>
+2 = включение, но только для незарегистрированных и не авторизованных пользователей
+<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&captcha=`2`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="336"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse336"><span class="text-bold">&badwords</span> - Список фраз, запрещенных к использованию в комментариях</a></h4>
+</div>
+<div id="collapse336" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> список фраз | имя чанка<br>
+<span class="text-bold">Значение по умолчанию:</span> нет<br>
+<span class="text-bold">Примечание:</span> Список фраз через запятую или имя чанка со списком фраз. Используется в сочетании с параметром bw <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&badwords=`{{MyBadwordsChunk}}`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="337"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse337"><span class="text-bold">&bw</span> - Действие при обнаружении нецензурных выражений из параметра badwords</a></h4>
+</div>
+<div id="collapse337" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1 | 2<br>
+<span class="text-bold">Значение по умолчанию:</span> 1<br>
+<span class="text-bold">Примечание:</span> <br>0 - опубликовывает<br>
+1 - не опубликовывает<br>
+2 - отклоняет комментарий. В особых случаях сообщение теряется навсегда
+<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&bw=`2`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="338"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse338"><span class="text-bold">&customfields</span> - Список дополнительных полей с информацией о пользователе</a></h4>
+</div>
+<div id="collapse338" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> дополнительные поля, через запятую<br>
+<span class="text-bold">Значение по умолчанию:</span> name,email<br>
+<span class="text-bold">Примечание:</span> Поля будут созданы в дополнительной таблице автоматически.
+Стандартное значение "name,email". (Примечание: В списке, через запятую, не должно быть пробелов)<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&customfields=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="339"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse339"><span class="text-bold">&authorid</span> - id автора</a></h4>
+</div>
+<div id="collapse339" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> ID автора<br>
+<span class="text-bold">Значение по умолчанию:</span> автор комментария<br>
+<span class="text-bold">Примечание:</span> По-умолчанию автор комментария.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&authorid=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="340"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse340"><span class="text-bold">&title</span> - Заголовок по умолчанию</a></h4>
+</div>
+<div id="collapse340" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> longtitle<br>
+<span class="text-bold">Примечание:</span> Используется для темы комментария, когда в форме поле заголовка оставлено пустым.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&title=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="341"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse341"><span class="text-bold">&css</span> - Подключение стилей в заголовок шаблона</a></h4>
+</div>
+<div id="collapse341" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 1<br>
+<span class="text-bold">Примечание:</span> <br>0 - не включать &lt;link rel="stylesheet" src="assets/snippets/jot/templates/jot.css" /&gt; в заголовок шаблона, в тег &lt;HEAD&gt;&lt;/HEAD&gt;<br>
+1 - включить &lt;link rel="stylesheet" src="assets/snippets/jot/templates/jot.css" /&gt; в заголовок шаблона
+<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&css=`0`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="342"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse342"><span class="text-bold">&cssFile</span> - Альтернативный путь до файла стилей от корня сайта</a></h4>
+</div>
+<div id="collapse342" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> путь к файлу<br>
+<span class="text-bold">Значение по умолчанию:</span> assets/snippets/jot/templates/jot.css<br>
+<span class="text-bold">Примечание:</span> <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&cssFile=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="343"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse343"><span class="text-bold">&sortby</span> - Сортировка комментариев</a></h4>
+</div>
+<div id="collapse343" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> список критериев через запятую<br>
+<span class="text-bold">Значение по умолчанию:</span> createdon:d<br>
+<span class="text-bold">Примечание:</span> <br>имя поля:a - по возрастанию<br>
+имя поля:d - по убыванию<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&sortby=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="344"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse344"><span class="text-bold">&numdir</span> - Сортировка комментариев по их добавлению</a></h4>
+</div>
+<div id="collapse344" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 1<br>
+<span class="text-bold">Примечание:</span> <br>0 - первый комментарий внизу<br>
+1 - первый комментарий вверху.
+<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&numdir=`0`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="345"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse345"><span class="text-bold">&validate</span> - Проверка полей на правильность заполнения</a></h4>
+</div>
+<div id="collapse345" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> content:You forgot to enter a comment.<br>
+<span class="text-bold">Примечание:</span> <br>Синтаксис: fieldname:message(:validation)<br>
+Если поле добавлено в validate то оно становится обезательным для заполнения. Возможные значения:<br>
+number<br>
+email<br>
+регулярное выражение<br>
+Примеры.<br>
+Обязательное поле:<br>
+MyRequiredField:Поле обязательно должно быть заполнено!<br>
+Проверка электронной почты:<br>
+MyEmailField:Адрес электронной почты внесён вами не правильно.:email<br>
+Проверка на числовое значение:<br>
+MyNumberField:Номер дома должен быть в цифровом значении.:number<br>
+Комбинация требований: <br>
+MyRequiredField:Поле обязательно должно быть заполнено!,MyEmailField:Адрес электронной почты внесён вами не правильно.:email,MyNumberField:Номер дома должен быть в цифровом значении.:number
+
+<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&validate=`MyRequiredField:Поле обязательно должно быть заполнено!,MyEmailField:Адрес электронной почты внесён вами не правильно.:email,MyNumberField:Номер дома должен быть в цифровом значении.:number`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="346"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse346"><span class="text-bold">&guestname</span> - Анонимное имя автора, не зарегистрированного и не авторизованного</a></h4>
+</div>
+<div id="collapse346" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> строка<br>
+<span class="text-bold">Значение по умолчанию:</span> anonymous<br>
+<span class="text-bold">Примечание:</span> <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&guestname=`Гость`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="347"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse347"><span class="text-bold">&postdelay</span> - Число секунд ожидания между отправкой следующего сообщения тем же пользователем</a></h4>
+</div>
+<div id="collapse347" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> секунды, как целое число<br>
+<span class="text-bold">Значение по умолчанию:</span> 15<br>
+<span class="text-bold">Примечание:</span> <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&postdelay=`10`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="348"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse348"><span class="text-bold">&pagination</span> - Число комментариев на одной странице</a></h4>
+</div>
+<div id="collapse348" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> число<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> <br>0 - отключение, показывать все комментарии на одной странице (стандартное значение)<br>
+1 &gt; любое числовое значение<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&pagination=`10`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="349"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse349"><span class="text-bold">&placeholders</span> - Добавление плэйсхолдеров</a></h4>
+</div>
+<div id="collapse349" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> <br>0 - никаких плейсхолдеров не создано (по-умолчанию)<br>
+1 - плейсхолдеры созданы для каждого значения debug (смотрите параметр debug) <br>
+если tagid не найден, плесхолдеры создаются так:<br>
+[+jot.html.form+]<br>
+если tagid найден, плейсхолдеры будут созданы так:<br>
+[+jot.html.form.tagid+]<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&placeholders=`1`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="350"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse350"><span class="text-bold">&output</span> - Показать результаты</a></h4>
+</div>
+<div id="collapse350" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 1 | 0<br>
+<span class="text-bold">Значение по умолчанию:</span> 1<br>
+<span class="text-bold">Примечание:</span> <br>0 - спрятать результаты (может использоваться с параметром placeholder)<br>
+1 - показать результаты (по-умолчанию)
+<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&output=`0`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="351"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse351"><span class="text-bold">&debug</span> - Отладка</a></h4>
+</div>
+<div id="collapse351" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> <br>0 - отключить вывод "скрытых" переменных. (По умолчанию)<br>
+1 - включить вывод "скрытых" переменных.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&debug=`1`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="352"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse352"><span class="text-bold">&trusted</span> - Список доверенных веб-групп через запятую</a></h4>
+</div>
+<div id="collapse352" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> список групп пользователей<br>
+<span class="text-bold">Значение по умолчанию:</span> <br>
+<span class="text-bold">Примечание:</span> Коммментарии пользователей из этих групп будут публиковаться по умолчанию, когда moderated установлен 1. Параметр badwords не применяется к этим группам. <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&trusted=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="353"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse353"><span class="text-bold">&canpost</span> - Список веб-групп через запятую, которые могут размещять комментарии</a></h4>
+</div>
+<div id="collapse353" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> список групп пользователей<br>
+<span class="text-bold">Значение по умолчанию:</span> <br>
+<span class="text-bold">Примечание:</span> Оставьте пустым, для публичного комментирования<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&canpost=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="354"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse354"><span class="text-bold">&canview</span> - Список веб-групп через запятую, которые могут просматривать комментарии</a></h4>
+</div>
+<div id="collapse354" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> список групп пользователей<br>
+<span class="text-bold">Значение по умолчанию:</span> <br>
+<span class="text-bold">Примечание:</span> Оставьте пустым для публичного просмотра.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&canview=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="355"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse355"><span class="text-bold">&canedit</span> - Список веб-групп через запятую, которые могут редактировать свои комментарии</a></h4>
+</div>
+<div id="collapse355" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> список групп пользователей<br>
+<span class="text-bold">Значение по умолчанию:</span> <br>
+<span class="text-bold">Примечание:</span> Оставьте пустым для того чтоб пользователи не могли редактировать комментарии.<br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&canedit=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="356"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse356"><span class="text-bold">&canmoderate</span> - Список веб-групп через запятую, которые могут модерировать комментарии</a></h4>
+</div>
+<div id="collapse356" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> список групп пользователей<br>
+<span class="text-bold">Значение по умолчанию:</span> <br>
+<span class="text-bold">Примечание:</span> <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&canmoderate=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="357"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse357"><span class="text-bold">&amp;notifyAuthor</span> - Информировать автора когда кто-то добавляет коментарии</a></h4>
+</div>
+<div id="collapse357" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&amp;notifyAuthor=`1`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a id="358"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse358"><span class="text-bold">&subjectAuthor</span> - Тема письма для оповещения автора</a></h4>
+</div>
+<div id="collapse358" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> строка<br>
+<span class="text-bold">Значение по умолчанию:</span> <br>
+<span class="text-bold">Примечание:</span> <br>
+<p><span class="text-bold">Пример:</span></p>
+<pre class="brush: html;">&subjectAuthor=``</pre>
+</div>
+</div>
+</div>
+</div>

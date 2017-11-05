@@ -1,0 +1,354 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<h2>TvTagCloud: Параметры</h2>
+
+<div class="panel-group">
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1226"><span class="text-bold">&parent</span> - ID контейнера, в котором находятся отображаемые документы</a></h4>
+</div>
+<div id="collapse1226" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> можно указывать несколько ID через запятую<br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&parent=`5`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1227"><span class="text-bold">&depth</span> - глубина просмотра</a></h4>
+</div>
+<div id="collapse1227" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> 10<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&depth=`5`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1228"><span class="text-bold">&days</span> - количество учитываемых дней</a></h4>
+</div>
+<div id="collapse1228" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> на основе pub_date, 0 - выбрать все дни<br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&days=`30`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1229"><span class="text-bold">&min</span> - минимальное число вхождений тега</a></h4>
+</div>
+<div id="collapse1229" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> 0 - показать все<br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&min=`5`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1230"><span class="text-bold">&sort</span> - сортировка тегов. По умолчанию сортируются по ID</a></h4>
+</div>
+<div id="collapse1230" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> asc | desc | numasc | numdesc | random<br>
+<span class="text-bold">Значение по умолчанию:</span> нет<br>
+<span class="text-bold">Примечание:</span> asc - по возрастанию<br>
+dec - по убыванию<br>
+numasc - по возрастанию счетчика<br>
+numdesc - по убыванию счетчика<br>
+random - случайный порядок<br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&sort=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1231"><span class="text-bold">&landing</span> - ID документа, где расположен вызов Ditto</a></h4>
+</div>
+<div id="collapse1231" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> id документа<br>
+<span class="text-bold">Значение по умолчанию:</span> Id текущего документа<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&landing=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1232"><span class="text-bold">&tvTags</span> - TV-параметр, в котором содержатся теги</a></h4>
+</div>
+<div id="collapse1232" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> TV-параметр<br>
+<span class="text-bold">Значение по умолчанию:</span> repo_tags<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&tvTags=`tags`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1233"><span class="text-bold">&tagDelim</span> - разделитель между тегами</a></h4>
+</div>
+<div id="collapse1233" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> ,<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&tagDelim=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1234"><span class="text-bold">&displayType</span> - внешний вид</a></h4>
+</div>
+<div id="collapse1234" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> cloud | list | custom<br>
+<span class="text-bold">Значение по умолчанию:</span> cloud<br>
+<span class="text-bold">Примечание:</span> в виде облака, маркированного списка или выборочно<br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&displayType=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1235"><span class="text-bold">&customDisplayChunk</span> - Чанк с шаблоном</a></h4>
+</div>
+<div id="collapse1235" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> нет<br>
+<span class="text-bold">Примечание:</span> Используемые плейсхолдеры: <code>[+class+] [+landing+] [+qs_seperator+] [+url_param+] [+tag+] [+urlencoded_tag+] [+tooltip+] [+count+] [+bracketed_count+]</code><br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&customDisplayChunk=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1236"><span class="text-bold">&showCount</span> - включает/выключает отображение количества вхождений тега</a></h4>
+</div>
+<div id="collapse1236" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&showCount=`1`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1237"><span class="text-bold">&caseSensitive</span> - включает/выключает дублирование тегов, чувствителен к регистру</a></h4>
+</div>
+<div id="collapse1237" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> 0 | 1<br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> 1 - вкл., 0 - выкл., более того, без этого параметра русские буквы отображаются некорректно<br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&caseSensitive=`1`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1238"><span class="text-bold">&steps</span> - список числовых интервалов для определения размера тега и его класса</a></h4>
+</div>
+<div id="collapse1238" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> 14,25,34,51,100<br>
+<span class="text-bold">Примечание:</span> т. е. сколько раз должен быть выбран тег, чтобы увеличиться в размерах, разделяются запятыми<br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&steps=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1239"><span class="text-bold">&styles</span> - разделенный запятыми список имен классов, которые будут применяться к каждому из интервалов в параметре "steps"</a></h4>
+</div>
+<div id="collapse1239" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> s5,s4,s3,s2,s1<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&styles=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1240"><span class="text-bold">&tooltip</span> - шаблон для подсказки, которая появится в качестве названия атрибута ссылки для каждого тега</a></h4>
+</div>
+<div id="collapse1240" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> <br>
+<span class="text-bold">Примечание:</span> Принимает значения <code></code> и <code></code>, которые будут заменены соответствующими значениями тега<br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&tooltip=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1241"><span class="text-bold">&dittoID</span> - индификатор Ditto, осуществляющего вызов</a></h4>
+</div>
+<div id="collapse1241" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> пусто<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&dittoID=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1242"><span class="text-bold">&limit</span> - ограничивает количество отображаемых тегов</a></h4>
+</div>
+<div id="collapse1242" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> 0<br>
+<span class="text-bold">Примечание:</span> 0 - без ограничений<br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&limit=`20`</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1243"><span class="text-bold">&exclude</span> - список исключаемых тегов</a></h4>
+</div>
+<div id="collapse1243" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> <br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&exclude=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1244"><span class="text-bold">&promote</span> - список тегов, которые должны отображаться первыми</a></h4>
+</div>
+<div id="collapse1244" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> <br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&promote=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1245"><span class="text-bold">&demote</span> - список тегов, которые должны отображаться последними</a></h4>
+</div>
+<div id="collapse1245" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> <br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&demote=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1246"><span class="text-bold">&extraTags</span> - список дополнительных тегов, которые должны отображаться, даже если они не обнаружены на страницах</a></h4>
+</div>
+<div id="collapse1246" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> <br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&extraTags=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1247"><span class="text-bold">&amp;currentClass</span> - класс активного тега</a></h4>
+</div>
+<div id="collapse1247" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> current<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&amp;currentClass=``</pre>
+</div>
+</div>
+</div>
+
+<div class="panel panel-default">
+<div class="panel-heading">
+<h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse1248"><span class="text-bold">&urlParam</span> - имя параметра URL, используемого при создании URL-адреса при фильтрации</a></h4>
+</div>
+<div id="collapse1248" class="panel-collapse collapse">
+<div class="panel-body">
+<span class="text-bold">Формат:</span> <br>
+<span class="text-bold">Значение по умолчанию:</span> tags<br>
+<span class="text-bold">Примечание:</span> <br>
+<span class="text-bold">Пример:</span>
+<pre class="brush: html;">&urlParam=``</pre>
+</div>
+</div>
+</div>
+</div>
