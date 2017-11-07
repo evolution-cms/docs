@@ -1,9 +1,14 @@
 <h2 style=margin-top:0px>Уроки</h2>
 <p>Для тех кто только знакомится с MODX EVO очень рекомендую пройтись по ссылкам ниже, сразу отпадут многие вопросы.</p>
-<h3>Видео уроки по созданию сайта на MODX EVO</h3>
+<h3>Видеоуроки по созданию сайта на MODX EVO</h3>
 <ul>
-<li><a href="http://vimeo.com/29422796">Видео урок</a>&nbsp; (<a style="line-height: 1.5;" href="http://a42.ru/site/tutorial-cash.html">доп материалы и ссылки с видео</a>)</li>
-<li><a href="http://www.youtube.com/watch?v=WDBsCL9Xfx8">Видео урок 2</a></li>
+  <li>
+  <a href="https://www.youtube.com/watch?v=3YNPqkBUjO0&list=PLKTHZGrYLdtpuzPA14WaSt5krBaG72UlK">Уроки Evolution CMS
+ от Dmi3yy</a>
+    </li>
+  <li><a href="https://www.youtube.com/watch?v=28zlVnBOg5o&list=PL6eZlKN20KLmFb9Yfgvfql_R-BpTx5mUZ">Создание магазина на Evolution CMS</a></li>
+<li><a href="http://vimeo.com/29422796">Видеоурок</a></li>
+<li><a href="http://www.youtube.com/watch?v=WDBsCL9Xfx8">Видеоурок 2</a></li>
 </ul>
 <h3>Уроки с сайта Я--гу.ру</h3>
 <ul class="unstyled sidebarPadding scroll-pane">
@@ -67,18 +72,4 @@
 <li><a title="Создание блога на MODx. Урок 6 &mdash; Поиск по сайту, контактная форма, XML и HTML карты, RSS рассылка" href="http://efimov.ws/main/develop/modx/modx-blog-sitemap-forma-poisk.html">Урок 6. Поиск по сайту, контактная форма, XML и HTML карты, RSS рассылка</a></li>
 <li><a title=" Создание блога на MODx. Урок 7 &mdash; Оформление внутренних страниц блога и подключение комментариев" href="http://efimov.ws/main/develop/modx/modx-blog-comments-page-inside.html">Урок 7. Оформление внутренних страниц блога и подключение комментариев</a></li>
 <li><a title=" Создание блога на MODx. Урок 8 &mdash; Устранение дублирования контента, оформление футера и другие настройки" href="http://efimov.ws/main/develop/modx/sozdanie-bloga-na-modx-urok-8.html">Урок 8. Устранение дублирования контента, оформление футера и другие настройки</a></li>
-</ul>
-<h3>Статьи по разработке сайтов на MODX</h3>
-<ul>
-<li><a title="Разработка на MODx с нуля" href="http://modx.ru/blog/modx-development-from-scratch/">Разработка на MODx с нуля</a></li>
-<li><a title="Подготовка к работе" href="http://modx.ru/blog/first-step-work-preparing/">Шаг 1: Подготовка к работе</a></li>
-<li><a title="Импорт готового дизайна" href="http://modx.ru/blog/import-ready-design-modx/">Шаг 2: Импорт готового дизайна</a></li>
-<li><a title="Организация структуры документов в MODx" href="http://modx.ru/blog/organization-structure-modx-documents/">Шаг 3: Организация структуры документов в MODx</a></li>
-<li><a title="Программируем верхнее меню на MODx" href="http://modx.ru/blog/modx-programming-top-menu/">Шаг 4: Программируем верхнее меню на MODx</a></li>
-<li><a title="Вывод содержимого активной страницы" href="http://modx.ru/blog/modx-page-content/">Шаг 5: Вывод содержимого активной страницы</a></li>
-<li><a title="Добавление и вывод статей на сайте" href="http://modx.ru/blog/modx-adding-articles/">Шаг 6.1: Добавление и вывод статей на сайте</a></li>
-<li><a title="Постраничное разбиение (навигация) статей" href="http://modx.ru/blog/modx-pagination/">Шаг 6.2: Постраничное разбиение (навигация) статей</a></li>
-<li><a title="Использование @-привязки в TV-параметрах" href="http://modx.ru/blog/bindings-easy2/">Использование @-привязки в TV-параметрах</a></li>
-<li><a title="О привязке форумов к MODx" href="http://modx.ru/blog/modx-forum/">О привязке форумов к MODx</a></li>
-<li><a title="Исправление форума &quot;кривыми&quot; руками" href="http://modx.ru/blog/modx-forum-correction/">Исправление форума "кривыми" руками</a></li>
 </ul>
