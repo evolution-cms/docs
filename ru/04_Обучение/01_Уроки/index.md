@@ -10,6 +10,24 @@
 <li><a href="http://vimeo.com/29422796">Видеоурок</a></li>
 <li><a href="http://www.youtube.com/watch?v=WDBsCL9Xfx8">Видеоурок 2</a></li>
 </ul>
+<h3>Видео уроки с канала Андрея Казунина</h3>
+<ul class="unstyled sidebarPadding scroll-pane">
+<li><a title="001. Установка Modx Evolution на хостинг «Джино»" href="https://www.youtube.com/watch?v=28zlVnBOg5o&t=2s">001. Установка Modx Evolution на хостинг «Джино»</a></li>
+<li><a title="002. Первоначальная настройка Modx Evolution" href="https://www.youtube.com/watch?v=FilCWYsiol8">002. Первоначальная настройка Modx Evolution</a></li>
+
+<li><a title="003. Ставим шаблон сайта на систему управления Modx Evolution. Немного DocLister'а" href="https://www.youtube.com/watch?v=WMzhayH_LMo&t=3s">003. Ставим шаблон сайта на систему управления Modx Evolution. Немного DocLister'а</a></li>
+<li><a title="004. Шаблонизация сайта. Сниппеты, плагины и модули в Modx Evolution" href="https://www.youtube.com/watch?v=UU9p3LjVvGQ&t=875s">004. Шаблонизация сайта. Сниппеты, плагины и модули в Modx Evolution</a></li>
+<li><a title="005. Шаблон сайта.Галерея Fancybox и Modx Evolution" href="https://www.youtube.com/watch?v=Q4K_FGuNAhI">005. Шаблон сайта.Галерея Fancybox и Modx Evolution</a></li>
+<li><a title="006. Шаблон сайта. Делаем FAQ и текстовую страницу на Modx Evolution" href="https://www.youtube.com/watch?v=DlTqvgjehQk&t=374s">006. Шаблон сайта. Делаем FAQ и текстовую страницу на Modx Evolution</a></li>
+<li><a title="007. Шаблон сайта. Делаем блог на Modx Evolution" href="https://www.youtube.com/watch?v=_fSxCXCG2SE&t=494s">007. Шаблон сайта. Делаем блог на Modx Evolution</a></li>
+<li><a title="008. Аякс-комментарии. Делаем блог на Modx Evolution" href="https://www.youtube.com/watch?v=yr7i-NlHnKc&t=10s">008. Аякс-комментарии. Делаем блог на Modx Evolution</a></li>
+<li><a title="009. Теги в блоге на Modx Evolution" href="https://www.youtube.com/watch?v=uoKdcGPrChI&t=142s">009. Теги в блоге на Modx Evolution</a></li>
+<li><a title="010. МАГАЗИН на Evolution. Shopkeeper, покупка товаров и корзина" href="https://www.youtube.com/watch?v=I1cdHKM9cRA&t=686s">010. МАГАЗИН на Evolution. Shopkeeper, покупка товаров и корзина</a></li>
+<li><a title="011. МАГАЗИН на Evolution. Форма отправки сообщений на eForm. Болтаем про FormLister" href="https://www.youtube.com/watch?v=-MdV0XNsJhU&t=1s">011. МАГАЗИН на Evolution. Форма отправки сообщений на eForm. Болтаем про FormLister</a></li> 
+<li><a title="012. МАГАЗИН на Evolution. Shopkeeper - отправка заказа" href="https://www.youtube.com/watch?v=xjIRHf6RAV0&t=872s">012. МАГАЗИН на Evolution. Shopkeeper - отправка заказа</a></li> 
+<li><a title="013. Обновление Modx Evolution. Прощай Modx, привет Evo" href="https://www.youtube.com/watch?v=jp6-SsMD9kE&t=18s">013. Обновление Modx Evolution. Прощай Modx, привет Evo</a></li>  
+</ul>
+
 <h3>Уроки с сайта Я--гу.ру</h3>
 <ul class="unstyled sidebarPadding scroll-pane">
 <li><a title="Сайт за один день? Это реально!" href="http://i--gu.ru/vstuplenie">Вступление - Сайт за один день? Это реально!</a></li>
@@ -34,6 +52,7 @@
 <li><a title="Модули, плагины, сниппеты" href="http://i--gu.ru/poleznyie-ssyilki">Полезные ссылки - Модули, плагины, сниппеты</a></li>
 <li><a title="Ответы на популярные вопросы по MODx Evolution" href="http://i--gu.ru/sprashivali-otvechaem">Спрашивали? Отвечаем - Ответы на популярные вопросы по MODx Evolution</a></li>
 </ul>
+
 <h3>Уроки по созданию сайта от Виктора Ефимова</h3>
 <ul>
 <li><a title="Инструкция по созданию сайта на MODx. Урок 1 &mdash; Вступительный" href="http://efimov.ws/main/develop/modx/instrukcziya-po-sozdaniyu-sajta-urok1.html">Урок 1 &mdash; Вступительный</a></li>
