@@ -1,4 +1,4 @@
-###Прямой запрос в базу данных
+### Прямой запрос в базу данных
 
 mixed query($sql)
 
@@ -8,16 +8,16 @@ mixed query($sql)
 
 ***
 
-####Пример
+#### Пример
 
 	$output = '';  
-	$result = $modx->db->query( 'SELECT id, name, joined FROM `user_table` GROUP BY `member_type` ORDER BY name ASC' );   
+	$result = $modx->db->query('SELECT id, name, joined FROM ' . $modx->getFullTableName('user_table') . ' GROUP BY `member_type` ORDER BY name ASC');   
 	
 	while( $row = $modx->db->getRow( $result ) ) {  
-		$output .=  '<br /> Идентификатор: ' . $row['id'] . 
-					'<br /> Имя: ' . $row['name'] . 
-					'<br /> Участие: ' . $row['joined']  . 
-					'<br />---------<br />';  
+		$output .=  '<br> Идентификатор: ' . $row['id'] . 
+					'<br> Имя: ' . $row['name'] . 
+					'<br> Участие: ' . $row['joined']  . 
+					'<br>---------<br>';  
 	}  
 	
 	echo $output;
