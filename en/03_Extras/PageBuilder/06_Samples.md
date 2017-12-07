@@ -1,4 +1,4 @@
-##Примеры конфигурации
+Examples of configuration can be found <a href="https://github.com/mnoskov/pagebuilder/tree/master/assets/plugins/pagebuilder/config" target="_blank">here</a>. (For example blocks to become available for selection, you need to rename files `*.php.sample` to `*.php`)
 
 ### Пример 1
 
