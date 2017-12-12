@@ -1,10 +1,10 @@
-##Примеры конфигурации
+Examples of configuration can be found <a href="https://github.com/mnoskov/pagebuilder/tree/master/assets/plugins/pagebuilder/config" target="_blank">here</a>. (For example blocks to become available for selection, you need to rename files `*.php.sample` to `*.php`)
 
 ### Пример 1
 
 В этом примере создается контентный блок с однострочным и многострочным текстовыми полями, который будет выводиться в шаблонах с идентификатором "2" под именем "Example 1":
 
-```php
+```
 <?php
     return [
         'title' => 'Example 1',
@@ -37,7 +37,7 @@
 
 Блок будет выводиться только в документах с идентификаторами "37" и "41" под именем "Example 2":
 
-```php
+```
 <?php
     return [
         'title' => 'Example 2',

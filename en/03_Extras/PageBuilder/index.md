@@ -1,106 +1,75 @@
-Автор: <a href="https://github.com/sunhaim/contentblocks">sunhaim</a>
+Author: <a href="https://github.com/mnoskov/pagebuilder">mnoskov</a>
 
-Плагин позволяет разработчику определить набор блоков с определенной разметкой и списком полей, чтобы контент-менеджер использовал те блоки, которые считает нужным, со своим наполнением.
+<img src="https://img.shields.io/badge/PHP-%3E=5.6-green.svg?php=5.6">
 
-Конфигурация для блоков берется из папки config. Для создания нового блока нужно создать в этой папке файл .php, который должен вернуть ассоциативный массив. Структура массива следующая:
+The plug-in allows the developer to define a set of blocks with a certain markup and a list of fields, so that the content manager uses those blocks that it considers necessary, with its content.
+
+The configuration for the blocks is taken from the config folder. To create a new block, you need to create a `<block-name>.php` file in this folder, which should return an associative array. To create a container, you need to create a file `container.<container-name>.php`. The structure of the array is as follows:
 
 <table>
-<tr><th>Ключ</th><th>Значение</th></tr>
-<tr><td>title</td><td>Название блока, видимое менеджеру при заполнении</td></tr>
+<tr><th>Key</th><th>Value</th></tr>
+<tr><td>title</td><td>Block name visible to the manager when filling in Value</td></tr>
+<tr><td>container</td><td>Name of the container (or the array of names) in which the block will be displayed.</td></tr>
 <tr>
 <td>fields</td>
 <td>
-Ассоциативный массив используемых полей, в котором ключами являются идентификаторы полей, а значениями - массивы опций этих полей.
+Associative array of used fields, in which the keys are field identifiers, and the values are the arrays of options for these fields.
 
-Возможные типы полей и опции приведены ниже.
+The possible field types and options are listed below.
 </td>
 </tr>
-<tr><td>show_in_templates</td><td>Массив идентификаторов шаблонов, для которых доступны редактирование и вывод блоков</td></tr>
-<tr><td>hide_in_docs</td><td>Массив идентификаторов документов, для которых редактирование и вывод недоступны</td></tr>
-<tr><td>show_in_docs</td><td>Массив идентификаторов документов, для которых доступны редактирование и вывод блоков.
+<tr><td>show_in_templates</td><td>Array of template identifiers for which editing and output of blocks are available</td></tr>
+<tr><td>hide_in_docs</td><td>Array of document identifiers for which editing and output are not available</td></tr>
+<tr><td>show_in_docs</td><td>
+  
+An array of document identifiers for which editing and output of blocks are available.
 
-Если этот параметр указан, то "hide_in_docs" не принимается во внимание.
+If this parameter is specified, then `hide_in_docs` is not taken into account.
 
-Если не указан ни один из параметров, ограничивающих доступ, блоки будут доступны во всех документах.</td></tr>
+If none of the parameters restricting access is specified, the blocks will be available in all documents.
+
+</td></tr>
+<tr><td>order</td><td>
+  
+The sort order in the `add-block` section. This parameter does NOT affect the sorting of the blocks themselves!
+  
+</td></tr>
 <tr>
 <td>templates</td>
 <td>
-Ассоциативный массив, содержащий шаблон для ключа "owner", а также шаблоны для каждой группы полей.
+  
+An associative array containing the template for the `owner` key, as well as templates for each field group.
 
-Также может содержать шаблоны для полей, для которых определено свойство "elements", это поля типа "dropdown", "checkbox", "radio". В таких шаблонах доступны выбранные значения свойства "elements".
+For a description of template creation methods, see below.
 
-Например, если в массиве полей используется группа "images", то в шаблонах должен быть определен элемент с ключом "images", который будет содержать либо строку шаблона:
-
-```
-'images' => '<img src="[+image+]" alt="[+title+]" class="slide">'
-```
-
-либо ассоциативный массив шаблонов:
-
-```
-'images' => [
-  'item'  => '<img src="[+image+]" alt="[+title+]" class="slide">',
-  'thumb' => '<div class="thumb" style="background-image: url([+image+])"></div>',
-],
-```
-
-Во втором случае вывод этих элементов в родительском шаблоне можно использовать как "[+images.item+]" и "[+images.thumb+]".
-
-Возможно указание имени чанка, в котором находится нужный шаблон. Для этого нужно использовать привязку @CHUNK, например:
-
-```
-'checkbox' => '@CHUNK all_fields_checkboxes',
-```
-
-Также возможна подгрузка шаблона из файла, например:
-
-```
-'owner' => '@FILE contentblocks/all_fields.tpl',
-```
-
-В этом примере файл шаблона будем загружен из MODX_BASE_PATH . "assets/templates/contentblocks/all_fields.tpl". Вообще файл  ищется в следующих директориях:
-
-```
-assets/tvs/
-assets/chunks/
-assets/templates/
-```
-
-Либо можно указать полный путь от корня сайта. Первый слеш не указывается.
 </td>
 </tr>
-</table>
+<tr><td>icon</td><td>
+  
+The icon class that will be displayed in the `add-block` section, if the plugin setting &addType is set to `icons`
+  
+For example, if you set the class `fa fa-cogs`, the output will be as following:
+```html
+<i class="fa fa-cogs"></i>
+```
 
-##Структура массива для описания поля
+</td></tr>
+<tr><td>image</td><td>
+  
+The image that will be displayed in the `add-block` section, if the plugin setting `&addType` is set to `images`.
+  
+The image will be processed with the `phpthumb` snippet with the parameter `w=80`
 
-<table>
-<tr><th>Ключ</th><th>Значение</th></tr>
-<tr><td>caption</td><td>Название поля, которое видит менеджер. Необязательно</td></tr>
-<tr><td>type</td><td>Тип поля, см. ниже</td></tr>
-<tr><td>theme</td><td>Тема редактора для поля "richtext", доступные значения можно посмотреть в конфигурации Evolution CMS, на вкладке "Интерфейс"</td></tr>
-<tr><td>options</td><td>Дополнительные опции для поля "richtext", значения можно посмотреть <a href="https://www.tinymce.com/docs/configure/" target="_blank">здесь</a></td></tr>
-<tr><td>fields</td><td>Вложенные поля, для типа "group"</td></tr>
-<tr><td>height</td><td>Высота поля, с указанием единиц измерения, например "150px". Доступно для типа поля "textarea".
+</td></tr>
+<tr><td>prepare</td><td>The name of a snippet or function that will be called before displaying data. For example:
 
-Для полей "richtext" указывается в составе опций редактора, в ключе "options"</td></tr>
-<tr><td>elements</td><td>Возможные значения для поля выбора. Доступны для полей "dropdown", "radio", "checkbox". Могут быть представлены в виде массива "ключ" => "значение", или в виде строки в доступном формате Evolution CMS (@SELECT и пр. работают).</td></tr>
-<tr><td>layout</td><td>Вид расположения вариантов для полей "radio" и "checkbox". Возможные значения - "vertical" (по умолчанию) и "horizontal"</td></tr>
-<tr><td>default</td><td>Значение по умолчанию. Для типа поля "checkbox" может быть массивом значений.
+```php
+'prepare' => function($options, $values) {
+  ...
+},
+```
 
-Возможно указание в формате "1||2||3", и использование привязок @SELECT, @EVAL и пр.</td></tr>
-</table>
+The parameters for the function and the snippet is the same: `options` - container options, `values` - values of fields. 
 
-##Типы полей
-
-<table>
-<tr><th>Значение</th><th>Описание</th></tr>
-<tr><td>text</td><td>Однострочное текстовое поле</td></tr>
-<tr><td>image</td><td>Текстовое поле с миниатюрой и кнопкой для выбора изображения</td></tr>
-<tr><td>richtext</td><td>Текстовый редактор TinyMCE 4</td></tr>
-<tr><td>textarea</td><td>Многострочное текстовое поле</td></tr>
-<tr><td>date</td><td>Текстовое поле с выпадающим календарем для выбора даты</td></tr>
-<tr><td>dropdown</td><td>Выпадающий список</td></tr>
-<tr><td>checkbox</td><td>Флажки, позволяет выбрать несколько вариантов из представленных</td></tr>
-<tr><td>radio</td><td>Переключатели, позволяют выбрать только один вариант</td></tr>
-<tr><td>group</td><td>Группа полей, обязательно должны быть определены вложенные поля в ключе "fields"</td></tr>
+If you use the name of the snippet, then the snippet should return the new data is `$values`. In the case of an anonymous function, this is not necessary (the function parameters are passed by reference).</td></tr>
 </table>
