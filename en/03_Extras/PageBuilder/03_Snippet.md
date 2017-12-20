@@ -12,4 +12,10 @@ The list of blocks is separated by commas, without spaces. The name of the confi
 <tr><td>templates</td><td></td><td>The identifier of the template group to be used for output. It must be defined in the configuration of each output block</td></tr>
 <tr><td>offset</td><td>0</td><td>Number of skipped blocks from the beginning of the output</td></tr>
 <tr><td>limit</td><td>0</td><td>The number of blocks for output, or 0 for all</td></tr>
+<tr><td>renderTo</td><td>templates</td><td>
+  
+Output type: `templates` - through templates, `array` - as array, `json` - as json.
+
+</td></tr>
+<tr><td>giveTo</td><td></td><td>If the parameter is set, the result data will be transferred to the snippet specified in this parameter, and then the result of this snippet will be showed</td></tr>
 </table>
