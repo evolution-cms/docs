@@ -64,12 +64,10 @@ The image will be processed with the `phpthumb` snippet with the parameter `w=80
 <tr><td>prepare</td><td>The name of a snippet or function that will be called before displaying data. For example:
 
 ```php
-'prepare' => function($options, $values) {
+'prepare' => function(&$options, &$values) {
   ...
 },
 ```
 
-The parameters for the function and the snippet is the same: `options` - container options, `values` - values of fields. 
-
-If you use the name of the snippet, then the snippet should return the new data is `$values`. In the case of an anonymous function, this is not necessary (the function parameters are passed by reference).</td></tr>
+The parameters for the function and the snippet is the same: `options` - container options, `values` - values of fields.</td></tr>
 </table>
