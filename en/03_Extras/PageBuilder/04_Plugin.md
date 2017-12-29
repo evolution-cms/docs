@@ -1,4 +1,4 @@
-The plugin is displaying the form for editing blocks and has the following parameters:
+The plugin is displaying the form for editing blocks. The parameters of the plugin and container configuration are almost identical to each other.
 <table>
 <tr><th>Parameter</th><th>Default value</th><th>Possible values</th></tr>
 <tr><td>tabName</td><td>Page Builder</td><td>The tab name on the resource editing page in which the form will be displayed</td></tr>
@@ -13,7 +13,7 @@ For the `images` value, the `image` key must be defined, with the image address 
 </td></tr>
 <tr><td>placement</td><td>tab</td><td>
 
-Placing the form: `tab` - in a separate tab, `content` - under the contents of the resource
+Placing the form: `tab` - in a separate tab, `content` - under the contents of the resource, `tv` - instead of the tv-parameter (only for use in the container configuration file)
 
 </td></tr>
 </table>
