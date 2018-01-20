@@ -17,4 +17,3 @@ string userLoggedIn();
 ####Пример:
 
 	$txt = $modx->userLoggedIn();
-	//вернет информацию о версии Evolution CMS.
