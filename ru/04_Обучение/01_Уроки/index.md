@@ -1,10 +1,33 @@
 <h2 style=margin-top:0px>Уроки</h2>
 <p>Для тех кто только знакомится с MODX EVO очень рекомендую пройтись по ссылкам ниже, сразу отпадут многие вопросы.</p>
-<h3>Видео уроки по созданию сайта на MODX EVO</h3>
+<h3>Видеоуроки по созданию сайта на MODX EVO</h3>
 <ul>
-<li><a href="http://vimeo.com/29422796">Видео урок</a>&nbsp; (<a style="line-height: 1.5;" href="http://a42.ru/site/tutorial-cash.html">доп материалы и ссылки с видео</a>)</li>
-<li><a href="http://www.youtube.com/watch?v=WDBsCL9Xfx8">Видео урок 2</a></li>
+  <li>
+  <a href="https://www.youtube.com/watch?v=3YNPqkBUjO0&list=PLKTHZGrYLdtpuzPA14WaSt5krBaG72UlK">Уроки Evolution CMS
+ от Dmi3yy</a>
+    </li>
+  <li><a href="https://www.youtube.com/watch?v=28zlVnBOg5o&list=PL6eZlKN20KLmFb9Yfgvfql_R-BpTx5mUZ">Создание магазина на Evolution CMS</a></li>
+<li><a href="http://vimeo.com/29422796">Видеоурок</a></li>
+<li><a href="http://www.youtube.com/watch?v=WDBsCL9Xfx8">Видеоурок 2</a></li>
 </ul>
+<h3>Видео уроки с канала Андрея Казунина</h3>
+<ul class="unstyled sidebarPadding scroll-pane">
+<li><a title="001. Установка Modx Evolution на хостинг «Джино»" href="https://www.youtube.com/watch?v=28zlVnBOg5o&t=2s">001. Установка Modx Evolution на хостинг «Джино»</a></li>
+<li><a title="002. Первоначальная настройка Modx Evolution" href="https://www.youtube.com/watch?v=FilCWYsiol8">002. Первоначальная настройка Modx Evolution</a></li>
+
+<li><a title="003. Ставим шаблон сайта на систему управления Modx Evolution. Немного DocLister'а" href="https://www.youtube.com/watch?v=WMzhayH_LMo&t=3s">003. Ставим шаблон сайта на систему управления Modx Evolution. Немного DocLister'а</a></li>
+<li><a title="004. Шаблонизация сайта. Сниппеты, плагины и модули в Modx Evolution" href="https://www.youtube.com/watch?v=UU9p3LjVvGQ&t=875s">004. Шаблонизация сайта. Сниппеты, плагины и модули в Modx Evolution</a></li>
+<li><a title="005. Шаблон сайта.Галерея Fancybox и Modx Evolution" href="https://www.youtube.com/watch?v=Q4K_FGuNAhI">005. Шаблон сайта.Галерея Fancybox и Modx Evolution</a></li>
+<li><a title="006. Шаблон сайта. Делаем FAQ и текстовую страницу на Modx Evolution" href="https://www.youtube.com/watch?v=DlTqvgjehQk&t=374s">006. Шаблон сайта. Делаем FAQ и текстовую страницу на Modx Evolution</a></li>
+<li><a title="007. Шаблон сайта. Делаем блог на Modx Evolution" href="https://www.youtube.com/watch?v=_fSxCXCG2SE&t=494s">007. Шаблон сайта. Делаем блог на Modx Evolution</a></li>
+<li><a title="008. Аякс-комментарии. Делаем блог на Modx Evolution" href="https://www.youtube.com/watch?v=yr7i-NlHnKc&t=10s">008. Аякс-комментарии. Делаем блог на Modx Evolution</a></li>
+<li><a title="009. Теги в блоге на Modx Evolution" href="https://www.youtube.com/watch?v=uoKdcGPrChI&t=142s">009. Теги в блоге на Modx Evolution</a></li>
+<li><a title="010. МАГАЗИН на Evolution. Shopkeeper, покупка товаров и корзина" href="https://www.youtube.com/watch?v=I1cdHKM9cRA&t=686s">010. МАГАЗИН на Evolution. Shopkeeper, покупка товаров и корзина</a></li>
+<li><a title="011. МАГАЗИН на Evolution. Форма отправки сообщений на eForm. Болтаем про FormLister" href="https://www.youtube.com/watch?v=-MdV0XNsJhU&t=1s">011. МАГАЗИН на Evolution. Форма отправки сообщений на eForm. Болтаем про FormLister</a></li> 
+<li><a title="012. МАГАЗИН на Evolution. Shopkeeper - отправка заказа" href="https://www.youtube.com/watch?v=xjIRHf6RAV0&t=872s">012. МАГАЗИН на Evolution. Shopkeeper - отправка заказа</a></li> 
+<li><a title="013. Обновление Modx Evolution. Прощай Modx, привет Evo" href="https://www.youtube.com/watch?v=jp6-SsMD9kE&t=18s">013. Обновление Modx Evolution. Прощай Modx, привет Evo</a></li>  
+</ul>
+
 <h3>Уроки с сайта Я--гу.ру</h3>
 <ul class="unstyled sidebarPadding scroll-pane">
 <li><a title="Сайт за один день? Это реально!" href="http://i--gu.ru/vstuplenie">Вступление - Сайт за один день? Это реально!</a></li>
@@ -29,6 +52,7 @@
 <li><a title="Модули, плагины, сниппеты" href="http://i--gu.ru/poleznyie-ssyilki">Полезные ссылки - Модули, плагины, сниппеты</a></li>
 <li><a title="Ответы на популярные вопросы по MODx Evolution" href="http://i--gu.ru/sprashivali-otvechaem">Спрашивали? Отвечаем - Ответы на популярные вопросы по MODx Evolution</a></li>
 </ul>
+
 <h3>Уроки по созданию сайта от Виктора Ефимова</h3>
 <ul>
 <li><a title="Инструкция по созданию сайта на MODx. Урок 1 &mdash; Вступительный" href="http://efimov.ws/main/develop/modx/instrukcziya-po-sozdaniyu-sajta-urok1.html">Урок 1 &mdash; Вступительный</a></li>
@@ -67,18 +91,4 @@
 <li><a title="Создание блога на MODx. Урок 6 &mdash; Поиск по сайту, контактная форма, XML и HTML карты, RSS рассылка" href="http://efimov.ws/main/develop/modx/modx-blog-sitemap-forma-poisk.html">Урок 6. Поиск по сайту, контактная форма, XML и HTML карты, RSS рассылка</a></li>
 <li><a title=" Создание блога на MODx. Урок 7 &mdash; Оформление внутренних страниц блога и подключение комментариев" href="http://efimov.ws/main/develop/modx/modx-blog-comments-page-inside.html">Урок 7. Оформление внутренних страниц блога и подключение комментариев</a></li>
 <li><a title=" Создание блога на MODx. Урок 8 &mdash; Устранение дублирования контента, оформление футера и другие настройки" href="http://efimov.ws/main/develop/modx/sozdanie-bloga-na-modx-urok-8.html">Урок 8. Устранение дублирования контента, оформление футера и другие настройки</a></li>
-</ul>
-<h3>Статьи по разработке сайтов на MODX</h3>
-<ul>
-<li><a title="Разработка на MODx с нуля" href="http://modx.ru/blog/modx-development-from-scratch/">Разработка на MODx с нуля</a></li>
-<li><a title="Подготовка к работе" href="http://modx.ru/blog/first-step-work-preparing/">Шаг 1: Подготовка к работе</a></li>
-<li><a title="Импорт готового дизайна" href="http://modx.ru/blog/import-ready-design-modx/">Шаг 2: Импорт готового дизайна</a></li>
-<li><a title="Организация структуры документов в MODx" href="http://modx.ru/blog/organization-structure-modx-documents/">Шаг 3: Организация структуры документов в MODx</a></li>
-<li><a title="Программируем верхнее меню на MODx" href="http://modx.ru/blog/modx-programming-top-menu/">Шаг 4: Программируем верхнее меню на MODx</a></li>
-<li><a title="Вывод содержимого активной страницы" href="http://modx.ru/blog/modx-page-content/">Шаг 5: Вывод содержимого активной страницы</a></li>
-<li><a title="Добавление и вывод статей на сайте" href="http://modx.ru/blog/modx-adding-articles/">Шаг 6.1: Добавление и вывод статей на сайте</a></li>
-<li><a title="Постраничное разбиение (навигация) статей" href="http://modx.ru/blog/modx-pagination/">Шаг 6.2: Постраничное разбиение (навигация) статей</a></li>
-<li><a title="Использование @-привязки в TV-параметрах" href="http://modx.ru/blog/bindings-easy2/">Использование @-привязки в TV-параметрах</a></li>
-<li><a title="О привязке форумов к MODx" href="http://modx.ru/blog/modx-forum/">О привязке форумов к MODx</a></li>
-<li><a title="Исправление форума &quot;кривыми&quot; руками" href="http://modx.ru/blog/modx-forum-correction/">Исправление форума "кривыми" руками</a></li>
 </ul>
