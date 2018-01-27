@@ -4,10 +4,10 @@
 
 Specifies the class to fetch the data. Base classes (located in the folder DocLister/core/controller/):
 
-* site_content - for working with EVO documents;
-* shopkeeper - to work with the Shopkeeper catalog;
-* onetable - for working with arbitrary tables;
-* site_content_tags - Output of EVO documents with tag-filtering in conjunction with TagSaver plug-in.
+* site_content - working with EVO documents;
+* shopkeeper - working with the Shopkeeper catalog;
+* onetable - working with arbitrary tables;
+* site_content_tags - outputs EVO documents with tag-filtering in conjunction with TagSaver plug-in.
 
 Default value - site_content
 
