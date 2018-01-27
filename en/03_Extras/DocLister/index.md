@@ -1,20 +1,20 @@
-Автор: [Agel Nash](https://github.com/AgelxNash/)
+Author: [Agel Nash](https://github.com/AgelxNash/)
 
-Сниппет для вывода информации из различных таблиц. Изначально разрабатывался как замена сниппета Ditto, но в итоге существенно превзошел его в возможностях, гибкости и производительности. При этом в простых случаях использовать DocLister не сложнее, чем Ditto (многие параметры совпадают).
+Snippet for displaying information from various tables. It was originally developed as a replacement for the Ditto, but in the end it significantly surpassed it in its capabilities, flexibility and performance. In simple cases, using DocLister is not more difficult than Ditto (many parameters are the same).
 
-Отличительные особенности:
+Features:
 
-* легко расширяется;
-* позволяет выводить данные из любых таблиц (в том числе из каталога Shopkeeper);
-* есть возможность вывести данные в json-формате;
-* возможность произвольной обработки данных перед выводом;
-* удобные средства отладки;
-* сортировка по TV-параметрам с преобразованием типов;
-* фильтрация документов, в том числе по TV-параметрам;
-* поддержка лексиконов;
-* загрузка параметров из файлов.
+* Extends easily;
+* Allows to output data from any tables (including from the Shopkeeper directory);
+* It is possible to output data in JSON-format;
+* Ability to arbitrarily process data before output;
+* Convenient debugging;
+* Sorting by TV with type conversion;
+* filtering of documents, including TV;
+* Support for lexicons;
+* Using settings from files.
 
-Для работы DocLister требуется PHP 5.3 или выше.
+DocLister requires PHP 5.3 or higher.
 
 [Github](https://github.com/AgelxNash/DocLister)
 
