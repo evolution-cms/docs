@@ -8,7 +8,7 @@
 &parents=`5` 
 &tvList=`img,tag` 
 &id=`lastnews` 
-&tpl=`dl-post-item`
+&tpl=`dl-list-item`
 !]
 ```
 
