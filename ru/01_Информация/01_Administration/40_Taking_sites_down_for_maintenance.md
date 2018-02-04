@@ -1,21 +1,20 @@
-<p>You may occasionally want to take your site down for maintenance to perform server upgrades or update areas of your site such as templates or third party components and etc. The task of taking your site down or placing it into maintenance mode is simple in Evo.</p>
-<p>To take your site down for maintenance:</p>
+<p>Иногда вам может понадобиться отключить ваш сайт на техобслуживание, чтобы выполнить обновление сервера или обновить какие-нибудь части вашего сайта, например, шаблоны, сторонние компоненты и т. п. В Evo процедура отключения вашего сайта (или его перевода в режим техобслуживания) довольно простая.</p>
+<p>Чтобы отключить ваш сайт на техобслуживание, сделайте вот что:</p>
 <ol>
-  <li>Open the Evo Admin Interface.</li>
-  <li>Select the "Tools" tab and then choose "Configuration" from the available menu options.</li>
-  <li>When the Configuration page has loaded, choose the "Site" tab on the page.</li>
-  <li>Scroll down to the setting entitled "Site Status" and choose the "Offline" option.</li>
-  <li>Click the "Save" button.</li>
+  <li>Откройте админку Evo.</li>
+  <li>Войдите в меню "Система" и выберите опцию "Конфигурация".</li>
+  <li>После того, как загрузится раздел конфигурации сайта, выберите в нем вкладку "Сайт".</li>
+  <li>Найдите настройку под названием "Статус сайта" и выберите опцию "Оффлайн".</li>
+  <li>Нажмите на кнопку "Сохранить".</li>
 </ol>
-<p>At this point, your site is now offline and visitors will see the Site Unavailable page - see below for information on how to set this page up. You can easily make the site online again by following the options above but selecting "Online" in step 4.</p>
-<h3>Setting a Site Unavailable page</h3>
-<p>To set your Site Unavailable page, follow these steps:</p>
+<p>Начиная с этого момента, ваш сайт отключен на техобслуживание, и посетители увидят страницу, сообщающую об отключении сайта (о том, как настроить эту страницу, см. ниже). Если вам нужно сделать сайт снова доступным, это тоже можно сделать легко. Для этого следует повторить вышеприведенные действия, но на шаге 4 надо будет выбрать опцию "Онлайн".</p>
+<h3>Настройка страницы, сообщающей о недоступности сайта</h3>
+<p>Чтобы настроить страницу, сообщающую о недоступности сайта, сделайте вот что:</p>
 <ol>
-  <li>If you haven't already, create a Evo document that contains the information that you want site visitors to see when the site is offline. When creating this page, set the "Hide in Menu" option to Yes and make sure the page is published.</li>
-  <li>Open the Evo Admin Interface.</li>
-  <li>Select the "Tools" tab and then choose "Configuration" from the available menu options.</li>
-  <li>When the Configuration page has loaded, choose the "Site" tab on the page.</li>
-  <li>Scroll down to the setting entitled "Site Unavailable Page" and enter the ID number of your page in the textbox.</li>
-  <li>Click the "Save" button.</li>
+  <li>Если вы этого еще не сделали, создайте отдельный документ, содержащий информацию, которую вы хотите показать посетителям, если ваш сайт отключен на техобслуживание. При создании этой страницы следует выключить флажок "Показывать в меню", а также убедиться, что страница опубликована.</li>
+  <li>Затем войдите в меню "Система" и выберите опцию "Конфигурация".</li>
+  <li>После того, как загрузится раздел конфигурации сайта, выберите в нем вкладку "Сайт".</li>
+  <li>Найдите настройку под названием "Страница 'Сайт недоступен'" и введите туда ID созданной вами страницы.</li>
+  <li>Нажмите на кнопку "Сохранить".</li>
 </ol>
-<p>Your Site Unavailable page is now setup, ready for action!</p>
+<p>Теперь ваша страница, сообщающая о недоступности сайта, настроена и готова для применения!</p>
