@@ -1,8 +1,8 @@
-###Добавить обработчик события для плагина
+###Add an event handler for the plugin
 
-Замечание: используется только для текущего цикла выполнения.
+Note: This is used only for the current execution cycle.
 
 string addEventListener(string $evtName, string $pluginName);
 
-$evtName - наименование события
-$pluginName - название плагина
+$evtName - event name
+$pluginName - name of the plugin
