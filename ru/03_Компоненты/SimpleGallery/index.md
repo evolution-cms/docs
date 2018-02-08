@@ -14,7 +14,7 @@ SimpleGallery - Вывод галереи на странице Evolution CMS.
 	<li><span class="text-bold">sg_title</span> – название картинки;</li>
 	<li><span class="text-bold">sg_description</span> – описание картинки;</li>
 	<li><span class="text-bold">sg_properties</span> – здесь в формате json хранится информация о ширине и высоте картинки, а также размере файла, можно еще что-нибудь хранить в этом поле;</li>
-	<li><span class="text-bold">sg_add</span> – дополнительное поле, сейчас уже не помню, зачем оно мне было нужно;</li>
+	<li><span class="text-bold">sg_add</span> – дополнительное поле, сейчас уже не помню, зачем оно мне было нужно (например, фильтр в isotope галерее);</li>
 	<li><span class="text-bold">sg_isactive</span> – флажок, чтобы скрыть какие-то картинки из вывода;</li>
 	<li><span class="text-bold">sg_rid</span> – id ресурса, которому принадлежит картинка (parentField);</li>
 	<li><span class="text-bold">sg_createdon</span> – дата добавления картинки.</li>
