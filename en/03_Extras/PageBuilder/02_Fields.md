@@ -33,7 +33,7 @@ Possible values for the selection field. Available for the fields `dropdown`, `r
 </td></tr>
 <tr><td>layout</td><td>
 
-Layout for the fields `radio`, `checkbox` and `group`. Possible values are `vertical` (default) and `horizontal`
+Layout for the fields `radio`, `checkbox` and `group`. Possible values are `vertical` (default) and `horizontal`. Also, for `group` you can use `gallery`.
 
 </td></tr>
 <tr><td>default</td><td>

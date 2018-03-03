@@ -174,6 +174,7 @@ Call the snippet like this (most expample parameters are using the default value
 &oddClass=``
 &paginate=`0`
 &offsetKey=`page`
+&iterationStart=`1`
 !]
 ```
 
@@ -204,6 +205,7 @@ evenClass | content of row.class placeholder in an even row | -
 oddClass | content of row.class placeholder in an odd row | -
 paginate | show pagination | 0
 offsetKey | pagination offset parameter key | page
+iterationStart | Initial value of placeholder `[+iteration+]` | 1
 
 The default templates for outer template and row template could be defined in the config file for the custom template variable. These custom definitions could be overwritten by *rowTpl* and *outerTpl* in snippet call. Both template chunks are parsed by PHx (chunkie class).
 

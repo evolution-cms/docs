@@ -1,4 +1,4 @@
-##Параметры
+##Options
 
 ###customLang
 

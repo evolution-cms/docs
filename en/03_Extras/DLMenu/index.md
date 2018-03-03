@@ -23,6 +23,9 @@ Possible values - comma separated ids.
 
 Default - id of the resource, where the snippet has been called.
 
+### documents
+List of document ids to build plain menu. If set, "parents" parameter will be ignored, as well as "maxDepth". All documents from this parameter are assumed to have parent=0. The original parent field value stored in the "\_parent" field.
+
 ### maxDepth
 Maximum level of the menu.
 

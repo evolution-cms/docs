@@ -2,7 +2,7 @@ To display the blocks, use the PageBuilder snippet with the following parameters
 <table>
 <tr><th>Parameter</th><th>Default value</th><th>Possible values</th></tr>
 <tr><td>docid</td><td>Current document</td><td>Identifier of any existing document, an integer</td></tr>
-<tr><td>container</td><td>default</td><td>Name of the container</td></tr>
+<tr><td>container</td><td>default</td><td>Names of the containers, comma separated</td></tr>
 <tr><td>blocks</td><td>*</td><td>
 
 The list of blocks is separated by commas, without spaces. The name of the configuration file is taken without the extension (For example, `all_fields, groups`). If you specify `*`, the filter by name will not be applied
