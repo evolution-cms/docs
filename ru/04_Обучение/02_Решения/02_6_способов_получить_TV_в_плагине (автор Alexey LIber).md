@@ -38,4 +38,4 @@ $out.='Images from DocLister - '.$dl_images;
 echo $out;
 exit();
 
-![Вывод](https://github.com/media_kot/docs/images/gettv.jpg)
+![Вывод](https://github.com/media_kot/docs/blob/master/ru/images/gettv.jpg)
