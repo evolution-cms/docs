@@ -27,6 +27,10 @@
 <li><a title="013. Обновление Modx Evolution. Прощай Modx, привет Evo" href="https://www.youtube.com/watch?v=jp6-SsMD9kE">013. Обновление Modx Evolution. Прощай Modx, привет Evo</a></li>  
 <li><a title="014. Создаём свой тип ТВ-параметра в EvolutionCMS(modx)" href="https://www.youtube.com/watch?v=JCmRU0r_Ago">014. Создаём свой тип ТВ-параметра в EvolutionCMS(modx)</a></li>  
 <li><a title="015. Как в DocLister работать со своей таблицей mysql" href="https://www.youtube.com/watch?v=pH2MnVJE2do">015. Как в DocLister работать со своей таблицей mysql</a></li>
+<li><a title="016. Дополнение eFilter (часть 1). Как сделать фасетный фильтр товаров в Evolution CMS" href="https://www.youtube.com/watch?v=vPiA4KqxuH4">016. Дополнение eFilter (часть 1). Как сделать фасетный фильтр товаров в Evolution CMS</a></li>
+<li><a title="017. Дополнение eFilter (часть 2). Правим внешний вид фильтров." href="https://www.youtube.com/watch?v=F3moUvS0Bgk">017. Дополнение eFilter (часть 2). Правим внешний вид фильтров.</a></li>
+
+
 </ul>
 
 <h3>Уроки с сайта Я--гу.ру</h3>
