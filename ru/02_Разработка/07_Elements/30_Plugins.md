@@ -31,31 +31,31 @@ if($e->name = 'OnManagerNodePrerender'){
 	if($ph['id'] == '3'){
 		$ph['icon'] = "<i class='fa fa-copy'></i>";
 		$ph['icon_folder_open'] = "<i class='fa fa-copy'></i>";
-		$ph['icon_folder_close'] = "<i class='fa fa-copy'></i>";
+		$ph['icon_folder_close'] = "<i class='fa fa-copy'></i>";	
+		$ph['contextmenu'] = array(
+			'header1' => array(
+				'innerText' => "Это каталог"
+			),
+			'item3' => array(
+				'innerHTML' => '<i class="fa fa-file-o fa-fw fa-lg"></i> Добавить товар',
+				'title' => 'Дочерний ресурс',
+				'id' => 'item3',
+				'onclick' => "modx.tree.menuHandler(3);"
+			),
+			'item2' => array(
+				'innerHTML' => '<i class="fa fa-pencil-square-o fa-fw fa-lg"></i> Редактировать',
+				'title' => ' Редактировать',
+				'id' => 'item2',
+				'onclick' => "modx.tree.menuHandler(2);"
+			),
+			'item12' => array(
+				'innerHTML' => '<i class="fa fa-eye fa-fw fa-lg"></i> Просмотр',
+				'title' => 'Просмотр',
+				'id' => 'item12',
+				'onclick' => "modx.tree.menuHandler(12);",
+			)
+		);
 	}
-	$ph['contextmenu'] = array(
-		'header1' => array(
-			'innerText' => "Это каталог"
-		),
-		'item3' => array(
-			'innerHTML' => '<i class="fa fa-file-o fa-fw fa-lg"></i> Добавить товар',
-			'title' => 'Дочерний ресурс',
-			'id' => 'item3',
-			'onclick' => "modx.tree.menuHandler(3);"
-		),
-		'item2' => array(
-			'innerHTML' => '<i class="fa fa-pencil-square-o fa-fw fa-lg"></i> Редактировать',
-			'title' => ' Редактировать',
-			'id' => 'item2',
-			'onclick' => "modx.tree.menuHandler(2);"
-		),
-		'item12' => array(
-			'innerHTML' => '<i class="fa fa-eye fa-fw fa-lg"></i> Просмотр',
-			'title' => 'Просмотр',
-			'id' => 'item12',
-			'onclick' => "modx.tree.menuHandler(12);",
-		)
-	);
 }
 $e->output(serialize($ph));
 ```
