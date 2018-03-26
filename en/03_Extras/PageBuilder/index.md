@@ -31,7 +31,7 @@ If none of the parameters restricting access is specified, the blocks will be av
 </td></tr>
 <tr><td>order</td><td>
   
-The sort order in the `add-block` section. This parameter does NOT affect the sorting of the blocks themselves!
+The sort order in the `add-block` section, or the sort order of the containers (tabs). This parameter does NOT affect the sorting of the blocks themselves!
   
 </td></tr>
 <tr>
