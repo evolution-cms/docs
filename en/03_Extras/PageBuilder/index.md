@@ -4,6 +4,8 @@ Author: <a href="https://github.com/mnoskov/pagebuilder">mnoskov</a>
 
 The plug-in allows the developer to define a set of blocks with a certain markup and a list of fields, so that the content manager uses those blocks that it considers necessary, with its content.
 
+After installation, you must create the configuration files or rename the `*.php.sample` files to `*.php`. In the administration panel, the plugin adds a new tab to the edit-resource page. To show contents of the blocks use the snippet `[[PageBuilder]]`.
+
 The configuration for the blocks is taken from the config folder. To create a new block, you need to create a `<block-name>.php` file in this folder, which should return an associative array. To create a container, you need to create a file `container.<container-name>.php`. The structure of the array is as follows:
 
 <table>
