@@ -28,12 +28,12 @@ For `richtext` field type this option must be specified in the key `options`
 </td></tr>
 <tr><td>elements</td><td>
 
-Possible values for the selection field. Available for the fields `dropdown`, `radio` and `checkbox`. Can be represented as an array of pairs `key => value`, or as a string in an cms format (`@SELECT` and others).
+Possible values for the selection field. Available for the fields `dropdown`, `radio`, `checkbox`, `imageradio` and `imagecheckbox`. Can be represented as an array of pairs `key => value`, or as a string in an cms format (`@SELECT` and others).
 
 </td></tr>
 <tr><td>layout</td><td>
 
-Layout for the fields `radio`, `checkbox` and `group`. Possible values are `vertical` (default) and `horizontal`. Also, for `group` you can use `gallery`.
+Layout for the fields `radio`, `checkbox`, `group`, `imageradio` and `imagecheckbox`. Possible values are `vertical` (default) and `horizontal`. Also, for `group` you can use `gallery`.
 
 </td></tr>
 <tr><td>default</td><td>
@@ -55,6 +55,8 @@ Default value. For the field type `checkbox` can be an array of values. Can be i
 <tr><td>dropdown</td><td>Dropdown list</td></tr>
 <tr><td>checkbox</td><td>Checkboxes, allows to multiselect</td></tr>
 <tr><td>radio</td><td>Radio buttons</td></tr>
+<tr><td>imagecheckbox</td><td>As checkbox, but with images. In elements array should be images as values.</td></tr>
+<tr><td>imageradio</td><td>As radio, but with images. In elements array should be images as values.</td></tr>
 <tr><td>group</td><td>
 
 Fields group, it is necessary to specify nested fields in the key `fields`
