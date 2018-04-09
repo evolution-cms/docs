@@ -1,11 +1,11 @@
-#Документация по MODX Evolution
+# EvolutionCMS documentation
 
-*Evolution CMS — это профессиональный инструмент разработки сайтов, позволяющий управлять контентом (да и самим сайтом) абсолютно на все 100%! Эта система с открытым кодом (open source), и поэтому бесплатна. В отличие от большинства бесплатных CMS на Evolution вы можете построить сайт любой сложности, практически с любым набором функций, при этом система не будет никоим образом влиять на ваш html-код.*
+* Evolution CMS is a professional website development tool that allows you to manage content (and the site itself) absolutely 100%! This system is open source, and therefore free. Unlike most free CMS on Evolution, you can build a site of any complexity, with almost any set of functions, while the system will not in any way affect your html code. *
 
 
-## Как внести свой вклад
-1. Для начала у вас должен быть аккаунт на GitHub, если нет - [то его сделать очень просто](https://github.com/join).
-2. Сделать форк [https://github.com/evolution-cms/docs/](https://github.com/evolution-cms/docs/) к себе, нажав кнопку "Fork" справа вверху.
-3. Клонировать репозиторий к себе на диск и работать с ним локально, как и все (если вы разработчик)
-4. Если вы не разработчик, то можете просто отредактировать файлы *.md прямо на GitHub.
-5. Когда вы все сделали, вам следует [сделать "Pull Request"](https://help.github.com/articles/creating-a-pull-request) и отправить тем самым отправить изменения в этот репозиторий.
+## How to contribute
+1. First of all, you must have an account on GitHub, if not - [then make it very simple](https://github.com/join).
+2. Make a fork [https://github.com/evolution-cms/docs/](https://github.com/evolution-cms/docs/) to yourself by clicking the "Fork" button on the top right.
+3. Clone the repository to your disk and work with it locally, like everyone else (if you are a developer)
+4. If you are not a developer, you can simply edit the * .md files directly on GitHub.
+5. When you have done everything, you should [make a "Pull Request"](https://help.github.com/articles/creating-a-pull-request) and send it to send changes to this repository.
