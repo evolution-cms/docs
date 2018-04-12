@@ -1,16 +1,17 @@
 ## Введение ##
+
 В шаблонах Evolution используются различные теги, которые служат для формирования контента. Теги дают простой, но эффективный способ включать в контент веб-страницы различные данные.
 
 ** Виды используемых тегов **
 
-[[snippet]]	- результат работы кэшируемого сниппета.
-[!snippet!]	- то же, но без кэширования
-[(setting)] - любое значение из настроек сайта. Чаще всего используется что-то вроде [(site_name)].
-[*resourceField*] - ТВ-параметр или поле ресурса
-[^timing^]	- время выполнения скриптов
-[~link~] - ссылка на ресурс
-{{chunk}} - чанк
-[+placeholder+]	- плейсхолдер
+* [[snippet]]	- результат работы кэшируемого сниппета.
+* [!snippet!]	- то же, но без кэширования
+* [(setting)] - любое значение из настроек сайта. Чаще всего используется что-то вроде [(site_name)].
+* [\*resourceField\*] - ТВ-параметр или поле ресурса
+* [^timing^]	- время выполнения скриптов
+* [~link~] - ссылка на ресурс
+* {{chunk}} - чанк
+* [+placeholder+]	- плейсхолдер
 
 
 ## Сниппеты ##
@@ -49,7 +50,6 @@
 * [(friendly_url_prefix)] - префикс для дружественных URL
 * [(friendly_url_suffix)] - суффикс для дружественных URL
 * [(manager_language)] - язык системы управления
-* [(manager_layout)] - layout for the MODx Content Manager.
 * [(manager_theme)] - шаблон системы управления
 * [(number_of_logs)] - количество записей протокола на одной странице
 * [(number_of_messages)] - количество сообщений на одной странице
@@ -57,13 +57,10 @@
 * [(publish_default)] - публикация новых ресурсов после создания по умолчанию
 * [(rb_base_dir)] - физический путь к папке файлов
 * [(rb_base_url)] - адрес (URL) папки файлов
-* [(reset_template)] - indicates if all templates or just documents assigned the current default_template are reset when the default template is changed in the manager.
-* [(resolve_hostnames)] - indicates if MODx will try to resolve visitors' hostnames when they visit the site (applies to MODx internal logs).
 * [(search_default)] - новые ресурсы после создания доступны для поиска по умолчанию
 * [(server_offset_time)] - поправка (количество часов) между временем на месте вашего пребывания и на месте нахождения сервера
 * [(server_protocol)] - HTTP или HTTPS (SSL) соединение
 * [(settings_version)] - версия системы
-* [(show_preview)] - determines if preview is shown when viewing documents in MODx Content Manager.
 * [(signupemail_message)] - сообщение, которое будет отсылаться менеджерам, когда создается учетная запись нового менеджера
 * [(site_name)] - название сайта
 * [(site_start)] - идентификатор стартовой страницы
@@ -80,7 +77,7 @@
 * [(use_alias_path)] - используются вложенные URL
 * [(use_captcha)] - использовать код CAPTCHA при авторизации
 * [(use_editor)] - использовать HTML-редактор
-* [(use_udperms)] - indicates if user permissions are enabled for the site.
+* [(use_udperms)] - права доступа юзера
 * [(webpwdreminder_message)] - сообщение, которое будет отсылаться веб-пользователям, когда они запрашивают напоминание пароля
 * [(websignupemail_message)] - сообщение, которое будет отсылаться веб-пользователям, когда создается учетная запись нового веб-пользователя
 * [(which_editor)] - используемый HTML-редактор
@@ -91,10 +88,10 @@
 
 Это наиболее часто используемые теги ресурса:
 
-* [*pagetitle*] - название документа
-* [*longtitle*] - длинное название документа
-* [*introtext*] - сводка документа
-* [*content*] - содержание документа
+* [\*pagetitle\*] - название документа
+* [\*longtitle\*] - длинное название документа
+* [\*introtext\*] - сводка документа
+* [\*content\*] - содержание документа
 
 
 ## Переменные шаблона ##
