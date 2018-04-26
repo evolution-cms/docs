@@ -1,6 +1,6 @@
 Возвращает идентификатор документа по его урл
 
-string getIdFromAlias(int $alias);
+string getIdFromAlias(string $alias);
 
 **$alias** - псевдоним документа
 
