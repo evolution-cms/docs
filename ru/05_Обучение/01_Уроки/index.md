@@ -3,9 +3,8 @@
 ### Видеоуроки по созданию сайта на Evolution CMS
 
 *   [Уроки Evolution CMS от Dmi3yy](https://www.youtube.com/watch?v=3YNPqkBUjO0&list=PLKTHZGrYLdtpuzPA14WaSt5krBaG72UlK)
-*   [Создание магазина на Evolution CMS](https://www.youtube.com/watch?v=28zlVnBOg5o&list=PL6eZlKN20KLmFb9Yfgvfql_R-BpTx5mUZ)
-*   [Видеоурок](http://vimeo.com/29422796)
-*   [Видеоурок 2](http://www.youtube.com/watch?v=WDBsCL9Xfx8)
+*   [Создание сайта](http://vimeo.com/29422796)
+*   [Шаблонизация](http://www.youtube.com/watch?v=WDBsCL9Xfx8)
 
 ### Видео уроки с канала Андрея Казунина
 
