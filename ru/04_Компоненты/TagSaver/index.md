@@ -70,7 +70,7 @@ $id = isset($id) ? (int)$id : 0;
 $out = array();
 if($id&gt;0 &amp;&amp; $tag!=''){
 	$sql=$modx-&gt;db-&gt;query("SELECT doc_id FROM ".$modx-&gt;getFullTableName("tags")." as t
-	LEFT JOIN ".$modx-&gt;getFullTableName("site_content_tags")." s ct ON ct.tag_id = id
+	LEFT JOIN ".$modx-&gt;getFullTableName("site_content_tags")." as ct ON ct.tag_id = id
 	WHERE t.`name`='".$modx-&gt;db-&gt;escape($tag)."' AND ct.tv_id={$id}");
 	$sql=$modx-&gt;db-&gt;makeArray($sql);
 	foreach($sql as $item){
