@@ -7,9 +7,9 @@ With this MODX Evolution package a new template variable type is introduced. The
 
 The package contains three main parts
 
-- a custom template variabe displaying and editing a sortable multi item list or a datatable
+- a custom template variable displaying and editing a sortable multi item list or a datatable
 - a snippet to display the value of the template variable
-- a module do edit the content of custom database tables.
+- a module to edit the content of custom database tables.
 
 and some extras
 
