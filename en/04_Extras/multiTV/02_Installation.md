@@ -1,6 +1,6 @@
 There are three possibilities to install multiTV in MODX Evolution
 
-- Use the Evolution CMS Extras module
+- <b>[RECOMMENDED] Use the Evolution CMS Extras module</b>
 - Use the MODX Evolution [Package Manager](https://github.com/Jako/PackageManager) and install the [latest multiTV package](https://github.com/Jako/multiTV/archive/master.zip)
 - Install it on your own:
     1. Upload the folder *assets/tvs/multitv* in the corresponding folder in your installation.
