@@ -19,7 +19,9 @@ width | Width of the input | 100
 theme | Theme[^3] for TinyMCE if type is richtext | -
 
 [^1]: Supported input types: text, rawtext, email, number, textareamini, textarea, rawtextarea, htmlarea, richtext, date, dropdown, listbox, listbox-multiple, checkbox, option, image, file, color
+
 [^2]: See [images config](https://github.com/extras-evolution/multiTV/blob/master/assets/tvs/multitv/configs/images.config.inc.php) for thumb
+
 [^3]: Themes in the theme directory: advanced, base, creative, custom, editor, full, inline, introtext, legacy, logic,mini, simple, webuser
 
 In datatable mode a layer will be displayed during adding/editing one row. In this editing layer the MODX input type richtext is possible.
