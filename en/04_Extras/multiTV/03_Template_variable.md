@@ -18,7 +18,7 @@ thumbof | Name of an image input. A thumbnail of the selected image will be rend
 width | Width of the input | 100
 theme | Theme[^3] for TinyMCE if type is richtext | -
 
-[^1]: Supported MODX input types: text, rawtext, email, number, textareamini, textarea, rawtextarea, htmlarea, date, dropdown, listbox, listbox-multiple, checkbox, option, image, file
+[^1]: Supported input types: text, rawtext, email, number, textareamini, textarea, rawtextarea, htmlarea, richtext, date, dropdown, listbox, listbox-multiple, checkbox, option, image, file, color
 [^2]: See [images config](https://github.com/extras-evolution/multiTV/blob/master/assets/tvs/multitv/configs/images.config.inc.php) for thumb
 [^3]: Themes in the theme directory: advanced, base, creative, custom, editor, full, inline, introtext, legacy, logic,mini, simple, webuser
 
@@ -75,5 +75,7 @@ hideHeader | Hide the table header in *datatable* and *dbtable* mode. | false
 radioTabs | Tabs in the datatable editing layer are displayed as radio buttons. The button state is saved in *fieldTab* key of each multiTV row. | false
 sortindex | Field that contains the sort index (to enable draggable sorting in the module or *dbtable* mode) | -
 sorting | Enable sorting by clicking on the column header in *datatable* or *dbtable* mode. Row reordering by drag & drop will be disabled. | false
+prepare | Function to process data before output (called for each list item) | -
+prepareWrap | Function to process outer wrap data before output | -
 
 See the [multidemo config](https://github.com/extras-evolution/multiTV/blob/master/assets/tvs/multitv/configs/multidemo.config.inc.php) for all usable vertical settings and the [multicontent config](https://github.com/extras-evolution/multiTV/blob/master/assets/tvs/multitv/configs/multicontent.config.inc.php) for all usable datatable settings.
