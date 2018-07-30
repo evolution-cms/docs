@@ -1,53 +1,43 @@
-MODx - функциональная, расширяемая и удобная система разработки сайта (cmf), а также удобная система управления(cms). Это движок нового поколения, который изначально рассчитан на создание проектов поколения Веб 2.0
+Evolution is a functional, extensible and user-friendly site development system (cmf), as well as a user-friendly management system (cms). This engine is a new generation, which was originally designed to create Web 2.0 generation projects
 
-## Основные особенности ##
-- интуитивно понятный интерфейс системы управления
-- простой язык шаблонов
-- полный контроль HTML-кода, позволяющий реализовать любой дизайн
-- удобное дерево документов
-- интегрированный механизм работы с ajax
-- встроенная поддержка ЧПУ (SEF)
-- управление пользователями
-- разделение менеджеров и веб-пользователей
-- создание групп пользователей
-- создание групп документов с ограниченным доступом как для посетителей, так и менеджеров
-- эффективная работа с документами
-- публикация и отмена публикации документа, в том числе в указанное время
-- поддержка документов разных типов (MIME)
-- создание дополнительных параметров различных типов (текстовое поле, чекбоксы, выпадающий список и т.д.)
-- встроенный механизм SEO (управление ключевыми словами и мета-тегами)
-- отличная расширяемость (с помощью сниппетов, плагинов и модулей)
+## Key Features ##
+- intuitive control system interface
+- simple template language
+- full control of HTML-code, allowing to implement any design
+- convenient document tree
+- integrated mechanism for working with ajax
+- built-in NC support (SEF)
+- user management
+- separation of managers and web users
+- create user groups
+- creating groups of documents with limited access for both visitors and managers
+- effective work with documents
+- publication and cancellation of the publication of the document, including automation at the specified time
+- support for different types of documents (MIME)
+- creation of additional parameters of various types (text box, checkboxes, drop-down list, etc.)
+- integrated SEO engine (keyword and meta tag management)
+- excellent extensibility (with the help of snippets, plug-ins and modules)
 
-** Стандартные расширения:**
+**Standard extensions:**
 
-**Ditto** - формирует списки материалов с разбиением на страницы. Это может быть лента новостей или блогов, каталог товаров. Позволяет вывести как обычный списочек документов в виде ссылок, так и сортированный по заданному параметру. Позволяет использовать любые дополнительные параметры и вывести имя автора статьи, количество комментариев, стоимость товара и т.д. В данный момент устарел.
+**DocLister** - The ideal solution for the output of news feeds, lists of goods. It is possible to work with arbitrary tables. From the access box, filters, extensions, various types of sorting by standard system fields and TV-parameters.
 
-**DocLister** - современная и мощная замена Ditto. Идеальное решения для вывода новостных лент, списков товаров.  Есть возможность работать с произвольными таблицами.
-Работает быстрее, чем Ditto, потребляет в разы меньше памяти. Из коробки доступы фильтры, расширения, различные типы сортировки по стандартным полям Modx и TV-параметрам.
+**Wayfinder** - Tool for organizing menus. It gives an opportunity to organize both a simple, multi-level and drop-down menu. Easy to change and customizable.
 
-**Wayfinder** - инструмент организации меню. Дает возможность организации как простого, так многоуровневого и выпадающего меню. Легко изменяется и настраивается.
+**eForm** - Manages the work of forms in the CMS. Allows to organize any form and its processing. It can simply send to the mail the information entered or process it to get some result - say, create a new document with the information filled in.
 
-**eForm** - управляет работой форм в CMS. Позволяет организовать любую форму и ее обработку. Может просто отправить на почту введенную информацию или обработать для получения какого-то результата -- допустим, создать новый документ с заполненной информацией.
+**Jot** - mechanism for commenting by users.
 
-**Jot** - механизм комментарования пользователями.
+**Breadcrumbs** - Creation of chain links ("bread crumbs") on the site.
 
-**Breadcrumbs** - создание на сайте цепочных ссылок («хлебные крошки»).
+**AjaxSearch** - search the site using Ajax.
 
-**AjaxSearch** - поиск по сайту с использованием Ajax.
+A large number of ready-made add-ons are available on our website and the official repository.
 
-Есть большое количество готовых дополнений на нашем сайте и официальном репозитории.
+## License ## 
 
-## Лицензия ## 
+Evolution CMS is distributed under the GNU / GPL license, which makes it possible to use this CMS for free without any restrictions and makes it possible to work with open source.
 
-MODx распространяется под лицензией GNU/GPL, что позволяет использовать эту CMS бесплатно без ограничений и дает возможность работать с открытым кодом (opensource).
+## Requirements ##
 
-## Требования ##
-
-PHP 4.3.10 или старше. На PHP 5 также сложностей не замечено. Также в ближайшем будущем разработчики обещают специальные возможности именно для PHP 5.
-MySQL 4.1.x или старше.
-
-### Награды ###
-
-MODx - самая многообещающая CMS 2007 года.
-
-MODx получил 1 место в номинации «самая многообещающая CMS 2007 года».
+PHP 5.6 or later. MySQL 4.1.x or later.
