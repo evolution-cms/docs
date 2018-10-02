@@ -1,1 +1,1 @@
-Различные решения конкретных задач, которые можно использовать на своих сайтах.
+Various solutions to specific tasks that you can use on your sites.
