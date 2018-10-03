@@ -1,6 +1,6 @@
-##Parameters
+## Parameters
 
-###controller
+### controller
 
 Specifies the class to fetch the data. Base classes (located in the folder DocLister/core/controller/):
 
@@ -11,7 +11,7 @@ Specifies the class to fetch the data. Base classes (located in the folder DocLi
 
 Default value - site_content
 
-###idType
+### idType
 
 Type of documents. Possible Values - parents, documents.
 
@@ -21,7 +21,7 @@ To avoid misunderstandings, it is recommended to always explicitly define this p
 
 Default value - parents
 
-###parents
+### parents
 
 Selection of documents based on the list of parental documents. 
 
@@ -29,7 +29,7 @@ Possible values are the id values of the parent documents, separated by a comma.
 
 The default value is the page id on which the snippet is called.
 
-###documents
+### documents
 
 Selection of arbitrary documents.
 
@@ -37,7 +37,7 @@ If the parameter parents__ is used, then the documents listed in this parameter 
 
 Possible values are document id values, separated by a comma.
 
-###ignoreEmpty
+### ignoreEmpty
 
 Allows you to select all the records from the table if the documents parameter is not specified. The idType parameter in this case must be documents.
 
@@ -45,7 +45,7 @@ Possible values - 1 or 0.
 
 Default - 0.
 
-###display
+### display
 
 Maximum number of documents per query.
 
@@ -63,7 +63,7 @@ Possible values are an integer that is greater than or equal to zero.
 
 Default value - 0.
 
-###depth
+### depth
 
 The depth of the query using the parameter parents.
 
@@ -71,7 +71,7 @@ Possible values are an integer that is greater than or equal to zero.
 
 Default value - 0.
 
-###offset
+### offset
 
 Number of documents to skip from the beginning of the list. Overridden when using pagination. If you want to always skip N documents, you must use the start parameter.
 
@@ -79,7 +79,7 @@ Possible values are an integer that is greater than or equal to zero.
 
 Default value - 0.
 
-###start
+### start
 
 Number of documents skipped from the beginning of the query. Folds with an offset value that is automatically set when pagination occurs.
 
@@ -87,7 +87,7 @@ Possible values are an integer that is greater than or equal to zero.
 
 Default value - 0.
 
-###total
+### total
 
 The maximum number of documents displayed on 1 page in the query.
 
@@ -95,13 +95,13 @@ Possible values are an integer that is greater than or equal to zero.
 
 Default value - 0.
 
-###addWhereList
+### addWhereList
 
 Additional conditions for retrieving documents. Any string that meets the requirements of the string to be substituted in the WHERE clause of the SQL query.
 
 Default value - empty.
 
-###showParent
+### showParent
 
 The exclusion of documents from which a query was made using the parameter parents.
 
@@ -113,21 +113,21 @@ Possible values:
 
 Default value - 0.
 
-###selectFields
+### selectFields
 
 The names of the fields to include in the selection.
 
 Default value - empty.
 
-###groupBy
+### groupBy
 
 Group results by any field.
 
 Default value - defined in the controller
 
-##Query parameters for arbitrary tables (onetable controller)
+## Query parameters for arbitrary tables (onetable controller)
 
-###table
+### table
 
 The name of the table for query. If the table PrimaryKey differs from id, then you must additionally specify the name of this field in the idField parameter.
 
@@ -135,7 +135,7 @@ Possible values - any table name without the EVO table prefix.
 
 Default value - site_content
 
-###idField
+### idField
 
 The name of the PrimaryKey field. The documents specified through the documents parameter will be selected by this field.
 
@@ -143,7 +143,7 @@ Possible values - any field name available in the table specified by the table p
 
 Default value - id
 
-###parentField
+### parentField
 
 The name of the field in which the idField values of the parent documents are stored. Used when fetching documents from the parents parameter.
 
@@ -151,15 +151,15 @@ Possible values - any name of the field available in the table specified by the 
 
 Default value - parent.
 
-##Query with TV-parameters
+## Query with TV-parameters
 
-###tvPrefix
+### tvPrefix
 
 Prefix for placeholders created from the names of TV-parameters.
 
 Default value - tv
 
-###tvList
+### tvList
 
 List of TV that should be in the query.
 
@@ -167,16 +167,16 @@ Possible values - names of TV, separated by a comma.
 
 Default value - empty.
 
-###renderTV 
+### renderTV 
 TV-names, the value of which must be prepared for display in accordance with the installed widgets. TV parameters which are not present in the value of the tvList parameter will be ignored.
 
 Possible values - * or a list of TV names, separated by a comma.
 
 Default value - empty.
 
-##Sorting
+## Sorting
 
-###sortType
+### sortType
 
 The value "none" specifies automatic sorting by MySQL rules (usually by primary key).
 
@@ -188,7 +188,7 @@ Possible values:
 
 Default value - none.
 
-###orderBy
+### orderBy
 
 A single sort string (at least a collection of sortBy and sortDir parameters, but has a higher priority).
 
@@ -198,7 +198,7 @@ For sorting in random order, the value of the orderBy parameter will be "RAND()"
 
 Default value - id DESC (or defined in the controller)
 
-###sortBy
+### sortBy
 
 Sorting criterion without sorting direction.
 
@@ -206,7 +206,7 @@ Possible values - any string that meets the rules for constructing the ORDER BY 
 
 Default value - empty. The default value can be hard-coded in the controller.
 
-###order
+### order
 
 Sorting direction.
 
@@ -214,7 +214,7 @@ Possible values are ASC, DESC. The value of this parameter can be overridden by 
 
 Default value - DESC.
 
-###sortDir
+### sortDir
 
 A synonym for the "order" parameter, but it has a higher priority. If "order" and "sortDir" parameters are set, the value of the sortDir parameter will be used.
 
@@ -222,9 +222,9 @@ Possible values - ASC, DESC.
 
 Default value - DESC (or defined in the controller).
 
-##Sorting by TV
+## Sorting by TV
 
-###tvSortType
+### tvSortType
 
 Rules for converting the types of TV when sorting.
 
@@ -237,14 +237,14 @@ Possible values (are separated by commas in the order in which the TV names in t
 * DATETIME - date;
 * TVDATETIME- outputs the string to the date according to the format used by the TV with the type of input "Date" (available only from the controllers based on site_content).
 
-###tvSortWithDefault
+### tvSortWithDefault
 
 Due to the engine features (TV whose values coincide with the default values are not saved in a separate table), sorting records may not be corrected if the Default value is different from the empty page.
 Therefore, it is recommended to specify the TV parameters for which the Default value is forcibly specified.
 
-##Filtering
+## Filtering
 
-###showNoPublish
+### showNoPublish
 
 Output of deleted or unpublished resources (used only in controllers based on site_content)
 
@@ -252,7 +252,7 @@ Possible values - 0/1.
 
 Default value - 0
 
-###filters 
+### filters 
 
 Rules for filtering documents.
 
@@ -260,13 +260,13 @@ Possible values - The string is formed according to the rules described in DocLi
 
 Default value - empty.
 
-####Example string
+#### Example string
 
 ```
 OR(AND(filter:field:operator:value;filter2:field:operator:value);(...))
 ```
 
-###filter_delimiter
+### filter_delimiter
 
 The filter separator for mode containsOne.
 
@@ -274,7 +274,7 @@ Possible values - any string.
 
 ##Sort by tags
 
-###tagsData
+### tagsData
 
 The string that defines the source of the tags.
 
@@ -284,9 +284,9 @@ Default value - empty.
 
 To automatically substitute tags from a GET variable, you must specify the name of this variable by passing a value of type get:tag in this parameter. In this case, the tags should be substituted into $_GET['tag']. In case if static query is necessary, it is possible to replace get on static and after a colon to transfer value of the tag, for example, static:value_tag
 
-##Additional information
+## Additional information
 
-###urlScheme
+### urlScheme
 
 URL genereting scheme
 
@@ -294,7 +294,7 @@ Possible values are the schemes available in Evolution (relative, http, https, f
 
 Default value - empty (the relative)
 
-###dateSource
+### dateSource
 
 The document field in which the date is located.
 
@@ -302,7 +302,7 @@ Possible values - name of the field in the table. If the value was a string othe
 
 Default value - pub_date.
 
-###dateFormat
+### dateFormat
 
 Formatting rules for the PHP function strftime.
 
@@ -310,7 +310,7 @@ The date source is the dateSource parameter. In addition, the date offset on the
 
 Default value - %d.%b.%y %H:%M.
 
-###summary
+### summary
 
 Text processing rules for the formation of a brief description. Loads the summary extender. The controller site_content has an additional rule for the processed text: by default, the content field is sent to the processing. But if the introtext field is not empty, then the text from this field will be passed in addition to the summary. Similarly, the onetable controller itself leads.
 
@@ -322,25 +322,25 @@ action1:parameter1,action2:parameter2A:parameter2B,action3
 
 Default value - empty.
 
-###introField
+### introField
 
 The name of the field for the short text source from the contentField. Used only if the summary extender is loaded.
 
 Default value - empty.
 
-###contentField    
+### contentField    
 
 The name of the field in which the main content of the document is stored. Used only if the summary extender is loaded.
 
 Default value - empty.
 
-###e
+### e
 
 Screening of field values. Field names are available in templates via placeholders with the prefix e: [+e.pagetitle+], [+e.longtitle+].
 
 Possible values - field names, separated by commas.
 
-###jotcount
+### jotcount
 
 Adds JotX comments number to the selection when using the jotcount extender.
 
