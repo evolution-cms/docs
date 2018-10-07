@@ -9,12 +9,12 @@
 
 #### Установка
 
-Скачивать здесь: github.com/Pathologic/EvoHybridAuth
+Скачивать здесь: [github.com/Pathologic/EvoHybridAuth](https://github.com/Pathologic/EvoHybridAuth)
 
-После установки нужно зайти на страницу веб-пользователя в админке, чтобы создалась таблица. Затем переименовать файл config.sample в config.php в папке assets/plugins/hybridauth/config и настроить в нем необходимые соцсети. По настройке придется гуглить, но что-то можно найти здесь: docs.modx.pro/components/hybridauth/providers/ 
-Также должен быть включен плагин userHelper.
+После установки нужно зайти на страницу веб-пользователя в админке, чтобы создалась таблица. Затем переименовать файл `config.sample` в `config.php` в папке `assets/plugins/hybridauth/config` и настроить в нем необходимые соцсети. По настройке придется гуглить, но что-то можно найти здесь: `docs.modx.pro/components/hybridauth/providers/`
+Также должен быть включен плагин `userHelper`.
 
-Классы для основных провайдеров находятся в папке assets/plugins/hybridauth/vendor/hybridauth/hybridauth/hybridauth/Hybrid/Providers/ и не требуют дополнительных действий. В случае дополнительных провайдеров из папки assets/plugins/hybridauth/vendor/hybridauth/hybridauth/additional-providers/ необходимо добавить в конфигурацию провайдера ключ wrapper. На примере Vkontakte:
+Классы для основных провайдеров находятся в папке `assets/plugins/hybridauth/vendor/hybridauth/hybridauth/hybridauth/Hybrid/Providers/` и не требуют дополнительных действий. В случае дополнительных провайдеров из папки `assets/plugins/hybridauth/vendor/hybridauth/hybridauth/additional-providers/` необходимо добавить в конфигурацию провайдера ключ wrapper. На примере Vkontakte:
 
 ```
 "Vkontakte" => array(
