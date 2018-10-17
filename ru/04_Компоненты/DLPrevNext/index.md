@@ -49,4 +49,12 @@ return ($prev == $ID) ? '' : $TPL->parseChunk($prevnextTPL, array(
     'prev' => empty($prev) ? '' : $TPL->parseChunk($prevTPL, $children[$prev]),
     'next' => empty($next) ? '' : $TPL->parseChunk($nextTPL, $children[$next]),
 ));
+?>
+
+```
+## Использование
+В нужном месте шаблона вставьте вызов
+```
+[[DLPrevNext? &idType=`parents` &parents=`[*parent*]` &prevnextTPL=`@CODE: [+prev+] | [+next+]` &prevTPL=`@CODE: <a href="[+url+]">&larr; [+title+]</a>` &nextTPL=`@CODE: <a href="[+url+]">[+title+] &rarr;</a>`]]
+
 ```
