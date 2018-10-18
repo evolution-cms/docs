@@ -52,8 +52,17 @@ return ($prev == $ID) ? '' : $TPL->parseChunk($prevnextTPL, array(
 ?>
 
 ```
-## Использование
-В нужном месте шаблона вставьте вызов
+## Примеры использования
+В нужном месте шаблона вставьте вызов сниппета, параметры вызова аналогичные [параметрам](http://docs.evo.im/04_extras/doclister/parameters.html) **Doclister**.
+**&prevnextTPL** — чанк вывода ссылок на соседедние документы, должен содержать 2 плейсхолдера **[+prev+]** и **[+next+]**
+**&prevTPL** — чанк в котором задается внешний вид плейсхолдера
+
+#### Простейший вызов
+```
+[[DLPrevNext? &idType=`parents` &prevnextTPL=`@CODE: [+prev+] | [+next+]` &prevTPL=`@CODE: <a href="[+url+]">&larr; [+title+]</a>` &nextTPL=`@CODE: <a href="[+url+]">[+title+] &rarr;</a>`]]
+
+```
+#### Вызов с учетом родительской папки (удобно для вывода соседних документов в каталогах)
 ```
 [[DLPrevNext? &idType=`parents` &parents=`[*parent*]` &prevnextTPL=`@CODE: [+prev+] | [+next+]` &prevTPL=`@CODE: <a href="[+url+]">&larr; [+title+]</a>` &nextTPL=`@CODE: <a href="[+url+]">[+title+] &rarr;</a>`]]
 
