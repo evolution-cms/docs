@@ -10,7 +10,7 @@
  ### pid
  аналог parents
 
- Для работы ajax необходима следующая структура обертки
+ Для работы ajax необходима следующая структура обертки:
  ````
  <div id="eFiltr_results_wrapper">
      <div class="eFiltr_loader"></div>
@@ -18,15 +18,17 @@
  </div>
  ````
 
- Если для eFilter задан параметр ajax = 1 то стандартная пагинация переопределяется
- TplNextP ``<a data-prefix="" data-page="[+num+]">&gt;</a>``
- TplPrevP ``<a data-prefix="" data-page="[+num+]">&lt;</a>``
- TplPage ``<a data-prefix="" data-page="[+num+]" class="page">[+num+]</a>``
-
- Можно задать свои шаблоны главное вместо href использовать data-page="[+num+]"
+ Если для eFilter задан параметр ajax = 1 то стандартная пагинация переопределяется.
+ Обертка пагинации должна иметь класс .pagination!
+ ```
+&TplNextP = `@CODE: <a data-prefix="" data-page="[+num+]">&gt;</a>`
+&TplPrevP = `@CODE: <a data-prefix="" data-page="[+num+]">&lt;</a>`
+&TplPage = `@CODE: <a data-prefix="" data-page="[+num+]" class="page">[+num+]</a>`
+&TplWrapPaginate=`@CODE: <div class="paginate">[+wrap+]</div>`
+```
+ Можно задать свои шаблоны, главное вместо href использовать data-page="[+num+]"
  и если задан параметр id для eFilterResult  в data-prefix необходимо записать id + '_'
 
- Обертка пагинации должна иметь класс .pagination
 
  ### Склонение слова Товар к количеству
  [+параметр_id.pluarl+] Склонение слова Товар к количеству
