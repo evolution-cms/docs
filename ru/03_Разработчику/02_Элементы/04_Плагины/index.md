@@ -57,7 +57,7 @@ if($e->name = 'OnManagerNodePrerender'){
 		);
 	}
 }
-$e->output(serialize($ph));
+$modx->event->output(serialize($ph));
 ```
 Зачастую дополнения отдают плагинам переменные для изменения.
 Как правило, эти переменные описаны в документации к дополнению.
