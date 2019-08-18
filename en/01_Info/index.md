@@ -1,24 +1,3 @@
-В этом разделе содежится общая информация о MODx. В основном она будет полезна тем, кто только начинает свое знакомство с этой CMS. Хотя и для специалистов здесь найдется много важной информации.
+This section contains general information about the Evolution CMS. Basically, it will be useful to those who are new to the CMS. Although for professionals it is also a good resource of information.
 
-Если вы хотите разобраться в том, что вам может предложить MODx, то рекомендуем вам читать все в том порядке, который существует. Если возникли какие-то вопросы или материал показался вам недостаточно раскрытым, то лучше всего обратиться в сообщество. На основе ваших вопросов мы постоянно улучшаем наши материалы, а значит их качество зависит от вас.
-
-Характеристика MODx
-
-Разработка на MODx
-
-Что такое шаблон
-
-Что такое чанк
-
-Что такое параметр
-
-Управление сайтом на MODx
-
-Продвижение на MODx
-
-Базовые принципы
-
-Перевод GNU General Public License 3
-
-Глоссарий
-
+If you want to understand what EVO has to offer, we recommend that you read everything in the order of these help pages. If you have any questions or the information seems insufficient to you, then it's best to contact the community. Based on your questions, we constantly improve our material, which means their quality depends on you.

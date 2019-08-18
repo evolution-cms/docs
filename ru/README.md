@@ -1,7 +1,7 @@
-MODX Evolution Docs
+Evolution CMS  Docs
 =========
 
-Документация по MODX Evolution
+Документация по Evolution CMS
 
 Разработка мануала сообща через pull-requests + issues.
 

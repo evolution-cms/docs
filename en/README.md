@@ -1,8 +1,8 @@
-MODX Evolution Docs
+Evolution CMS Docs
 =========
 
-Документация по MODX Evolution
+Evolution CMS documentation
 
-Разработка мануала сообща через pull-requests + issues.
+Development of the manual through pull-requests + issues.
 
-Автоматический билд после вливания в мастер на сайт.
+Automatic build on the site after merge into the master.
