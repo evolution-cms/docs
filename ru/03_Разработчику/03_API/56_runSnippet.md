@@ -1,10 +1,12 @@
 ###Возвращает результат выполнения сниппета с заданными параметрами
 
-string runSnippet(string $snippetName [, array $params]);
+string runSnippet(string $snippetName [, array $params, int $cacheTime]);
 
 **$snippetName** - название сниппета (чувствительно к регистру!)
 
 **$params** - массив со значениями параметров
+
+**$cacheTime** - время кэширования в секундах. **Доступно только в 2.0**
 
 ***
 
