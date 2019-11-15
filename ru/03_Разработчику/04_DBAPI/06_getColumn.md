@@ -16,7 +16,8 @@ mixed getColumn (string $name, $dsq)
 		global $modx;  
 		$output = '';   
 	
-		$result = $modx->db->select( 'id, name', 'colors', 'favorite_color = "blue"' );  		$col = $modx->db->getColumn( 'name', $result );   
+		$result = $modx->db->select( 'id, name', 'colors', 'favorite_color = "blue"' );
+		$col = $modx->db->getColumn( 'name', $result );   
 		
 		for( $i = 0; $i < count( $col ); $i++ ) {  
 			$output .= $col[$i] . "'s favorite color is blue.<br />";  
