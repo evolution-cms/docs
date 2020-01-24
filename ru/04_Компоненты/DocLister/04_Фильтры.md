@@ -41,10 +41,10 @@ OR(AND(filter:field:operator:value;filter2:field:operator:value);(...))
 Содержит строку.
 
 ###like-r
-Заканчивается строкой.
+Начинается строкой.
 
 ###like-l
-Начинается строкой.
+Заканчивается строкой.
 
 ###regexp
 Выборка с использованием регулярных выражений [REGEXP](https://dev.mysql.com/doc/refman/5.5/en/regexp.html).
