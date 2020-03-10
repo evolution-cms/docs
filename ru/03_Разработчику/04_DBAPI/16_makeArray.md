@@ -1,6 +1,6 @@
-###Результат запроса в виде массива
+### Результат запроса в виде массива
 
-mixed makeArray( $rs, $index = false )
+mixed makeArray($rs, $index = false)
 
 **$rs** - результат выполнения запроса
 
@@ -10,19 +10,19 @@ mixed makeArray( $rs, $index = false )
 
 ***
 
-####Пример
+#### Пример
 
-	function show_members() {  
-		global $modx;  
-		$output = '';  
-		$table = $modx->getFullTableName( 'members' );   
-		
-		$result = $modx->db->select( 'id, name, picture', $table, '', 'name ASC', '' );
-		$members = $modx->db->makeArray( $result );   
-
-		foreach( $members as $p_val ) {  
-			foreach( $p_val as $m_key => $m_val ) {  
-				$output .= '<strong>' . $m_key . ':</strong> ' . $m_val . '<br />';  
-			}  
+function show_members(){
+	$modx = evolutionCMS();
+	$output = '';
+	$table = $modx->getFullTableName('members');
+	
+	$result = $modx->db->select('id, name, picture', $table, '', 'name ASC', '');
+	$members = $modx->db->makeArray($result);
+	
+	foreach( $members as $p_val ) {  
+		foreach( $p_val as $m_key => $m_val ) {  
+			$output .= '<strong>' . $m_key . ':</strong> ' . $m_val . '<br />';  
 		}  
-	}
+	}  
+}
