@@ -1,0 +1,201 @@
+Placeholders
+============
+
+> This is a user-contributed Extra. If you find issues or would like more info or help, please contact the author.
+
+Two forms of each placeholder are available. In the first form, `(yams_???)`, the placeholders provide information about the current document. In the second form, `(yams_???:_docId_)`, they provide information about the document with the given document identifier, `_docId_`.
+
+It should be possible to use snippet calls and chunks to specify the document identifier. `(yams_doc:[+id+])` can be used within templates.
+
+It should be possible to use YAMS placeholders almost anywhere, including in chunks, in the names and output of template variables, and in the names, output and parameters of snippet calls.
+
+When the output of a YAMS placeholder is language dependent it needs to know what the current language is. The current language is dependent upon the context. The `(yams-in)` or `(yams-repeat)` blocks allow the inclusion of alternate language content on a page. (See the Constructs tab).
+
+If a placeholder falls within either of these blocks, then the current language is that specified by those blocks. Otherwise the current language is taken to be the language in which the current page is being displayed. There may be occasions when it is necessary to override this behaviour and force the placeholder to treat the current document language as the current language.
+
+This can be achieved by appending a + symbol to the end of the name of the placeholder. For example, the following will generate a `(yams-repeat)` block that will display a list of the names of the available languages, all written in the current document language:
+
+    <ul>[[YAMS? &get=`repeat` &repeattpl=`@CODE:<li>(yams_name_in_(yams_id+))</li>]]</ul>
+
+YAMS placeholders
+-----------------
+
+**Placeholder :** `(yams_id)` / `(yams_id:_docId_)`
+
+**Monolingual Document :**  The default language id
+
+**Multilingual Document :** The current language id
+
+-----
+
+**Placeholder :** `(yams_defaultid)` / `(yams_defaultid:_docId_)`
+
+**Monolingual Document :**  The default language id  
+
+**Multilingual Document :** The default language id  
+
+-----
+
+**Placeholder :** `(yams_tag)` / `(yams_tag:_docId_)`**
+
+**Monolingual Document :**  The primary language tag for the default language
+
+**Multilingual Document :** The primary language tag for the current language
+
+-----
+
+**Placeholder :** `(yams_root)` / `(yams_root:_docId_)`
+
+**Monolingual Document :**  Nothing
+
+**Multilingual Document :** If specified and non-empty, the server root name for the current language, else nothing
+
+-----
+
+**Placeholder :** `(yams_/root)` / `(yams_/root:_docId_)`
+
+**Monolingual Document :**  Nothing
+
+**Multilingual Document :** If specified and non-empty, the server root name for the current language preceded by a /, else nothing
+
+-----
+
+**Placeholder :** `(yams_root/)` / `(yams_root/:_docId_)`
+
+**Monolingual Document :**  Nothing
+
+**Multilingual Document :** If specified and non-empty, the server root name for the current language followed by a /, else nothing
+
+-----
+
+**Placeholder :** `(yams_site)` / `(yams_site:_docId_)`
+
+**Monolingual Document :**  If server name mode is ON, an URL created using the specified monolingual server name. If server name mode is OFF, the same output as \[(site\_url)\].
+
+**Multilingual Document :** The full multilingual site url including server name and server root as required for the current page.
+
+-----
+
+**Placeholder :** `(yams_server)` / `(yams_server:_docId_)`
+
+**Monolingual Document :**  Same as for yams\_site.
+
+**Multilingual Document :** Same as for yams\_site, but with no root name.
+
+-----
+
+**Placeholder :** `(yams_doc)` / `(yams_doc:_docId_)`
+
+**Monolingual Document :**  A complete URL for the document or weblink. There is an option on the "Other Params" tab that will suppress the filename for the site start document.
+
+**Multilingual Document :** A complete URL for the current language version of the document or weblink. There is an option on the 'Other Params' tab that will suppress the filename for the site start document.
+
+-----
+
+**Placeholder :** `(yams_docr)` / `(yams_docr:_docId_)`
+
+**Monolingual Document :**  Same as for yams\_doc, but weblinks are resolved.
+
+**Multilingual Document :** Same as for yams\_doc, but weblinks are resolved.
+
+-----
+
+`(yams_dir)` / `(yams_dir:_docId_)`
+
+**Monolingual Document :**  The language direction ('ltr' or 'rtl') for the default language
+
+**Multilingual Document :** The language direction ('ltr' or 'rtl') for the current language
+
+-----
+
+**Placeholder :** `(yams_align)` / `(yams_align:_docId_)`
+
+**Monolingual Document :**  The text alignment ('left' or 'right') for the default language
+
+**Multilingual Document :** The text alignment ('left' or 'right') for the current language
+
+-----
+
+**Placeholder :** `(yams_mname)` / `(yams_mname:_docId_)`
+
+**Monolingual Document :**  The Evo language name for the default language
+
+**Multilingual Document :** The Evo language name for the current language
+
+-----
+
+**Placeholder :** `(yams_confirm)` / `(yams_confirm:_docId_)`
+
+**Monolingual Document :**  The name of the Confirm Language param. (See the Other Params tab.)
+
+**Multilingual Document :** The name of the Confirm Language param. (See the Other Params tab.)
+
+-----
+
+**Placeholder :** `(yams_change)` / `(yams_change:_docId_)`
+
+**Monolingual Document :**  The name of the Change Language param. (See the Other Params tab.)
+
+**Multilingual Document :** The name of the Change Language param. (See the Other Params tab.)
+
+-----
+
+**Placeholder :** `(yams_name)` / `(yams_name:_docId_)`
+
+**Monolingual Document :**  The name of the default language in the default language
+
+**Multilingual Document :** The name of the current language in the current language
+
+-----
+
+**Placeholder :** `(yams_name_in__langId_)` / `(yams_name_in__langId_:_docId_)`
+
+**Monolingual Document :**  The name of the default language, written in the language specified by the `_langId_` language group id.
+
+**Multilingual Document :** The name of the current language, written in the language specified by the `_langId_` language group id.
+
+-----
+
+**Placeholder :** `(yams_choose)` / `(yams_choose:_docId_)`
+
+**Monolingual Document :**  The Select Language Text, written in the default language. (See the Language Settings tab.)
+
+**Multilingual Document :** The Select Language Text, written in the current language. (See the Language Settings tab.)
+
+-----
+
+**Placeholder :** `((yams_data:_docId_:_fieldname_))` / `((yams_data:_docId_:_fieldname_:_phx_))`
+
+**Monolingual Document :**  This special inline placeholder is different from all the others. It is used by YAMS for efficiently grabbing template variables from documents. Here, `_docId_` is the id of the document to grab the template variable from and `_fieldname_` is the name of the template variable from which to get the data. _In future, this syntax will allow phx to be used, but this is not currently supported._
+
+YAMS will search out all these placeholders in the document, work out what information needs to be grabbed from the database and grab in large chunks so as to minimise the number of database queries required.
+
+The ``[[YAMS? &get=`data` `` snippet call (same as the legacy ``[[YAMS? &get=`content` `` snippet call) which is used in the Wayfinder templates and internally by the YAMS Ditto extension will now output such placeholders meaning improved performance for large Ditto and Wayfinder calls.
+
+_As of YAMS 1.2 this will work with document variables as well as template variables._
+
+**Multilingual Document :** Same as for monolingual documents
+
+-----
+
+**Placeholder :** `(yams_multi)` / `(yams_multi:_docId_)`
+
+**Monolingual Document :**  Outputs `0`. _This parameter is due to appear in YAMS 1.2_, and can be used in combination with PHx, for example, to exclude or include content based on type.
+
+**Multilingual Document :** Outputs `1`. _This parameter is due to appear in YAMS 1.2_, and can be used in combination with PHx, for example, to exclude or include content based on type.
+
+-----
+
+**Placeholder :** `(yams_mono)` / `(yams_mono:_docId_)`
+
+**Monolingual Document :**  Outputs `1`. _This parameter is due to appear in YAMS 1.2_, and can be used in combination with PHx, for example, to exclude or include content based on type.
+
+**Multilingual Document :** Outputs `0`. _This parameter is due to appear in YAMS 1.2_, and can be used in combination with PHx, for example, to exclude or include content based on type.
+
+-----
+
+**Placeholder :** `(yams_type)` / `(yams_type:_docId_)`
+
+**Monolingual Document :**  Outputs `mono`. _This parameter is due to appear in YAMS 1.2_, and can be used in combination with PHx, for example, to exclude or include content based on type.
+
+**Multilingual Document :** Outputs `multi`. _This parameter is due to appear in YAMS 1.2_, and can be used in combination with PHx, for example, to exclude or include content based on type.

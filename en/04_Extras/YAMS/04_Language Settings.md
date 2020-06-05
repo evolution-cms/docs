@@ -1,0 +1,144 @@
+Language Settings
+=================
+
+> This is a user-contributed Extra. If you find issues or would like more info or help, please contact the author.
+
+The following is a list of the parameters that can be configured for each language. These parameters are used to define the format of the URLs used for each language, to control access to the each language depending on user roles, and to provide language specific information that can be accessed within content using [YAMS Placeholders](extras/yams/yams-placeholders).
+
+### 1. Monolingual Settings
+
+**Name :**	Server Name
+
+**Description :** The server name to use for non-multilingual pages. Leave the field blank to accept the default server name, in which case the current server name will be shown in brackets.
+
+**Corresponding Placeholders :**	`(yams_server)`
+
+**Example :**	www.example.com
+
+-----
+
+**Name :**	Site URL
+
+**Description :** The site URL for monolingual pages. This is output for your information and cannot be modified directly. It can by the same as one or more of the multilingual site URLs
+
+**Corresponding Placeholders :**	`(yams_site)`
+
+**Example :**	http://www.example.com/
+
+-----
+
+### 2. Multilingual Settings
+
+
+**Name :**  Lang ID
+
+**Description :** Used by YAMS to identify the language group. Alphanumeric characters, no spaces. The language code is typically used.
+
+**Corresponding Placeholders :**  `(yams_id)`
+
+**Example :** en
+
+-----
+
+**Name :**  Tags
+
+**Description :** A comma separated list of language tags, in priority order, to be associated with this language group. eg: en-us,en-gb
+
+**Corresponding Placeholders :**  `(yams_tag)`
+
+**Example :** en
+
+-----
+
+**Name :**  Server Name
+
+**Description :** The server/host name associated with the language group. Leave this field blank to accept the default server name, in which case the current server name will be shown in brackets.
+
+**Corresponding Placeholders :**  `(yams_server)`
+
+**Example :** en.example.com
+
+-----
+
+**Name :**  Root Name
+
+**Description :** A root folder name to be used with the language group. Can be left blank. Leave them all blank if language groups do not need to be distinguished by root folder name.
+
+**Corresponding Placeholders :**  `(yams_root)  
+(yams_/root)  
+(yams_root/)`
+
+**Example :** en
+
+-----
+
+**Name :**  Site URL
+
+**Description :** The site URL for the language group. This is output for your information and cannot be modified directly. It is formed from the server name and root name. Each language must have a unique site URL.
+
+**Corresponding Placeholders :**  `(yams_site)`
+
+**Example :** http://en.mysite.com/en/
+
+-----
+
+**Name :**  Language Direction
+
+**Description :** The language direction.
+
+**Corresponding Placeholders :**  `(yams_dir)  
+(yams_align)`
+
+**Example :** `ltr` or `rtl`
+
+-----
+
+**Name :**  Roles
+
+**Description :** A comma separated list of ids of manager roles that have permission to edit the language via the document interface. If a role id is prefixed by an exclamation mark (!) then all roles except the specified role have access. If no roles are specified then all roles have access. The YAMS ManagerManager rules are required for this to function.
+
+**Corresponding Placeholders :**  None
+
+**Example :** 1,2
+
+-----
+
+**Name :**  Evo Language Name
+
+**Description :** The corresponding Evo manager language. For use with snippets like ditto and eForm which accept a language parameter.
+
+**Corresponding Placeholders :**  `(yams_mname)`
+
+**Example :** english
+
+-----
+
+**Name :**  Select Language Text
+
+**Description :** Text, written in the current language, to be used when presenting the user with a choice of languages.
+
+**Corresponding Placeholders :**  `(yams_choose)`
+
+**Example :** Choisir une langue
+
+-----
+
+**Name :**  Name for `_langId_`
+
+**Description :** The name to use for the language group `_langId_` written in each language.
+
+**Corresponding Placeholders :**  `(yams_name)  
+(yams_name_in__langId_)`
+
+**Example :** anglais
+
+-----
+
+**Name :**  Name for new
+
+**Description :** Used when adding a new language. The name to use for the new language group in its own language
+
+**Corresponding Placeholders :**  `(yams_name)  
+(yams_name_in__langId_)`
+
+**Example :** Deutsch

@@ -1,0 +1,145 @@
+Installation
+============
+
+This is a user-contributed Extra. If you find issues or would like more info or help, please contact the author.
+
+Pre-requisites
+--------------
+
+YAMS was originally developed for Evo v0.9.6.3+ and with PHP 5.2.6-3+. It will not work on servers running PHP 4.
+
+Current version v1.3.0 has been released for compatibility with Evolution CMS v1.4+, v2+ and PHP 7+
+
+YAMS uses ManagerManager to hide redundant document variables and to obtain a tabbed layout in the document view with one tab per language.
+
+Upgrade / Update Instructions
+-----------------------------
+
+To upgrade / update from a previous version do the following:
+
+To upgrade/update from a previous version do the following:
+
+1. Rename your assets/modules/yams directory, to something else. For example
+   assets/modules/yams_old or assets/modules/yams_v1.1.x
+
+2. Copy the new yams directory to assets/modules/yams
+
+3. Copy your yams.config.inc.php file from your old yams directory into your
+   new yams directory.
+
+4. Make sure that your new yams directory and the yams.config.inc.php file (if
+   it exists) are writeable by your server user/group.
+
+5. Make sure that your YAMS plugin is set-up to be active on all the events
+   described in the installation instructions below.
+
+   Caution :
+		- Unchek the event OnBeforeDocFormSave
+		- Check the event OnDocFormSave
+
+6. Check that YAMS always appears first in your plugin execution order for
+   each event that it is active. In particular, if you have phx installed then
+   YAMS should appear before it in the OnParseDocument execution order.
+
+7. Check that everything is working and that your settings are correctly
+   displayed in the YAMS module. If so, you may remove your old yams directory.
+   If there are any problems, then you can simply roll back be renaming your
+   directories to reinstate your previous yams directory.
+
+
+Installation Instructions
+-------------------------
+
+#### Installation via Extras
+
+You can install YAMS via Extras. If you do so please assure, that YAMS is at the first
+place in the execution order of all plugin-events which it is associated to.
+
+#### Manual Installation
+
+1. Copy the yams directory to assets/modules/yams
+
+2. Make sure that the assets/modules/yams directory is writeable by the
+user/group that your server runs under. YAMS maintains a config file called
+config.inc.php in the directory that is automatically updated via the module
+interface.
+
+3. Within MODx under Elements > Manage Elements > Plugins create a new plugin:
+
+**Plugin name :** YAMS
+**Description :** Yet Another Multilingual Solution Plugin
+**Plugin code :**
+
+`require( MODX_BASE_PATH . 'assets/modules/yams/yams.plugin.inc.php');`
+
+**System Events :**
+  - OnLoadWebDocument
+  - OnParseDocument
+  - OnWebPageInit
+  - OnWebPagePrerender
+  - OnLoadWebPageCache
+  - OnPageNotFound
+  - OnDocFormSave
+  - OnMakeDocUrl
+
+Note that YAMS should be moved to first place in the execution order for all events to which it is associated.
+
+4. Within MODx under Elements > Manage Elements > Snippets create a new snippet:
+
+**Snippet name :**  YAMS
+
+**Description :**  Gets multi-language content.
+
+**Snippet code :** (The following line needs to be placed between the opening and closing php markers)
+
+`require( MODX_BASE_PATH . 'assets/modules/yams/yams.snippet.inc.php' );`
+
+5. Within MODx under Modules>Manage Modules create a new module:
+
+**Module name :** YAMS
+**Description :** Yet Another Multilingual Solution
+**Module code :**
+
+`require_once( MODX_BASE_PATH . 'assets/modules/yams/yams.module.inc.php' );`
+
+6. Reload the page to update the manager view. If you want to use ManagerManager to obtain a tabbed document interface then follow the instructions below (point 5) to set it up.
+
+7. Browse to
+   http://docs.evo.im/en/04_extras/yams.html
+   for help setting up your multilingual site.
+
+
+ManagerManager Setup
+--------------------
+
+To set up ManagerManager so that it provides a tabbed document interface, please carry out the following:
+
+1.  Check that the ManagerManager plugin is installed under Elements => Manage Elements => Plugins.
+
+2.  Modify the ManagerManager plugin configuration so that it knows to find custom ManagerManager rules in a chunk called "mm\_rules". In newer versions this can be set using the configuration tab. In older versions this is done by including the line
+
+    `$config_chunk` `=` `'mm_rules'``;`
+
+    in the plugin code.
+
+3.  Under Elements => Manage Elements => Chunks, create a chunk called "mm\_rules" and add the following line:
+
+    `require($modx->config['base_path'] . 'assets/modules/yams/yams.mm_rules.inc.php');`
+
+If you are already using custom ManagerManager rules, then it is advisable to place the YAMS require line at the end of the rules.
+
+
+PHx Setup
+---------
+
+If you are using the PHx snippet, please take note of the following:
+
+For some reason, a file specified using "include\_once" is re-included and this causes the "PHxParser" class to be redefined, which generates a PHP parse error. This can be avoided by modifying the PHx snippet to wrap the include in some code that will only include the file if the class has not yet been defined:
+
+
+`if( !class_exists('PHxParser') )
+{
+  include_once $modx->config['rb_base_dir'] ."plugins/phx/phx.parser.class.inc.php";
+}`
+
+Also, please remember that the Plugin Execution Order must be edited to place YAMS in first place - that is before PHx - on all associated events.
