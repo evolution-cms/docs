@@ -1,0 +1,136 @@
+Technical Details
+=================
+
+> This is a user-contributed Extra. If you find issues or would like more info or help, please contact the author.
+
+> **Warning**: This is an unfinished first draft…
+
+*   [YAMS Constructs](extras/yams/yams-technical-details#YAMSConstructs)
+*   [YAMS Parser](extras/yams/yams-technical-details#YAMSParser)
+    *   [Pre-Parse](extras/yams/yams-technical-details#PreParse)
+    *   Post-Parse
+
+YAMS works by embedding the various language versions of each bit of multilingual content in the document using various YAMS Constructs:
+
+*   The YAMS snippet call generates such constructs.
+*   Standard document variables are replaced by constructs containing the multilingual tv language variants.
+*   Most \[YAMS placeholders\] are expanded out into YAMS constructs.
+
+Unless something goes wrong (like PHx truncating some content which breaks an embedded construct for example), these constructs are completely hidden to the user.
+
+Once all multilingual content has been expanded out into constructs, the end result is a single document containing all language information in a complete nested mess. It is the job of the YAMS parser to evaluate and reorder this nested mess into one single construct, containing one version of the document for each language.
+
+It will do as much of this reorganisation as possible before the document is cached, so as to minimise the performance hit from this. Up until the point that the caching occurs all language variants are retained. After that all language variants apart from the requested language are thrown away.
+
+If the document contains uncacheable snippet calls containing YAMS constructs then this can sometimes provoke some additional processing or reorganisation of the document before it is sent out.
+
+For cacheable documents containing only cacheable snippet calls or uncacheable snippet calls that don't contain multilingual content then there is virtually no performance hit due to YAMS processing after first page access.
+
+YAMS Constructs
+---------------
+
+These constructs are used internally by YAMS, which also generates and manages the `_yamsId_` parameter to avoid clashes. The constructs are provided here for reference only. Under normal circumstances these constructs do not need to be used. Instead a YAMS snippet call should be used, which will automatically generate the correct constructs.
+
+**Name :**  YAMS In Language Block
+
+**YAMS Constructs Construct :**
+
+    (yams-in:_yamsId_:_langId_)_…content…_(/yams-in:_yamsId_)
+
+**Description :** Forces the content of the `yams-in` block to be displayed as if the current language is that specified by the language group identifier `_langId_`.
+
+Here `_yamsId_` is a positive integer identifier that should be unique to this block. This allows blocks to be nested. _langId_ is a language group id.
+
+-----
+
+**Name :**  YAMS Select Language Block
+
+**YAMS Constructs Construct :**
+
+    (yams-select:_yamsId_)(lang:_yamsId_:_langId1_)_…content1…_(lang:_yamsId_:_langId2_)_…content2…_(/yams-select:_yamsId_)
+
+**Description :** This includes multiple language versions of content in the page. Only the current language version is displayed (except if it is within a `yams-repeat` block - see below.)
+
+The `pagetitle`, `longtitle`, `description`, `introtext`, `menutitle` and `content` document variables are automatically expanded into this form for the currently defined active languages.
+
+For any other content (chunks, tvs, etc.) that need to be expanded into multi-language form a YAMS snippet call can be used to generate the relevant construct.
+
+When a Yams Select block is being parsed to select the correct language content the current language is taken to be context dependent. Within Yams In blocks (and branches of Yams Repeat blocks which ultimately resolve to Yams In blocks) the current language switches to the specified language.
+
+Here `_yamsId_` is a positive integer identifier that should be unique to this block. This allows blocks to be nested. `_langId_` is a language group id.
+
+-----
+
+**Name :** YAMS Select Plus Language Block
+
+**YAMS Constructs Construct :**
+
+    (yams-select+:_yamsId_)(lang:_yamsId_:_langId1_)_…content1…_(lang:_yamsId_:_langId2_)_…content2…_(/yams-select+:_yamsId_)
+
+**Description :** This is the same as the Yams Select block, except that the current language is not context sensitive. So, the current language will always be the language in which the page is being viewed.
+
+-----
+
+**Name :** YAMS Repeat Language Block 1
+
+**YAMS Constructs Construct :**
+
+    (yams-repeat:_yamsId_)_…content…_(current:_yamsId_)_…current language content…_(/yams-repeat:_yamsId_)
+
+**Description :** The `yams-repeat` block will repeat any content once for each active language and is similar to specifying one `yams-in` block for each active language.
+
+The current sub-block is optional and is to allow an alternative template to be used with the current language content.
+
+Here `_yamsId_` is a positive integer identifier that should be unique to this block.
+
+-----
+
+**Name :** YAMS Repeat Language Block 2
+
+**YAMS Constructs Construct :**
+
+    (yams-repeat:_yamsId_:_langId1_,_langId2_,_…_)_…content…_(/yams-repeat:_yamsId_)
+
+**Description :** This variation on the YAMS Multi-Language Block will only repeat for the specified language groups. This functionality is not currently accessible via a YAMS Snippet call.
+
+YAMS Parser
+-----------
+
+The YAMS parser has two phases. It does pre-parsing, which does the expansion of constructs, evaluation of placeholders and reorganisation of the document. It does a final post-parse each time the document is requested just before it is send out. Post-parsing selects a single language variant.
+
+### Pre-Parse
+
+The pre-parse step does the following:
+
+1.  If the document hasn't changed since the last pre-parse, exit.
+
+2.  Evaluate all chunks. The normal YAMS chunk parser removes chunks from the document if it doesn't recognise them. However, at this stage the chunk names could contain YAMS placholders, like {{`myname_(yams_id)`}}.
+
+    Since we don't want Evo to remove this, a custom chunk parser is used that leaves these intact (`YAMS::MergeChunkContent`). If the document has changed as a result of this processing the pre-parse restarts.
+
+3.  For multilingual documents, the standard document variables are expanded out into constructs containing `(yams_data)` placeholders that will pull in the multilingual template variable content later in the parse process.
+
+4.  The document variables and template variables belonging to the current document are evaluated. Once again, a custom parser is used (`YAMS::MergeDocumentContent`) rather than the standard Evo method.
+
+    The custom method doesn't delete unrecognised document variables or template variables so that names that include YAMS placeholders persist until later in the parse process. If the document has changed as a result of this processing the pre-parse restarts.
+
+5.  Next, the document is searched for all `(yams_data)` placeholders in the document (`YAMS::MergeOtherDocumentContent`). These placeholders request data from template variables on different documents.
+
+    Having worked out what data is needed, YAMS will grab the data from the database, `YAMS_DOC_LIMIT` items at a time. `YAMS_DOC_LIMIT` is defined as 50 by default. The `(yams_data)` placeholders are then replaced by their content. If the document has changed as a result of this processing the pre-parse restarts.
+
+6.  All Evo URL placeholders enclosed in quotes, like `"[~…~]"`, `"[(site_url)][~…~]"` or `"[(base_url)][~…~]"` are now replaced by YAMS multilingual URL placeholders `(yams_doc)` or `(yams_docr)`, depending on how YAMS has been configured.
+
+7.  All YAMS settings placeholders are evaluated using the standard Evo function (`modx::mergeSettingsContent`).
+
+8.  All YAMS placeholders are evaluated for each language and expanded out using YAMS constructs.
+
+9.  Pre-parse optimisation takes place. This untangles the nested web of YAMS constructs and replaces them by a single YAMS construct with one branch per language, taking into account the fact that some content will be repeated in multiple languages, that some content may appear in a different language to the current document, and that there may still be snippets in the document which will output more multilingual constructs later. If the document has changed as a result of this processing the pre-parse restarts.
+
+10.  The evaluation and expansion of YAMS placeholders into constructs and reorganisation of those constructs may have made more chunks and template variables which previously had YAMS placheholders in their name possible to evaluate now. Steps 2, 4 and 7 are repeated.
+
+11.  Snippets are evaluated using the standard Evo function (`modx::evalSnippets`). If the document has changed as a result of this processing the pre-parse restarts.
+
+
+Once the parser has arrived here it hands control back to the standard Evo parser, which will first call the other plugins. If PHx has been installed and has been placed after YAMS in the plugin execution order, it will do its evaluation next… but by now all YAMS constructs and placeholders have been evaluated and tidied up, so it should be pretty safe to do so. Evo will then do its standard parsing … but there is very little left for it to do.
+
+Most chunks, document variables, template variables and snippets have already been evaluated during the YAMS preparse step.
