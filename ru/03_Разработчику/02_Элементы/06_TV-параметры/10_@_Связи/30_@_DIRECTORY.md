@@ -2,4 +2,4 @@
 ```
 @DIRECTORY path_to_folder
 ```
-Где path_to_folder - путь к папке. Возвращает список файлов.
+Де path_to_folder - дорога до теки. Повертає перелік файлів.
