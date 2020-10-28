@@ -3,14 +3,16 @@
 #### Доступные функции и примеры использования ####
 1. [ get ](#get) - получение пользователя
 2. [ create ](#create) - регистрация пользователя
-2. [ edit ](#edit) - редактирование пользователя
-2. [ delete ](#delete) - удаление пользователя
-2. [ login ](#login) - авторизация пользователя
-2. [ logout ](#logout) - Выход пользователя из системы
-2. [ setRole ](#setRole) - назначение польхователю его роли
-2. [ setGroups ](#setGroups) - назначению пользователю его группы пользователей
-2. [ saveSettings ](#saveSettings) - сохранение настройки пользователя
-2. [ repairPassword ](#repair) - получение хэша для сброса пароля
+3. [ edit ](#edit) - редактирование пользователя
+4. [ delete ](#delete) - удаление пользователя
+5. [ login ](#login) - авторизация пользователя
+6. [ logout ](#logout) - Выход пользователя из системы
+7. [ setRole ](#setRole) - назначение польхователю его роли
+8. [ setGroups ](#setGroups) - назначению пользователю его группы пользователей
+9. [ saveSettings ](#saveSettings) - сохранение настройки пользователя
+10. [ repairPassword ](#repair) - получение хэша для сброса пароля
+11. [ changePassword ](#changePassword) - смена пароля при наличии старого пароля
+12. [ hashChangePassword](#hashChangePassword) - смена пароля по хэшу полученному из метода [ repairPassword ](#repair)
 
 
 <a name="get"></a>
@@ -305,8 +307,6 @@ try {
 }
 ```
 
-
-
 ___
 <a name="repair"></a>
 **repairPassword** - получение хэша для сброса пароля
@@ -333,6 +333,74 @@ User \UserManager::repairPassword(array $userData, bool $events = true, bool $ca
 $data = ['id'=> 1];
 try {
     $user = \UserManager::repairPassword($data);
+} catch (\EvolutionCMS\Exceptions\ServiceValidationException $exception) {
+    $validateErrors = $exception->getValidationErrors(); //Получаем все ошибки валидации
+    print_r($validateErrors); //Выводим все ошибки валидации
+} catch (\EvolutionCMS\Exceptions\ServiceActionException $exception) {
+    print_r($exception->getMessage()); //Выводим ошибку процесса обработки данных
+}
+```
+
+___
+<a name="changePassword"></a>
+**changePassword** - смена пароля при наличии старого пароля
+```php
+User \UserManager::changePassword(array $userData, bool $events = true, bool $cache = true)
+```
+
+Функция возвращает hash для сброса пароля
+
+Параметры, которые принимает функция:
+- $userData - массив содержащий поля id, old_password, password, password_confirmation. Все поля обязательны к заполнению.
+- $events - указатель вызываем ли мы события связанные со сменой пароля пользователя
+- $cache - указатель сбрасываем ли кэш после смены пароля пользователя
+
+**ВНИМАНИЕ**
+Функция может бросить два различных исключения 
+ 
+- **\EvolutionCMS\Exceptions\ServiceValidationException** исключение срабатывает в случае если мы передали плохие данные в $userData.
+- **\EvolutionCMS\Exceptions\ServiceActionException** исключение срабатывает в ситуации когда возникла ошибка в процессе обработки данных.
+
+Пример функции сброса пароля
+
+```php
+$data = ['id'=>1, 'old_password'=>'111111', 'password'=>'123456', 'password_confirmation'=>'123456'];
+try {
+    $user = \UserManager::changePassword($data);
+} catch (\EvolutionCMS\Exceptions\ServiceValidationException $exception) {
+    $validateErrors = $exception->getValidationErrors(); //Получаем все ошибки валидации
+    print_r($validateErrors); //Выводим все ошибки валидации
+} catch (\EvolutionCMS\Exceptions\ServiceActionException $exception) {
+    print_r($exception->getMessage()); //Выводим ошибку процесса обработки данных
+}
+```
+
+___
+<a name="hashChangePassword"></a>
+**hashChangePassword** - смена пароля по хэшу полученному из метода [ repairPassword ](#repair)
+```php
+User \UserManager::hashChangePassword(array $userData, bool $events = true, bool $cache = true)
+```
+
+Функция возвращает hash для сброса пароля
+
+Параметры, которые принимает функция:
+- $userData - массив содержащий поля hash, password, password_confirmation. Все поля обязательны к заполнению.
+- $events - указатель вызываем ли мы события связанные со сменой пароля пользователя
+- $cache - указатель сбрасываем ли кэш после смены пароля пользователя
+
+**ВНИМАНИЕ**
+Функция может бросить два различных исключения 
+ 
+- **\EvolutionCMS\Exceptions\ServiceValidationException** исключение срабатывает в случае если мы передали плохие данные в $userData.
+- **\EvolutionCMS\Exceptions\ServiceActionException** исключение срабатывает в ситуации когда возникла ошибка в процессе обработки данных.
+
+Пример функции сброса пароля
+
+```php
+$data = ['hash'=>'111111', 'password'=>'123456', 'password_confirmation'=>'123456'];
+try {
+    $user = \UserManager::hashChangePassword($data);
 } catch (\EvolutionCMS\Exceptions\ServiceValidationException $exception) {
     $validateErrors = $exception->getValidationErrors(); //Получаем все ошибки валидации
     print_r($validateErrors); //Выводим все ошибки валидации
