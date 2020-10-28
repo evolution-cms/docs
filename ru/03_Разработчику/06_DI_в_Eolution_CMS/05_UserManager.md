@@ -1,7 +1,19 @@
 ### UserManager ###
 
 #### Доступные функции и примеры использования ####
+1. [ get ](#get) - получение пользователя
+2. [ create ](#create) - регистрация пользователя
+2. [ edit ](#edit) - редактирование пользователя
+2. [ delete ](#delete) - удаление пользователя
+2. [ login ](#login) - авторизация пользователя
+2. [ logout ](#logout) - Выход пользователя из системы
+2. [ setRole ](#setRole) - назначение польхователю его роли
+2. [ setGroups ](#setGroups) - назначению пользователю его группы пользователей
+2. [ saveSettings ](#saveSettings) - сохранение настройки пользователя
+2. [ repairPassword ](#repair) - получение хэша для сброса пароля
 
+
+<a name="get"></a>
 **get** - получение пользователя
 ```php
 User \UserManager::get(integer $userId)
@@ -18,7 +30,7 @@ print_r($user->attributes->toArray());
 ```
 
 ___
-
+<a name="create"></a>
 **create** - регистрация пользователя
 ```php
 User \UserManager::create(array $userData, bool $events = true, bool $cache = true)
@@ -54,7 +66,7 @@ try {
 ```
 
 ___
-
+<a name="edit"></a>
 **edit** - редактирование пользователя
 ```php
 User \UserManager::edit(array $userData, bool $events = true, bool $cache = true)
@@ -90,7 +102,7 @@ try {
 }
 ```
 ___
-
+<a name="delete"></a>
 **delete** - удаление пользователя
 ```php
 User \UserManager::delete(array $userData, bool $events = true, bool $cache = true)
@@ -124,7 +136,7 @@ try {
 ```
 
 ___
-
+<a name="login"></a>
 **login** - авторизация пользователя
 ```php
 User \UserManager::login(array $userData, bool $events = true, bool $cache = true)
@@ -159,7 +171,7 @@ try {
 ```
 
 ___
-
+<a name="logout"></a>
 **logout** - Выход пользователя из системы
 ```php
 User \UserManager::logout(array $userData, bool $events = true, bool $cache = true)
@@ -192,7 +204,7 @@ try {
 ```
 
 ___
-
+<a name="setRole"></a>
 **setRole** - назначению пользователю его роли
 ```php
 User \UserManager::setRole(array $userData, bool $events = true, bool $cache = true)
@@ -226,7 +238,7 @@ try {
 ```
 
 ___
-
+<a name="setGroups"></a>
 **setGroups** - назначению пользователю его группы пользователей
 ```php
 User \UserManager::setGroups(array $userData, bool $events = true, bool $cache = true)
@@ -260,7 +272,7 @@ try {
 ```
 
 ___
-
+<a name="saveSettings"></a>
 **saveSettings** - сохранение настройки пользователя
 ```php
 User \UserManager::saveSettings(array $userData, bool $events = true, bool $cache = true)
@@ -296,8 +308,8 @@ try {
 
 
 ___
-
-**repairPassword** - сохранение настройки пользователя
+<a name="repair"></a>
+**repairPassword** - получение хэша для сброса пароля
 ```php
 User \UserManager::repairPassword(array $userData, bool $events = true, bool $cache = true)
 ```
