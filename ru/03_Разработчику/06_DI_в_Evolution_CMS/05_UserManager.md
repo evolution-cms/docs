@@ -163,7 +163,7 @@ username и password, необходимы для авторизации пол�
 ```php
 $data = ['username'=> 'manager', 'password' => '123456'];
 try {
-    $user = \UserManager::delete($data);
+    $user = \UserManager::login($data);
 } catch (\EvolutionCMS\Exceptions\ServiceValidationException $exception) {
     $validateErrors = $exception->getValidationErrors(); //Получаем все ошибки валидации
     print_r($validateErrors); //Выводим все ошибки валидации
