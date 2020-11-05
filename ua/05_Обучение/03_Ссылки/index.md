@@ -1,8 +1,8 @@
-Полезные ссылки
+Корисні посилання
 -------------------------
 
-[MODX.im](http://modx.im)  - Сообщество по MODX
+[MODX.im](http://modx.im)  - Спільнота по MODX
 
-[code.divandesign.ru](http://code.divandesign.ru) - Репозиторий студии «Диван.Дизайн».
+[code.divandesign.ru](http://code.divandesign.ru) - Репозиторій студії "Диван.Дизайн".
 
 [Telegram](https://t.me/evolutioncms) - канал Evolution CMS в Телеграм
