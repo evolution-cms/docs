@@ -62,7 +62,7 @@
 * [Урок 8-Створення шаблонів і виведення вмісту сторінок](http://efimov.ws/main/develop/modx/instrukcziya-MODx-urok-8.html "Створення шаблонів і виведення вмісту сторінок")
 * [Урок 9-Робота зі спеціальними тегами MODx](http://efimov.ws/main/develop/modx/tags-MODx.html " Робота зі спеціальними тегами MODx")
 * [Урок 10-Робота з візуальним редактором в MODx](http://efimov.ws/main/develop/modx/tinymce-set-modx.html "Робота з візуальним редактором в MODx")
-* [Урок 11-Реалізація ланцюжка навігації "Хлібні крихти"](http://efimov.ws/main/develop/modx/breadcrumbs-MODx.html "Реалізація ланцюжка навігації "Хлібні крихти". Сніпет Breadcrumbs")
+* [Урок 11-Реалізація ланцюжка навігації "Хлібні крихти"](http://efimov.ws/main/develop/modx/breadcrumbs-MODx.html "Реалізація ланцюжка навігації \"Хлібні крихти\". Сніпет Breadcrumbs")
 * [Урок 12-Створення стрічки новин. Сніпет Ditto](http://efimov.ws/main/develop/modx/ditto-modx-newsline.html "Створення стрічки новин. Сніпет Ditto")
 * [Урок 13-Посторінкове розбиття новинної стрічки](http://efimov.ws/main/develop/modx/MODx-pagination-Ditto.html "Урок 13-Посторінкове розбиття новинної стрічки")
 * [Урок 14-TV параметри MODx. Додавання зображень ресурсам](http://efimov.ws/main/develop/modx/MODx-TV-parametrs.html " Урок 14-TV параметри MODx. Додавання зображень ресурсам")
