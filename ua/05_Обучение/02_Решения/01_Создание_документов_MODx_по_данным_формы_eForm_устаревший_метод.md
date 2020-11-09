@@ -1,100 +1,100 @@
-**Это устаревший метод. Рекомендуем для создания документов использовать сниппет FormLister, либо заменить в сниппете вызовы функций на методы библиотеки MODx Api. **
+**Це застарілий метод. Рекомендуємо для створення документів використовувати сніппет FormLister, або замінити в сніпеті виклики функцій на методи бібліотеки MODx Api. **
 
-Однако, как пример работы со сниппетами и событиями eForm, это решение очень хорошо подходит.
+Однак, як приклад роботи з сниппетами і подіями eForm, це рішення дуже добре підходить.
 
-Для операций с документами будем использовать специальную библиотеку docmanager. Устанавливаем ее в папку `assets/libs/docmanager`.
+Для операцій з документами будемо використовувати спеціальну бібліотеку docmanager. Встановлюємо її в папку `assets/libs/docmanager`.
 
-### Создаем форму
+### Створюємо форму
 
-Форма создается с помощью стандартного сниппета eForm. В него встроены все необходимые проверки полей, а также возможность отправить нам письмо о добавлении нового материала.
+Форма створюється за допомогою стандартного сніппета eForm. У нього вбудовані всі необхідні перевірки полів, а також можливість відправити нам лист про додавання нового матеріалу.
 
-Для примера сделаем такую форму в чанке Anketa:
+Для прикладу зробимо таку форму в чанку Anketa:
 ```
 <p class="error">[+validationmessage+]</p>
  <form action="[~[*id*]~]" method="post" enctype="multipart/form-data">
      <input type="hidden" name="formid" value="newArticle" />
      <p><label>Автор *</label><br>
-     <input class="field" type="text" name="avtor" maxlength="60" eform="Имя автора:string:1:Имя автора нужно обязательно!" /></p>      <p><label>Email *</label><br>
-     <input class="field" type="text" name="email" size="40" maxlength="40" eform="Адрес почты:email:0" /></p>      <p><label>Адрес сайта</label><br>
+     <input class="field" type="text" name="avtor" maxlength="60" eform="Ім'я автора:string:1:Ім'я автора потрібно обов'язково!" /></p>      <p><label>Email *</label><br>
+     <input class="field" type="text" name="email" size="40" maxlength="40" eform="Адреса пошти:email:0" /></p>      <p><label>Адрес сайта</label><br>
      <input class="field" type="text" name="link" size="40" maxlength="40" eform="Адрес сайта:string:0" /><br>
-     <em style="color: #999">Правильно: "http://www.modx-cms.ru". Неправильно: "www.modx-cms.ru"</em></p>      Название *<br>
-     <input name="pagetitle" type="text" eform="Краткое название:string:0:Название обязательно!" /><br>      Аннотация *<br>
-     <textarea name="introtext" cols="40" rows="5" eform="Краткое описание:string:0:Краткое описание обязательно!"></textarea><br><br>      Текст статьи<br>
-     <textarea name="content" cols="40" rows="10" eform="Расширенное описание:string:0"></textarea><br><br>
-     <p><input type="submit" name="frmGo" value="Послать" /></p>
+     <em style="color: #999">Правильно: "http://www.modx-cms.ru". Неправильно: "www.modx-cms.ru"</em></p>      Назва *<br>
+     <input name="pagetitle" type="text" eform="Коротка назва:string:0:Назва обов'язково!" /><br>      Аннотація *<br>
+     <textarea name="introtext" cols="40" rows="5" eform="Короткий опис:string:0:Короткий опис обов'язково!"></textarea><br><br>      Текст статті<br>
+     <textarea name="content" cols="40" rows="10" eform="Розширений опис:string:0"></textarea><br><br>
+     <p><input type="submit" name="frmGo" value="Відіслати" /></p>
  </form>
  ```
 
-### Вызов формы на сайте
+### Виклик форми на сайті
 
-Для показа формы можно использовать следующий вызов:
+Для показу форми можна використовувати наступний виклик:
 ```
-[!eForm? &formid=`newArticle` &subject=`Посетители прислали новый файл` &tpl=`Anketa` !]
+[!eForm? &formid=`newArticle` &subject=`Відвідувачі надіслали новий файл` &tpl=`Anketa` !]
 ```
-Важно! Параметр formid должен совпадать с одноименным скрытым полем формы.
+Важливо! Параметр formid повинен збігатися з однойменною прихованим полем форми.
 
-### Обработчик полученных данных
+### Оброблювач отриманих даних
 
-После того как мы получили все необходимые от пользователя данные нам необходимо их поместить в документ. Для это делаем новый сниппет с именем NewArticleEvent и в нем создаем свою функцию CreateNewArticle:
+Після того як ми отримали всі необхідні від користувача дані нам необхідно їх помістити в документ. Для цього робимо новий сніппет з ім'ям NewArticleEvent і в ньому створюємо свою функцію CreateNewArticle:
 ```
 function CreateNewArticle(&$fields){
-     // Массив $fields будет содержать данные всех полей формы
-     // Создания документа с описанием.
+     // Масив $fields буде містити дані всіх полів форми
+     // Створення документа з описом.
      require_once('assets/libs/docmanager/document.class.inc.php');
-     $doc = new Document(); // создаем документ
-     $doc->Set('parent',60); // определяем в какую папку положить
-     $doc->Set('template','Статья'); // задаем шаблон
-     $doc->Set('pagetitle',$fields['pagetitle']); // краткое название
-     $doc->Set('introtext',$fields['introtext']); // аннотацию
-     $doc->Set('content',$fields['content']); // основное содержимое
-     // Далее пойдут TV-параметры
+     $doc = new Document(); // створюємо документ
+     $doc->Set('parent',60); // визначаємо в яку папку покласти
+     $doc->Set('template','Статья'); // задаєм шаблон
+     $doc->Set('pagetitle',$fields['pagetitle']); // коротка назва
+     $doc->Set('introtext',$fields['introtext']); // аннотація
+     $doc->Set('content',$fields['content']); // основний вміст
+     // Далі підуть TV-параметри
      $doc->Set('tvAvtor',$fields['avtor']); // автор
      $doc->Set('tvEmail',$fields['email']); // e-mail
-     $doc->Set('tvLink',$fields['link']); // ссылка
-     $doc->Save(); // сохраняем
-     return true; // Говорим eForm, что все в порядке. }
+     $doc->Set('tvLink',$fields['link']); // посилання
+     $doc->Save(); // зберігаємо
+     return true; // Говоримо eForm, що все в гаразд. }
 ```
 
-Вот такой простой код нам позволит полученные данные сохранить в документ. Названия сниппета и функции с обработчиком можно изменить при желании.
+Ось такий простий код нам дозволить отримані дані зберегти в документ. Назви сніппета і функції з обробником можна змінити при бажанні.
 
-Важно! Для указания TV-параметров перед названием необходимо добавлять приставку tv, то есть  это не часть названия параметра.
+Важливо! Для вказівки TV-параметрів перед назвою необхідно додавати приставку tv, тобто це не частина назви параметра.
 
-### Подключаем обработчик к нашей форме
+### Підключаємо обробник до нашої форми
 
-eForm имеет несколько событий, которые мы можем перехватывать, но в данном случае нам нужно только eFormOnBeforeMailSent. Оно вызывается прямо перед отправкой формы и после того как все данные проверены на обязательность заполнения и формат. Изменяем немного вызов нашей формы и получаем следующий окончательный вид:
+eForm має кілька подій, які ми можемо перехоплювати, але в даному випадку нам потрібно тільки eFormOnBeforeMailSent. Воно викликається прямо перед відправкою форми і після того як всі дані перевірені на обов'язковість заповнення і формат. Змінюємо трохи виклик нашої форми і отримуємо наступний остаточний вигляд:
 ```
 [!NewArticleEvent!]
-[!eForm? &formid=`newArticle` &subject=`Посетители прислали новый файл` &tpl=`Anketa` &eFormOnBeforeMailSent=`CreateNewArticle`!]
+[!eForm? &formid=`newArticle` &subject=`Відвідувачі надіслали новий файл` &tpl=`Anketa` &eFormOnBeforeMailSent=`CreateNewArticle`!]
 ```
-Важно! Чтобы событие eForm имело доступ к нашему обработчику необходимо сделать вызов сниппета с обработчиком сразу перед вызовом eForm. Название вызываемой функции задается в параметре вызова обработчика &eFormOnBeforeMailSent.
+Важливо! Щоб подія eForm мала доступ до нашого обробника необхідно зробити виклик сніппета з обробником відразу перед викликом eForm. Назва функції, що викликається, задається в параметрі виклику обробника &eFormOnBeforeMailSent.
 
-PS: Таким образом можно создавать формы любой сложности и даже организовать закачку файлов.
+PS: Таким чином можна створювати форми будь-якої складності і навіть організувати закачування файлів.
 
-### Визуальный редактор
+### Візуальний редактор
 
-Чтобы посетителям было удобнее создавать статьи, можно использовать визуальный редактор tinyMCE.  Для этого в страницу с формой нужно включить следующий код:
+Щоб відвідувачам було зручніше створювати статті, можна використовувати візуальний редактор tinyMCE. Для цього в сторінку з формою потрібно включити наступний код:
 ```
 <script language="javascript" type="text/javascript" src="assets/plugins/tinymce212/jscripts/tiny_mce/tiny_mce.js"></script>
  <script language="javascript" type="text/javascript">
  tinyMCE.init({
- // Общие настройки
+ // Загальні налаштування
  language : 'ru',
  mode : "textareas",
  theme : "advanced",
  plugins : "emotions,preview,searchreplace,contextmenu,paste,fullscreen,visualchars",
- // Настройки темы
+ // Налаштування теми
  theme_advanced_buttons1 : "code,|,undo,redo,|,bold,italic,underline,strikethrough,|,removeformat,cut,copy,paste,|,bullist,numlist,|,link,unlink,|,image,|,sub,sup,|,charmap,formatselect",
  theme_advanced_buttons2 : "",
  theme_advanced_toolbar_location : "top",
  theme_advanced_toolbar_align : "left",
  theme_advanced_statusbar_location : "bottom",
  theme_advanced_resizing : true,
- // Подключение нужного CSS стиля
+ // Підключення потрібного CSS стиля
  content_css : "assest/templates/me_template/style.css"
  });
  </script>
 ```
-Редактор tinyMCE хорошо настраивается. поэтому вы можете добавить инструменты, которые необходимы в вашем случае.  А для того, чтобы eForm пропустил теги HTML необходимо добавить следующие параметры:
+Редактор tinyMCE добре налаштовується, тому ви можете додати інструменти, які необхідні у вашому випадку. А для того, щоб eForm пропустив теги HTML необхідно додати наступні параметри:
 ```
 &allowhtml=`1` &sendAsHtml=`1`
 ```
