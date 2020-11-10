@@ -15,6 +15,8 @@
 12. [ hashChangePassword ](#hashChangePassword) - смена пароля по хэшу полученному из метода [ repairPassword ](#repair)
 13. [ generateAndSavePassword ](#generateAndSavePassword) - смена пароля на автосгенерированный для дальнейшей отправки пользователю
 14. [ refreshToken ](#refreshToken) - обновление токена авторизации
+15. [ getVerifiedKey ](#getVerifiedKey) - получение ключа верификации пользователя
+16. [ verified ](#verified) - подтверждение пользователя с помощью ключа верификации
 
 
 <a name="get"></a>
@@ -471,6 +473,75 @@ try {
  $data = ['refresh_token'=>'1asdasd1sad2dd4t54351fd1dfs1fd1'];
  try {
      $user = \UserManager::refreshToken($data);
+ } catch (\EvolutionCMS\Exceptions\ServiceValidationException $exception) {
+     $validateErrors = $exception->getValidationErrors(); //Получаем все ошибки валидации
+     print_r($validateErrors); //Выводим все ошибки валидации
+ } catch (\EvolutionCMS\Exceptions\ServiceActionException $exception) {
+     print_r($exception->getMessage()); //Выводим ошибку процесса обработки данных
+ }
+ ```
+
+ ___
+ <a name="getVerifiedKey"></a>
+ **getVerifiedKey** - получение ключа верификации пользователя
+ ```php
+ User \UserManager::getVerifiedKey(array $userData, bool $events = true, bool $cache = true)
+ ```
+
+ Функция возвращает объект пользователя из которого можно получить ключ верификации $user->verified_key;
+
+ Параметры, которые принимает функция:
+ - $userData - массив содержащий поле id. Поле обязательно к заполнению.
+ - $events - указатель вызываем ли мы события связанные с верификацией пользователя
+ - $cache - указатель сбрасываем ли кэш после верификации пользователя
+
+ **ВНИМАНИЕ**
+ Функция может бросить два различных исключения 
+
+ - **\EvolutionCMS\Exceptions\ServiceValidationException** исключение срабатывает в случае если мы передали плохие данные в $userData.
+ - **\EvolutionCMS\Exceptions\ServiceActionException** исключение срабатывает в ситуации когда возникла ошибка в процессе обработки данных.
+
+ Пример функции обновления токена
+
+ ```php
+ $data = ['id'=>'1'];
+ try {
+     $user = \UserManager::getVerifiedKey($data);
+ } catch (\EvolutionCMS\Exceptions\ServiceValidationException $exception) {
+     $validateErrors = $exception->getValidationErrors(); //Получаем все ошибки валидации
+     print_r($validateErrors); //Выводим все ошибки валидации
+ } catch (\EvolutionCMS\Exceptions\ServiceActionException $exception) {
+     print_r($exception->getMessage()); //Выводим ошибку процесса обработки данных
+ }
+ ```
+
+
+ ___
+ <a name="verified"></a>
+ **verified** - подтверждение пользователя с помощью ключа верификации
+ ```php
+ User \UserManager::verified(array $userData, bool $events = true, bool $cache = true)
+ ```
+
+ Функция возвращает объект пользователя
+
+ Параметры, которые принимает функция:
+ - $userData - массив содержащий поля verified_key и username. Оба поля обязательны к заполнению.
+ - $events - указатель вызываем ли мы события связанные с верификацией пользователя
+ - $cache - указатель сбрасываем ли кэш после оверификациии пользователя
+
+ **ВНИМАНИЕ**
+ Функция может бросить два различных исключения 
+
+ - **\EvolutionCMS\Exceptions\ServiceValidationException** исключение срабатывает в случае если мы передали плохие данные в $userData.
+ - **\EvolutionCMS\Exceptions\ServiceActionException** исключение срабатывает в ситуации когда возникла ошибка в процессе обработки данных.
+
+ Пример функции обновления токена
+
+ ```php
+ $data = ['username'=>'test', 'verified_key'=>'166a44621c209ef152cc92a2316c6307'];
+ try {
+     $user = \UserManager::verified($data);
  } catch (\EvolutionCMS\Exceptions\ServiceValidationException $exception) {
      $validateErrors = $exception->getValidationErrors(); //Получаем все ошибки валидации
      print_r($validateErrors); //Выводим все ошибки валидации
