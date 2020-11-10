@@ -12,7 +12,9 @@
 9. [ saveSettings ](#saveSettings) - сохранение настройки пользователя
 10. [ repairPassword ](#repair) - получение хэша для сброса пароля
 11. [ changePassword ](#changePassword) - смена пароля при наличии старого пароля
-12. [ hashChangePassword](#hashChangePassword) - смена пароля по хэшу полученному из метода [ repairPassword ](#repair)
+12. [ hashChangePassword ](#hashChangePassword) - смена пароля по хэшу полученному из метода [ repairPassword ](#repair)
+13. [ generateAndSavePassword ](#generateAndSavePassword) - смена пароля на автосгенерированный для дальнейшей отправки пользователю
+14. [ refreshToken ](#refreshToken) - обновление токена авторизации
 
 
 <a name="get"></a>
@@ -38,6 +40,7 @@ ___
 User \UserManager::create(array $userData, bool $events = true, bool $cache = true)
 ```
 
+Пользователи по умолчанию создаются подтверждёнными, если необходимо чтобы пользователь был не подтверждён, необходимо в $userData передать элемент с ключом verified и значнием 0
 Функция возвращает объект модели пользователя User
 
 Параметры, которые принимает функция:
@@ -408,3 +411,70 @@ try {
     print_r($exception->getMessage()); //Выводим ошибку процесса обработки данных
 }
 ```
+
+<a name="generateAndSavePassword"></a>
+ **generateAndSavePassword** - смена пароля на автосгенерированный для дальнейшей отправки пользователю
+ ```php
+ User \UserManager::generateAndSavePassword(array $userData, bool $events = true, bool $cache = true)
+ ```
+
+ Функция возвращает пароль
+
+ Параметры, которые принимает функция:
+ - $userData - массив содержащий поле id. Поле обязательно к заполнению.
+ - $events - указатель вызываем ли мы события связанные со сменой пароля пользователя
+ - $cache - указатель сбрасываем ли кэш после смены пароля пользователя
+
+ **ВНИМАНИЕ**
+ Функция может бросить два различных исключения 
+
+ - **\EvolutionCMS\Exceptions\ServiceValidationException** исключение срабатывает в случае если мы передали плохие данные в $userData.
+ - **\EvolutionCMS\Exceptions\ServiceActionException** исключение срабатывает в ситуации когда возникла ошибка в процессе обработки данных.
+
+ Пример функции смена пароля
+
+ ```php
+ $data = ['id'=>1];
+ try {
+     $user = \UserManager::generateAndSavePassword($data);
+ } catch (\EvolutionCMS\Exceptions\ServiceValidationException $exception) {
+     $validateErrors = $exception->getValidationErrors(); //Получаем все ошибки валидации
+     print_r($validateErrors); //Выводим все ошибки валидации
+ } catch (\EvolutionCMS\Exceptions\ServiceActionException $exception) {
+     print_r($exception->getMessage()); //Выводим ошибку процесса обработки данных
+ }
+ ```
+
+ ___
+ <a name="refreshToken"></a>
+ **refreshToken** - обновление токена авторизации
+ ```php
+ User \UserManager::refreshToken(array $userData, bool $events = true, bool $cache = true)
+ ```
+
+ Функция возвращает актуальный токен
+
+ Параметры, которые принимает функция:
+ - $userData - массив содержащий поле refresh_token. Поле обязательно к заполнению.
+ - $events - указатель вызываем ли мы события связанные с обновлением токена пользователя
+ - $cache - указатель сбрасываем ли кэш после обновления токена пользователя
+
+ **ВНИМАНИЕ**
+ Функция может бросить два различных исключения 
+
+ - **\EvolutionCMS\Exceptions\ServiceValidationException** исключение срабатывает в случае если мы передали плохие данные в $userData.
+ - **\EvolutionCMS\Exceptions\ServiceActionException** исключение срабатывает в ситуации когда возникла ошибка в процессе обработки данных.
+
+ Пример функции обновления токена
+
+ ```php
+ $data = ['refresh_token'=>'1asdasd1sad2dd4t54351fd1dfs1fd1'];
+ try {
+     $user = \UserManager::refreshToken($data);
+ } catch (\EvolutionCMS\Exceptions\ServiceValidationException $exception) {
+     $validateErrors = $exception->getValidationErrors(); //Получаем все ошибки валидации
+     print_r($validateErrors); //Выводим все ошибки валидации
+ } catch (\EvolutionCMS\Exceptions\ServiceActionException $exception) {
+     print_r($exception->getMessage()); //Выводим ошибку процесса обработки данных
+ }
+ ```
