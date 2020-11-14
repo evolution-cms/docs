@@ -6,17 +6,19 @@
 3. [ edit ](#edit) - редактирование пользователя
 4. [ delete ](#delete) - удаление пользователя
 5. [ login ](#login) - авторизация пользователя
-6. [ logout ](#logout) - Выход пользователя из системы
-7. [ setRole ](#setRole) - назначение польхователю его роли
-8. [ setGroups ](#setGroups) - назначению пользователю его группы пользователей
-9. [ saveSettings ](#saveSettings) - сохранение настройки пользователя
-10. [ repairPassword ](#repair) - получение хэша для сброса пароля
-11. [ changePassword ](#changePassword) - смена пароля при наличии старого пароля
-12. [ hashChangePassword ](#hashChangePassword) - смена пароля по хэшу полученному из метода [ repairPassword ](#repair)
-13. [ generateAndSavePassword ](#generateAndSavePassword) - смена пароля на автосгенерированный для дальнейшей отправки пользователю
-14. [ refreshToken ](#refreshToken) - обновление токена авторизации
-15. [ getVerifiedKey ](#getVerifiedKey) - получение ключа верификации пользователя
-16. [ verified ](#verified) - подтверждение пользователя с помощью ключа верификации
+6. [ loginById ](#loginById) - авторизация пользователя по его id
+7. [ logout ](#logout) - Выход пользователя из системы
+8. [ setRole ](#setRole) - назначение польхователю его роли
+9. [ setGroups ](#setGroups) - назначению пользователю его группы пользователей
+10. [ clearSettings ](#clearSettings) - удалеение всех настроек пользователя
+11. [ saveSettings ](#saveSettings) - сохранение настроек пользователя
+12. [ repairPassword ](#repair) - получение хэша для сброса пароля
+13. [ changePassword ](#changePassword) - смена пароля при наличии старого пароля
+14. [ hashChangePassword ](#hashChangePassword) - смена пароля по хэшу полученному из метода [ repairPassword ](#repair)
+15. [ generateAndSavePassword ](#generateAndSavePassword) - смена пароля на автосгенерированный для дальнейшей отправки пользователю
+16. [ refreshToken ](#refreshToken) - обновление токена авторизации
+17. [ getVerifiedKey ](#getVerifiedKey) - получение ключа верификации пользователя
+18. [ verified ](#verified) - подтверждение пользователя с помощью ключа верификации
 
 
 <a name="get"></a>
@@ -178,6 +180,40 @@ try {
 ```
 
 ___
+<a name="loginById"></a>
+**loginById** - авторизация пользователя по его id
+```php
+User \UserManager::loginById(array $userData, bool $events = true, bool $cache = true)
+```
+
+Функция возвращает объект модели пользователя User
+
+Параметры, которые принимает функция:
+- $userData - массив содержащий поля необходимые для авторизации пользователя. Обязательнон поле id
+- $events - указатель вызываем ли мы события связанные с авторизацией пользователя
+- $cache - указатель сбрасываем ли кэш после авторизации пользователя
+
+**ВНИМАНИЕ**
+Функция может бросить два различных исключения 
+ 
+- **\EvolutionCMS\Exceptions\ServiceValidationException** исключение срабатывает в случае если мы передали плохие данные в $userData.
+- **\EvolutionCMS\Exceptions\ServiceActionException** исключение срабатывает в ситуации когда возникла ошибка в процессе обработки данных.
+
+Пример авторизации пользователя
+
+```php
+$data = ['id'=> 1];
+try {
+    $user = \UserManager::loginById($data);
+} catch (\EvolutionCMS\Exceptions\ServiceValidationException $exception) {
+    $validateErrors = $exception->getValidationErrors(); //Получаем все ошибки валидации
+    print_r($validateErrors); //Выводим все ошибки валидации
+} catch (\EvolutionCMS\Exceptions\ServiceActionException $exception) {
+    print_r($exception->getMessage()); //Выводим ошибку процесса обработки данных
+}
+```
+
+___
 <a name="logout"></a>
 **logout** - Выход пользователя из системы
 ```php
@@ -279,8 +315,42 @@ try {
 ```
 
 ___
+<a name="clearSettings"></a>
+**clearSettings** - удаление всех настроек пользователя
+```php
+User \UserManager::clearSettings(array $userData, bool $events = true, bool $cache = true)
+```
+
+Функция возвращает true в случае успешного сохранения
+
+Параметры, которые принимает функция:
+- $userData - массив содержащий id пользователя. Поле id является обязательным.
+- $events - указатель вызываем ли мы события связанные с удалением настроек пользователя
+- $cache - указатель сбрасываем ли кэш после удаления настроек пользователя
+
+**ВНИМАНИЕ**
+Функция может бросить два различных исключения 
+ 
+- **\EvolutionCMS\Exceptions\ServiceValidationException** исключение срабатывает в случае если мы передали плохие данные в $userData.
+- **\EvolutionCMS\Exceptions\ServiceActionException** исключение срабатывает в ситуации когда возникла ошибка в процессе обработки данных.
+
+Пример функции сохранения настроек пользователей
+
+```php
+$data = ['id'=> 1];
+try {
+    $user = \UserManager::clearSettings($data);
+} catch (\EvolutionCMS\Exceptions\ServiceValidationException $exception) {
+    $validateErrors = $exception->getValidationErrors(); //Получаем все ошибки валидации
+    print_r($validateErrors); //Выводим все ошибки валидации
+} catch (\EvolutionCMS\Exceptions\ServiceActionException $exception) {
+    print_r($exception->getMessage()); //Выводим ошибку процесса обработки данных
+}
+```
+
+___
 <a name="saveSettings"></a>
-**saveSettings** - сохранение настройки пользователя
+**saveSettings** - сохранение настроек пользователя
 ```php
 User \UserManager::saveSettings(array $userData, bool $events = true, bool $cache = true)
 ```
