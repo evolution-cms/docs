@@ -1,5 +1,5 @@
 ### DocumentManager ###
-Это различные методы связанные с управлением ресурсами в EvolutionCMS, все действия связанные с пользователем проходят через эти методы.
+Это различные методы связанные с управлением ресурсами в EvolutionCMS, все действия связанные с документами проходят через эти методы.
 #### Доступные функции и примеры использования ####
 1. [ get ](#get) - получение документа
 2. [ create ](#create) - создание документа
@@ -236,7 +236,7 @@ ___
 <a name="publish"></a>
 **publish** - опубликовать документ
 ```php
-SoteContent \DocumentManager::publish(array $documentData, bool $events = true, bool $cache = true)
+SiteContent \DocumentManager::publish(array $documentData, bool $events = true, bool $cache = true)
 ```
 
 Функция возвращает объект модели документа SiteContent
@@ -270,7 +270,7 @@ ___
 <a name="unpublished"></a>
 **unpublished** - снять с публикации документ
 ```php
-SoteContent \DocumentManager::unpublished(array $documentData, bool $events = true, bool $cache = true)
+SiteContent \DocumentManager::unpublished(array $documentData, bool $events = true, bool $cache = true)
 ```
 
 Функция возвращает объект модели документа SiteContent
@@ -304,7 +304,7 @@ ___
 <a name="clearCart"></a>
 **clearCart** - очистить корзину с удалёнными документами
 ```php
-SoteContent \DocumentManager::clearCart(array $documentData => [], bool $events = true, bool $cache = true)
+SiteContent \DocumentManager::clearCart(array $documentData => [], bool $events = true, bool $cache = true)
 ```
 
 Функция возвращает объект модели первого документа SiteContent 
