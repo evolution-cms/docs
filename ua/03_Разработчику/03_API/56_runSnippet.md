@@ -1,18 +1,18 @@
-###Возвращает результат выполнения сниппета с заданными параметрами
+### Повернення результату виконання сніпета з заданими параметрами
 
 string runSnippet(string $snippetName [, array $params, int $cacheTime, string $cacheKey]);
 
-**$snippetName** - название сниппета (чувствительно к регистру!)
+**$snippetName** - назва сніпета (чутливість до регістру).
 
-**$params** - массив со значениями параметров
+**$params** - масив зі значеннями параметрів.
 
-**$cacheTime** - время кэширования в секундах. Если указано 0, то хранение до полного сброса кэша **Доступно только в 2.0**
+**$cacheTime** - час кешування в секундах. Збереження до повного очищення кеша при вказаному 0.  **Доступно тільки в 2.0**
 
-**$cacheKey** - ключ для кэширования. Используется только в связке с cacheTime, если не указать, то будет сформирован на основании $_GET и $params массивов **Доступно только в 2.0**
+**$cacheKey** - ключ кешування. Якщо не вказати час кешування, ключ буде сформованим з використанням $_GET та $params масивів. **Доступно тільки в 2.0**
 
 ***
 
-####Пример
+#### Приклад
 
 	$txt = $modx->runSnippet('Ditto', 	array( 'startID' => 2, 
 					'summarize' => 2, 
@@ -24,5 +24,5 @@ string runSnippet(string $snippetName [, array $params, int $cacheTime, string $
 					'tagData' => 'documentTags' 
 					));
 
-	//вернет результат работы сниппета Ditto, который идентичен вызову:
+	//Поверне результат роботи сніпета Ditto, що ідентичний виклику:
 	[[Ditto? &startID=`2` &summarize=`2` &removeChunk=`Comments` &tpl=`ditto_blog` &paginate=`1` &extenders=`summary,dateFilter` &paginateAlwaysShowLinks=`1` &tagData=`documentTags`]]

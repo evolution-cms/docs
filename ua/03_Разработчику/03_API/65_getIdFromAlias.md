@@ -1,10 +1,10 @@
-Возвращает идентификатор документа по его урл
+### Повернення ідентифікатору документа через його URL
 ```
 string getIdFromAlias(string $alias);
 ```
-**$alias** - псевдоним документа
+**$alias** - псевдонім документа.
 
-### Пример
+### Приклад.
 ```
 	$id = $modx->getIdFromAlias('folder/folder/doc.html')
 	//id документа doc.html
