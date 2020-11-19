@@ -12,7 +12,7 @@ string runSnippet(string $snippetName [, array $params, int $cacheTime, string $
 
 ***
 
-#### Приклад.
+#### Приклад
 
 	$txt = $modx->runSnippet('Ditto', 	array( 'startID' => 2, 
 					'summarize' => 2, 
