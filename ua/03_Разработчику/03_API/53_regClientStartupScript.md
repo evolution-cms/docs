@@ -1,25 +1,25 @@
-###Подключение скриптов JavaScript к документу или блока ‹script› в область ‹head›
+### Підключення JavaScript до документу або блоку ‹script› в область ‹head›
 
 string regClientStartupScript(string $src[, bool $plaintext]);
 
-**$src** - путь до файла JavaScript
+**$src** - шлях до файла JavaScript.
 
-**$plaintext** - разместить в виде текста переданного в $src
-true - размещение в виде текста
-false - размещение в виде внешнего файла или блока **script**
-По умолчанию: false
+**$plaintext** - потрібно розмістити в вигляді тексту, переданого в $src.
+true - розміщення в вигляді тексту.
+false - розміщення в вигляді зовнішнього файлу або блоку **script**
+За замовчуванням: false.
 
 ***
 
-####Пример 1
+#### Приклад 1.
 
 	$src = "assets/js/prototype.js"; $modx->regClientStartupScript($src);
-	Это добавит в документ запись:
+	Це додасть в документ наступний запис:
 
 	<script type="text/javascript" url="assets/js/prototype.js"></script>
 
-####Пример 2
-Можно разместить также и блок с готовым скриптом:
+#### Приклад 2.
+Так само можна розмістити блок із готовим скриптом:
 
 	$src2 = "<script type='text/javascript'>
 				function getHTML() { 
@@ -30,4 +30,4 @@ false - размещение в виде внешнего файла или бл
 	</script>"; 
 	
 	$modx->regClientStartupScript($src2);
-	//Этот блок появится в том же виде.
+	//Буде виведений ідентичний блок.
