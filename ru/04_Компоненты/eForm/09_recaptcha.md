@@ -43,7 +43,7 @@ if(isset($_REQUEST['g-recaptcha-response'])){
         
 if(!function_exists('setReCaptcha')){
 	function setReCaptcha(&$fields){
-		$fields['ReCaptcha']= '<div class="g-recaptcha" data-sitekey="'.siteKey.'"></div>';
+		$fields['ReCaptcha']= '&lt;div class="g-recaptcha" data-sitekey="'.siteKey.'"&gt;&lt;/div&gt;';
 		return true;
 	}
 }
