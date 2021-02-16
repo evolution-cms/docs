@@ -9,7 +9,7 @@
 6. [ duplicate ](#duplicate) - копирование документа
 7. [ setGroups ](#setGroups) - установка групп документа
 8. [ publish ](#publish) - опубликовать документ
-9. [ unpublished ](#unpublished) - снять с публикации документ
+9. [ unpublish ](#unpublish) - снять с публикации документ
 10. [ clearCart ](#clearCart) - очистить корзину с удалёнными документами
 
 
@@ -267,10 +267,10 @@ try {
 ```
 
 ___
-<a name="unpublished"></a>
-**unpublished** - снять с публикации документ
+<a name="unpublish"></a>
+**unpublish** - снять с публикации документ
 ```php
-SiteContent \DocumentManager::unpublished(array $documentData, bool $events = true, bool $cache = true)
+SiteContent \DocumentManager::unpublish(array $documentData, bool $events = true, bool $cache = true)
 ```
 
 Функция возвращает объект модели документа SiteContent
@@ -291,7 +291,7 @@ SiteContent \DocumentManager::unpublished(array $documentData, bool $events = tr
 ```php
 $data = ['id'=> 1];
 try {
-    $document = \DocumentManager::unpublished($data);
+    $document = \DocumentManager::unpublish($data);
 } catch (\EvolutionCMS\Exceptions\ServiceValidationException $exception) {
     $validateErrors = $exception->getValidationErrors(); //Получаем все ошибки валидации
     print_r($validateErrors); //Выводим все ошибки валидации
