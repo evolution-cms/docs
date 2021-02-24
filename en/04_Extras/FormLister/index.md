@@ -1,17 +1,11 @@
-Автор: [Pathologic](https://github.com/Pathologic/)
+Snippet to process forms. Though it seems to be more difficult than eForm, FormLister offers a lot of features to suit any form processing tasks:
 
-Сниппет для работы с формами. В отличие от eForm сниппет сложнее в настройке, что компенсируется возможностью более гибко решать различные задачи с применением форм.
-
-Отличительные особенности:
-
-* легко дорабатывается с помощью контроллеров и prepare-сниппетов;
-* использует шаблонизатор DocLister;
-* поддерживает лексиконы;
-* не зависит от html-кода формы и не влияет на него;
-* имеет api-режим для работы с шаблонизаторами и ajax;
-* умеет загружать исходные данные из внешних источников (массивы, плейсхолдеры, сессия, куки, MODxAPI);
-* поддерживает хранение параметров в файлах.
-
-Версия PHP - не ниже 5.6.
+* it can be fitted for any custom task using controllers and prepare snippets;
+* DocLister template engine;
+* lexicons;
+* it does not depend on forms html code;
+* different api modes for convenient work with template engines and ajax;
+* external sources of data (arrays, modx placeholders, session, cookies, MODxAPI models);
+* storing parameters in files.
 
 [Github](https://github.com/Pathologic/FormLister)
