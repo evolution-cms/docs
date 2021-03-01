@@ -18,19 +18,17 @@ Evolution is a functional, extensible and user-friendly site development system 
 - integrated SEO engine (keyword and meta tag management)
 - excellent extensibility (with the help of snippets, plug-ins and modules)
 
-**Standard extensions:**
+**Common used extensions:**
 
 **DocLister** - The ideal solution for the output of news feeds, lists of goods. It is possible to work with arbitrary tables. From the access box, filters, extensions, various types of sorting by standard system fields and TV-parameters.
 
-**Wayfinder** - Tool for organizing menus. It gives an opportunity to organize both a simple, multi-level and drop-down menu. Easy to change and customizable.
+**DLMenu** - Tool for organizing menus. It gives an opportunity to organize both a simple, multi-level and drop-down menu. Easy to change and customizable.
 
-**eForm** - Manages the work of forms in the CMS. Allows to organize any form and its processing. It can simply send to the mail the information entered or process it to get some result - say, create a new document with the information filled in.
+**FormLister** - Manages the work of forms in the CMS. Allows to organize any form and its processing. It can simply send to the mail the information entered or process it to get some result - say, create a new document with the information filled in.
 
-**Jot** - mechanism for commenting by users.
+**DLCrumbs** - Creation of chain links ("bread crumbs") on the site.
 
-**Breadcrumbs** - Creation of chain links ("bread crumbs") on the site.
-
-**AjaxSearch** - search the site using Ajax.
+**evoSearch** - search the site.
 
 A large number of ready-made add-ons are available on our website and the official repository.
 
@@ -40,4 +38,4 @@ Evolution CMS is distributed under the GNU / GPL license, which makes it possibl
 
 ## Requirements ##
 
-PHP 5.6 or later. MySQL 4.1.x or later.
+Evolution CMS 3.0 requires PHP >= 7.3.
