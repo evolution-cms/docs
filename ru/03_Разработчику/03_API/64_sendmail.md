@@ -5,9 +5,9 @@
 $modx->sendmail()
 ```
 
-## Пример использования: ##
+## Пример использования:
 
-### простой вариант 
+### Простой вариант 
 ```
    		$param = array();
 		$param['from']    = "{$site_name}<{$emailsender}>";
@@ -17,7 +17,7 @@ $modx->sendmail()
 		$rs = $modx->sendmail($param);
 ```
 
-### вариант с расширенными настройками  
+### Вариант с расширенными настройками  
 
 ```
 		$modx->loadExtension('MODxMailer');
@@ -34,3 +34,7 @@ $modx->sendmail()
 		if(!$modx->mail->send()) return 'Main mail: ' . $_lang['ef_mail_error'] . $modx->mail->ErrorInfo;
  ```
 Значения некоторых из полей (From и Fromname, допустим) при при инициализации ModxMailer подставляются из конфигурации сайта. Так что, если нет необходимости их заменять, число параметров можно сократить.
+
+### Вариант использования \Helpers\Mailer
+
+Этот способ доступен начиная с версии 2.х, описание использования на странице [Helpers](/03_develop/06_di_v_evolution_cms/04_helper.html).
