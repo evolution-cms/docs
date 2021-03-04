@@ -4,10 +4,9 @@ These parameters are processed by FormLister core class. Controllers can change 
 
 ## Settings
 ### controller
-Sets the class to process data. 
+Sets the class extending \FormLister\Core to process data. 
 
-Possible values - php-file name without extension which contains controller class.
-
+Possible values - class name. If it has no namespace, then namespace is assumed to be \FormLister. So Form means \FormLister\Form.
 Default value - Form.
 
 ### dir
