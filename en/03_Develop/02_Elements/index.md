@@ -1,39 +1,38 @@
-Любой, кто начнет разбираться в Evolution, столкнется с новыми терминами.
+Anyone who starts to understand Evolution will come across new terms.
+Here we will note small points that you can periodically spy on.
 
-Здесь мы отметим небольшие моменты, которые периодически можно подсматривать.
+## Terminology ##
 
-## Терминология ##
+**Template** - Contains the general layout of the page with structure and design. It also defines where to display dynamic content. You can choose your own template for each document.
 
-**Шаблон** - содержит общую верстку страницы со структурой и дизайном. Также в нем определяются места для вывода динамического содержимого. Для каждого документа можно выбрать свой шаблон.
+**Parameters (TV)** - Additional parameters that are connected to the template. Parameters can be of different types (text, link, file, date, number, etc.). For more details on types, see the following articles.
 
-**Параметры (TV)** - дополнительные параметры, которые подключаются к шаблону. Параметры могут быть разных типов (текст, ссылка, файл, дата, число и т.д.). Более подробно о типах ждите в следующих статьях.
+**Chunk** - Chunk is a small template that can be used both simply for displaying some content (phone on all pages), and for processing (template of the sent eForm letter, template of the directory displayed by Ditto, etc.). Thus, the kind (presentation) of information is separated from the place of processing and is easily controlled.
 
-**Чанк** - маленький шаблон, который может использоваться как просто для вывода какого-то содержимого (телефона на всех страницах), так и для обработки (шаблон отправляемого письма eForm, шаблон каталога выводимого Ditto и т.д.). Таким образом, вид (представление) информации отделяется от места обработки и легко управляется.
+**Snippet** - Snippet is a code for processing information. The received information is analyzed (for example, the user's message) and the result is provided (for example, the message is sent by mail, and the user is shown a message about the result). Snippets form menus (Wayfinder), output lists of articles with pagination (Ditto), build forms (eForm). Chunks are used for withdrawal.
 
-**Сниппет** - код для обработки информации. Анализируют полученную информацию (например, сообщение пользователя) и предоставляют результат (например, отправляют сообщение по почте, а пользователю показывают сообщение о результате). Сниппеты формируют меню (Wayfinder), выводят списки статей с разбиением на страницы (Ditto), строят формы (eForm). Для вывода используют Чанки.
+**Plugin** - A plugin is a code that runs when an event occurs. For example, it highlights search words (Search Highlighting) when navigating from a search page. There are many events and their consideration is worth a separate article.
 
-**Плагин** - код, который запускается при наступлении какого-то события. Например, подсвечивает искомые слова (Search Highlighting) при переходе со страницы поиска. Событий много и их рассмотрение стоит отдельной статьи.
+## Special tags ##
 
-## Специальные теги ##
+Special tags are used to display dynamic data.
 
-Для вывода динамических данных используются специальные теги.
+### Systemic ###
 
-### Системные ###
+- [(site_name)] - site name
+- [(base_url)] or [(site_url)] - site address (https://evo.im)
+- [(modx_charset)] - used encoding
+- [(lang_code)] - the code of the language used on the site
+- [^m^] - the amount of used memory
+- [^qt^] - time for database queries
+- [^q^] - the number of requests to the database
+- [^p^] - time spent for PHP scripts
+- [^t^] - total time to generate the page
+- [^s^] - content source (database or cache) 
 
-- [(site_name)] - название сайта
-- [(base_url)] или [(site_url)] - адрес сайта (https://www.evolutioncms.org)
-- [(modx_charset)] - используемая кодировка
-- [(lang_code)] - код языка, используемого на сайте
-- [^m^] - количество использованной памяти
-- [^qt^] - время на запросы к базе данных
-- [^q^] - количество запросов к базе данных
-- [^p^] - время на работу PHP скриптов
-- [^t^] - общее время на генерацию страницы
-- [^s^] - источник содержимого (база или кэш) 
+### Standard ###
 
-### Стандартные ###
-
-- [\*pagetitle\*] - заголовок документа
+- [\*pagetitle\*] - document title
 - [\*longtitle\*] - расширенный заголовок документа
 - [\*description\*] - описание документа
 - [\*introtext\*] - аннотация документа
@@ -48,58 +47,54 @@
 - [\*editedon\*] - Дата редактирования документа
 - [~идентификатор~] - URL указанного документа
 
-### Дополнительные ###
+### Additional ###
 
-- [\*type\*] - вариант (документ, папка или ссылка)
-- [\*contentType\*] - тип содержимого (например, text/html)
-- [\*published\*] - опубликован ли документ (1|0)
-- [\*parent\*] - номер (ID) родительского документа
-- [\*isfolder\*] - является ли документа папкой (1|0)
-- [\*richtext\*] - используется ли при редактировании документа визуальный редактор
-- [\*template\*] - номер (ID) используемого шаблона для документа
-- [\*menuindex\*] - порядковый номер отображения в меню
-- [\*searchable\*] - доступен ли документ для поиска (1|0)
-- [\*cacheable\*] - Кэшируется ли документ (1|0)
-- [\*deleted\*] - Документ удален (1|0)
-- [\*deletedby\*] - Идентификатор пользователя удалившего документ
-- [\*menutitle\*] - Заголовок меню. Если не используется, то заголовок документа
-- [\*donthit\*] - Слежение за количеством посещений отключено (1|0)
-- [\*haskeywords\*] - Документ содержит ключевые слова (1|0)
-- [\*hasmetatags\*] - Документ имеет метатеги (1|0)
-- [\*privateweb\*] - Документ входит в частную группу пользовательских документов (1|0)
-- [\*privatemgr\*] - Документ входит в частную группу менеджерских документов (1|0)
-- [\*content_dispo\*] - Вариант выдачи содержимого (1 - для отображения | 0 - для скачивания)
-- [\*hidemenu\*] - Документ не отображается в меню (1|0)
+- [\*type\*] - variant (document, folder or link)
+- [\*contentType\*] - content type (for example, text / html)
+- [\*published\*] - whether the document has been published (1 | 0)
+- [\*parent\*] - number (ID) of the parent document
+- [\*isfolder\*] - is the document a folder (1 | 0)
+- [\*richtext\*] - whether a visual editor is used when editing a document
+- [\*template\*] - number (ID) of the used template for the document
+- [\*menuindex\*] - ordernumber of the display in the menu
+- [\*searchable\*] - is the document searchable (1 | 0)
+- [\*cacheable\*] - Whether the document is cached (1 | 0)
+- [\*deleted\*] - Document deleted (1 | 0)
+- [\*deletedby\*] - ID of the user who deleted the document
+- [\*menutitle\*] - Menu title. If not used, then the title of the document
+- [\*donthit\*] - Tracking the number of visits is disabled (1 | 0)
+- [\*haskeywords\*] - The document contains keywords (1 | 0)
+- [\*hasmetatags\*] - Document has metatags (1 | 0)
+- [\*privateweb\*] - The document belongs to the private group of user documents (1 | 0)
+- [\*privatemgr\*] - The document is included in the private group of managerial documents (1 | 0)
+- [\*content_dispo\*] - Option for serving content (1 - for display | 0 - for download)
+- [\*hidemenu\*] - The document is not displayed in the menu (1 | 0)
 
-## Параметры TV, сниппеты и чанки ##
+## TV parameters, snippets and chunks ##
 ```
-[\*НазваниеПараметраTV\*] - выводит значение параметра в документе.
-```
-```
-{{НазваниеЧанка}} - возвращает содержимое чанка.
+[\*TVname\*] - prints the value of the parameter in the document. 
 ```
 ```
-[[название сниппета]] - возвращает результат работы сниппета. 
+{{ChunkName}} - returns the contents of the chunk. 
 ```
-Можно передавать сниппету дополнительные параметры, перечисляя их при вызове. Допустим, если мы хотим получить id текущего документа и обработать его в сниппете, то вызов может быть похож на этот:
 ```
-[[название сниппета?docId=`[+id+]`]]
+[[SnippetName]] - returns the result of the snippet. 
 ```
-[+НазваниеПеременной+] - плейсхолдер - встречается в чанках, которые используются для обработки результатов работы сниппетов. После обработки вместо них вставляются значения. В примере выше вы видите, как в параметр docId для сниппета мы подставили системный плейсхолдер [+id+], в котором будет id текущего документа. Плейсхолдеры можно создавать самому.
+You can pass additional parameters to the snippet, listing them when called. Suppose, if we want to get the id of the current document and process it in a snippet, then the call may look like this: 
+```
+[[snippetname?docId=`[+id+]`]]
+```
+[+VariableName+] - placeholder - found in chunks that are used to process the results of snippets. After processing, values are inserted instead. In the example above, you can see how we have substituted the system placeholder [+id+] in the docId parameter for the snippet, in which the id of the current document will be. You can create placeholders yourself. 
 
-**Нюансы**
+** Nuances **
 
-На самом деле есть два варианта вызова сниппета:
-1. [[название сниппета]] - кэшируемый вызов сниппета
-2. [!НазваниеСниппета!] - некэшируемый вызов сниппета
+There are actually two options for calling a snippet:
+1. [[SnippetName]] - cached snippet call
+2. [!SnippetName!] - noncacheable snippet call
 
-**Где использовать**
+**Where to use**
 
-Все очень гармонично используется друг с другом.
-В шаблонах можно использовать параметры TV, сниппеты и чанки.
-В чанках можно вызывать сниппеты, параметры TV и другие чанки.
-В сниппетах можно вызывать вообще все, но через PHP.
-В конечном счете вам вернется итоговый результат обработки всех сниппетов/чанков/параметровTV.
+Everything is very harmoniously used with each other. In templates, you can use TV parameters, snippets and chunks. In chunks, you can call snippets, TV parameters and other chunks. In snippets, you can call anything at all, but through PHP. Ultimately, you will receive the final result of processing all snippets/chunks/TV parameters.
 
 ### Пример шаблона ###
 ```html
@@ -111,7 +106,7 @@
 </body>
 </html>
 ```
-где head_tags это чанк со следующим содержимым:
+where head_tags is a chunk with the following content:
 
 ```html
 <head>	
@@ -120,5 +115,4 @@
 	<title>[*pagetitle*] / [(site_name)]</title>
 </head>
 ```
-А в поле [\*content\*] будет выведено содержимое страницы, заданное из админки.
-На эту информацию опирается все остальное.
+And in the field [\*content\*] will be displayed the content of the page, set from the admin panel. Everything else is based on this information.
