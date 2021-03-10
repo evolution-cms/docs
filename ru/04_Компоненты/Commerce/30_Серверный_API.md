@@ -40,50 +40,55 @@ if ($modx->event->name == 'OnInitializeCommerce') {
 }
 ```
 
-#### add
+#### add - добавление товара в корзину
 ```php
 $cart->add(array $item, $isMultiple = false);
 ```
+В массиве `$item` передается информация о товаре, должны быть как минимум `id` и `count`. Параметр `isMultiple` означает множественное добавление, если равен `true`, в случае успеха не вызывается событие `OnCartChanged`.
 
-#### addMultiple
+#### addMultiple - пакетное добавление товаров в корзину
 ```php
 $cart->addMultiple(array $items = []);
 ```
 
-#### update
+#### update - изменение товара в корзине
 ```php
 $cart->update($row, array $attributes = [], $isAdded = false);
 ```
+В параметре `$row` передается символьный идентификатор строки в корзине, в `$attributes` - поля, которые нужно изменить. `$isAdded` означает, было ли действие изначально <i>добавлением</i> товара или нет.
 
-#### remove
+#### remove - удаление товара из корзины
 ```php
 $cart->remove($row);
 ```
+Удаляет товар из корзины по символьному идентификатору строки.
 
-#### removeById
+#### removeById - удаление товаров по идентификатору товара
 ```php
 $cart->removeById($id);
 ```
+Удаляет товары из корзины по уникальному идентификатору товара/ресурса в дереве.
 
-#### clean
+#### clean - очистка корзины
 ```php
 $cart->clean();
 ```
 
-#### setTitleField
+#### setTitleField - задание имени поля для использования в качестве названия товаров
 ```php
 $cart->setTitleField($field);
 ```
 
-#### setPriceField
+#### setPriceField - задание имени поля для использования в качестве цены товаров
 ```php
 $cart->setPriceField($field);
 ```
 
-#### getSubtotals
+#### getSubtotals - расчет подитогов и итоговой стоимости товаров в корзине
 ```php
 $cart->getSubtotals(array &$rows, &$total);
 ```
+Вызывается событие `OnCollectSubtotals`, подитоги записываются в `$rows`, итоговая сумма - в `$total`.
 
 ### Обработчик заказа OrderProcessor
 
