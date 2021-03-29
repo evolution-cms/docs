@@ -138,7 +138,7 @@ Use this event you can add custom widgets to home page of admin panel.
             'icon'      => 'fab fa-leanpub',
             'title'     => 'Відео-туторіал',
             'body'      => '<div class="card-body text-center">
-                        <iframe width="500" height="250" src="https://www.youtube.com/embed/videoseries?list=PL70UTpI8mq2AHJHcn5jBGjS1fJEyH2jwI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <iframe width="500" height="250" src="https://www.youtube.com/embed/videoseries?list=yourplaylist" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>'
         ];
         return serialize($params['widgets']);
