@@ -128,22 +128,22 @@ manager/includes/document.parser.class.inc.php
 ### OnManagerWelcomeHome
 Use this event you can add custom widgets to home page of admin panel.
 ```php
-    Event::listen(
-    'evolution.OnManagerWelcomeHome',
-    function ($params) {
-        $params['widgets']['tutorial'] = [
-            'menuindex' => '1',
-            'id'        => 'tutorial',
-            'cols'      => 'col-sm-12',
-            'icon'      => 'fab fa-leanpub',
-            'title'     => 'Відео-туторіал',
-            'body'      => '<div class="card-body text-center">
-                        <iframe width="500" height="250" src="https://www.youtube.com/embed/videoseries?list=yourplaylist" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>'
-        ];
-        return serialize($params['widgets']);
-    }
-);
+     Event::listen(
+        'evolution.OnManagerWelcomeHome',
+        function ($params) {
+            $params['widgets']['tutorial'] = [
+                'menuindex' => '1',
+                'id'        => 'tutorial',
+                'cols'      => 'col-sm-12',
+                'icon'      => 'fab fa-leanpub',
+                'title'     => 'Відео-туторіал',
+                'body'      => '<div class="card-body text-center">
+                            <iframe width="500" height="250" src="https://www.youtube.com/embed/videoseries?list=yourplaylist" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        </div>'
+            ];
+            return serialize($params['widgets']);
+        }
+    );
 ```
 ### OnManagerWelcomePrerender 
 ### OnManagerWelcomeRender
