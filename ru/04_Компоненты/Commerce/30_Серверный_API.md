@@ -97,76 +97,76 @@ $cart->getSubtotals(array &$rows, &$total);
 $processor = $modx->commerce->loadProcessor();
 ```
 
-#### createOrder
+#### createOrder - создание заказа
 ```php
 $order = $processor->createOrder(array $items, array $fields);
 ```
 
-#### addOrderHistory
+#### addOrderHistory - добавление пункта в историю заказа
 ```php
 $processor->addOrderHistory($order_id, &$status_id, &$comment = '', &$notify = false);
 ```
-#### changeStatus
+#### changeStatus - изменение статуса заказа
 ```php
 $processor->changeStatus($order_id, $status_id, $comment = '', $notify = false, $template = null);
 ```
-#### updateOrder
+#### updateOrder - изменение данных заказа
 ```php
 $processor->updateOrder($order_id, $data = []);
 ```
-#### deleteOrder
+#### deleteOrder - удаление заказа
 ```php
 $processor->deleteOrder($order_id);
 ```
-#### getOrder
+#### getOrder - получение текущего заказа
 ```php
 $processor->getOrder();
 ```
-#### loadOrder
+#### loadOrder - получение заказа по идентификатору
 ```php
 $processor->loadOrder($order_id, $force = false);
 ```
-#### loadOrderByHash
+#### loadOrderByHash - получение заказа по хэшу
 ```php
 $processor->loadOrderByHash($order_hash);
 ```
-#### payOrderByHash
+#### payOrderByHash - создание платежа для заказа по хэшу платежа
 ```php
 $processor->payOrderByHash($hash);
 ```
-#### loadPayment
+#### loadPayment - получение платежа по идентификатору
 ```php
 $processor->loadPayment($payment_id);
 ```
-#### loadPaymentByHash
+#### loadPaymentByHash - получение платежа по хэшу
 ```php
 $processor->loadPaymentByHash($hash);
 ```
-#### createPayment
+#### createPayment - создание платежа
 ```php
 $processor->createPayment($order_id, $amount);
 ```
-#### savePayment
+#### savePayment сохранение данных платежа
 ```php
 $processor->savePayment($payment);
 ```
-#### getOrderPaymentsAmount
+#### getOrderPaymentsAmount - получение суммы всех платежей для заказа
 ```php
 $processor->getOrderPaymentsAmount($order_id);
 ```
-#### isOrderStarted
+#### isOrderStarted - начато ли оформление заказа
 ```php
 $processor->isOrderStarted();
 ```
-#### updateRawData
+#### updateRawData - обновление сырых данных заказа (используется в процессе заполнения формы)
 ```php
 $processor->updateRawData($data);
 ```
-#### getCurrentDelivery
+#### getCurrentDelivery - получение текущего способа доставки
 ```php
 $processor->getCurrentDelivery();
 ```
-#### getCurrentPayment
+#### getCurrentPayment - получение текущего способа оплаты
 ```php
 $processor->getCurrentPayment();
 ```
