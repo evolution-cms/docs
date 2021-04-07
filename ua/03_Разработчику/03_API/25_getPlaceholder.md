@@ -4,14 +4,14 @@
 
 string getPlaceholder(string $name);
 
-**$name** - назва плейсхолдера. Здається без синтаксичної конструкції.
+**$name** - назва плейсхолдера. Задається без синтаксичної конструкції.
 
 ***
 
 ####Приклад
 ```php
 $txt = $modx->getPlaceholder('MyPlaceholder');
-//поверне  значення плейсхолдера MyPlaceholder.
+//поверне значення плейсхолдера MyPlaceholder.
 ```
 ***
 
