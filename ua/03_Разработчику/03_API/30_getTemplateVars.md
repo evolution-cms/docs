@@ -29,7 +29,7 @@ array getTemplateVars(array $idnames[, string $fields[, int $docid[, int $publis
 
 **$dir** - правило сортування TV-параметрів
 ASC - в порядку зростання
-DESC - в порядку убування
+DESC - в порядку спадання
 за замовчуванням: ASC
 
 ***
