@@ -14,3 +14,5 @@
 
 <li><p>Опціонально: перевірте і змініть права доступу до  файла config.inc.php в папці /manager/includes на -0444 (r--r--r--) - це дасть захист  вашому сайту від можливої атаки.</p></li>
 </ul>
+<p><b>Швидке встановлення</b></p>
+<p>Використайте <a href="https://github.com/evolution-cms/installer">installer</a></p>
