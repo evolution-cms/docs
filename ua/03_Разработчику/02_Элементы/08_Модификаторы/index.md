@@ -26,14 +26,14 @@
 [*longtitle:ifempty('[*pagetitle*]')*]
 ```
 
-Пример 2: регістронезалежність
+Приклад 2: регістронезалежність
 
 ```
 [*template:is(1):then(Top page):else(Sub page)*]
 [*template:IS(1):THEN('Top page'):ELSE('Sub page')*]
 ```
 
-Пример 3: оформлення в декількох рядках
+Приклад 3: оформлення в декількох рядках
 
 ```
 [*id
