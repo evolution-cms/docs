@@ -10,7 +10,7 @@ mixed changeWebUserPassword(string $oldPwd, string $newPwd);
 
 
 
-### Приклаж:###
+### Приклад:###
 
 ```php
 $txt = $modx->changeWebUserPassword('oldpassword','newpassword');
