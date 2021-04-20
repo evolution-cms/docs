@@ -1,216 +1,216 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<h3>ddGetMultipleField Сниппет для вывода данных </h3> 
-Сниппет для вывода данных, разделённых через определённые разделители. Удобно использовать для вывода значений полей документов.	
+<h3>ddGetMultipleField Сніпет для виведення даних </h3> 
+Сніпет для виведення даних, розділених через певні роздільники. Зручно використовувати для виведення значень полів документів.	
 <br>
-<p>Сниппет для вывода данных, разделённых через определённые разделители. Удобно использовать для вывода значений полей документов, сформированных виджетом <a href="128.html">mm_ddMultipleFields</a>.</p>
+<p>Сніпет для виведення даних, розділених через певні роздільники. Зручно використовувати для виведення значень полів документів, сформованих віджетом <a href="128.html">mm_ddMultipleFields</a>.</p>
 <p>Автор: <i class="fa fa-github fa-lg text-primary"></i> <a href="https://github.com/DivanDesign/MODXEvo.snippet.ddGetMultipleField" rel="nofollow" target="_blank">DivanDesign</a></p>
 
-<h3 class="sub-header">Возможности:</h3>
+<h3 class="sub-header">Можливості:</h3>
 <ul>
-	<li>Получение необходимого поля документа (и TV) по id. Параметры «inputString_docField» и «inputString_docId».</li>
-	<li>Вывод необходимого количества значений по номерам строк и и значениям. Параметры «startRow», «totalRows» и «filter».</li>
-	<li>Вывод необходимых значений по номерам колонок. Параметр «columns».</li>
-	<li>Сортировка строк по значениям колонок перед выводом ('ASC', 'DESC', 'RAND', 'REVERSE'), в том числе множественная сортировка. Параметры «sortDir» и «sortBy».</li>
-	<li>Вывод значений через разделители строк и колонок. Параметры «rowGlue» и «colGlue».</li>
-	<li>Удаление пустых значений колонок и строк перед выводом. Параметры «removeEmptyRows» и «removeEmptyCols».</li>
-	<li>Типографирование значений перед выводом (используется сниппет <a href="ddtypograph/index.html">ddTypograph</a>). Параметр «typography».</li>
-	<li><span style="word-spacing:nowrap;">URL-кодирование</span> результата перед выводом. Параметр «urlencode».</li>
-	<li>Вывод результата в JSON. Параметр «outputFormat».</li>
-	<li>Вывод значений по шаблонам (чанкам) строк и колонок (в шаблоне строк также доступен плэйсхолдер <span>[</span>+rowNumber+] с номером строки). Параметры «rowTpl» и «colTpl».</li>
-	<li>Вывод результата выполнения в чанк «outerTpl» с передачей дополнительных данных через параметр «placeholders».</li>
+	<li>Отримання необхідного поля документа (і TV) по id. Параметри «inputString_docField» і «inputString_docId».</li>
+	<li>Виведення необхідної кількості значень за номерами рядків і і значенням. Параметри «startRow», «totalRows» і «filter».</li>
+	<li>Виведення необхідних значень за номерами колонок. Параметр «columns».</li>
+	<li>Сортування рядків за значеннями колонок перед виведенням ('ASC', 'DESC', 'RAND', 'REVERSE'), в тому числі множинне сортування. Параметри «sortDir» і «sortBy».</li>
+	<li>Виведення значень через роздільники рядків і колонок. Параметри «rowGlue» і «colGlue».</li>
+	<li>Видалення порожніх значень колонок і рядків перед виведенням. Параметри «removeEmptyRows» і «removeEmptyCols».</li>
+	<li>Типографіровання значень перед виведенням (використовується сніппет <a href="ddtypograph/index.html">ddTypograph</a>). Параметр «typography».</li>
+	<li><span style="word-spacing:nowrap;">URL-кодування</span> результату перед виведенням. Параметр «urlencode».</li>
+	<li>Виведення результату в JSON. Параметр «outputFormat».</li>
+	<li>Виведення значень за шаблонами (чанками) рядків і колонок (в шаблоні рядків також доступний плейсхолдер <span>[</span>+rowNumber+] з номером рядка). Параметри «rowTpl» і «colTpl».</li>
+	<li>Виведення результату виконання в чанк «outerTpl» з передачею додаткових даних через параметр «placeholders».</li>
 </ul>
 
-<h2 class="page-header">Документация</h2>
-<p>Из пары параметров «inputString»/«inputString_docField» необходимо передавать лишь один.</p>
-<h3 class="sub-header">Описание параметров</h3>
+<h2 class="page-header">Документація</h2>
+<p>З пари параметрів «inputString» / «inputString_docField» необхідно передавати лише один.</p>
+<h3 class="sub-header">Опис параметрів</h3>
 <table class="table table-bordered table-vcenter flip-content">
 	<thead class="flip-content bordered-palegreen">
 		<tr>
-			<th>Название</th>
-			<th>Описание</th>
-			<th>Допустимые значения</th>
-			<th>Значение по умолчанию</th>
+			<th>Назва</th>
+			<th>Опис</th>
+			<th>Допустимі значення</th>
+			<th>Значення за замовчуванням</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td class="em">inputString<span class="help" title="Обязательный параметр">*</span></td>
-			<td colspan="1">Исходная строка, содержащая значение с разделителями.</td>
+			<td class="em">inputString<span class="help" title="Обов'язковий параметр">*</span></td>
+			<td colspan="1">Вихідний рядок, що містить значення з роздільниками.</td>
 			<td>{separated string}</td>
 			<td>–</td>
 		</tr>
 		<tr>
 			<td>inputString_docField</td>
-			<td colspan="1">Имя поля документа / TV, содержащего значение. В этом случае параметр «inputString» игнорируется, значение получается из поля документа.</td>
+			<td colspan="1">Ім'я поля документа / TV, що містить значення. У цьому випадку параметр «inputString» ігнорується, значення виходить з поля документа..</td>
 			<td>{string}</td>
 			<td>–</td>
 		</tr>
 		<tr>
 			<td>inputString_docId</td>
-			<td colspan="1">ID документа, значение поля которого нужно получить. Если id не задан, берётся id текущего документа.</td>
+			<td colspan="1">ID документа, значення поля яке потрібно отримати. Якщо id не заданий, береться id поточного документа.</td>
 			<td>{integer}</td>
 			<td>–</td>
 		</tr>
 		<tr>
 			<td>rowDelimiter</td>
-			<td colspan="1">Разделитель между строками в исходной строке.</td>
+			<td colspan="1">Роздільник між рядками в вихідній стрічці.</td>
 			<td>{string; regexp}</td>
 			<td>'||'</td>
 		</tr>
 		<tr>
 			<td>colDelimiter</td>
-			<td colspan="1">Разделитель между колонками в исходной строке.</td>
+			<td colspan="1">Роздільник між колонками в вихідній стрічці.</td>
 			<td>{string; regexp}</td>
 			<td>'::'</td>
 		</tr>
 		<tr>
 			<td>startRow</td>
-			<td colspan="1">Номер строки, начиная с которой необходимо возвращать (строки нумеруются с 0).</td>
+			<td colspan="1">Номер рядка, починаючи з якого необхідно повертати (рядки нумеруються з 0).</td>
 			<td>{integer}</td>
 			<td>0</td>
 		</tr>
 		<tr>
 			<td>totalRows</td>
-			<td colspan="1">Количество возвращаемых строк. При значении == 'all' будут возвращены все имеющиеся строки.</td>
+			<td colspan="1">Кількість повертаючих рядків. При значенні == 'all' будуть повернуті всі наявні рядки.</td>
 			<td>{integer; 'all'}</td>
 			<td>'all'</td>
 		</tr>
 		<tr>
 			<td>columns</td>
-			<td colspan="1">Номера колонк через запятую, которые нужно вернуть (колонки нумеруются с 0). При значении == 'all' будут возвращены все колонки.</td>
+			<td colspan="1">Номера колонок через кому, які потрібно повернути (колонки нумеруються з 0). При значенні == 'all' будуть повернуті всі колонки.</td>
 			<td>{comma separated string; 'all'}</td>
 			<td>'all'</td>
 		</tr>
 		<tr>
 			<td>filter</td>
-			<td colspan="1">Фильтр по значениям колонок. Например, при '0::a||0::b||1::1' выведутся только строки, в которых значение колонки 0 равно 'a' или 'b' и значение колонки 1 равно '1'.</td>
+			<td colspan="1">Фільтр за значеннями колонок. Наприклад, при '0 :: a || 0 :: b || 1 :: 1' виведуться тільки рядки, в яких значення колонки 0 дорівнює 'a' або 'b' і значення колонки 1 дорівнює '1'.</td>
 			<td>{separated string}</td>
 			<td>–</td>
 		</tr>
 		<tr>
 			<td>removeEmptyRows</td>
-			<td colspan="1">Удалять пустые строки?</td>
+			<td colspan="1">Видаляти порожні рядки</td>
 			<td>{0; 1}</td>
 			<td>1</td>
 		</tr>
 		<tr>
 			<td>removeEmptyCols</td>
-			<td colspan="1">Удалять пустые колонки?</td>
+			<td colspan="1">Видаляти порожні колонки</td>
 			<td>{0; 1}</td>
 			<td>1</td>
 		</tr>
 		<tr>
 			<td>sortBy</td>
-			<td colspan="1">Номер колонки (нумеруются с ноля), по которой необходимо сортировать. Для множественной сортировки параметры указываются через запятую (например: '0,1').</td>
+			<td colspan="1">Номер колонки (нумерується з нуля), по якій необхідно сортувати. Для множинного сортування параметри вказуються через кому (наприклад: '0,1')..</td>
 			<td>{comma separated string}</td>
 			<td>0</td>
 		</tr>
 		<tr>
 			<td>sortDir</td>
-			<td colspan="1">Направление сортировки строк. При значении == 'REVERSE' строки будут возвращены в обратном порядке.</td>
+			<td colspan="1">Напрямок сортування рядків. При значенні == 'REVERSE' рядки будуть повернуті в зворотньому порядку.</td>
 			<td>{'ASC'; 'DESC'; 'RAND'; 'REVERSE'; ''}</td>
 			<td>–</td>
 		</tr>
 		<tr>
 			<td>typography</td>
-			<td colspan="1">Номера колонок через запятую, значения которых нужно типографировать (колонки нумеруются с 0). Если не задано, ничего не типографируется.</td>
+			<td colspan="1">Номери колонок через кому, значення яких потрібно типографірувати (колонки нумеруються з 0). Якщо не задано, нічого не типографується.</td>
 			<td>{comma separated string}</td>
 			<td>–</td>
 		</tr>
 		<tr>
 			<td>outputFormat</td>
-			<td colspan="1">Формат, в котором возвращать результат.</td>
+			<td colspan="1">Формат, в якому повертається результат.</td>
 			<td>{'html'; 'JSON'; 'array'; 'htmlarray'}</td>
 			<td>'html'</td>
 		</tr>
 		<tr>
 			<td>rowGlue</td>
-			<td colspan="1">Разделитель (объединитель) между строками при выводе. Может использоваться совместно с шаблоном «rowTpl».</td>
+			<td colspan="1">Роздільник (об'єднувач) між рядками при виведенні. Може використовуватися спільно з шаблоном «rowTpl».</td>
 			<td>{string}</td>
 			<td>–</td>
 		</tr>
 		<tr>
 			<td>colGlue</td>
-			<td colspan="1">Разделитель (объединитель) между колонками при выводе. Может использоваться совместно с шаблоном «colTpl» (но не «rowTpl», по понятным причинам).</td>
+			<td colspan="1">Роздільник (об'єднувач) між колонками при виведенні. Може використовуватися спільно з шаблоном «colTpl» (але не «rowTpl», зі зрозумілих причин).</td>
 			<td>{string}</td>
 			<td>–</td>
 		</tr>
 		<tr>
 			<td>rowTpl</td>
-			<td colspan="1">Шаблон для вывода строк (параметр «outputFormat» должен быть == 'html').
-				<p>Доступные плэйсхолдеры:</p>
+			<td colspan="1">Шаблон для виведення рядків (параметр «outputFormat» повинен бути == 'html').
+				<p>Доступні плейсхолдери:</p>
 				<ul>
-					<li>[+rowNumber+] – номер строки, начинающийся с 1;</li>
-					<li>[+rowNumber.zeroBased+] – номер строки, начинающийся с 0;</li>
-					<li>[+total+] – общее количество строк;</li>
-					<li>[+resultTotal+] – количество возвращаемых строк;</li>
-					<li>[+col0+], [+col1+], … – значения соответствующих колонок.</li>
+					<li>[+rowNumber+] – номер рядка, що починається з 1;</li>
+					<li>[+rowNumber.zeroBased+] – номер рядка, що починається з 0;</li>
+					<li>[+total+] – загальна кількість рядків;</li>
+					<li>[+resultTotal+] – кількість повертаючих рядків;</li>
+					<li>[+col0+], [+col1+], … – значення відповідних колонок.</li>
 				</ul>
-				<p>Передавать код напрямую без чанка можно начиная значение с «@CODE:».</p></td>
+				<p>Передавати код безпосередньо без чанка можна починаючи значення з «@CODE:».</p></td>
 			<td>{string: chunkName|string}</td>
 			<td>–</td>
 		</tr>
 		<tr>
 			<td>colTpl</td>
-			<td colspan="1">Список шаблонов для вывода колонок, через запятую (параметр «outputFormat» должен быть == 'html'). Если шаблонов меньше, чем колонок, для всех недостающих выставляется последний указанный шаблон. Значение 'null' – без шаблона.
-				<p>Доступные плэйсхолдеры:</p>
+			<td colspan="1">Список шаблонів для виведення колонок, через кому (параметр «outputFormat» повинен бути == 'html'). Якщо шаблонів менше, ніж колонок, для всіх відсутніх виставляється останній вказаний шаблон. Значення 'null' - без шаблону.
+				<p>Доступні плейсхолдери:</p>
 				<ul>
-					<li>[+val+] – значение;</li>
-					<li>[+rowNumber+] – номер строки, начинающийся с 1;</li>
-					<li>[+rowNumber.zeroBased+] – номер строки, начинающийся с 0.</li>
+					<li>[+val+] – значення;</li>
+					<li>[+rowNumber+] – номер рядка, що починається з 1;</li>
+					<li>[+rowNumber.zeroBased+] – номер рядка, що починається з 0.</li>
 				</ul>
-				<p>Передавать код напрямую без чанка можно начиная значение с «@CODE:».</p></td>
+				<p>Передавати код безпосередньо без чанка можна починаючи значення з «@CODE:».</p></td>
 			<td>{comma separated string: chunkName|string; 'null'}</td>
 			<td>–</td>
 		</tr>
 		<tr>
 			<td>outerTpl</td>
-			<td colspan="1">Шаблон внешней обёртки (при «outputFormat» != 'array').
-				<p>Доступные плэйсхолдеры:</p>
+			<td colspan="1">Шаблон зовнішньої обгортки (при «outputFormat» != 'array').
+				<p>Доступні плейсхолдери:</p>
 				<ul>
-					<li>[+result+] – результат сниппета;</li>
-					<li>[+total+] – общее количество строк;</li>
-					<li>[+resultTotal+] – количество возвращаемых строк;</li>
-					<li>[+rowY.colX+] – значение (где «Y» – номер строки, «X» – номер колонки).</li>
+					<li>[+result+] – результат сніппета;</li>
+					<li>[+total+] – загальна кількість рядків;</li>
+					<li>[+resultTotal+] – кількість повертаючих рядків;</li>
+					<li>[+rowY.colX+] – значення (де «Y» - номер рядка, «X» - номер колонки).</li>
 				</ul>
-				<p>Передавать код напрямую без чанка можно начиная значение с «@CODE:».</p></td>
+				<p>Передавати код безпосередньо без чанка можна починаючи значення з «@CODE:».</p></td>
 			<td>{string: chunkName|string}</td>
 			<td>–</td>
 		</tr>
 		<tr>
 			<td>placeholders</td>
-			<td colspan="1">Дополнительные данные в виде <a href="https://en.wikipedia.org/wiki/Query_string" target="_blank">query string</a> которые будут переданы в шаблоны «outerTpl», «rowTpl» and «colTpl». Например, «pladeholder1=value1&pagetitle=My awesome pagetitle!».</td>
+			<td colspan="1">Додаткові дані у вигляді <a href="https://en.wikipedia.org/wiki/Query_string" target="_blank">query string</a> які будуть передані в шаблони «outerTpl», «rowTpl» і «colTpl». Наприклад, «pladeholder1=value1&pagetitle=My awesome pagetitle!».</td>
 			<td>{query string}</td>
 			<td>–</td>
 		</tr>
 		<tr>
 			<td>urlencode</td>
-			<td colspan="1">Надо URL-кодировать результирующую строку (при «outputFormat» != 'array')? Строка кодируется согласно RFC 3986.</td>
+			<td colspan="1">Треба URL-кодувати результуючий рядок (при «outputFormat»! = 'Array')? Рядок кодується згідно RFC 3986.</td>
 			<td>{0; 1}</td>
 			<td>0</td>
 		</tr>
 		<tr>
 			<td>totalRowsToPlaceholder</td>
-			<td colspan="1">Имя внешнего плэйсхолдера, в который нужно вывести общее количество строк. Если параметр не задан – не выводится.</td>
+			<td colspan="1">Ім'я зовнішнього плейсхолдера, в який потрібно вивести загальну кількість рядків. Якщо параметр не заданий - не виводиться.</td>
 			<td>{string}</td>
 			<td>–</td>
 		</tr>
 		<tr>
 			<td>resultToPlaceholder</td>
-			<td colspan="1">Имя внешнего плэйсхолдера, в который нужно сохранить результат работы сниппета вместо обычного вывода. Если параметр не задан – сниппет просто возвращает реузльтат.</td>
+			<td colspan="1">Ім'я зовнішнього плейсхолдера, в який потрібно зберегти результат роботи сніпета замість звичайного виведення. Якщо параметр не заданий - сніппет просто повертає реузльтат.</td>
 			<td>{string}</td>
 			<td>–</td>
 		</tr>
 	</tbody>
 </table>
 
-<h3 class="sub-header">Примеры</h3>
-<h4>Вывод изображений с описаниями</h4>
-<p>Исходная строка (пусть находится в TV документа «images»):</p>
+<h3 class="sub-header">Приклади</h3>
+<h4>Виведення зображень з описами</h4>
+<p>Вихідний рядок (нехай перебуває в TV документа «images»):</p>
 <pre class="brush: html;">
-assets/images/some_img1.jpg::Изображение 1||assets/images/some_img2.jpg::Изображение 2</pre>
-<p>Вызов сниппета в шаблоне документа:</p>
+assets/images/some_img1.jpg::Изображение 1||assets/images/some_img2.jpg::Зображення 2</pre>
+<p>Виклик сніпета в шаблоні документа:</p>
 <pre class="brush: html;">
 [[ddGetMultipleField?
 &inputString=``
@@ -223,11 +223,11 @@ assets/images/some_img1.jpg::Изображение 1||assets/images/some_img2.j
 &lt;img src="[+col0+]" alt="[+col1+]" /&gt;
 </pre>
 
-<h4>Получение и вывод данных из поля (TV) «prices» документа с id = 25 в виде таблицы, если что-то есть и ничего, если нету</h4>
-<p>Исходное значение поля:</p>
-<pre class="brush: html;">Яблоки вкусные::100::кг||Гвозди обыкновенные::5 000::центнер||Коты::865::шт</pre>
+<h4>Отримання і виведення даних з поля (TV) «prices» документа з id = 25 в вигляді таблиці, якщо щось є і нічого, якщо немає</h4>
+<p>Вихідне значення поля:</p>
+<pre class="brush: html;">Яблука смачні::100::кг||Цвяхи звичайні::5 000::центнер||Коти::865::шт</pre>
 
-<p>Вызов сниппета (где угодно):</p>
+<p>Виклик сніпета (де завгодно):</p>
 <pre class="brush: html;">
 [[ddGetMultipleField?
 &amp;inputString_docField=`prices`
@@ -246,18 +246,18 @@ assets/images/some_img1.jpg::Изображение 1||assets/images/some_img2.j
 
 <p>Код чанка «prices»:</p>
 <pre class="brush: html;">
-&lt;h1&gt;Табличка цен&lt;/h1&gt;
+&lt;h1&gt;Табличка цін&lt;/h1&gt;
 &lt;table&gt;
 	[+result+]
 &lt;/table&gt;
 </pre>
 
-<h4>Вывод тегов документа через запятую с использованием регулярного выражения в «rowDelimiter»</h4>
-<p>Пусть теги документа у нас хранятся в TV «tags» и к этой TV у нас применён виджет <a href="130.html">mm_widget_tags</a>. Пользователь заполняет теги через запятую, при этом, может заполняться как с пробелами по краям, так и без них.</p>
-<p>Значение TV «tags»:</p>
+<h4>Виведення тегів документа через кому з використанням регулярного виразу в «rowDelimiter»</h4>
+<p>Нехай теги документа у нас зберігаються в TV «tags» і до цієї TV у нас застосований віджет <a href="130.html">mm_widget_tags</a>. Користувач заповнює теги через кому, при цьому, може заповнюватися як з пробілами по краях, так і без них.</p>
+<p>Значення TV «tags»:</p>
 <pre class="brush: html;">
-Коты, Кошки,Собаки , Медведи ,Слоны</pre>
-<p>Вызов сниппета в шаблоне документа:</p>
+Коти, Кішки, Собаки, Ведмеді, Слони</pre>
+<p>Виклик сніпета в шаблоні документа:</p>
 <pre class="brush: html;">
 [[ddGetMultipleField?
 &inputString=`Manager, General`
@@ -272,29 +272,29 @@ assets/images/some_img1.jpg::Изображение 1||assets/images/some_img2.j
 
 <p>Результат:</p>
 <pre class="brush: html;">
-&lt;a href="dlbuildmenu/kratkoe-opisanie?tags=Коты"&gt;Коты&lt;/a&gt;,
-&lt;a href="dlbuildmenu/kratkoe-opisanie?tags=Кошки"&gt;Кошки&lt;/a&gt;,
+&lt;a href="dlbuildmenu/kratkoe-opisanie?tags=Коти"&gt;Коти&lt;/a&gt;,
+&lt;a href="dlbuildmenu/kratkoe-opisanie?tags=Кішки"&gt;Кішки&lt;/a&gt;,
 &lt;a href="dlbuildmenu/kratkoe-opisanie?tags=Собаки"&gt;Собаки&lt;/a&gt;,
-&lt;a href="dlbuildmenu/kratkoe-opisanie?tags=Медведи"&gt;Медведи&lt;/a&gt;,
-&lt;a href="dlbuildmenu/kratkoe-opisanie?tags=Слоны"&gt;Слоны&lt;/a&gt;
+&lt;a href="dlbuildmenu/kratkoe-opisanie?tags=Ведмеді"&gt;Ведмеді&lt;/a&gt;,
+&lt;a href="dlbuildmenu/kratkoe-opisanie?tags=Слони"&gt;Слони&lt;/a&gt;
 </pre>
 
-<h4>Передача дополнительных данных через параметр «placeholders»</h4>
+<h4>Передача додаткових даних через параметр «placeholders»</h4>
 <pre class="brush: html;">
 [[ddGetMultipleField?
-&inputString=`Серый::8 кг::любит мясо||Рыжий::6 кг::вегетарианец`
+&inputString=`Сірий::8 кг::любить м'ясо || Рудий :: 6 кг :: вегетаріанець`
 &outerTpl=`cats`
 &rowTpl=`cats_item`
 &colTpl=`cats_item_color,null,null`
-&placeholders=`kind=коты`
-&price=`не продаётся.`
-&colorTitle=`Шерсть густая, хорошая`
+&placeholders=`kind=коти`
+&price=`не продається.`
+&colorTitle=`Шерсть густа, хороша`
 ]]
 </pre>
-<p>Код чанка «cats» (вместо «[+kind+]» подставятся «коты»):</p>
-<pre class="brush: html;">&lt;h1&gt;Наши любимые [+kind+], [+resultTotal+] штук.&lt;/h1&gt;[+result+]</pre>
-<p>Код чанка «cats_item» (вместо «[+price+]» подставится «не продаётся.»):</p>
-<pre class="brush: html;">[+rowNumber+]. [+col0+], весит [+col1+], [+col2+] – &lt;i&gt;[+price+]&lt;/i&gt;&lt;br /&gt;</pre>
-<p>Код чанка «cats_item_color» (вместо «[+colorTitle+]» подставится «Шерсть густая, хорошая»):</p>
+<p>Код чанка «cats» (замість «[+ kind]» підставляється «коти»):</p>
+<pre class="brush: html;">&lt;h1&gt;Наші улюблені [+kind+], [+resultTotal+] штук.&lt;/h1&gt;[+result+]</pre>
+<p>Код чанка «cats_item» (замість «[+price+]» підставиться «не продається.»):</p>
+<pre class="brush: html;">[+rowNumber+]. [+col0+], важить [+col1+], [+col2+] – &lt;i&gt;[+price+]&lt;/i&gt;&lt;br /&gt;</pre>
+<p>Код чанка «cats_item_color» (замість «[+colorTitle+]» підставиться «Шерсть густа, хороша»):</p>
 <pre class="brush: html;">&lt;span title="[+colorTitle+]"&gt;[+val+]&lt;/span&gt;</pre>
-<p><i>Примеров здесь можно напридумывать великое множество.</i></p>
+<p><i>Прикладів тут можна напридумувати безліч.</i></p>
