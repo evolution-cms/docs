@@ -34,7 +34,7 @@ $modx-&gt;documentIdentifier
 <h3 class="sub-header text-bold">tplFirst</h3>
 <p>Шаблон виведення першого пункту.</p>
 <p>Значення за замовчуванням: немає</p>
-<p>Приклад шаблону для домашньої сторінки/p>
+<p>Приклад шаблону для домашньої сторінки</p>
 <pre class="brush: html;">
 @CODE:&lt;li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="home-link"&gt;
 	&lt;meta itemprop="position" content="[+iteration+]" /&gt;
