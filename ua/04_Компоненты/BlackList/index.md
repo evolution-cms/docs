@@ -1,13 +1,13 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<h3>BlackList: Защита от спама без каптчи </h3>
-Плагин Защиты от спама без каптчи на Evolution CMS.
-<h3 class="page-header">Пример используя платного веб-сервиса Akismet</h3>
-<p>Автор: <i class="fa fa-modx fa-lg"></i> <a href="https://modx.ru/razrabotchiki-na-modx/8423/" rel="nofollow" target="_blank">Алексей Либер</a></p>
-<p>Первое, что надо сделать – зарегистрироваться на сайте <a href="https://akismet.com/" rel="nofollow" target="_blank">Akismet</a> и получить ключ API. (Там просит регистрацию на Wordpress.com, т.к. класс изначально под него заточен был). Затем перейти на страницу с плагинами и библиотеками, выбрать и <a href="https://github.com/kenmoini/akismet/blob/master/src/Kenmoini/Akismet/Akismet.php" rel="nofollow" target="_blank">загрузить класс PHP 5 Akismet</a>.</p>
-<p>Загруженный файлик akismet.class.php кидаем в assets/lib/<p>
-<p>Далее создаем табличку для нежелательных ip чтобы сразу блокировать ip с которых рассылался спам.</p>
-<p>Инструменты -&gt; Резервное копирование -&gt; Восстановить -&gt; Выполнить произвольную команду SQL.</p>
+<h3>BlackList: Захист від спаму без капчі </h3>
+Плагін Захисту від спаму без капчі на Evolution CMS.
+<h3 class="page-header">Приклад використовуючи платного веб-сервісу Akismet</h3>
+<p>Автор: <i class="fa fa-modx fa-lg"></i> <a href="https://modx.ru/razrabotchiki-na-modx/8423/" rel="nofollow" target="_blank">Олексій Лібер</a></p>
+<p>Перше, що треба зробити - зареєструватися на сайті <a href="https://akismet.com/" rel="nofollow" target="_blank">Akismet</a> і отримати ключ API. (Там просить реєстрацію на Wordpress.com, тому що клас спочатку під нього заточений був). Потім перейти на сторінку з плагінами і бібліотеками, вибрати і <a href="https://github.com/kenmoini/akismet/blob/master/src/Kenmoini/Akismet/Akismet.php" rel="nofollow" target="_blank">завантажити клас PHP 5 Akismet</a>.</p>
+<p>Завантажений файлик akismet.class.php кидаємо в assets/lib/<p>
+<p>Далі створюємо табличку для небажаних ip щоб відразу блокувати ip з яких розсилався спам.</p>
+<p>Інструменти -&gt; Резервне копіювання -&gt; Відновити -&gt; Виконати довільну команду SQL.</p>
 <pre class="brush: sql;">
 CREATE TABLE `modx_ip_blocked` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -19,9 +19,9 @@ CREATE TABLE `modx_ip_blocked` (
   UNIQUE KEY `ip` (`ip`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
 </pre>
-<p>Далее создаем плагин на события <span class="text-bold">OnBeforeLoadDocumentObject</span> и <span class="text-bold">OnLoadWebPageCache</span> и вставляем следующий код:</p>
+<p>Далі створюємо плагін на події <span class="text-bold">OnBeforeLoadDocumentObject</span> и <span class="text-bold">OnLoadWebPageCache</span> і вставляємо наступний код:</p>
 <pre class="brush: php;">
-$blockip = 1; //Блокировать пользователей по ip. 1 - да. 0 - нет.
+$blockip = 1; //Блокувати користувачів по ip. 1 - так. 0 - ні.
 $e = $modx->Event;
 if ($e->name == 'OnBeforeLoadDocumentObject' || $e->name == 'OnLoadWebPageCache'){
 	if ($blockip){
@@ -44,15 +44,15 @@ if ($e->name == 'OnBeforeLoadDocumentObject' || $e->name == 'OnLoadWebPageCache'
 	}
 }
 </pre>
-<p>Данная конструкция проверяет имя пользователя, его email и само сообщение. В примере выше используется имя поля message. Если у вас другое имя – поменяйте на ваше.</p>
-<p>На момент написания поста прошло около 12-ти часов с момента установки данного решения на одном из сайтов, поймано пять писем содеражих спам, и два от клиентов доставлены адресату – т.е. вроде работает исправно.</p>
+<p>Дана конструкція перевіряє ім'я користувача, його email і саме повідомлення. В наведеному вище прикладі використовується ім'я поля message. Якщо у вас інше ім'я - поміняйте на ваше.</p>
+<p>На момент написання посту пройшло близько 12-ї години з моменту установки даного рішення на одному з сайтів, спіймано п'ять листів які містять спам, і два від клієнтів доставлені адресату - тобто начебто працює справно.</p>
 
-<h3 class="page-header">Бесплатный пример используя доп. таблицу с емаил адресами или доменные имена</h3>
+<h3 class="page-header">Безкоштовний приклад використовуючи дод. таблицю з емейл адресами або доменні імена</h3>
 <p>Автор: <i class="fa fa-modx fa-lg"></i> <a href="http://saniock.com" rel="nofollow" target="_blank">Saniock</a></p>
-<p><i class="fa fa-plus fa-fw"></i> бесплатна</p>
-<p><i class="fa fa-minus fa-fw"></i> надо в ручную добавлять емаил адреса или доменные имена</p>
+<p><i class="fa fa-plus fa-fw"></i> безкоштовна</p>
+<p><i class="fa fa-minus fa-fw"></i> Потрібно вручну додавати емейл адреси і доменні імена</p>
 
-<p>Cоздаем ту же таблицу для нежелательных ip</p>
+<p>Створюємо ту ж таблицю для небажаних ip</p>
 <pre class="brush: sql;">
 CREATE TABLE `modx_ip_blocked` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -65,7 +65,7 @@ CREATE TABLE `modx_ip_blocked` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
 </pre>
 
-<p>Cоздаем таблицу в котором будем хранить емаил адреса, или подозрительные доменные имена</p>
+<p>Створюємо таблицю в якій будемо зберігати емейл адреси, або підозрілі доменні імена</p>
 <pre class="brush: sql;">
 CREATE TABLE `modx_email_blocked` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -76,9 +76,9 @@ CREATE TABLE `modx_email_blocked` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
 </pre>
 
-<p>Далее создаем плагин на события <span class="text-bold">OnBeforeLoadDocumentObject</span>, <span class="text-bold">OnLoadWebPageCache</span>, <span class="text-bold">OnPageNotFound</span> и вставляем следующий код:</p>
+<p>Далі створюємо плагін на події <span class="text-bold">OnBeforeLoadDocumentObject</span>, <span class="text-bold">OnLoadWebPageCache</span>, <span class="text-bold">OnPageNotFound</span> і вставляємо наступний код:</p>
 <pre class="brush: php;">
-$blockip = 1; //Блокировать пользователей по ip. 1 - да. 0 - нет.
+$blockip = 1; //Блокувати користувачів по ip. 1 - так. 0 - ні.
 $e = $modx->Event;
 switch($e->name){
 	case 'OnBeforeLoadDocumentObject':
