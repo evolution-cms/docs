@@ -1,62 +1,62 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<h3>SimpleTube - плагин и сниппет для создания видеогалерей </h3>
-SimpleTube - плагин и сниппет для создания видеогалерей.
-<p>Основных отличий всего два, но мне кажется, они достаточно существенные, чтобы сменить название:</p>
+<h3>SimpleTube - плагін і сніппет для створення відеогалерей </h3>
+SimpleTube - плагін і сніппет для створення відеогалерей.
+<p>Основних відмінностей всього дві, проте мені здається, вони достатньо суттєві, щоб змінити назву:</p>
 <ul>
-	<li>теперь используется отдельная таблица для хранения данных, вместо TV-параметра с json;</li>
-	<li>новый удобный интерфейс c jQuery EasyUI</li>
+	<li>тепер використовується окрема таблиця для зберігання данних, замість TV-параметра з json;</li>
+	<li>новий зручний інтерфейс з jQuery EasyUI</li>
 </ul>
-<p>Для работы всего этого необходимо наличие <a href="https://github.com/AgelxNash/DocLister" rel="nofollow" target="_blank">DocLister и MODxAPI</a>, а также PHP 5.6.</p>
-<p>Скачивать здесь: <i class="fa fa-github fa-lg text-primary"></i> <a href="https://github.com/Pathologic/SimpleTube" rel="nofollow" target="_blank">Pathologic</a></p>
-<p><span class="text-bold">Сниппет</span> умеет находить с помощью класса <a href="http://frandieguez.github.io/panorama-php/" rel="nofollow" target="_blank">Panorama-PHP</a> информацию о видео по ссылке, а также при возможности скачивать картинку-превью. Поддерживаются youtube, rutube, vimeo, metacafe и dailymotion. Вообще класс поддерживает больше видеохостингов, но это в теории; поэтому я оставил только то, что более-менее работает (при этом, например, о metacafe и dailymotion я ни разу не слышал).</p>
-<p>С помощью этого сниппета плагин получает информацию для добавления в таблицу, но ничто не мешает использовать его без плагина, как сниппет getVideo из MultiVideos.</p>
-<h3 class="sub-header">Параметры Сниппета:</h3>
+<p>Для роботи всього цього необхіна наявність <a href="https://github.com/AgelxNash/DocLister" rel="nofollow" target="_blank">DocLister і MODxAPI</a>, а також PHP 5.6.</p>
+<p>Скачати тут: <i class="fa fa-github fa-lg text-primary"></i> <a href="https://github.com/Pathologic/SimpleTube" rel="nofollow" target="_blank">Pathologic</a></p>
+<p><span class="text-bold">Сніппет</span> уміє находити за допомогою классу <a href="http://frandieguez.github.io/panorama-php/" rel="nofollow" target="_blank">Panorama-PHP</a> інформацію про відео за посиланням, а також при можливості скачати Зображення-прев'ю. Підтримуються youtube, rutube, vimeo, metacafe і dailymotion. Взагалі класс підтримує більше відеохостингів, але це в теорії; тому я залишив тільки те, що більш-менш працює (при цьому, наприклад, про metacafe і dailymotion я ні разу не чув).</p>
+<p>З допомогою цього сніппета плагін отримує інформацію для додавання в таблицю, але нічого не заважає використовувати його без плагіна, як сніппет getVideo з MultiVideos.</p>
+<h3 class="sub-header">Параметри Сніппета:</h3>
 <ul>
-	<li><span class="text-bold">&input</span> – ссылка;</li>
-	<li><span class="text-bold">&forceDownload</span> – если 1, то всегда скачивать превью, если 0, то только в том случае, если картинки нет в папке; по умолчанию – 0;</li>
-	<li><span class="text-bold">&folder</span> – папка для хранения превью; по умолчанию – assets/images/video/;</li>
-	<li><span class="text-bold">&noImage</span> – путь к картинке, которая выводится в режиме &api=`0` при отсутствии превью; по умолчанию – assets/snippets/simpletube/noimage.png;</li>
-	<li><span class="text-bold">&api</span> – если 0, то выводится чанк &tpl, 1 – json, 2 – массив; по умолчанию – 0;</li>
-	<li><span class="text-bold">&tpl</span> – чанк для вывода в режиме &api=`0`, указывается так же, как в DocLister. Доступные плейсхолдеры: [+st_title+] (название видео), [+st_thumbUrl+] (ссылка на превью или картинку noImage), [+st_embedUrl+] (ссылка для встраивания), [+st_service+] (название видеохостинга), [+st_duration+] (длина видео, секунд);</li>
-	<li><span class="text-bold">&ytApiKey</span> – ключ для работы с Youtube, если параметр не указан, то сниппет попытается получить это значение из настроек плагина.</li>
+	<li><span class="text-bold">&input</span> – посилання;</li>
+	<li><span class="text-bold">&forceDownload</span> – якщо 1, то завжди скачувати прев'ю, якщо 0, то тільки в тому випадку, якщо зображення немає в папці; за замовчуванням – 0;</li>
+	<li><span class="text-bold">&folder</span> – папка для зберігання прев'ю; за замовчуванням – assets/images/video/;</li>
+	<li><span class="text-bold">&noImage</span> – шлях до зображення, котре виводиться в режимі &api=`0` при відсутності прев'ю; за замовчуванням – assets/snippets/simpletube/noimage.png;</li>
+	<li><span class="text-bold">&api</span> – якщо 0, то виводиться чанк &tpl, 1 – json, 2 – массив; за замовчуванням – 0;</li>
+	<li><span class="text-bold">&tpl</span> – чанк для виведення в режимі &api=`0`, вказується так само, як в DocLister. Доступні плейсхолдері: [+st_title+] (назва відео), [+st_thumbUrl+] (посилання на прев'ю або зображення noImage), [+st_embedUrl+] (посилання для вбудови), [+st_service+] (назва відеохостинга), [+st_duration+] (довжина відео, секунд);</li>
+	<li><span class="text-bold">&ytApiKey</span> – ключ для роботи з Youtube, якщо параметр не вказаний, то сніппет намагатиметься отримати це значення з налаштувань плагіна.</li>
 </ul>
-<h3 class="sub-header">Параметры Плагина:</h3>
-<p>Плагин используется для управления галереями на странице ресурса.</p>
+<h3 class="sub-header">Параметри Плагіна:</h3>
+<p>Плагін використовується для керування галереями на сторінці ресурсу.</p>
 <ul>
-	<li><span class="text-bold">Tab name</span> – название вкладки;</li>
-	<li><span class="text-bold">Templates</span> – id шаблонов ресурсов с видео, <span class="text-bold">обязательно</span> – ;</li>
-	<li><span class="text-bold">Roles</span> – id разрешенных ролей;</li>
-	<li><span class="text-bold">Thumbs folder</span> – папка для превью;</li>
-	<li><span class="text-bold">Thumbs cache folder</span> – папка для превью превью (:</li>
-	<li><span class="text-bold">No image picture</span> – картинка, если нет превью;</li>
-	<li><span class="text-bold">Thumbs width</span> – ее ширина;</li>
-	<li><span class="text-bold">Thumbs height</span> – и высота;</li>
-	<li><span class="text-bold">Force download</span> – скачивать превью всегда или при необходимости;</li>
-	<li><span class="text-bold">Youtube API Key</span> – ключ для работы с YouTube.</li>
+	<li><span class="text-bold">Tab name</span> – назва вкладки;</li>
+	<li><span class="text-bold">Templates</span> – id шаблонів ресурсів з відео, <span class="text-bold">обов'язковоо</span> – ;</li>
+	<li><span class="text-bold">Roles</span> – id дозволених ролей;</li>
+	<li><span class="text-bold">Thumbs folder</span> – папка для прев'ю;</li>
+	<li><span class="text-bold">Thumbs cache folder</span> – папка для прев'ю прев'ю (:</li>
+	<li><span class="text-bold">No image picture</span> – зображення, якщо немає прев'ю;</li>
+	<li><span class="text-bold">Thumbs width</span> – її ширина;</li>
+	<li><span class="text-bold">Thumbs height</span> – і висота;</li>
+	<li><span class="text-bold">Force download</span> – скачувати прев'ю завжди або при необхідності;</li>
+	<li><span class="text-bold">Youtube API Key</span> – ключ для работы з YouTube.</li>
 </ul>
-<p>Вывод такой же, как в SimpleGallery – c поправкой на название таблицы и полей. Поэтому смотреть <a href="http://modx.im/blog/docs/2762.html" rel="nofollow" target="_blank">здесь</a>.</p>
-<h3 class="sub-header">Поля в таблице st_videos:</h3>
+<p>Вивід такий же, як в SimpleGallery – c поправкой на назву таблиці і полей. Тому дивитись <a href="http://modx.im/blog/docs/2762.html" rel="nofollow" target="_blank">тут</a>.</p>
+<h3 class="sub-header">Поля в таблиці st_videos:</h3>
 <ul>
-	<li><span class="text-bold">st_id</span> – id видео (idField);</li>
-	<li><span class="text-bold">st_index</span> – позиция в списке;</li>
-	<li><span class="text-bold">st_title</span> – название видео;</li>
-	<li><span class="text-bold">st_videoUrl</span> – исходная ссылка на видео;</li>
-	<li><span class="text-bold">st_thumbUrl</span> – ссылка на превью;</li>
-	<li><span class="text-bold">st_embedUrl</span> – ссылка для встраивания;</li>
-	<li><span class="text-bold">st_duration</span> – длина видео, секунды;</li>
-	<li><span class="text-bold">st_isactive</span> – флажок, чтобы скрыть какие-то видео из вывода;</li>
-	<li><span class="text-bold">st_service</span> – название видеохостинга;</li>
-	<li><span class="text-bold">st_rid</span> – id ресурса, которому принадлежит видео (parentField).</li>
-	<li><span class="text-bold">st_createdon</span> – дата добавления видео.</li>
+	<li><span class="text-bold">st_id</span> – id відео (idField);</li>
+	<li><span class="text-bold">st_index</span> – позиція в списку;</li>
+	<li><span class="text-bold">st_title</span> – назва відео;</li>
+	<li><span class="text-bold">st_videoUrl</span> – вихідне посилання на відео;</li>
+	<li><span class="text-bold">st_thumbUrl</span> – посилання на прев'ю;</li>
+	<li><span class="text-bold">st_embedUrl</span> – посилання для вбудови;</li>
+	<li><span class="text-bold">st_duration</span> – довжина відео, секунди;</li>
+	<li><span class="text-bold">st_isactive</span> – прапорець, щоб приховати якісь відео з виведення;</li>
+	<li><span class="text-bold">st_service</span> – назва відеохостинга;</li>
+	<li><span class="text-bold">st_rid</span> – id ресурсу, котрому належить відео (parentField).</li>
+	<li><span class="text-bold">st_createdon</span> – дата додавання відео.</li>
 </ul>
 
-<h3 class="page-header">Получение ключа для Youtube</h3>
-<p>Старый API, с которым можно было работать без ключей, больше не доступен, поэтому придется регистрировать аккаунт и получать ключ:</p>
+<h3 class="page-header">Отримання ключа для Youtube</h3>
+<p>Старий API, з котрим можна було працювати без ключів, більше не доступний, тому прийдеться реєструвати аккаунт і отримати ключ:</p>
 <ol>
-	<li>Идем сюда <a href="https://console.developers.google.com/" rel="nofollow" target="_blank">console.developers.google.com/</a></li>
-	<li>Создаем проект.</li>
-	<li>В разделе APIs выбираем YouTube Data API, нажимаем Enable API.</li>
-	<li>В разделе Credentials нажимаем Create New Key, выбираем Browser Key и сразу Create (в текстовое поле ничего писать не нужно).</li>
-	<li>Копируем API Key и вставляем в настройки плагина.</li>
+	<li>ІдемО сюдИ <a href="https://console.developers.google.com/" rel="nofollow" target="_blank">console.developers.google.com/</a></li>
+	<li>Створюємо проєкт.</li>
+	<li>В розділі APIs вибираємо YouTube Data API, нажимаєм Enable API.</li>
+	<li>В розділі Credentials нажимаєм Create New Key, вибираємо Browser Key і відразу Create (в текстове поле нічого писати не потрібно).</li>
+	<li>Копируем API Key и вставляємо в налаштування плагіна.</li>
 </ol>
