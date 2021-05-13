@@ -35,7 +35,7 @@ SimpleTube - плагін і сніппет для створення відео
 	<li><span class="text-bold">Force download</span> – скачувати прев'ю завжди або при необхідності;</li>
 	<li><span class="text-bold">Youtube API Key</span> – ключ для работы з YouTube.</li>
 </ul>
-<p>Вивід такий же, як в SimpleGallery – c поправкой на назву таблиці і полей. Тому дивитись <a href="http://modx.im/blog/docs/2762.html" rel="nofollow" target="_blank">тут</a>.</p>
+<p>Вивід такий ж, як в SimpleGallery – c поправкой на назву таблиці і полей. Тому дивитись <a href="http://modx.im/blog/docs/2762.html" rel="nofollow" target="_blank">тут</a>.</p>
 <h3 class="sub-header">Поля в таблиці st_videos:</h3>
 <ul>
 	<li><span class="text-bold">st_id</span> – id відео (idField);</li>
