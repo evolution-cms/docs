@@ -1,4 +1,4 @@
-## Selector - custom TV для скадання списку документів в Evolution CMS. ##
+## Selector - custom TV для складання списку документів в Evolution CMS. ##
 Selector є заміною для mm_ddSelectDocuments.
 
 На відміну від mm_ddSelectDocuments:
