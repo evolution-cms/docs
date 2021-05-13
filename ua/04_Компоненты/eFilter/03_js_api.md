@@ -21,7 +21,7 @@ function afterFilterComplete() {
 ### beforeFilterSend(_form)
 ...
 
-## Важливо! для работи `ajax`
+## Важливо! для роботи `ajax`
 Для роботи ajax форма і блок товарів не повинні бути в самому корені документа, тобто безпосередньо в <body>.
 
 Не можна:`<body>[!eFilter!][+eFilter_form+][!eFilteResult!]</body>`
