@@ -1,7 +1,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <h3>MetaX: Параметри Dublin Core </h3> 
-Параметри Dublin Core сніппета MetaX.	
+Параметри Dublin Core сніпета MetaX.	
 <br>
 <div class="panel-group accordion">
 	<div class="panel panel-default">
