@@ -1,9 +1,9 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <h3>Особистий кабінет веб користувача MODx Evo </h3>
-Сніппет для реєстрації, входу, нагадування пароля і особистого кабінету користувача.
+Сніпет для реєстрації, входу, нагадування пароля і особистого кабінету користувача.
 <h3 class="sub-header">Установка</h3>
-<p>Створюється сніппет <span class="text-bold">account</span> з кодом</p>
+<p>Створюється сніпет <span class="text-bold">account</span> з кодом</p>
 <pre class="brush: php;">
 &lt;?php
 require MODX_BASE_PATH.'assets/snippets/account/snippet.account.php';
@@ -14,7 +14,7 @@ require MODX_BASE_PATH.'assets/snippets/account/snippet.account.php';
 <p>Реєстрація -&gt; <span class="text-bold">register</span></p>
 <p>Профіль -&gt; <span class="text-bold">profile</span></p>
 <p>Відновлення паролю -&gt; <span class="text-bold">forgot</span></p>
-<p> І на кожній сторінці ставиться виклик сніппета</p>
+<p> І на кожній сторінці ставиться виклик сніпета</p>
 <p><span class="text-bold">account</span></p>
 <pre class="brush: html">
 [!account?
@@ -63,10 +63,10 @@ require MODX_BASE_PATH.'assets/snippets/account/snippet.account.php';
 &amp;userGroupId=``
 !]
 </pre>
-<p>Замість псевдонімів контролерів &amp;controller..., можна поставити id сторінок на яких розташований той чи інший виклик сніппета.</p>
-<p><span class="text-bold">&amp;success</span> - перенаправлення після вдалої дії сніппета.</p>
+<p>Замість псевдонімів контролерів &amp;controller..., можна поставити id сторінок на яких розташований той чи інший виклик сніпета.</p>
+<p><span class="text-bold">&amp;success</span> - перенаправлення після вдалої дії сніпета.</p>
 <p><span class="text-bold">&amp;userGroupId</span> - id груп, через кому для нового зареєстрованого користувача.</p>
-<p>При створенні вкладеності документів, як вказано вище і використовуючи вкладені URL, виклик сніппета можна скоротити до одного рядка</p>
+<p>При створенні вкладеності документів, як вказано вище і використовуючи вкладені URL, виклик сніпета можна скоротити до одного рядка</p>
 <pre class="brush: html">
 [!account?&amp;userGroupId=``!]
 </pre>
@@ -87,7 +87,7 @@ require MODX_BASE_PATH.'assets/snippets/account/snippet.account.php';
 <pre class="brush: html;">
 &lt;img src="assets/captcha" alt="captcha" width="120px" height="60px"/>
 </pre>
-<p>або створити сніппет captcha і вивести його на окремій сторінці з шаблоном blank і типом text/plain</p>
+<p>або створити сніпет captcha і вивести його на окремій сторінці з шаблоном blank і типом text/plain</p>
 <pre class="brush: php;">
 &lt;?php
 $chars = !empty($modx->config['captcha_words']) ? preg_replace('![^\w\d]*!', '', $modx->config['captcha_words']) : '1234567890';
@@ -112,7 +112,7 @@ imagepng($img);
 imagedestroy($img);
 ?>
 </pre>
-<p>Гілка обговорення сніппета на форумі <a href="http://modx.im/blog/addons/4750.html" rel="nofollow" target="_blank">modx.im</a></p>
+<p>Гілка обговорення сніпета на форумі <a href="http://modx.im/blog/addons/4750.html" rel="nofollow" target="_blank">modx.im</a></p>
 
 <h3 class="sub-header">Приклади використання</h3>
 <p><span class="text-bold">Реєстрація</span></p>
