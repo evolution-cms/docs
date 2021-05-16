@@ -41,7 +41,7 @@ JotX - покращений та доповнений Jot
 * **depth** - глибина деревовидних коментарів (за замовчуванням 10)
 * **upc** - як рахувати userpostcount (0 - не рахувати, 1(за замовчуванням) - рахувати для всього сайту , 2 - рахувати для поточної сторінки)
 
-* **js и jsFile** - аналоги css і cssFile
+* **js і jsFile** - аналоги css і cssFile
 
 Посторінкова навігація
 
@@ -72,8 +72,8 @@ onReturnOutput,onSetDefaultOutput,onBeforeGetUserPostCount,onSetFormOutput,onSet
 До складу входять плагіни:
 
 * **subscribe** (події: onBeforeFirstRun,onSaveComment,onBeforeRunActions,onBeforeProcessPassiveActions,onGetSubscriptions,onBeforeGetUserInfo,onBeforeNotify) - 
-підписка гостей сайту на сповіщення про нові коментарі. Також необхідно 2 виправлення в шаблонах: чекбокс і текст про відписку, см. приклад в tree.config.php
-* **ajax** (події: onSetCommentsOutput,onSetFormOutput,onReturnOutput) - загрузка всего через аякс
+підписка гостей сайту на сповіщення про нові коментарі. Також необхідно 2 виправлення в шаблонах: чекбокс і текст про відписку, див. приклад в tree.config.php
+* **ajax** (події: onSetCommentsOutput,onSetFormOutput,onReturnOutput) - завантаження всього через аякс
 * **antispam** (події: onBeforePOSTProcess,onSetFormOutput) - боротьба з ботами шляхом додавання прихованого поля-пастки
 * **nolink** (події: onBeforeValidateFormField) - заборонити посилання в коментарях
 * **onlyrus** (події: onBeforeValidateFormField) - заборонити неросійський спам
