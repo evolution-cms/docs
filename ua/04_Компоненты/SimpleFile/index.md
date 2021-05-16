@@ -9,7 +9,7 @@ SimpleFiles - прикріплюємо до сторінки файли Evolutio
 <ul>
 	<li><span class="text-bold">Tab name</span> – назва вкладки;</li>
 	<li><span class="text-bold">Controller class</span> – клас контролера відмінний від стандартного;</li>
-	<li><span class="text-bold">Templates</span> – id шаблонів, з якими працює плагін, <strong>обязательно</strong>;</li>
+	<li><span class="text-bold">Templates</span> – id шаблонів, з якими працює плагін, <strong>обов'язково</strong>;</li>
 	<li><span class="text-bold">Documents</span> – те ж саме, але для окремих ресурсів;</li>
 	<li><span class="text-bold">Ignore Documents</span> – id ресурсів що виключаються;</li>
 	<li><span class="text-bold">Roles</span> – id дозволених ролей;</li>
@@ -38,7 +38,7 @@ SimpleFiles - прикріплюємо до сторінки файли Evolutio
 <h3 class="sub-header">Поля в таблиці sf_files:</h3>
 <ul>
 	<li><span class="text-bold">sf_id</span> – id файлу (idField);</li>
-	<li><span class="text-bold">sf_index</span> – позмція в списку;</li>
+	<li><span class="text-bold">sf_index</span> – позиція в списку;</li>
 	<li><span class="text-bold">sf_title</span> – назва файлу;</li>
 	<li><span class="text-bold">sf_description</span> – опис файлу;</li>
 	<li><span class="text-bold">sf_file</span> – посилання на файл;</li>
