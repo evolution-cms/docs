@@ -1,7 +1,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <h3>DLCrumbs - breadcrumbs за допомогою DocLister </h3>
-<p>Сніппет для створення навігації breadcrumbs за допомогою DocLister. Ви можете використовувати будь-який з параметрів DocLister у виклику DLCrumbs.</p>
+<p>Сніпет для створення навігації breadcrumbs за допомогою DocLister. Ви можете використовувати будь-який з параметрів DocLister у виклику DLCrumbs.</p>
 <p>Автор: <i class="fa fa-github fa-lg text-primary"></i> <a href="https://github.com/AgelxNash" rel="nofollow" target="_blank">Agel_Nash</a></p>
 <h2 class="page-header">Параметри</h2>
 <h3 class="sub-header text-bold">id</h3>
