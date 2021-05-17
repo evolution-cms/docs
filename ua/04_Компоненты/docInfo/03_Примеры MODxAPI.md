@@ -1,7 +1,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <h3>Приклад DocInfo на базі modResource MODxAPI </h3> 
-Тепер сниппет DocInfo НЕ буде навантажувати сторінку повторними SQL запитами при багаторазовому отриманні значень з одного і того ж документа.	
+Тепер сніпет DocInfo НЕ буде навантажувати сторінку повторними SQL запитами при багаторазовому отриманні значень з одного і того ж документа.	
 <br>
 <p>Вміст сховища розміщується в папці <span class="text-bold">/assets/lib/MODxAPI/</span></p>
 <p>Створюється плагін на події <span class="text-bold">OnWebPageInit</span>, <span class="text-bold">OnManagerPageInit</span> і <span class="text-bold">OnPageNotFound</span> з кодом:</p>
@@ -10,7 +10,7 @@ if(!isset($modx->doc)){
  $modx->doc = new modResource($modx);
 }</pre>
 
-<h3>Після чого створюється сниппет допустимо DocInfo</h3>
+<h3>Після чого створюється сніпет допустимо DocInfo</h3>
 <pre class="brush: php">$id = isset($id) ? (int)$id : $modx->documentObject['id'];
 $field = isset($field) ? (string)$field : 'id';
 if($field == 'id'){
@@ -26,4 +26,4 @@ if($field == 'id'){
     }
 }
 return (string)$out;</pre>
-<p><span class="text-bold">Profit!</span> Тепер сніппет DocInfo не буде навантажувати сторінку повторними SQL запитами при багаторазовому отриманні значень з одного і того ж документа</p>
+<p><span class="text-bold">Profit!</span> Тепер сніпет DocInfo не буде навантажувати сторінку повторними SQL запитами при багаторазовому отриманні значень з одного і того ж документа</p>
