@@ -1,8 +1,8 @@
-### Отримання даних
+###Отримання даних
 
 resource select($fields , $from [, $where [, $orderby [, $limit]]])
 
-**$fields** - список необхідних полів із запиту
+**$fields** - список необхідних полей із запиту
 **$from** - таблиця для вибірки
 **$where** - умова вибірки
 **$orderby** - поле за яким потрібно зробити сортування
@@ -12,7 +12,7 @@ resource select($fields , $from [, $where [, $orderby [, $limit]]])
 
 ***
 
-#### Приклад
+####Приклад
 
 ```php
 function login($username, $password) {  

@@ -1,4 +1,4 @@
-### Масив назв колонок
+###Масив назв колонок
 
 array getColumnNames($dsq)
 
@@ -8,7 +8,7 @@ array getColumnNames($dsq)
 
 ***
 
-#### Приклад
+####Приклад
 
 	$result = $modx->db->select( 'id, name, age', 'people_table' );  
 	

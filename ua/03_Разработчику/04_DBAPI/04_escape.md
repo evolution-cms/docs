@@ -1,4 +1,4 @@
-### Екранування потенційно-небезпечних символів
+###Екранування потенційно-небезпечних символів
 
 string escape(string $s)
 
@@ -10,7 +10,7 @@ string escape(string $s)
 
 ***
 
-#### Приклад
+####Приклад
 
 	function login($username, $password) {  
 		global $modx, $table_prefix;  

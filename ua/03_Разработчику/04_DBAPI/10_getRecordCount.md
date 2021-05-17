@@ -1,4 +1,4 @@
-### Кількість записів в результаті запиту
+###Кількість записів в результаті запиту
 
 integer getRecordCount ($data_set)
 
@@ -8,7 +8,7 @@ integer getRecordCount ($data_set)
 
 ***
 
-#### Приклад
+####Приклад
 
 	$output = '';  
 	$result = $modx->db->select('make, model, color, year', 'cars', 'year > 2001');  	$total_rows = $modx->db->getRecordCount( $result );   

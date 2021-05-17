@@ -1,4 +1,4 @@
-### Додавання запису
+###Додавання запису
 
 mixed insert($fields, $intotable [, $fromfields [, $fromtable [, $where [, $limit ]]]])
 
@@ -22,7 +22,7 @@ mixed insert($fields, $intotable [, $fromfields [, $fromtable [, $where [, $limi
 
 ***
 
-#### Приклад
+####Приклад
 
 	function insert_my_rows( $data = array() ) {  
 		global $modx;  

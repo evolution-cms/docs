@@ -1,4 +1,4 @@
-### Формує HTML-таблицю з даними запиту
+###Формує HTML-таблицю з даними запиту
 
 string getHTMLGrid($dsq, $params)
 
@@ -33,7 +33,7 @@ string getHTMLGrid($dsq, $params)
 
 ***
 
-#### Приклад
+####Приклад
 
 	$resource = $modx->db->query('SELECT id,name FROM modx_site_tmplvars order by name');   
 	$result = $modx->db->getHTMLGrid(

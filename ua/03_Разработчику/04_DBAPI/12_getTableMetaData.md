@@ -1,4 +1,4 @@
-### Інформація про структуру таблиці
+###Інформація про структуру таблиці
 
 array getTableMetaData($table)
 
@@ -14,7 +14,7 @@ array getTableMetaData($table)
 
 ***
 
-#### Інформаційні параметри:
+####Інформаційні параметри:
 
 **Field** - назва поля таблиці
 **Type** - тип поля і розмір (наприклад int(5), varchar(40) або text)
@@ -25,7 +25,7 @@ array getTableMetaData($table)
 
 ***
 
-#### Приклад
+####Приклад
 
 	$table = 'my_table';  
 	$data = $modx->db->getTableMetaData( $table );  

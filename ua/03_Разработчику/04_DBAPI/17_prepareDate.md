@@ -1,4 +1,4 @@
-### Форматування виведення дати
+###Форматування виведення дати
 
 string prepareDate($timestamp, $fieldType)
 
@@ -13,7 +13,7 @@ string prepareDate($timestamp, $fieldType)
 
 ***
 
-#### Приклад
+####Приклад
 
 	function getEvents( $date ) {  
 		global $modx;  
