@@ -61,4 +61,4 @@
 Результат роботи складнішого виклику сніпета з висновком превьюшек, дати і заголовка може виглядати приблизно так:
 ![siblings_demo_1](https://user-images.githubusercontent.com/6253807/50377091-b58ff300-0649-11e9-8880-f2672927e4af.png)
 
-Детальніше про сніпеті DLSiblings читайте на моєму сайті: <a href="https://aharito.ru/modx-evolution/dlsiblings-podnimaem-sajt-po-nch-zaprosam">Сніппет DLSiblings</a>
+Детальніше про сніпеті DLSiblings читайте на моєму сайті: <a href="https://aharito.ru/modx-evolution/dlsiblings-podnimaem-sajt-po-nch-zaprosam">Сніпет DLSiblings</a>
