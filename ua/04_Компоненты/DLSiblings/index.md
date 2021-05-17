@@ -6,31 +6,31 @@
 
 <p>Автор: <i class="fa fa-github fa-lg text-primary"></i> <a href="https://github.com/Aharito/DLSiblings" rel="nofollow" target="_blank">Aharito</a></p>
 
-<strong>DLSiblings</strong> — сниппет виведення сусідніх ресурсів для Evolution CMS (MODx Evo). Призначений для організації множинної кільцевої перелинковки сторінок сайту. Заснований на сніпеті <strong>DocLister</strong>, тому можна використовувати всі можливості ДокЛістера.
+<strong>DLSiblings</strong> — сніпет виведення сусідніх ресурсів для Evolution CMS (MODx Evo). Призначений для організації множинної кільцевої перелинковки сторінок сайту. Заснований на сніпеті <strong>DocLister</strong>, тому можна використовувати всі можливості ДокЛістера.
 
 <h3>Трохи теорії</h3>
 Що таке множинна кільцева перелинковка? Сеошники напевно знають про неї. А для тих, хто не знає - це схема перелинковки сторінок сайту, що дозволяє непогано підняти сайт по низькочастотних і СНЧ запитам.
 
 <em>*** Детальніше про кільцевої перелинковке читайте в моїй статті: <a href="https://aharito.ru/seo-prodvizhenie/shema-perelinkovki-stranic-sajta-pod-nch">Схема перелинковки сайту під НЧ</a></em>
 
-<h3>Параметри сніппета</h3>
+<h3>Параметри сніпета</h3>
 <ul>
-<li><strong>&renderSnippet</strong> ( DocLister | sgController ) сниппет, який використовується для виведення, default DocLister</li>
+<li><strong>&renderSnippet</strong> ( DocLister | sgController ) сніпет, який використовується для виведення, default DocLister</li>
     <li><strong>&prevQty</strong> - Кількість виведених сусідів-попередників, default 2</li>
     <li><strong>&nextQty</strong> - Кількість виведених сусідів-послідовників, default 2</li>
     <li><strong>все</strong> інші параметри і шаблони як в DocLister</li>
 </ul>
 
-Можна використовувати успадковані від DocLister (такі ж, як у нього): умови вибірки & addWhereList і & filters, умови сортування & orderBy, глибину вибірки & depth, prepare-сніппети і багато інших параметрів і всі шаблони.
+Можна використовувати успадковані від DocLister (такі ж, як у нього): умови вибірки & addWhereList і & filters, умови сортування & orderBy, глибину вибірки & depth, prepare-сніпети і багато інших параметрів і всі шаблони.
 
-Якщо в якості сниппета виведення вказано sgController, то відповідно можна використовувати і всі умови, параметри і шаблони sgController.
+Якщо в якості сніпета виведення вказано sgController, то відповідно можна використовувати і всі умови, параметри і шаблони sgController.
 
-<h3>Шаблони сніппета</h3>
-Всі шаблони - точно такі ж, як у DocLister. Плейсхолдери в шаблонах - теж точно такі ж, як в DocLister. Якщо в якості сниппета виведення вказано sgController, то шаблони і плейсхолдери - точно такі ж, як в sgController.
+<h3>Шаблони сніпета</h3>
+Всі шаблони - точно такі ж, як у DocLister. Плейсхолдери в шаблонах - теж точно такі ж, як в DocLister. Якщо в якості сніпета виведення вказано sgController, то шаблони і плейсхолдери - точно такі ж, як в sgController.
 
 <h3>Установка</h3>
 <ul>
-    <li>Сніппет знаходиться <a href="https://github.com/Aharito/DLSiblings">на Github</a></li>
+    <li>Сніпет знаходиться <a href="https://github.com/Aharito/DLSiblings">на Github</a></li>
     <li>Архів потрібно <a href="https://github.com/Aharito/DLSiblings/archive/master.zip">скачать</a> і встановити через Extras ("Установка з архіву").</li>
 </ul>
 
@@ -58,7 +58,7 @@
 
 ### Ще приклад
 
-Результат роботи складнішого виклику сниппета з висновком превьюшек, дати і заголовка може виглядати приблизно так:
+Результат роботи складнішого виклику сніпета з висновком превьюшек, дати і заголовка може виглядати приблизно так:
 ![siblings_demo_1](https://user-images.githubusercontent.com/6253807/50377091-b58ff300-0649-11e9-8880-f2672927e4af.png)
 
 Детальніше про сніпеті DLSiblings читайте на моєму сайті: <a href="https://aharito.ru/modx-evolution/dlsiblings-podnimaem-sajt-po-nch-zaprosam">Сніппет DLSiblings</a>
