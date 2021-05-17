@@ -1,4 +1,4 @@
-### Масив значень із заданої колонки
+###Масив значень із заданої колонки
 
 mixed getColumn (string $name, $dsq)
 
@@ -10,7 +10,7 @@ mixed getColumn (string $name, $dsq)
 
 ***
 
-#### Приклад
+####Приклад
 
 	function myColumn() {  
 		global $modx;  

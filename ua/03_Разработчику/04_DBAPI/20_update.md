@@ -1,4 +1,4 @@
-###оновлення даних
+###Оновлення даних
 
 boolean update($fields, $table, $where)
 

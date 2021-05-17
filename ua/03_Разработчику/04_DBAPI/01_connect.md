@@ -1,4 +1,4 @@
-### Встановлення зв'язку з базою
+###Встановлення зв'язку з базою
 
 void connect(string $host, string $dbase, string $uid, string $pwd, boolean $persist)
 
@@ -13,7 +13,7 @@ void connect(string $host, string $dbase, string $uid, string $pwd, boolean $per
 
 ***
 
-#### Приклад 
+####Приклад 
 
 	//З'єднання зі сторонньою базою
 	$modx->db->connect('123.45.6.7', 'mydb', 'user', 'password', true);  
@@ -21,10 +21,10 @@ void connect(string $host, string $dbase, string $uid, string $pwd, boolean $per
 	while($tmp = $modx->db->getRow($res, 'assoc')) {  
 		// обробка отриманих даних  
 	}  
-	// Відкулюченння   
+	// Відключенння   
 	$modx->db->disconnect()   
 	
 	// Повторне підключення  
 	$modx->db->connect();
 
-При необхідності, можна створити окремий екземпляр об'єкта і організувати підключення до окремої базі без прив'язки до $ modx.
+При необхідності, можна створити окремий екземпляр об'єкта і організувати підключення до окремої бази без прив'язки до $modx.
