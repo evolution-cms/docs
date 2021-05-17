@@ -62,7 +62,7 @@ switch($type) {
 <pre class="brush: php;">
 [!countViews? &type=`counter` &id=`[*id*]` &tvid=`id TV-параметра countViews`!]
 </pre>
-<p>І, нарешті, в тому місці, де Ви ходите бачити кількість переглядів, вставляємо такий код:</p>
+<p>І, нарешті, в тому місці, де Ви хочете бачити кількість переглядів, вставляємо такий код:</p>
 <pre class="brush: php;">
 [[countViews? &type=`output` &id=`[*id*]` &tvid=`id TV-параметра countViews`]] - в документі MODX
 [[countViews? &type=`output` &id=`[+id+]` &tvid=`id TV-параметра countViews`]] - в шаблоні Ditto
