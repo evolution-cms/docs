@@ -53,7 +53,7 @@
 
 <div class="panel panel-default">
 <div class="panel-heading">
-<h4 class="panel-title"><a id="1149"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1149"><span class="text-bold">&forceUTF8</span> - чи розглядати значення filterBy як UTF-8 рядоку</a></h4>
+<h4 class="panel-title"><a id="1149"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1149"><span class="text-bold">&forceUTF8</span> - чи розглядати значення filterBy як UTF-8 рядок</a></h4>
 </div>
 <div id="collapse1149" class="panel-collapse collapse">
 <div class="panel-body">
