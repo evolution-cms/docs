@@ -1,7 +1,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <h3>Ditto: Параметри request </h3> 
-Завдяки екстендерів request сніпет Ditto обробляє значення і виводить результат відповідно до переданих параметрів.	
+Завдяки екстендеру request, сніпет Ditto обробляє значення і виводить результат відповідно до переданих параметрів.	
 <br>
 <div class="panel-group accordion">
 <div class="panel panel-default">
