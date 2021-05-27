@@ -21,7 +21,7 @@
 
 <div class="panel panel-default">
 <div class="panel-heading">
-<h4 class="panel-title"><a id="1162"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1162"><span class="text-bold">&tvFilterMode</span> - настройка фільтрації</a></h4>
+<h4 class="panel-title"><a id="1162"></a><a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1162"><span class="text-bold">&tvFilterMode</span> - налаштування фільтрації</a></h4>
 </div>
 <div id="collapse1162" class="panel-collapse collapse">
 <div class="panel-body">
