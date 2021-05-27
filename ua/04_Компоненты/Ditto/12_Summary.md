@@ -104,7 +104,7 @@
 <span class="text-bold">Формат:</span> ім'я чанка | @FILE | @CODE<br>
 <span class="text-bold">Значення за замовчуванням:</span> &truncText<br>
 <span class="text-bold">Примітка:</span> <br> 
-Будь-яке валідності назву чанка<br>
+Будь-яка валідна назва чанка<br>
 Код через @CODE<br>
 Файл через @FILE<br>
 <p><span class="text-bold">Приклад:</span></p>
