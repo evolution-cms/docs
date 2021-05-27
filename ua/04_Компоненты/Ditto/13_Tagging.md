@@ -1,7 +1,8 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <h3>Ditto: Параметри tagging </h3> 
-Параметри tagging сніпета Ditto.	
+Параметри tagging с
+пета Ditto.	
 <br>
 <div class="panel-group accordion">
 <div class="panel panel-default">
@@ -26,7 +27,7 @@
 <div id="collapse528" class="panel-collapse collapse">
 <div class="panel-body">
 <span class="text-bold">Формат:</span> Будь-які допустимі теги, розділені за допомогою tagDelimiter<br>
-<span class="text-bold">Значення за замовчуванням:</span> ні<br>
+<span class="text-bold">Значення за замовчуванням:</span> немає<br>
 <span class="text-bold">Примітка:</span> Будь-які допустимі теги, розділені за допомогою tagDelimiter<br>
 <p><span class="text-bold">Приклад:</span></p>
 <pre class="brush: html;">&tags=``</pre>
@@ -42,10 +43,10 @@
 <div class="panel-body">
 <span class="text-bold">Формат:</span> onlyAllTags | onlyTags | removeAllTags | removeTags<br>
 <span class="text-bold">Значення за замовчуванням:</span> onlyTags<br>
-<span class="text-bold">Примітка:</span> <br>onlyAllTags показати документа, що містять всі теги з параметра tags
-<br>onlyTags показати документи, які мають будь-який з тегів tags
-<br>removeAllTags видалити документи, які містять всі теги tags
-<br>removeTags видалити документи, які мають будь-який з тегів tags <br>
+<span class="text-bold">Примітка:</span> <br>onlyAllTags показує документи, що містять всі теги з параметра tags
+<br>onlyTags — показує документи, які мають будь-який з тегів tags
+<br>removeAllTags — видалити документи, які містять всі теги tags
+<br>removeTags — видалити документи, які мають будь-який з тегів tags <br>
 <p><span class="text-bold">Приклад:</span></p>
 <pre class="brush: html;">&tagMode=`onlyAllTags`</pre>
 </div>
@@ -119,7 +120,7 @@
 <div id="collapse582" class="panel-collapse collapse">
 <div class="panel-body">
 <span class="text-bold">Формат:</span> Поле документа або змінна шаблону<br>
-<span class="text-bold">Значення за замовчуванням:</span> ні<br>
+<span class="text-bold">Значення за замовчуванням:</span> немає<br>
 <span class="text-bold">Примітка:</span> автоматично додає в позначки Extender<br>
 <p><span class="text-bold">Приклад:</span></p>
 <pre class="brush: html;">&tagData=`tags`</pre>
@@ -150,7 +151,7 @@
 <div id="collapse535" class="panel-collapse collapse">
 <div class="panel-body">
 <span class="text-bold">Формат:</span> ім'я чанка | @FILE | @CODE<br>
-<span class="text-bold">Значення за замовчуванням:</span> ні<br>
+<span class="text-bold">Значення за замовчуванням:</span> немає<br>
 <span class="text-bold">Примітка:</span> <br>
 <p><span class="text-bold">Приклад:</span></p>
 <pre class="brush: html;">&tplTagLinks=``</pre>
@@ -165,7 +166,7 @@
 <div id="collapse536" class="panel-collapse collapse">
 <div class="panel-body">
 <span class="text-bold">Формат:</span> будь-яке припустиме ім'я функції<br>
-<span class="text-bold">Значення за замовчуванням:</span> ні<br>
+<span class="text-bold">Значення за замовчуванням:</span> немає<br>
 <span class="text-bold">Примітка:</span> <br>
 <p><span class="text-bold">Приклад:</span></p>
 <pre class="brush: html;">&tagCallback=``</pre>
