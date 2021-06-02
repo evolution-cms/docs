@@ -2,7 +2,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <h3>SimpleFiles - прикріплюємо до сторінки файли </h3>
 SimpleFiles - прикріплюємо до сторінки файли Evolution CMS.
-<p>Ще одне доповнення на базі DocLister і EasyUI. Цього разу до сторінки прикріплюються файли і редагуються в таблиці </span> – як в MultiFiles, але трохи зручніше (особлив, коли йде мова про велику кількість файлів) (:</p>
+<p>Ще одне доповнення на базі DocLister і EasyUI. Цього разу до сторінки прикріплюються файли і редагуються в таблиці </span> – як в MultiFiles, але трохи зручніше (особливо, коли йде мова про велику кількість файлів) (:</p>
 <p>Для роботи необхідна наявність<a href="https://github.com/AgelxNash/DocLister" rel="nofollow" target="_blank">DocLister і MODxAPI</a>, а також PHP не менше 5.6.</p>
 <p>Завантажувати тут: <i class="fa fa-github fa-lg text-primary"></i> <a href="https://github.com/Pathologic/SimpleFiles" rel="nofollow" target="_blank">Pathologic</a></p>
 <h3 class="sub-header">Налаштування плагіну</h3>
@@ -19,7 +19,7 @@ SimpleFiles - прикріплюємо до сторінки файли Evolutio
 </ul>
 <p>Maximum file size</span> – обмеження розміру файлу, в мегабайтах.</p>
 <p>Іконки повинні іменуватися як <em>розширення_файлу_рядковими_буквами.png</em></p>
-<p>Іконка file.png підставляється, якщо не знайшлось підходящої.</p>
+<p>Іконка file.png підставляється, якщо не знайшлось відповідної.</p>
 
 <h3 class="sub-header">Вивід записів</h3>
 <p>Після виводу записів читаємо про <a href="simplegallery/index.html" rel="nofollow" target="_blank">SimpleGallery</a>.</p>
