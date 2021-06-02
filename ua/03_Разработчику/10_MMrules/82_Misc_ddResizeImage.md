@@ -19,7 +19,7 @@ multipleField|Чи є поле множинним (для mm_ddMultipleFields).|
 colNum|Номер колонки, в якій знаходиться зображення (для mm_ddMultipleFields).|{integer}|0|false
 splY|Роздільник рядків (для mm_ddMultipleFields).|{string}|'\|\|'|false
 splX|Роздільник колонок (для mm_ddMultipleFields).|{string}|'::'|false
-num|Номер рядка, яку треба обробляти (для mm_ddMultipleFields).|{integer};'all'|'all'|false
+num|Номер рядка, який треба обробляти (для mm_ddMultipleFields).|{integer};'all'|'all'|false
 
 ####Приклади
 Створити для зображень, виставлених в TV «imageTV», зменшені копії шириною 200 px (висота нехай розраховується автоматично)
