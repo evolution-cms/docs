@@ -1,4 +1,4 @@
-###Віджет для плагіна ManagerManager, дозволяє зробити можливим введення в TV тільки цифр.
+###Віджет для плагіна ManagerManager, дозволяє зробити можливе введення в TV тільки цифр.
 
 mm_ddNumericFields(string $tvs, string $roles, string $templates, bool $allowFloat, int $decimals);
 
