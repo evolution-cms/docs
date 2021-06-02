@@ -28,7 +28,7 @@ SimpleTube - плагін і сніпет для створення відеог
 	<li><span class="text-bold">Templates</span> – id шаблонів ресурсів з відео, <span class="text-bold">обов'язковоо</span> – ;</li>
 	<li><span class="text-bold">Roles</span> – id дозволених ролей;</li>
 	<li><span class="text-bold">Thumbs folder</span> – папка для прев'ю;</li>
-	<li><span class="text-bold">Thumbs cache folder</span> – папка для прев'ю прев'ю (:</li>
+	<li><span class="text-bold">Thumbs cache folder</span> – папка для прев'ю (:</li>
 	<li><span class="text-bold">No image picture</span> – зображення, якщо немає прев'ю;</li>
 	<li><span class="text-bold">Thumbs width</span> – її ширина;</li>
 	<li><span class="text-bold">Thumbs height</span> – і висота;</li>
