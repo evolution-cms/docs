@@ -1,7 +1,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<h3>SimpleTube - плагін і сніппет для створення відеогалерей </h3>
-SimpleTube - плагін і сніппет для створення відеогалерей.
+<h3>SimpleTube - плагін і сніпет для створення відеогалерей </h3>
+SimpleTube - плагін і сніпет для створення відеогалерей.
 <p>Основних відмінностей всього дві, проте мені здається, вони достатньо суттєві, щоб змінити назву:</p>
 <ul>
 	<li>тепер використовується окрема таблиця для зберігання данних, замість TV-параметра з json;</li>
@@ -9,9 +9,9 @@ SimpleTube - плагін і сніппет для створення відео
 </ul>
 <p>Для роботи всього цього необхіна наявність <a href="https://github.com/AgelxNash/DocLister" rel="nofollow" target="_blank">DocLister і MODxAPI</a>, а також PHP 5.6.</p>
 <p>Скачати тут: <i class="fa fa-github fa-lg text-primary"></i> <a href="https://github.com/Pathologic/SimpleTube" rel="nofollow" target="_blank">Pathologic</a></p>
-<p><span class="text-bold">Сніппет</span> уміє находити за допомогою классу <a href="http://frandieguez.github.io/panorama-php/" rel="nofollow" target="_blank">Panorama-PHP</a> інформацію про відео за посиланням, а також при можливості скачати Зображення-прев'ю. Підтримуються youtube, rutube, vimeo, metacafe і dailymotion. Взагалі класс підтримує більше відеохостингів, але це в теорії; тому я залишив тільки те, що більш-менш працює (при цьому, наприклад, про metacafe і dailymotion я ні разу не чув).</p>
-<p>З допомогою цього сніппета плагін отримує інформацію для додавання в таблицю, але нічого не заважає використовувати його без плагіна, як сніппет getVideo з MultiVideos.</p>
-<h3 class="sub-header">Параметри Сніппета:</h3>
+<p><span class="text-bold">Сніпет</span> вміє знаходити за допомогою классу <a href="http://frandieguez.github.io/panorama-php/" rel="nofollow" target="_blank">Panorama-PHP</a> інформацію про відео за посиланням, а також при можливості завантажити Зображення-прев'ю. Підтримуються youtube, rutube, vimeo, metacafe і dailymotion. Взагалі класс підтримує більше відеохостингів, але це в теорії; тому я залишив тільки те, що більш-менш працює (при цьому, наприклад, про metacafe і dailymotion я ні разу не чув).</p>
+<p>З допомогою цього сніпета плагін отримує інформацію для додавання в таблицю, але нічого не заважає використовувати його без плагіна, як сніпет getVideo з MultiVideos.</p>
+<h3 class="sub-header">Параметри Сніпета:</h3>
 <ul>
 	<li><span class="text-bold">&input</span> – посилання;</li>
 	<li><span class="text-bold">&forceDownload</span> – якщо 1, то завжди скачувати прев'ю, якщо 0, то тільки в тому випадку, якщо зображення немає в папці; за замовчуванням – 0;</li>
@@ -32,7 +32,7 @@ SimpleTube - плагін і сніппет для створення відео
 	<li><span class="text-bold">No image picture</span> – зображення, якщо немає прев'ю;</li>
 	<li><span class="text-bold">Thumbs width</span> – її ширина;</li>
 	<li><span class="text-bold">Thumbs height</span> – і висота;</li>
-	<li><span class="text-bold">Force download</span> – скачувати прев'ю завжди або при необхідності;</li>
+	<li><span class="text-bold">Force download</span> – завантажувати прев'ю завжди, або при необхідності;</li>
 	<li><span class="text-bold">Youtube API Key</span> – ключ для работы з YouTube.</li>
 </ul>
 <p>Вивід такий ж, як в SimpleGallery – c поправкой на назву таблиці і полей. Тому дивитись <a href="http://modx.im/blog/docs/2762.html" rel="nofollow" target="_blank">тут</a>.</p>
