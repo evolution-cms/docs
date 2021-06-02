@@ -3,7 +3,7 @@
 <h3>Зірковий рейтинг для MODX Evolution </h3>
 Відрізняється від основної збірки дуже гнучкими налаштуваннями (зображення зірок, оформлення і т.п.).
 <h3 class="sub-header">Установка<a class="pull-right" data-toggle="tooltip" data-placement="left" title="СКАЧАТИ" href="assets/files/MODX-Evolution-Star-Rating-jquery.raty.zip.html"><i class="fa fa-lg fa-download"></i></a></h3>
-<p>Створити новий сніппет з ім'ям <code>star_rating</code> і наступним вмістом:</p>
+<p>Створити новий сніпет з ім'ям <code>star_rating</code> і наступним вмістом:</p>
 <pre class="brush: php;">
 &lt;?php
 return require MODX_BASE_PATH . 'assets/snippets/star_rating/snippet.php';
@@ -15,11 +15,11 @@ include MODX_BASE_PATH . 'assets/snippets/star_rating/starrating.module.php';
 </pre>
 <p>Після створення модуля необхідно оновити сторінку щоб посилання на модуль появилось на вкладці <code>"Модулі"</code>. Далі якщо ви раніше не встановлювали цей компонент необхідно натиснути кнопку <code>"Установити"</code>.</p>
 <h3 class="sub-header">Використання</h3>
-<p>Приклад виклику сніппета:</p>
+<p>Приклад виклику сніпета:</p>
 <pre class="brush: html;">
 [!star_rating? &amp;id=`418` &amp;tpl=`@CHUNK:star_rating`!]
 </pre>
-<h3 class="sub-header">Параметри сніппета</h3>
+<h3 class="sub-header">Параметри сніпета</h3>
 <table class="table table-striped table-vcenter table-bordered table-condensed">
 	<thead>
 		<tr>
