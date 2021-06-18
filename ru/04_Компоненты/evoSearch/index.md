@@ -31,30 +31,30 @@
 ### Расширенный пример
 
 Форма
-<code>
-<form action="[~2~]" method="get"><input name="search" type="text"><button type="submit"></button></form>
-</code>
+```
+	<form action="[~2~]" method="get"><input name="search" type="text"><button type="submit"></button></form>
+```
 
 Обработка результатов на странице id=2
 
-<code>
-[!evoSearch?
-&display=`16`
-&paginate=`pages`
-&statTpl= `<div class="srch_res_info">По запросу <b>[+stat_request+]</b> найдено <b>[+stat_total+]</b> документов.</div>`
-&noResult=`<div class="srch_res_info">По запросу <u>[+stat_request+]</u> ничего не найдено. Смягчите условия поиска</div>`
-&ownerTPL=`@CODE: <div class="srch_res">[+dl.wrap+] </div>`
-&tpl=`@CODE: 
-	<div class="srch_res_one">
-		<a href="[+url+]">[+title+]</a>
-		<div class="srch_ext">[+extract+]</div>
-	</div>
-`
-&TplNextP=`` &TplPrevP=`` &TplPage=`@CODE: <li><a href="[+link+]">[+num+]</a></li>` &TplCurrentPage=`@CODE: <li class="active"><a href="[+link+]">[+num+]</a></li>`&TplWrapPaginate=`@CODE: <div class="pagination"><ul>[+wrap+]</ul></div>`							
-!]
-[+pages+]
+```
+	[!evoSearch?
+	&display=`16`
+	&paginate=`pages`
+	&statTpl= `<div class="srch_res_info">По запросу <b>[+stat_request+]</b> найдено <b>[+stat_total+]</b> документов.</div>`
+	&noResult=`<div class="srch_res_info">По запросу <u>[+stat_request+]</u> ничего не найдено. Смягчите условия поиска</div>`
+	&ownerTPL=`@CODE: <div class="srch_res">[+dl.wrap+] </div>`
+	&tpl=`@CODE: 
+		<div class="srch_res_one">
+			<a href="[+url+]">[+title+]</a>
+			<div class="srch_ext">[+extract+]</div>
+		</div>
+	`
+	&TplNextP=`` &TplPrevP=`` &TplPage=`@CODE: <li><a href="[+link+]">[+num+]</a></li>` &TplCurrentPage=`@CODE: <li class="active"><a href="[+link+]">[+num+]</a></li>`&TplWrapPaginate=`@CODE: <div class="pagination"><ul>[+wrap+]</ul></div>`							
+	!]
+	[+pages+]
 							
-</code>
+```
 
 
 ### Состав пакета:
