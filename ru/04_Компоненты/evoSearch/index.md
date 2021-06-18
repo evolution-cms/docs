@@ -28,6 +28,35 @@
 
 Чанк `evoSearch` создается при установке дополнения.
 
+### Расширенный пример
+
+Форма
+<code>
+<form action="[~2~]" method="get"><input name="search" type="text"><button type="submit"></button></form>
+</code>
+
+Обработка результатов на странице id=2
+
+<code>
+[!evoSearch?
+&display=`16`
+&paginate=`pages`
+&statTpl= `<div class="srch_res_info">По запросу <b>[+stat_request+]</b> найдено <b>[+stat_total+]</b> документов.</div>`
+&noResult=`<div class="srch_res_info">По запросу <u>[+stat_request+]</u> ничего не найдено. Смягчите условия поиска</div>`
+&ownerTPL=`@CODE: <div class="srch_res">[+dl.wrap+] </div>`
+&tpl=`@CODE: 
+	<div class="srch_res_one">
+		<a href="[+url+]">[+title+]</a>
+		<div class="srch_ext">[+extract+]</div>
+	</div>
+`
+&TplNextP=`` &TplPrevP=`` &TplPage=`@CODE: <li><a href="[+link+]">[+num+]</a></li>` &TplCurrentPage=`@CODE: <li class="active"><a href="[+link+]">[+num+]</a></li>`&TplWrapPaginate=`@CODE: <div class="pagination"><ul>[+wrap+]</ul></div>`							
+!]
+[+pages+]
+							
+</code>
+
+
 ### Состав пакета:
 - **плагин `evoSearch`** - используется для индексирования результатов поиска. Индексируются поля `pagetitle`, `longtitle` ,`description`, `introtext`, `content` и указанные `TV-параметры`. Требуемые `TV` указываются в конфигруации плагина через админку в поле **Имена TV для поиска** через запятую. При использовании для построения списка возможных значений `TV` сниппета `multiParams` (из комплекта `eFilter`) индексируются не `id` ресурсов, а их заголовки.
 - **сниппет `evoSearch`** - используется для вывода результатов поиска. Может работать в двух режимах: использовать для вывода результатов `DocLister` или возвращать список `id` ресурсов (режим выбирается параметром `&action='ids'`). В последнем случае генерируется и возвращается список `id` ресурсов, подходящих под условия поиска. Эти данные могут использоваться в любом другом сниппете через плейсхолдер `evoSearchIDs`, который содержим массив `id` из результатов поиска.
