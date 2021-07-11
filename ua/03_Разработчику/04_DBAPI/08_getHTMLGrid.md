@@ -1,10 +1,10 @@
-###Формирует HTML-таблицу с данными запроса
+### Формує HTML-таблицю з даними запиту
 
 string getHTMLGrid($dsq, $params)
 
-**$dsq** - результат выполнения запроса или SQL-запрос
+**$dsq** - результат виконання запиту або SQL-запит
 
-**$params** - массив настроек вывода HTML-таблицы
+**$params** - масив налаштувань виведення HTML-таблиці
 
 + columnHeaderClass
 + cssClass
@@ -29,11 +29,11 @@ string getHTMLGrid($dsq, $params)
 + pagerClass
 + pagerStyle
 
-Метод формирует HTML-таблицу на основе данных запроса с учетом обширного списка возможных настроек вывода.
+Метод формує HTML-таблицю на основі даних запиту з урахуванням великого списку можливих налаштувань виведення.
 
 ***
 
-####Пример
+#### Приклад
 
 	$resource = $modx->db->query('SELECT id,name FROM modx_site_tmplvars order by name');   
 	$result = $modx->db->getHTMLGrid(
