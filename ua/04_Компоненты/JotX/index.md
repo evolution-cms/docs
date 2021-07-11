@@ -1,58 +1,58 @@
-JotX - улучшенный и дополненный Jot
+JotX - покращений та доповнений Jot
 -----------------------------------
 
-### Конфигурация из файла. 
-Все параметры и шаблоны можно прописывать в одном файле.
+### Конфігурація з файлу. 
+Всі параметри і шаблони можна прописувати в одному файлі.
 
 ```php
-    [!JotX? &config=`faq` !] - Вопрос-Ответ
-    [!JotX? &config=`tree` !] - Древовидные комментарии
-    [!JotX? &config=`tree-ajax` !] - Древовидные комментарии с аякс
+    [!JotX? &config=`faq` !] - Запитання-відповідь
+    [!JotX? &config=`tree` !] - деревовидні коментарі
+    [!JotX? &config=`tree-ajax` !] - деревовидні коментарі з аякс
 ```
 
-### Режимы вынесены в файлы.
+### Режими винесені в файли.
 
 ```php
-    [!JotX? &action=`lastcomments` !] - Последние комментарии
+    [!JotX? &action=`lastcomments` !] - Останні коментарі
 ```
 
-### Новые параметры.
+### Нові параметри.
 
-* **notifyEmails** - подписка на определенные адреса
-* **subjectEmails** - заголовок писем для этой рассылки
-* **subscriber** - имя получателя для этой рассылки, если не указано (по умолчанию "подписчик")
-* **tplNotifyEmails** - шаблон для этой рассылки
-
-    ```php
-    [!JotX? &notifyEmails=`user1@site.ru:Подписчик 1,user2@site.ru:Подписчик 2,user3@site.ru` !]
-
-* **docids** - список docid, можно указывать диапазоны
-* **tagids** - список tagid, через запятую
-* **userids** - список id пользователей, через запятую. Для веб-пользователей - отрицательные.
-* **limit** - ограничение количества комментариев
+* **notifyEmails** -   підписка на певні адреси
+* **subjectEmails** - заголовок листів для цієї розсилки
+* **subscriber** - ім'я отримувача для цієї розсилки, якщо не вказано (за замовчуванням "підписник")
+* **tplNotifyEmails** - шаблон для цієї розсилки
 
     ```php
-    [!JotX? &action=`lastcomments` &limit=`10` !] - 10 последних комментариев со всего сайта
-    [!JotX? &docids=`*` &sortby=`rand()` &limit=`1` !] - случайный комментарий со всего сайта
-    [!JotX? &docids=`1,2,5-10,20*,30-35,40**,` !] - так тоже можно :)
+    [!JotX? &notifyEmails=`user1@site.ua:Підписник 1,user2@site.ua:Підписник 2,user3@site.ua` !]
 
-Параметры docids и tagids используются для вывода данных, docid и tagid - для ввода текущих, поэтому они разделены
+* **docids** - список docid, можна вказувати діапазони
+* **tagids** - список tagid, через кому
+* **userids** - список id користувачів, через кому. Для веб-користувачів - негативні.
+* **limit** - обмеження кількості коментарів
 
-* **depth** - глубина древовидных комментариев (по умолчанию 10)
-* **upc** - как считать userpostcount (0 - не считать, 1(по умолчанию) - считать для всего сайта , 2 - считать для текущей страницы)
+    ```php
+    [!JotX? &action=`lastcomments` &limit=`10` !] - 10 останніх коментарів зі всього сайту
+    [!JotX? &docids=`*` &sortby=`rand()` &limit=`1` !] - випадковий коментар зі всього сайту
+    [!JotX? &docids=`1,2,5-10,20*,30-35,40**,` !] - так теж можна :)
 
-* **js и jsFile** - аналоги css и cssFile
+Параметри docids і tagids використовують для виводу даних, docid і tagid - для вводу поточних, тому вони розділені
 
-Постраничная навигация
+* **depth** - глибина деревовидних коментарів (за замовчуванням 10)
+* **upc** - як рахувати userpostcount (0 - не рахувати, 1(за замовчуванням) - рахувати для всього сайту , 2 - рахувати для поточної сторінки)
 
-* **tplNavPage** - шаблон для оформления номера страницы
-* **tplNavPageCur** - шаблон для оформления номера текущей страницы
-* **tplNavPageSpl** - разделитель номеров страниц
-* **tplNavPageDots** - разрыв пагинации (по умолчанию многоточие)
-* **pageAdjacents** - количество страниц до и после текущей (по умолчанию 2)
+* **js і jsFile** - аналоги css і cssFile
 
-### События. 
-В каждом из двух классов свои.
+Посторінкова навігація
+
+* **tplNavPage** - шаблон для оформлення номеру сторінки
+* **tplNavPageCur** - шаблон для оформлення номеру поточної сторінки
+* **tplNavPageSpl** - розділювач номерів сторінок
+* **tplNavPageDots** - розрив пагінації (за замовчуванням три крапки)
+* **pageAdjacents** - кількість сторінок до і після поточної (за замовчуванням 2)
+
+### Події. 
+В кожному з двох класів свої.
 
 onBeforeConfiguration,onBeforeRunActions,onRunActions,onConfiguration,onBeforeFirstRun,
 onFirstRun,onSubscriptionCheck,onDeleteComment,onGetCommentFields,onBeforeSaveComment,
@@ -62,36 +62,36 @@ onValidateFormFieldFail,onBeforePOSTProcess,onProcessForm,onBeforeProcessPassive
 onProcessPassiveActions,onBeforeGetCommentCount,onBeforeGetComments,onGetComments,
 onReturnOutput,onSetDefaultOutput,onBeforeGetUserPostCount,onSetFormOutput,onSetCommentsOutput
 
-### Плагины на события.
-Их можно подгружать как из сниппетов, так и из файлов. Можно прописывать через запятую.
+### Плагіни на події.
+Їх можна довантажувати як з сніпетів, так і з файлів. Можна прописувати через кому.
 
 ```php
     [!JotX? &onBeforeValidateFormField=`nolink,onlyrus` !]
 ```
 
-В состав входят плагины:
+До складу входять плагіни:
 
-* **subscribe** (события: onBeforeFirstRun,onSaveComment,onBeforeRunActions,onBeforeProcessPassiveActions,onGetSubscriptions,onBeforeGetUserInfo,onBeforeNotify) - 
-подписка гостей сайта на уведомления о новых комментариях. Также необходимы 2 исправления в шаблонах: чекбокс и текст об отписке, см. пример в tree.config.php
-* **ajax** (события: onSetCommentsOutput,onSetFormOutput,onReturnOutput) - загрузка всего через аякс
-* **antispam** (события: onBeforePOSTProcess,onSetFormOutput) - борьба с ботами путём добавления скрытого поля-ловушки
-* **nolink** (событие: onBeforeValidateFormField) - запретить ссылки в комментариях
-* **onlyrus** (событие: onBeforeValidateFormField) - запретить нерусский спам
-* **notifyfaq** (события: onProcessForm,onBeforeNotify) - уведомление пользователю об ответе на вопрос в FAQ
-* **rss** (события: onBeforeProcessPassiveActions,onSetCommentsOutput) - добавляет ссылку на RSS-ленту
-* **rating** (события: onFirstRun,onReturnOutput) - добавляет голосование за комментарий
+* **subscribe** (події: onBeforeFirstRun,onSaveComment,onBeforeRunActions,onBeforeProcessPassiveActions,onGetSubscriptions,onBeforeGetUserInfo,onBeforeNotify) - 
+підписка гостей сайту на сповіщення про нові коментарі. Також необхідно 2 виправлення в шаблонах: чекбокс і текст про відписку, див. приклад в tree.config.php
+* **ajax** (події: onSetCommentsOutput,onSetFormOutput,onReturnOutput) - завантаження всього через аякс
+* **antispam** (події: onBeforePOSTProcess,onSetFormOutput) - боротьба з ботами шляхом додавання прихованого поля-пастки
+* **nolink** (події: onBeforeValidateFormField) - заборонити посилання в коментарях
+* **onlyrus** (події: onBeforeValidateFormField) - заборонити неросійський спам
+* **notifyfaq** (події: onProcessForm,onBeforeNotify) - повідомлення користувачу про відповідь на питання в FAQ
+* **rss** (події: onBeforeProcessPassiveActions,onSetCommentsOutput) - додає посилання на RSS-стрічку
+* **rating** (події: onFirstRun,onReturnOutput) - додає голосування за коментар
 
-Будут и другие.
+Будуть і інші.
 
-### Прочие исправления.
+### Інші виправлення.
 
-* Система уведомлений объединена и переделана под PHPMailer
-* Оптимизированы запросы в базу, в том числе и для userpostcount. Поля пользователей объединены с полями комментариев.
-* Исправлены старые баги с удалением/добавлением полей
-* Постраничная пагинация, в древовидных комментариях она тоже работает, если включить
-* Всякие мелочи, типа граватаров
+* Система повідомлень об'єднана і перероблена під PHPMailer
+* Оптимізовано запити в базу, в тому числі і для userpostcount. Поля користувачів об'єднані з полями коментарів.
+* Виправлені старі баги з видаленням / додаванням полів
+* Посторінкова пагінація, в деревовидних коментарів вона теж працює, якщо включити
+* Всякі дрібниці, типу граваторів
 
-### Полезные ссылки
-[основной репозиторий](https://github.com/Temus/JotX)
-[обсуждение JotX на сообщесве](http://community.modx-cms.ru/blog/addons/8080.html)
-[страничка в репозитории](http://extras.evolution-cms.com/packages/users/jotx.html)
+### Корисні посилання
+[основний репозиторій](https://github.com/Temus/JotX)
+[обговорення JotX в спільноті](http://community.modx-cms.ru/blog/addons/8080.html)
+[сторінка в репозиторії](http://extras.evolution-cms.com/packages/users/jotx.html)
