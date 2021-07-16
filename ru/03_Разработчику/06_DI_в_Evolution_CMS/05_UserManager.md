@@ -2,23 +2,24 @@
 Это различные методы связанные с управлением пользователем в EvolutionCMS, все действия связанные с пользователем проходят через эти методы.
 #### Доступные функции и примеры использования ####
 1. [ get ](#get) - получение пользователя
-2. [ create ](#create) - регистрация пользователя
-3. [ edit ](#edit) - редактирование пользователя
-4. [ delete ](#delete) - удаление пользователя
-5. [ login ](#login) - авторизация пользователя
-6. [ loginById ](#loginById) - авторизация пользователя по его id
-7. [ logout ](#logout) - Выход пользователя из системы
-8. [ setRole ](#setRole) - назначение пользователю его роли
-9. [ setGroups ](#setGroups) - назначению пользователю его группы пользователей
-10. [ clearSettings ](#clearSettings) - удалеение всех настроек пользователя
-11. [ saveSettings ](#saveSettings) - сохранение настроек пользователя
-12. [ repairPassword ](#repair) - получение хэша для сброса пароля
-13. [ changePassword ](#changePassword) - смена пароля при наличии старого пароля
-14. [ hashChangePassword ](#hashChangePassword) - смена пароля по хэшу полученному из метода [ repairPassword ](#repair)
-15. [ generateAndSavePassword ](#generateAndSavePassword) - смена пароля на автосгенерированный для дальнейшей отправки пользователю
-16. [ refreshToken ](#refreshToken) - обновление токена авторизации
-17. [ getVerifiedKey ](#getVerifiedKey) - получение ключа верификации пользователя
-18. [ verified ](#verified) - подтверждение пользователя с помощью ключа верификации
+2. [_getValues_](#getValues) - получение TV пользователя
+3. [ create ](#create) - регистрация пользователя
+4. [ edit ](#edit) - редактирование пользователя
+5. [ delete ](#delete) - удаление пользователя
+6. [ login ](#login) - авторизация пользователя
+7. [ loginById ](#loginById) - авторизация пользователя по его id
+8. [ logout ](#logout) - Выход пользователя из системы
+9. [ setRole ](#setRole) - назначение пользователю его роли
+10. [ setGroups ](#setGroups) - назначению пользователю его группы пользователей
+11. [ clearSettings ](#clearSettings) - удалеение всех настроек пользователя
+12. [ saveSettings ](#saveSettings) - сохранение настроек пользователя
+13. [ repairPassword ](#repair) - получение хэша для сброса пароля
+14. [ changePassword ](#changePassword) - смена пароля при наличии старого пароля
+15. [ hashChangePassword ](#hashChangePassword) - смена пароля по хэшу полученному из метода [ repairPassword ](#repair)
+16. [ generateAndSavePassword ](#generateAndSavePassword) - смена пароля на автосгенерированный для дальнейшей отправки пользователю
+17. [ refreshToken ](#refreshToken) - обновление токена авторизации
+18. [ getVerifiedKey ](#getVerifiedKey) - получение ключа верификации пользователя
+19. [ verified ](#verified) - подтверждение пользователя с помощью ключа верификации
 
 
 <a name="get"></a>
@@ -35,6 +36,41 @@ User \UserManager::get(integer $userId)
 ```php
 $user = \UserManager::get(1);
 print_r($user->attributes->toArray());
+```
+
+___
+<a name="getValues"></a>
+**getValues** - получение TV пользователя
+```php
+array \UserManager::getValues(array $userData, bool $events = true, bool $cache = true)
+```
+Функция возвращает массив TV пользователя User в формате `[ 'tvname1' => 'tvvalue1', 'tvname2' => 'tvvalue2', ... ]`
+
+Параметры, которые принимает функция:
+- userData - массив содержащий поля пользователя.
+  - id - обязательное поле, необходимо для поиска пользователя.
+  - tvNames - необязательное поле, массив имён TV. Если не указано, то возвращаются все TV.
+- $events - указатель вызываем ли мы события связанные с созданием пользователя
+- $cache - указатель сбрасываем ли кэш после создания пользователя
+
+**ВНИМАНИЕ**
+Функция может бросить два различных исключения 
+ 
+- **\EvolutionCMS\Exceptions\ServiceValidationException** исключение срабатывает в случае если мы передали плохие данные в $userData.
+- **\EvolutionCMS\Exceptions\ServiceActionException** исключение срабатывает в ситуации когда возникла ошибка в процессе обработки данных.
+
+Пример получения всех TV пользователя 
+```php
+$data = [ 'id' => 1 ];
+$tvValues = \UserManager::get($data);
+print_r($tvValues);
+```
+
+Пример получения отдельных TV пользователя 
+```php
+$data = [ 'id' => 1, 'tvNames' => [ 'user_tv1', 'user-tv2' ] ];
+$tvValues = \UserManager::get($data);
+print_r($tvValues);
 ```
 
 ___
