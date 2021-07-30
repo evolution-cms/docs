@@ -1,27 +1,27 @@
-###Форматирование вывода даты
+### Форматування виведення дати
 
 string prepareDate($timestamp, $fieldType)
 
-**$timestamp** - дата в формате Unix timestamp
+**$timestamp** - дата в форматі Unix timestamp
 
-**$fieldType** - вариант форматирования
+**$fieldType** - варіант форматування
 
-+ DATE - формат вида Y-m-d. Пример: "2007-04-30"
-+ TIME - формат вида H:i:s. Пример: "13:43:27"
-+ YEAR - формат вида Y. Пример: "2007"
-+ DATETIME (по умолчанию) - формат вида Y-m-d H:i:s. Пример: "2007-04-30 13:43:27"
++ DATE - формат виду Y-m-d. Приклад: "2007-04-30"
++ TIME - формат виду H:i:s. Приклад: "13:43:27"
++ YEAR - формат виду Y. Приклад: "2007"
++ DATETIME (за замовчуванням) - формат виду Y-m-d H:i:s. Приклад: "2007-04-30 13:43:27"
 
 ***
 
-####Пример
+#### Приклад
 
 	function getEvents( $date ) {  
 		global $modx;  
 		$output = '';  
 		$fulldate = $modx->db->prepareDate( $date, 'DATE' );		
-		//Преобразует дату в удобный для чтения вид   
+		//Перетворює дату в зручний для читання вигляд
 		$result = $modx->db->select( 'event_name', 'events', 'timestamp = ' . intval( $date ) );  
 		while( $row = $modx->db->getRow( $result ) ) {  
-			$output .= $row['event_name'] . ' состоится ' . $fulldate . '.';  
+			$output .= $row['event_name'] . ' відбудеться ' . $fulldate . '.';  
 		}  
 	}
