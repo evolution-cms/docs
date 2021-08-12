@@ -1,84 +1,84 @@
-Сниппет для вывода блока с настройков сортировки и выбора количества товаров на странице.
+Сніппет для виведення блоку з налаштувань сортування і вибору кількості товарів на сторінці.
 
 ## evoSortBlock
-Сниппет для формирования блока сортировки. Из приятных вещей.
+Сніппет для формування блоку сортування. З приємних речей.
 
 
 
-## Параметры
-1. displayConfig  настройка сэлекта или ссылок для указания количества товаров на странице.
-Пример: 20||30||40||все==all.
-2. sortConfig  настройка  ссылок для указания поля по которому товары сортируються.
-Пример: По название==pagetitle||По индексу==menuindex||Цена от маленькой==price:asc||Цена от большой==price:desc
-3. ajax - использовать ли ajax по умолчанию ноль.
-4. changeSortByClickField - изменять направление сортировки при повторном клике по параметру сортировки. 1/0. По умолчанию 0.
-Параметр необходим если у нас нет блока для выбора направление, а надо изменять направление при клике второй раз по параметру поля.
+## Параметри
+1. displayConfig налаштування селекта або посилань для вказівки кількості товарів на сторінці. 
+Приклад: 20 || 30 || 40 || все == all.
+2. 2.sortConfig налаштування посилань для вказівки поля по якому товари сортуються. 
+Приклад: За назву == pagetitle || За індексом == menuindex || Ціна від маленької == price: asc || Ціна від великої == price: desc
+3.ajax - використовувати чи ajax за замовчуванням нуль.
+4..changeSortByClickField - змінити напрямок сортування при повторному натисканні на параметру сортування. 1/0. За замовчуванням 0. 
+Параметр необхідний якщо у нас немає блоку для вибору напрямку, а треба змінювати напрямок при кліці вдруге за параметром поля.
 
-### Шаблоны
-#### Обертка
-1. ownerTpl - Основная обертка блока.
-    Плейсхолдеры ```[+class+] [+display.block+] [+sort.block+] [+sort.direction+]```.
-    Пример: ```<div class="[+class+]">[+display.block+][+sort.block+]</div>```
+### Шаблони
+#### Верстка
+1. ownerTpl - Основна верстка блоку.
+    Плейсхолдери ```[+class+] [+display.block+] [+sort.block+] [+sort.direction+]```.
+    Приклад: ```<div class="[+class+]">[+display.block+][+sort.block+]</div>```
 
-    * class Плейсхолдер из класcами для обертки которые необходимы для работы js, а именно sort-wrap и ajax
-    * display.block блок выбора количества товаров
-    * sort.block Блок выбора поля для сортировки
-    * sort.direction Блок выбора направления сортировки
-#### Выбор количества товаров
-1. displayOwnerTpl - обертка блока для выбора количества элементов на странице.
-    Плейсхолдеры: ```[+class+]">[+wrapper+]```
-    Пример: ```<select class="[+class+]">[+wrapper+]</select>```
-    Пример: ```<div class="[+class+]">[+wrapper+]</div>```
+    * class Плейсхолдер з класcами для верстки які необхідніі для роботи js, а саме sort-wrap і ajax
+    * display.block блок вибору кількості товарів
+    * sort.block блок вибору поля для сортування
+    * sort.direction блок вибору напрамку сортування
+#### Вибір кількості товарів
+   displayOwnerTpl - верстка блоку для вибору кількості елементів на сторінці. 
+   Плейсхолдери: [+class+]">[+wrapper+] 
+   Приклад: <select class="[+class+]">[+wrapper+]</select> 
+   Пример: <div class="[+class+]">[+wrapper+]</div>
 
-2. displayRowTpl - Шаблон вывода строки. ( option для сэлекта или тег a для блока).
-    Плейсхолдеры: ```[+value+],[+selected+],[+data+],[+class+],[+caption+] ```
-    Пример: ``` <option value="[+value+]" [+selected+] >[+caption+]</option>```
-    Пример: ``` <a [+data+] class="[+class+]">[+caption+]</a> ```
-#### Выбор поля для сортировки
-1. sortOwnerTpl  - обертка блока для выбора поля по которому элементы сортируются на странице.
-    Плейсхолдеры: ```[+wrapper+]```
-    Пример: ```<ul>[+wrapper+]</ul>```
+2. displayRowTpl - Шаблон виведення рядка. ( option для селекту або тег a для блоку).
+    Плейсхолдери: ```[+value+],[+selected+],[+data+],[+class+],[+caption+] ```
+    Приклад: ``` <option value="[+value+]" [+selected+] >[+caption+]</option>```
+    Приклад: ``` <a [+data+] class="[+class+]">[+caption+]</a> ```
+#### Вибір поля для сортування
+1. sortOwnerTpl  - обгортка блоку для вибору поля за яким елементи сортуються на сторінці.
+    Плейсхолдери: ```[+wrapper+]```
+    Приклад: ```<ul>[+wrapper+]</ul>```
 
-2. sortRowTpl - Шаблон вывода ссылки для выбора поля.
-        Плейсхолдеры: ```[+class+],[+data+] [+caption+]```
-        Пример: ```<a class="[+class+]" [+data+]>[+caption+]</a>```
+2. sortRowTpl - Шаблон виведення посилання для вибору поля.
+        Плейсхолдери: ```[+class+],[+data+] [+caption+]```
+        Приклад: ```<a class="[+class+]" [+data+]>[+caption+]</a>```
 
-#### Выбор направления сортировки
-1. sortDirectionTpl - обертка блока выбора направления.
-    Плейсхолдеры: ```[+up+][+down+]```
-    up - сортировка asc
-    down - сортировка desc
-2. sortDirectionUpTpl - шаблон ссылки для выбора направления сортировки asc
-    Плейсхолдеры: ```[+class+][+data+]```
+#### Вибір напрямку сортування
+1. sortDirectionTpl - верстка блоку вибору напрямку.
+    Плейсхолдери: ```[+up+][+down+]```
+    up - сортування asc
+    down - сортування desc
+2. sortDirectionUpTpl - шаблон посилання для вибору напрямку сортування asc
+    Плейсхолдери: ```[+class+][+data+]```
     class - css клас
-    data - Дата атрибут data-value в котором хранится текущее поле а направление сортировки asc. Пример price:asc
-3. sortDirectionDescTpl - шаблон ссылки для выбора направления сортировки desc
-    Плейсхолдеры: ```[+class+][+data+]```
+    data - Дата атрибут data-value в якому зберігається поточне поле а напрямок сортування asc. Приклад price: asc
+3. sortDirectionDescTpl - шаблон посилання для вибору напрямку сортування desc
+    Плейсхолдери: ```[+class+][+data+]```
     class - css клас
-    data - Дата атрибут data-value в котором хранится текущее поле а направление сортировки asc. Пример price:desc
+    data - Дата атрибут data-value в якому зберігається поточне поле а напрямок сортування asc. Приклад price: desc
 
 
-##### Классы
-1. displayActiveClass - Класс для активного пунка в выборе количества элементов на странице. По умолчанию active.
-2. sortActiveClass - Класс для активного пункта в выборе поля для сортировки элементов на странице.
-3. sortUpClass - Класс для ссылки выбора поля когда сортировка от маленького к большому. По умолчанию up
-4. sortDownClass - Класс для ссылки выбора поля  когда сортировка от большого к маленькому. По умолчанию down
-5. sortFieldClass - Класс для ссылок выбора поля и направления сортировки. По умолчанию set-sort-field.
+##### Класи
+1. displayActiveClass - Клас для активного пункту у виборі кількості елементів на сторінці. За замовчуванням active.
+2. sortActiveClass - Клас для активного пункту в виборі поля для сортування елементів на сторінці.
+3. sortUpClass - Клас для посилання вибору поля коли сортування від маленького до великого. За замовчуванням up
+4. sortDownClass - Клас для посилання вибору поля коли сортування від великого до маленького. За замовчуванням down
+5. sortFieldClass - Клас для посилань вибору поля і напряму сортування. За замовчуванням set-sort-field.
 6. sortDirectionActiveClass - Класс для активной ссылки выбранного направления сортировки. По умолчанию active.
 
 
-##### Значения по умолчанию
-1. displayDefault - количество элементов на странице по умолчанию
-2. sortFieldDefault - поле сортировки по умолчанию
-3. sortOrderDefault - напрвление сортировки по умолчанию
+##### Значення за замовчуванням
+1. displayDefault - кількість елементів на сторінці за замовчуванням
+2. sortFieldDefault - поле сортування за замовчуванням
+3. sortOrderDefault - напрямок сортування за замовчуванням
 
 
-## Устанавливаемые плейсхолдеры для работы без eFilterResult
- * sort_display - количество товаров
- * sort_field - поле для сортировки
+## Встановлювані плейсхолдери для роботи без eFilterResult
+ * sort_display - кількість товарів
+ * sort_field - поле для сортування
  * sort_order - направление сортировки
-Также если использовать снипет без eFilter необходимо подключить js файл eFilter.js вручную.
-А товары обернуть в обертку eFilterResult
+Також якщо використовувати сніпет без eFilter необхідно підключити js файл eFilter.js вручну.
+А товари обернути у верстку eFilterResult
 ```
     <div id="eFiltr_results_wrapper">
         <div class="eFiltr_loader"></div>
@@ -88,32 +88,32 @@
     ```
 
 
-## Логика работы js.
-### Для выбора количества товаров.
-Обрабатывается клик по элементу из класом set-display-field.
-Если это тег a ( ссылка ) и событие click, то информация про количество берётся из дата атрибута.
-Если это событие change информация берется из атрибута value элемента option.
-Дале ajax запрос из параметром sortDisplay и значением.
-Если ajax отключен, то обновление страницы.
+## Логіка роботи js.
+### Для вибору кількості товарів.
+Обробляється клік по елементу з класом set-display-field.
+Якщо це тег a (посилання) і подія click, то інформація про кількість береться з дата атрибута.
+Якщо ця подія change інформація береться з атрибуту value елемента option.
+Далі ajax запит з параметром sortDisplay і значенням.
+Якщо ajax відключений, то оновлення сторінки.
 
-### Для выбора поля и направления сортировки.
-Обрабатывается клик по элементу из класом set-sort-field.
-Если это тег a ( ссылка ) и событие click то информация про поле и направление берется из дата атрибута.
-Если это событие change информация берется из атрибута value елмента option.
-Дале ajax запрос из параметром sortBy и значением.
-Если ajax отклчен то обновление страницы.
-
-
+### Для вибору поля і напряму сортування.
+Обробляється клік по елементу з класом set-sort-field.
+Якщо це тег a (посилання) і подія click то інформація про поле і напрямок береться з дата атрибута.
+Якщо ця подія change інформація береться з атрибуту value елмента option.
+Далі ajax запит з параметром sortBy і значенням.
+Якщо ajax відключений то оновлення сторінки.
 
 
-##### Пример
+
+
+##### Приклад
     [!evoSortBlock?
         &ownerTpl=`<div  class="sorting-block__filters [+class+]"><form action="#">[+display.block+][+sort.block+]</form></div>`
         &displayOwnerTpl=`<div class="sorting-block__filters-amount"><span class="sorting-block__filters-label">Показывать:</span><div class="sorting-block__select"><div class="inline-select"><select class="decor-select js-select[+class+]">[+wrapper+]</select></div></div></div>`
-        &sortOwnerTpl=`<div class="sorting-block__filters-type"><span class="sorting-block__filters-label sorting-block__filters-label--type">Сортировать:</span><div class="sorting-block__filters-block"><span class="sorting-block__filters-mobile-active"><span class="sorting-block__filters-mobile-active-inner">По популярности</span></span><ul class="sorting-block__filters-list">[+wrapper+]</ul></div></div>`
+        &sortOwnerTpl=`<div class="sorting-block__filters-type"><span class="sorting-block__filters-label sorting-block__filters-label--type">Сортувати:</span><div class="sorting-block__filters-block"><span class="sorting-block__filters-mobile-active"><span class="sorting-block__filters-mobile-active-inner">По популярності</span></span><ul class="sorting-block__filters-list">[+wrapper+]</ul></div></div>`
         &sortRowTpl=`<li class="sorting-block__filters-item"><a href="#"  [+data+] [+selected+]  class="sorting-block__filters-link [+class+]">[+caption+]</a></li>`
         &sortActiveClass=`is-active`
-        &sortConfig=`Название==pagetitle||Дата поступления==menuindex||Цена==price`
+        &sortConfig=`Назва==pagetitle||Дата надходження==menuindex||Ціна==price`
         &ajax=`1`
     !]
 

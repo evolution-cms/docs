@@ -1,13 +1,13 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <h3>reCAPTCHA для eForm </h3> 
-reCAPTCHA в сниппете eForm для создание обратной связи, заказа звонка, оформление заказа товаров на Evolution CMS.	
+reCAPTCHA в сніпеті eForm для створення зворотного зв'язку, замовлення дзвінка, оформлення замовлення товарів на Evolution CMS.	
 <br>
-<h3 class="sub-header text-bold">Установка</h3>
-<p>1. Прежде всего нужно получить ключи для сайта (siteKey и secretKey) – <a href="https://www.google.com/recaptcha/admin" rel="nofollow" target="_blank">здесь</a></p>
-<p>2. Скачиваем готовую PHP библиотеку каптчи здесь: <a href="https://github.com/google/recaptcha" rel="nofollow" target="_blank">github</a> (Clone or download, Download ZIP)</p>
-<p>3. Из архива, вытаскиваем папку src, закачиваем в папку /assets/snippets и переименовываем эту папку в recaptcha</p>
-<p>4. Создаем сниппет <code>ReCaptcha</code> и вставляем в него данный код:</p>
+<h3 class="sub-header text-bold">Встановлення</h3>
+<p>1. Перш за все потрібно отримати ключі для сайту (siteKey и secretKey) – <a href="https://www.google.com/recaptcha/admin" rel="nofollow" target="_blank">здесь</a></p>
+<p>2. Завантажуємо готову PHP бібліотеку каптчі тут: <a href="https://github.com/google/recaptcha" rel="nofollow" target="_blank">github</a> (Clone or download, Download ZIP)</p>
+<p>3. З архіву, витягуємо папку src, закачуємо в папку /assets/snippets і перейменовуємо цю папку в recaptcha</p>
+<p>4. Створюємо сніпет <code>ReCaptcha</code> і вставляємо в нього даний код:</p>
 <pre class="brush: php;">
 &lt;?php
 if(!defined('MODX_BASE_PATH')) {die('What are you doing? Get out of here!');}
@@ -58,8 +58,8 @@ if(!function_exists('verifyReCaptcha')){
 }
 ?&gt;
 </pre>
-<p>5. В темплейты eForm прописываем плейсхолдер <code>[+ReCaptcha+]</code> в том месте, где хотим ее видеть (если вы используете в темплейтах вызов veriword.php, закройте его комментарием или удалите)</p>
-<p>6. Перед вызовом eForm ставим вызов сниппета ReCaptcha <code>[[ReCaptcha]]</code>, а в вызов самого eForm добавляем параметры:</p>
+<p>5. У темплейти eForm прописуємо плейсхолдер <code>[+ReCaptcha+]</code> в тому місці, де хочемо її бачити (якщо ви використовуєте в темплейт виклик veriword.php, закрийте його коментарем або видаліть)</p>
+<p>6.Перед викликом eForm ставимо виклик сниппета ReCaptcha <code>[[ReCaptcha]]</code>, а у виклик самого eForm додаємо параметри:</p>
 <pre class="brush: html;">
 &vericode=`1`
 &eFormOnBeforeFormMerge=`setReCaptcha`
