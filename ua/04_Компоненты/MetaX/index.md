@@ -1,4 +1,4 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<h3>MetaX Сниппет MetaX. Автоматическая генерация HTML тегов Base, Meta и Link</h3>
-Представляет собой сниппет который автоматически генерирует HTML теги base meta и link в заголовке вашего сайта.
+<h3>MetaX Сніпет MetaX. Автоматична генерація HTML тегів Base, Meta і Link</h3>
+Являє собою сніпет який автоматично генерує HTML теги base meta і link в заголовку вашого сайту.
