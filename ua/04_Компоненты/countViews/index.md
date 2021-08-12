@@ -1,23 +1,23 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<h3>Количество просмотров страниц для MODX Evolution </h3>
-Количество просмотров страниц для MODX Evolution.
-<p>Устанавливаем счетчик количества просмотров. Для этого нам нужно будет создать дополнительное поле в таблице <span class="text-bold">modx_site_content</span> базы данных. Вот параметры нового поля – <span class="text-bold">count int(20) default = 0</span>.</p>
-<p>Теперь создадим сниппет <span class="text-bold">inc</span>, который будет считать количество посещений. Вызов сниппета inc нужно установить в самом верху шаблона материалов. Код сниппета:</p>
+<h3>Кількість переглядів сторінок для MODX Evolution </h3>
+Кількість переглядів сторінок для  MODX Evolution.
+<p>Встановлюємо лічильник кількості переглядів. Для цього нам потрібно буде створити додаткове поле в таблиці <span class="text-bold">modx_site_content</span> бази даних. Ось параметри нового поля – <span class="text-bold">count int(20) default = 0</span>.</p>
+<p>Тепер створимо сніпет <span class="text-bold">inc</span>, який буде рахувати кількість відвідувань. Виклик сніпета inc потрібно встановити в самому верху шаблону матеріалів. Код сніпета:</p>
 <pre class="brush: php;">
 $table = $modx->getFullTableName("site_content");
 $id = $modx->documentObject['id'];
 $result = $modx->db->update("count=count+1", $table, "id=$id");
 </pre>
-<p>И наконец, создаем сниипет <span class="text-bold">hits</span>, отвечающий за вывод количества просмотров:</p>
+<p>І нарешті, створюємо сніпет  <span class="text-bold">hits</span>, що відповідає за виведення кількості переглядів:</p>
 <pre class="brush: php;">
 $id = isset($id) ? $id : $modx->documentIdentifier;
 return $modx->db->getValue($modx->db->select('count',$modx->getFullTableName('site_content'),'id='.$id));
 </pre>
-<p>Давайте рассмотрим еще один способ подсчета количества просмотров. Данный способ имеет одно преимущество перед предыдущим – его можно использовать в шаблоне Ditto (<a rel="nofollow" href="http://rekill.ru/modx/snippet-kolichestvo-prosmotrov" target="_blank">исходные материалы</a>).</p>
-<p>Итак, создадим TV-параметр <span class="text-bold">countViews</span>
-с типом ввода Text.</p>
-<p>Далее создаем сниппет <span class="text-bold">countViews</span> с таким содержанием:</p>
+<p>Давайте розглянемо ще один спосіб підрахунку кількості переглядів. Даний спосіб має одну перевагу перед попереднім - його можна використовувати в шаблоні Ditto (<a rel="nofollow" href="http://rekill.ru/modx/snippet-kolichestvo-prosmotrov" target="_blank">вихідні матеріали</a>).</p>
+<p>Отже, створимо TV-параметр <span class="text-bold">countViews</span>
+з типом введення Text.</p>
+<p>Далі створюємо сніпет  <span class="text-bold">countViews</span> з таким змістом:</p>
 <pre class="brush: php;">
 $type = isset($type) ? $type : 'output'; 
 $table = $modx->getFullTableName('site_tmplvar_contentvalues'); 
@@ -58,13 +58,13 @@ switch($type) {
 	break;
 }
 </pre>
-<p>На страницах, где будет происходить подсчет посещений, вставляем этот код:</p>
+<p>На сторінках, де буде відбуватися підрахунок відвідувань, вставляємо цей код:</p>
 <pre class="brush: php;">
 [!countViews? &type=`counter` &id=`[*id*]` &tvid=`id TV-параметра countViews`!]
 </pre>
-<p>И, наконец, в том месте, где Вы ходите видеть количество просмотров, вставляем такой код:</p>
+<p>І, нарешті, в тому місці, де Ви хочете бачити кількість переглядів, вставляємо такий код:</p>
 <pre class="brush: php;">
-[[countViews? &type=`output` &id=`[*id*]` &tvid=`id TV-параметра countViews`]] - в документе MODX
-[[countViews? &type=`output` &id=`[+id+]` &tvid=`id TV-параметра countViews`]] - в шаблоне Ditto
+[[countViews? &type=`output` &id=`[*id*]` &tvid=`id TV-параметра countViews`]] - в документі MODX
+[[countViews? &type=`output` &id=`[+id+]` &tvid=`id TV-параметра countViews`]] - в шаблоні Ditto
 </pre>
-<p><em><span class="text-bold">Обратите внимание</span></em>: просмотр страницы авторизованным пользователем в системе MODX не учитывается.</p>
+<p><em><span class="text-bold">Зверніть увагу</span></em>: перегляд сторінки авторизованим користувачем в системі MODX не враховується.</p>
