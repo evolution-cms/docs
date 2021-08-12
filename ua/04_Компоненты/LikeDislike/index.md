@@ -49,7 +49,7 @@ LikeDislike - можливість ставити оцінки на Evolution CM
 </pre>
 <p>Скрипт likedislike.jsнаписаний під верстку в цьому прикладі.</p>
 <p>Крім виведення шаблонів сниппет задає плейсхолдери [+modResource.like.{id}+] і [+modResource.dislike.{id}+].</p>
-<h3 class="sub-header">Параметри сніппета LikeDislike</h3>
+<h3 class="sub-header">Параметри сніпета LikeDislike</h3>
 <ul>
 	<li><span class="text-bold">rid</span> – id оцінюваного ресурсу, якщо параметр не заданий, то по можливості використовується id поточного ресурсу;</li>
 	<li><span class="text-bold">classKey</span> – параметр дозволяє розділяти оцінювані суті. Зроблено на майбутнє, раптом знадобиться ставити оцінки користувачам або ще чого-небудь. За замовчуванням</span> – modResource.</li>
@@ -60,7 +60,7 @@ LikeDislike - можливість ставити оцінки на Evolution CM
 </ul>
 <p>Якщо не ставити шаблони, то сниппет поверне масив з ключами like і dislike.</p>
 
-<h3 class="sub-header">Параметри сніппета ldController</h3>
+<h3 class="sub-header">Параметри сніпета ldController</h3>
 <ul>
 	<li><span class="text-bold">allowLD</span> – дозволити оцінювати в списку (за замовчуванням - 0);</li>
 	<li><span class="text-bold">enabledTpl</span> – шаблон, якщо дозволено оцінювати;</li>
