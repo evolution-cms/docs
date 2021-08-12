@@ -1,5 +1,5 @@
-###Если страница формируется в системе управления (backend), то функция возвращает true, иначе false
+###Якщо сторінка формується в системі управління (backend), то функція повертає true, інакше false
 
 bool isBackend();
 
-Смотрите также: isFrontend(), insideManager()
+Дивіться також: isFrontend(), insideManager()

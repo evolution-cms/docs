@@ -1,12 +1,12 @@
-###Вызвать заданное событие
+###Викликати задану подію
 
 array invokeEvent(string $evtName, array $extParams);
 
-**$evtName** - наименование события
-**$extParams** - параметры события в виде набора значений name=>value
+**$evtName** - найменування події
+**$extParams** - параметри події у вигляді набору значень name => value
 
 ***
 
-####Пример
+####Приклад
 
 	$modx->invokeEvent("OnWebChangePassword", array( "userid" => $id, "username" => $username, "userpassword" => $newpwd ));
