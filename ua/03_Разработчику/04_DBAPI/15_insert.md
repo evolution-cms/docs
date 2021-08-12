@@ -18,7 +18,7 @@ mixed insert($fields, $intotable [, $fromfields [, $fromtable [, $where [, $limi
 
 Параметри $fromfields, $fromtable, $where и $limit використовуються для копіювання даних з однієї таблиці в іншу.
 
-Цей метод повертає AUTO_INCREMENT-ідентифікатор для доданої записи.
+Цей метод повертає AUTO_INCREMENT-ідентифікатор для доданого запису.
 
 ***
 
