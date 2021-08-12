@@ -1,103 +1,103 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<h3>Звездный рейтинг для MODX Evolution </h3>
-Отличается от основной сборки очень гибкими настройками (изображения звезд, оформление и т.д.).
-<h3 class="sub-header">Установка<a class="pull-right" data-toggle="tooltip" data-placement="left" title="СКАЧАТЬ" href="assets/files/MODX-Evolution-Star-Rating-jquery.raty.zip.html"><i class="fa fa-lg fa-download"></i></a></h3>
-<p>Создать новый сниппет с именем <code>star_rating</code> и следующим содержимым:</p>
+<h3>Зірковий рейтинг для MODX Evolution </h3>
+Відрізняється від основної збірки дуже гнучкими налаштуваннями (зображення зірок, оформлення і т.п.).
+<h3 class="sub-header">Установка<a class="pull-right" data-toggle="tooltip" data-placement="left" title="СКАЧАТИ" href="assets/files/MODX-Evolution-Star-Rating-jquery.raty.zip.html"><i class="fa fa-lg fa-download"></i></a></h3>
+<p>Створити новий сніпет з ім'ям <code>star_rating</code> і наступним вмістом:</p>
 <pre class="brush: php;">
 &lt;?php
 return require MODX_BASE_PATH . 'assets/snippets/star_rating/snippet.php';
 ?&gt;
 </pre>
-<p>Создать новый модуль <code>Star Rating</code>, со следующим содержимым:</p>
+<p>Створити новий модуль <code>Star Rating</code>, з наступним вмістом:</p>
 <pre class="brush: php;">
 include MODX_BASE_PATH . 'assets/snippets/star_rating/starrating.module.php';
 </pre>
-<p>После создания модуля необходимо обновить страницу чтобы ссылка на модуль появилась на вкладке <code>"Модули"</code>. Далее если вы ранее не устанавливали этот компонент необходимо нажать кнопку <code>"Установить"</code>.</p>
-<h3 class="sub-header">Использование</h3>
-<p>Пример вызова сниппета:</p>
+<p>Після створення модуля необхідно оновити сторінку щоб посилання на модуль появилось на вкладці <code>"Модулі"</code>. Далі якщо ви раніше не встановлювали цей компонент необхідно натиснути кнопку <code>"Установити"</code>.</p>
+<h3 class="sub-header">Використання</h3>
+<p>Приклад виклику сніпета:</p>
 <pre class="brush: html;">
 [!star_rating? &amp;id=`418` &amp;tpl=`@CHUNK:star_rating`!]
 </pre>
-<h3 class="sub-header">Параметры сниппета</h3>
+<h3 class="sub-header">Параметри сніпета</h3>
 <table class="table table-striped table-vcenter table-bordered table-condensed">
 	<thead>
 		<tr>
 			<th>Параметр</th>
-			<th class="text-center">По умолчанию</th>
-			<th>Описание</th>
+			<th class="text-center">За замовчуванням</th>
+			<th>Опис</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td><span class="text-bold">id</span></td>
 			<td class="text-center"><code>[*id*]</code></td>
-			<td>ID документа. Если не указать будет использован ID текущего документа</td>
+			<td>ID документа. Якщо не вказати буде використаний ID поточного документа</td>
 		</tr>
 		<tr>
 			<td><span class="text-bold">tpl</span></td>
 			<td class="text-center"><code>template</code></td>
-			<td>Шаблон для вывода рейтинга. Для использования чанков MODX следует у имени чанка добавить приставку <code>@CHUNK:</code> как на примере</td>
+			<td>Шаблон для виведення рейтинга. Для використання чанків MODX потрібно в імені чанка добавити приставку <code>@CHUNK:</code> як на прикладі</td>
 		</tr>
 		<tr>
 			<td><span class="text-bold">lang</span></td>
 			<td class="text-center"><code>ru</code></td>
-			<td>Язык. Все языки находятся в папке <code>/assets/snippets/star_rating/langs/</code></td>
+			<td>Мова. Всі мови знаходятся в папці <code>/assets/snippets/star_rating/langs/</code></td>
 		</tr>
 		<tr>
 			<td><span class="text-bold">interval</span></td>
 			<td class="text-center"><code>86400</code></td>
-			<td>Интервал в секундах по итечении которого можно будет оставить голос снова</td>
+			<td>Інтервал в секундах після закінчення котрого можна буде оставити голос знову</td>
 		</tr>
 		<tr>
 			<td><span class="text-bold">noJs</span></td>
 			<td class="text-center">-</td>
-			<td>Если указать <code>1</code> встроенные скрипты не будут выводиться на страницу</td>
+			<td>Якщо вказати <code>1</code> вбудовані скрипти не будуть виводитись на сторінку</td>
 		</tr>
 		<tr>
 			<td><span class="text-bold">noCss</span></td>
 			<td class="text-center">-</td>
-			<td>Если указать <code>1</code> встроенные стили не будут выводиться на страницу</td>
+			<td>Якщо вказати <code>1</code> вбудовані стилі не будуть виводитись на сторінку</td>
 		</tr>
 		<tr>
 			<td><span class="text-bold">class</span></td>
 			<td class="text-center">-</td>
-			<td>Добавляет ваш css класс в шаблон <code>&lt;div class="star-rating-container[+class+]"&gt;</code>, указывать без пробела</td>
+			<td>Добавляє ваший css клас в шаблон <code>&lt;div class="star-rating-container[+class+]"&gt;</code>, вказувати без пробіла</td>
 		</tr>
 		<tr>
 			<td><span class="text-bold">stars</span></td>
 			<td class="text-center">5</td>
-			<td>Количество звезд рейтинга</td>
+			<td>Кількість зірок рейтингу</td>
 		</tr>
 		<tr>
 			<td><span class="text-bold">starOn</span></td>
 			<td class="text-center">-</td>
-			<td>Изображение заполненной звезды (указывать только имя файла с расширением)</td>
+			<td>Зображення заповненої зірки (вказувати тільки ім'я файла з розширенням)</td>
 		</tr>
 		<tr>
 			<td><span class="text-bold">starOff</span></td>
 			<td class="text-center">-</td>
-			<td>Изображение не заполненной звезды (указывать только имя файла с расширением)</td>
+			<td>Зображення не заповненої зірки (вказувати тільки ім'я файла з розширенням)</td>
 		</tr>
 		<tr>
 			<td><span class="text-bold">starHalf</span></td>
 			<td class="text-center">-</td>
-			<td>Изображение полу-заполненной звезды (указывать только имя файла с расширением)</td>
+			<td>Зображення напів-заповненої зірки (вказувати тільки ім'я файла з розширенням)</td>
 		</tr>
 		<tr>
 			<td><span class="text-bold">imagesPath</span></td>
 			<td class="text-center">-</td>
-			<td>Путь к папке с изображениями звезд. <code>starOn</code>, <code>starOff</code>, <code>starHalf</code> связыны с этим параметром</td>
+			<td>Шлях до папки із зображенням зірок. <code>starOn</code>, <code>starOff</code>, <code>starHalf</code> звязані з цим параметром</td>
 		</tr>
 		<tr>
 			<td><span class="text-bold">readOnly</span></td>
 			<td class="text-center"><code>false</code></td>
-			<td>Запрещает возможность голосовать, только просмотр рейтинга</td>
+			<td>Забороняє можливість голосувати, тільки перегляд рейтингу</td>
 		</tr>
 		<tr>
 			<td><span class="text-bold">starType</span></td>
 			<td class="text-center"><code>img</code></td>
-			<td>По умолчанию <code>img</code>, если указать <code>span</code> то вместо изображений будет использоваться шрифт со звездами</td>
+			<td>За замовчуванням <code>img</code>, якщо вказати <code>span</code> то замість зображень буде використовуватись шрифт із зірками</td>
 		</tr>
 	</tbody>
 </table>
