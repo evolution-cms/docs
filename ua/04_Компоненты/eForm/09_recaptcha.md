@@ -59,7 +59,7 @@ if(!function_exists('verifyReCaptcha')){
 ?&gt;
 </pre>
 <p>5. У темплейти eForm прописуємо плейсхолдер <code>[+ReCaptcha+]</code> в тому місці, де хочемо її бачити (якщо ви використовуєте в темплейт виклик veriword.php, закрийте його коментарем або видаліть)</p>
-<p>6.Перед викликом eForm ставимо виклик сниппета ReCaptcha <code>[[ReCaptcha]]</code>, а у виклик самого eForm додаємо параметри:</p>
+<p>6.Перед викликом eForm ставимо виклик сніпета ReCaptcha <code>[[ReCaptcha]]</code>, а у виклик самого eForm додаємо параметри:</p>
 <pre class="brush: html;">
 &vericode=`1`
 &eFormOnBeforeFormMerge=`setReCaptcha`
