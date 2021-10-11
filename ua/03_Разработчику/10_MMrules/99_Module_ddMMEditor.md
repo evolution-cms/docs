@@ -13,7 +13,7 @@
 
 [http://code.divandesign.ru/modx/ddmmeditor](http://code.divandesign.ru/modx/ddmmeditor) - Посилання на сторінку модуля
 
-####Установка 
+####Встановлення 
 Вміст файлу module.php має бути скопійовано в поле «Код модуля» в меню створення нового модуля. 
 Інші файли повинні знаходитися в assets/modules/ddmmeditor/... (в архіві вже створена необхідна структура папок). 
 Модуль змінює файл assets/plugins/managermanager/mm_rules.inc.php плагіна ManagerManager.
