@@ -5,8 +5,8 @@ LikeDislike - можливість ставити оцінки на Evolution CM
 <p>завантажувати тут: <i class="fa fa-github fa-lg text-primary"></i> <a href="https://github.com/Pathologic/LikeDislike" rel="nofollow" target="_blank">Pathologic</a></p>
 <p>В коробцы:</p>
 <ul>
-	<li>сныппет Like Dislike, який і дає можливість ставити оцінки;</li>
-	<li>сныппет ldController для запуску DocLister з розширеним контролером site_content;</li>
+	<li>сніпет Like Dislike, який і дає можливість ставити оцінки;</li>
+	<li>сніпет ldController для запуску DocLister з розширеним контролером site_content;</li>
 	<li>модуль LikeDislike, щоб бачити оцінки в адмінці.</li>
 </ul>
 <p>Захист від накруток <s>ныяка</s> проста – кукы, ip, також можна дозволити оцінювати тільки зареєстрованим користувачам.</p>
