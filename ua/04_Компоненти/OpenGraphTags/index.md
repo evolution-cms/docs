@@ -1,4 +1,3 @@
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <h3>OpenGraphTags: Виведення OG-тегів для статті </h3>
 Сніппет виведення OG-тегів для статті у Evolution CMS.
@@ -93,8 +92,8 @@ $out .= '<meta property="og:site_name" content="' . $site_name . '">';
 $out .= PHP_EOL."\t".'<meta property="og:locale" content="' . $locale . '">';
 $out .= PHP_EOL."\t".'<meta property="og:type" content="article">';
 $out .= PHP_EOL."\t".'<meta property="og:title" content="' .$title. '">';
-$out.=$descTPL? PHP_EOL."\t".$descTPL : '';
-$out.=$imgTPL? PHP_EOL."\t".$imgTPL : '';
+$out .=$descTPL? PHP_EOL."\t".$descTPL : '';
+$out .=$imgTPL? PHP_EOL."\t".$imgTPL : '';
 $out .= PHP_EOL."\t".'<meta property="og:url" content="' . $url . '">';
 }
 
