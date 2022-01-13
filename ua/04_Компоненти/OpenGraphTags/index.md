@@ -1,6 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <h3>OpenGraphTags: Виведення OG-тегів для статті </h3>
-Сніппет виведення OG-тегів для статті у Evolution CMS.
+Сніпет виведення OG-тегів для статті у Evolution CMS.
 <p>Автор: <i class="fa fa-github fa-lg text-primary"></i> <a href="https://github.com/Aharito/OpenGraphTags/blob/master/snippet.OpenGraphTags .php" rel="nofollow" target="_blank">Aharito</a></p>
 <h3 class="sub-header">Параметри:</h3>
 <h3 class="sub-header text-bold">tplList</h3>
