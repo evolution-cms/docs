@@ -1,4 +1,4 @@
-Evolution is a functional, extensible and user-friendly site development system (cmf), as well as a user-friendly management system (cms). This engine is a new generation, which was originally designed to create Web 2.0 generation projects
+Evolution is a functional, extensible and user-friendly site development system (CMF), as well as a user-friendly management system (CMS). This engine is a new generation, which was originally designed to create Web 2.0 generation projects
 
 ## Key Features ##
 - intuitive control system interface
