@@ -1,16 +1,18 @@
-Evolution CMS Docs
+Evolution CMS Documentation
 =========
 
-Evolution CMS Documentation
+This is a repository of [Evolution CMS](https://evo.im/) documentation. 
 
-Development of the manual together through pull-requests + issues.
+Help us develop a good documentation with your feedback (open issues) and new edits (pull-requests)!
 
-Automatic build after infusion into the master on the site. 
+The website will be updated automatically after merging your branch with master.
 
 
-Документация по Evolution CMS
 
-Разработка мануала сообща через pull-requests + issues.
+Документация Evolution CMS 
+=========
+Это репозиторий документации [Evolution CMS](https://evo.im/).
 
-Автоматический билд после вливания в мастер на сайт.
+Помоги нам разработать хорошую документацию при помощи pull-request и открытием issues.
 
+Сайт документации будет автоматически обновлен после вливания вашей ветки в мастер-ветку.
