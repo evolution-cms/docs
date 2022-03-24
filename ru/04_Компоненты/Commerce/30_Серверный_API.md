@@ -84,6 +84,16 @@ $cart->setTitleField($field);
 $cart->setPriceField($field);
 ```
 
+#### getTotal - получение стоимости товаров в корзине
+```php
+$cart->getTotal();
+```
+
+#### getItemsCount - получение количества товаров в корзине
+```php
+$cart->getItemsCount();
+```
+
 #### getSubtotals - расчет подитогов и итоговой стоимости товаров в корзине
 ```php
 $cart->getSubtotals(array &$rows, &$total);
