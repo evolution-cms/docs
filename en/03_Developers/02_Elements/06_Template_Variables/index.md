@@ -1,89 +1,79 @@
-TV-параметр в MODx - элемент (поле), который содержит определенную информацию для текущей страницы.
+TV parameter in MODx is an element (field) that contains certain information for the current page.
 
-TV-параметры позволяют добавить к документу дополнительную информацию, которую затем можно использовать наравне с основными параметрами. Они имеют различные типы и в зависимости от этого меняется их поведение и внешний вид. Значение параметра можно вывести на страницу или передать сниппету для дальнейшей обработки.
+TV parameters allow you to add additional information to the document, which can then be used along with the main parameters. They have different types and depending on this, their behavior and appearance change. The parameter value can be displayed on the page or passed to a snippet for further processing.
 
-#### Для чего нужен TV-параметр?
+#### What is the TV parameter for?
+For orderly and logical storage of information on the site. Let's say there are 2 types of materials on the site - products and news. For a product, you can create parameters, in one of which the price will be stored, and in the other a photo. And for news, tags and a story.
 
-Для упорядочненного и логичного хранения информации на сайте. Допустим, на сайте есть 2 типа материалов - товары и новости. Для товара можно создать параметры, в одном из которых будет храниться цена, а в другом фотография. А для новостей - теги и сюжет.
+Often, TV parameters are used to create SEO fields like meta description, keywords, etc. Parameters are tied to templates, and this allows you to set completely different fields depending on the type of material.
 
-Зачастую TV-параметры используются для создания SEO-полей наподобие meta description, keywords и т.д.
-Параметры привязываются к шаблонам, и это позоляет в зависимости от типа материала задавать абсолютно разные для заполнения поля.
-
-### Пример параметра:
-
-[\*pagetitle\*]  -  вызов параметра в шаблоне, который вернет заголовок страницы. Чаще всего он используется для вывода title:
+### Example parameter:
+[\*pagetitle\*] - call a parameter in the template that will return the page title. It is most commonly used to output title:
 ```
 <head>
 <title>[*pagetitle*]</title>
 </head>
 ```
+All parameters can be divided into basic, system and user.
 
-Все параметры можно разделить на основные, системные и пользовательские.
+### Main parameters:
+The list of basic parameters is predefined in the cms and contains basic information about the document. Most of them can be seen when creating and editing any document.
 
-### Основные параметры:
+The most used are:
+- **[\*pagetitle\*]** - document title
+- **[\*longtitle\*]** - extended document title
+- **[\*description\*]** - description of the document
+- **[\*introtext\*]** - document annotation
+- **[\*content\*]** - document content
+- **[\*id\*]** - document identifier (number)
+- **[\*parent\*]** - number (ID) of the parent document
+- **[\*pub_date\*]** - date of publication of the documentary
+- **[\*unpub_date\*]** - date of completion of publication
+- **[\*createdby\*]** - Id of the user who created the document
+- **[\*createdon\*]** - Document creation date
+- **[\~identifier\~]** - URL of the document by the specified identifier
+It is worth mentioning separately that the parameters can be combined. This is especially true for creating links to different documents using the **[\~identifier\~]** parameter. You can also set a parameter as an identifier.
 
-Список основных параметров заранее определен в cms и содержит основную информацию о документе. Большую часть из них можете увидеть при создании и редактировании любого документа.
+**[\~[\*id\*]\~]** -Display a link to the current document.
 
-#### Наиболее используемые:
+**[\~[\*parent\*]\~]** - Display a link to the parent of the current document.
 
-- **[\*pagetitle\*]** - заголовок документа
-- **[\*longtitle\*]** - расширенный заголовок документа
-- **[\*description\*]** - описание документа
-- **[\*introtext\*]** - аннотация документа
-- **[\*content\*]** - содержимое документа
-- **[\*id\*]** - идентификатор (номер) документа
-- **[\*parent\*]** - номер (ID) родительского документа
-- **[\*pub_date\*]** - дата публикации дкоумента
-- **[\*unpub_date\*]** - дата завершения публикации
-- **[\*createdby\*]** - Идентификатор пользователя создавшего документ
-- **[\*createdon\*]** - Дата создания документа
-- **[\~идентификатор\~]** - URL документа по указанному идентификатору
+Additional
+**[\*alias\*]** - document alias
+**[\*editedby\*]** - id of the user who edited the document
+**[\*editedon\*]** - date of document editing
+**[\*type\*]** - resource type (document, folder or link)
+**[\*contentType\*]** - content type (e.g. text/html)
+**[\*published\*]** - is the document published (1|0)
+**[\*isfolder\*]** - whether the document is a folder (1|0)
+**[\*richtext\*]** - whether the visual editor is used when editing the document
+**[\*template\*]** - number (ID) of the template used for the document
+**[\*menuindex\*]** - serial number of the display in the menu
+**[\*searchable\*]** - is the document searchable (1|0)
+**[\*cacheable\*]** - Is the document cached? (1|0)
+**[\*deleted\*]** - document deleted (1|0)
+**[\*deletedby\*]** - id of the user who deleted the document
+**[\*menutitle\*]** - menu title.
+**[\*donthit\*]** - Tracking the number of visits is disabled (1|0)
+**[\*haskeywords\*]** - The document contains keywords (1|0)
+**[\*hasmetatags\*]** - The document has meta tags (1|0)
+**[\*privateweb\*]** - The document is part of a private group of user documents (1|0)
+**[\*privatemgr\*]** - The document is part of a private group of management documents (1|0)
+**[\*content_dispo\*]** - Content delivery option (1 - to display | 0 - to download)
+**[\*hidemenu\*]** - The document does not appear in the menu (1|0)
+**[\*alias_visible\*]** - Is the document involved in URL generation(1|0)
 
-Стоит отдельно упомянуть о том, что параметры можно сочетать. В особенности это актуально для создания ссылок на разные документы с помощью параметра **[\~идентификатор\~]**. В качестве идентификатора можно также задать параметр.
+## System Parameters
+Settings that display system data
 
-**[\~[\*id\*]\~]** -Вывести ссылку на текущий документ.
+-**[^qt^]** - time to query the database
+-**[^q^]** - database queries
+-**[^p^]** - time for PHP scripts to run
+-**[^t^]** - total time to generate the page
+-**[^s^]** - content source (database or cache)
+-**[^m^]** - amount of memory consumed
 
-**[\~[\*parent\*]\~]** - Вывести ссылку на родителя текущего документа.
-
-#### Дополнительные
-
-- **[\*alias\*]** - псевдоним документа
-- **[\*editedby\*]** - идентификатор пользователя, редактировавшего документ
-- **[\*editedon\*]** - дата редактирования документа
-- **[\*type\*]** - тип ресурса (документ, папка или ссылка)
-- **[\*contentType\*]** - тип содержимого (например, text/html)
-- **[\*published\*]** - опубликован ли документ (1|0)
-- **[\*isfolder\*]** - является ли документа папкой (1|0)
-- **[\*richtext\*]** - используется ли при редактировании документа визуальный редактор
-- **[\*template\*]** - номер (ID) используемого шаблона для документа
-- **[\*menuindex\*]** - порядковый номер отображения в меню
-- **[\*searchable\*]** - доступен ли документ для поиска (1|0)
-- **[\*cacheable\*]** - Кэшируется ли документ (1|0)
-- **[\*deleted\*]** - документ удален (1|0)
-- **[\*deletedby\*]** - идентификатор пользователя удалившего документ
-- **[\*menutitle\*]** - заголовок меню.
-- **[\*donthit\*]** - Слежение за количеством посещений отключено (1|0)
-- **[\*haskeywords\*]** - Документ содержит ключевые слова (1|0)
-- **[\*hasmetatags\*]** - Документ имеет метатеги (1|0)
-- **[\*privateweb\*]** - Документ входит в частную группу пользовательских документов (1|0)
-- **[\*privatemgr\*]** - Документ входит в частную группу менеджерских документов (1|0)
-- **[\*content_dispo\*]** - Вариант выдачи содержимого (1 - для отображения | 0 - для скачивания)
-- **[\*hidemenu\*]** - Документ не отображается в меню (1|0)
-- **[\*alias_visible\*]** - Участвует ли документ в формировании URL(1|0)
-
-### Системные параметры
-
-Параметры, которые отображают системные данные
-
-- **[^qt^]** - время на запросы к базе данных
-- **[^q^]** - запросов к базе данных
-- **[^p^]** - время на работу PHP скриптов
-- **[^t^]** - общее время на генерацию страницы
-- **[^s^]** - источник содержимого (база или кэш)
-- **[^m^]** - количество потребляемой памяти 
-
-#### Пример: 
-
+### Example:
 ```
 Memory : [^m^], 
 MySQL: [^qt^], [^q^] request(s), 
@@ -92,95 +82,70 @@ Total time: [^t^],
 Document from [^s^]. 
 ```
 
-### Пользовательские TV-параметры
+### Custom TV Settings
+Custom parameters are created manually by the programmer, based on the experience and structure of the site.
 
-Пользовательские параметры создаются программистом вручную, исходя из опыта и структуры сайта.
+#### Create and edit a TV setting
+To create a parameter, click on the link "Items - Settings (TV)" and select "New parameter (TV)".
 
-#### Создание и редактирование TV-параметра
+(Picture should be here!)
 
-Для создания параметра необходимо нажать на ссылку "Элементы - Параметры (TV)" и выбрать "Новый параметр (TV)".
+####Assign fields
+-**Parameter name** - used to call the TV parameter. You can use both English and Russian, as well as a hyphen and an underscore. You can't use a space!
+-**Title** - used to name the TV parameter in the document when editing.
+-**Description** - used for more advanced information about the parameter in the document when editing, as well as in the general list of TV parameters.
+-**Input type** - defines the type of information received. Depending on the selected type, the interface changes. For more information, see "Input Types".
+-**Default value** - Specifies the default value of the TV parameter when editing a document.
+-**Possible values** - used in some types of input (for example, Radio Options, Check Box) to provide choices. For more details, see Determining TV Parameter Values.
+-**Visual component** - determines the option of displaying the TV-parameter on the page of the site. For more details, see TV Parameter View.
+-**Order in the list** - determines the order of the TV parameter in the document.
+-**"Lock" in the parameter name** - if you enable the checkbox, then no one except administrators will be able to edit this TV-parameter.
 
-![пример](https://raw.githubusercontent.com/0test/docs/master/ru/02_Разработка/01_TV-параметры/tv_create.png)
+### Input Types
+-**Text** - input field. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
-#### Назначение полей
+-**Raw Text, Raw Textarea** - outdated and not recommended for use. Instead, we recommend using Textarea and Textarea (Mini).
 
-- **Имя параметра** - используется для вызова TV-параметра. Можно использовать как английский так и русский язык, а также дефис и знак подчеркивания. Пробел использовать нельзя!
-- **Заголовок** - используется для названия TV-параметра в документе при редактировании.
-- **Описание** - используется для более расширенной информации о параметре в документе при редактировании, а также в общем списке TV-параметров.
-- **Тип ввода** - определяет вид получаемой информации. В зависимости от выбранного типа интерфейс меняется. Более подробно смотрите "Типы ввода".
-- **Значение по умолчанию** - определеяет значение TV-параметра по умолчанию при редактировании документа.
-- **Возможные значения** - используются в некоторых типах ввода (например Radio Options, Check Box) для предоставления вариантов выбора. Более подробно смотрите Определение значений TV-параметра.
-- **Визуальный компонент** - определеяет вариант вывода TV-параметра на страницу сайта. Более подробно смотрите Вид TV-параметра.
-- **Порядок в списке** - определяет порядок TV-параметра в документе.
-- **"Замок" в имени параметра** - если включить флажок, то никто, кроме администраторов не сможет редактировать этот TV-параметр.
+-**Textarea and Textarea (Mini)** - text field. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
-#### Типы ввода ####
+-**RichText** - a field with a visual editor. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
-- **Text** - поле ввода.
-Возможные значения не используются. Значение по умолчанию автоматически записывается в поле при первом редактировании.
+-**DropDown List Menu** - drop-down list. The Possible Values field specifies a list of values and is defined in a special format. For more details, see Determining TV Parameter Values. The default value determines the selected item when you first edit it.
 
-- **Raw Text, Raw Textarea** - устарели и не рекомендуются к использованию. 
-Вместо них рекомендуется использовать Textarea и Textarea (Mini).
+-**Listbox (Single-Select) and Listbox (Multi-Select)** - a list of multiple selections. Single-Select and Multi-Select differ only in that in the first option you can select one value, and in the second several (using Ctrl). The Possible Values field specifies the final list of values and is defined in a special format. For more details, see Determining TV Parameter Values. The default value determines the selected item when you first edit it.
 
-- **Textarea и Textarea (Mini)** - текстовое поле. Возможные значения не используются. Значение по умолчанию автоматически записывается в поле при первом редактировании.
+-**Radio Options** - switches. The Possible Values field specifies a finite list of values and is defined in a special format. For more details, see Determining TV Parameter Values. The default value determines the selected item when you first edit it.
 
-- **RichText** - поле с визуальным редактором.
-Возможные значения не используются. Значение по умолчанию автоматически записывается в поле при первом редактировании.
+-**Check Box** - checkboxes. The Possible Values field specifies a finite list of values and is defined in a special format. For more details, see Determining TV Parameter Values. The default value determines the selected item when you first edit it.
 
-- **DropDown List Menu** - раскрывающийся список.
-Поле "Возможные значения" задает список значений и определеляется специальным форматом. Более подробно смотрите Определение значений TV-параметра. Значение по-умолчанию определяет выбранный пункт при первом редактировании.
+-**Image** - image. When you click the "Insert" button, a file manager opens, which allows you to select the desired image and upload it. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
-- **Listbox (Single-Select) и Listbox (Multi-Select)** - список множественного выбора.
-Single-Select и Multi-Select отличаются только тем, что в первом варианте можно выбрать одно значение, а во втором несколько (с использование Ctrl).
-Поле "Возможные значения" задает конечный список значений и определеляется специальным форматом. Более подробно смотрите Определение значений TV-параметра. Значение по умолчанию определяет выбранный пункт при первом редактировании.
+-**File** - file. When you click the "Insert" button, a file manager opens, which allows you to select the necessary file and download it. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
-- **Radio Options** - переключатели.
-Поле Возможные значения задает конечный список значений и определеляется специальным форматом. Более подробно смотрите Определение значений TV-параметра. Значение по умолчанию определяет выбранный пункт при первом редактировании.
+-**URL** - link. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
-- **Check Box** - флажки.
-Поле Возможные значения задает конечный список значений и определеляется специальным форматом. Более подробно смотрите Определение значений TV-параметра. Значение по умолчанию определяет выбранный пункт при первом редактировании.
+-**Email** - e-mail. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
-- **Image** - изображение.
-При нажатии кнопки "Вставить" открывается файловый менеджер, который позволяет выбрать необходимое изображение и загрузить его.
-Возможные значения не используются. Значение по умолчанию автоматически записывается в поле при первом редактировании. 
+-**Number** - number. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
-- **File** - файл.
-При нажатии кнопки "Вставить" открывается файловый менеджер, который позволяет выбрать необходимый файл и загрузить его.
-Возможные значения не используются. Значение по умолчанию автоматически записывается в поле при первом редактировании.
+-**Date** - date. The first button invokes a calendar that you can use to select a date. The second button erases the date. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
-- **URL** - ссылка.
-Возможные значения не используются. Значение по умолчанию автоматически записывается в поле при первом редактировании.
+### Determining TV Parameter Values
+The Possible Values setting defines options for parameters such as DropDown List Menu, Listbox, Check Box, and Radio Options.
 
-- **Email** - электронная почта.
-Возможные значения не используются. Значение по умолчанию автоматически записывается в поле при первом редактировании.
-
-- **Number** - число.
-Возможные значения не используются. Значение по умолчанию автоматически записывается в поле при первом редактировании.
-
-- **Date** - дата.
-Первая кнопка вызывает календарик, с помощью которого можно выбрать дату. Вторая кнопка стирает дату.
-Возможные значения не используются. Значение по умолчанию автоматически записывается в поле при первом редактировании.
-
-#### Определение значений TV-параметра ####
-
-Настройкой "Возможные значения" определяются варианты для таких параметров как DropDown List Menu, Listbox,Check Box и Radio Options.
-
-Формат определения значений следующий:
+The format for determining the values is as follows:
 ```
-параметр1==значение1||параметр2==значение2||параметр3==значение3
+parameter1==value1|| parameter2==value2|| parameter3==value3
 ```
-Разделитель "==" используется для разделения отображаемого и фактического значения, а разделитель "||" разделяет значения между собой.
+The separator "==" is used to separate the displayed and actual value, and the separator "||" separates the values from each other.
 
-Если фактические и отображаемые значения совпадают, то можно использовать упрощенный вариант записи:
+If the actual and displayed values match, you can use a simplified version of the record:
 ```
-значение1||значение2||значение3
+value1|| value2|| value3
 ```
-#### Пример ####
-
-Тип ввода: DropDown List Menu
-Возможные значения:
+#### Example
+Input Type: DropDown List Menu Possible values:
 ```
-Красный==#FF0000||Зеленый==#00FF00||Синий==#0000FF
+Red==#FF0000|| Green==#00FF00|| Blue==#0000FF
 ```
-
-Когда пользователь будет редактировать документ, то увидит выпадающий список со значениями "Красный, Зеленый, Синий". При выборе значения и сохранения документа в базу сохранится одно из значений - #FF0000, #00FF00 или #0000FF.
+When the user edits the document, he will see a drop-down list with the values "Red, Green, Blue". When you select a value and save the document to the database, one of the values will be saved - #FF0000, #00FF00 or #0000FF.
