@@ -1,4 +1,4 @@
-Use of Chunk
+## Chunks ##
 
 A chunk in MODx is a small piece of HTML code or other information that can be reused in a template, other chunk, or snippet.
 
@@ -6,7 +6,7 @@ As a rule, templates use several chunks that contain a matching appearance. For 
 
 The second most common use of chunk is snippet templates. Thanks to this, there is a separation of the control code and design. Depending on the complexity of the snippet, the number of templates may vary. For example, to create a feedback form, you may need 3 main templates - a form, a text about the successful acceptance of the form, the text of a letter to the administrator with the information received. In order for the chunk to be not just a piece of HTML code, but to work as a template, it is necessary to mark the appropriate places in it where the snippet will record its information. The role of such places is performed by placeholders.
 
-####Пример chunk contents with placeholders:
+#### Example chunk contents with placeholders:
 
 [+wf.linktext+]
 This is a template that is used for menu items in MODx-cms.ru. And respectively , [+wf.classes+] and [+wf.linktext+] are placeholders that will be replaced by the Wayfinder snippet on the CSS class used and the name of the menu item.
@@ -78,7 +78,7 @@ This will open a copy of the chunk for editing. The copy differs in that Duplica
 
 A copy is created immediately after confirmation, so if you click Cancel, a copy will still remain in the chunk list.
 
-Chunk removal
+## Chunk removal ##
 
 To delete, you need to go into the editing mode of the corresponding chunk and click the Delete button.
 
@@ -88,7 +88,7 @@ After that, the system will ask you for confirmation:
 
 Attention! Chunks are removed completely and there is no way to restore them.
 
-Chunk Call
+## Chunk Call ##
 
 In template and other chunk
 
@@ -96,7 +96,7 @@ An existing chunk in a template (or other chunk) is invoked very simply. To do t
 
 {{NameChanka}} It is worth remembering that the name is case sensitive (The name Chunka and the name Chunka are different Chunks in terms of MODx).
 
-####Пример chunk template:
+#### Example chunk template:
 
 {{Head}}
 {{Main Menu}} {{Search}}
@@ -111,9 +111,9 @@ Via API
 
 To retrieve chunk content through the API, use the getChunk method.
 
-####Пример call:
+#### Example call:
 
-$chunk = $modx->getChunk('НазваниеЧанка'); FAQ
+$chunk = $modx->getChunk('ChunkName'); FAQ
 
 I made a chunk, but it doesn't work. Why might that be?
 
@@ -121,4 +121,4 @@ Check the name of the chunk. It must not contain a space, and the case of the le
 
 Can I invoke a chunk in a chunk?
 
-Yes I do.
+Yes you can.
