@@ -20,7 +20,7 @@ if($e->name == 'OnWebPagePrerender') {//проверяем, то ли это с�
 }
 ### Plugin to modify the resource tree
 The previous example worked on a custom part of the site. And this plugin will work on the event of the formation of the left menu in the administration panel. It will replace the resource icon with id=3 and create its own context menu for it.
-
+```
 $e = &$modx->Event;
 if($e->name = 'OnManagerNodePrerender'){
 	if($ph['id'] == '3'){
@@ -53,4 +53,5 @@ if($e->name = 'OnManagerNodePrerender'){
 	}
 }
 $e->output(serialize($ph));
+```
 Often, add-ons give plugins variables to change. As a rule, these variables are described in the documentation for the addendum.
