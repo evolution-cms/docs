@@ -12,14 +12,18 @@ Often, add-ons themselves can generate events. For example, the Shopkeeper add-o
 ### Word replacement plugin
 This plugin will work before the contents of the resource are shown to the visitor (OnWebPagePrerender) and replace the words from the array with a stub.
 
-$words = array("плохое слово", "ещё одно"); // слова для фильтации
+```
+$words = array("bad word", "one more"); // words for filtration
 $e = &$modx->Event;
-if($e->name == 'OnWebPagePrerender') {//проверяем, то ли это событие, которое нам нужно
-	$out = &$modx->documentOutput; // получаем ссылку на содержимое ресурса
-	$out = str_replace($words,"<b>цензура</b>",$out); // заменяем слова из массива на "заглушку".
+if($e->name == 'OnWebPagePrerender') { // check if this is the event we need
+	$out = &$modx->documentOutput; // get a link to the content of the resource
+	$out = str_replace($words,"<b>censorship</b>",$out); // replace the words from the array with "stub".
 }
+```
+
 ### Plugin to modify the resource tree
 The previous example worked on a custom part of the site. And this plugin will work on the event of the formation of the left menu in the administration panel. It will replace the resource icon with id=3 and create its own context menu for it.
+
 ```
 $e = &$modx->Event;
 if($e->name = 'OnManagerNodePrerender'){
