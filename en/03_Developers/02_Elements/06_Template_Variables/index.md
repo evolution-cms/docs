@@ -63,7 +63,7 @@ Additional
 **[\*hidemenu\*]** - The document does not appear in the menu (1|0)
 **[\*alias_visible\*]** - Is the document involved in URL generation(1|0)
 
-## System Parameters
+### System Parameters
 Settings that display system data
 
 -**[^qt^]** - time to query the database
@@ -73,7 +73,7 @@ Settings that display system data
 -**[^s^]** - content source (database or cache)
 -**[^m^]** - amount of memory consumed
 
-### Example:
+#### Example:
 ```
 Memory : [^m^], 
 MySQL: [^qt^], [^q^] request(s), 
@@ -90,7 +90,7 @@ To create a parameter, click on the link "Items - Settings (TV)" and select "New
 
 (Picture should be here!)
 
-####Assign fields
+#### Assign fields
 -**Parameter name** - used to call the TV parameter. You can use both English and Russian, as well as a hyphen and an underscore. You can't use a space!
 -**Title** - used to name the TV parameter in the document when editing.
 -**Description** - used for more advanced information about the parameter in the document when editing, as well as in the general list of TV parameters.
@@ -101,7 +101,7 @@ To create a parameter, click on the link "Items - Settings (TV)" and select "New
 -**Order in the list** - determines the order of the TV parameter in the document.
 -**"Lock" in the parameter name** - if you enable the checkbox, then no one except administrators will be able to edit this TV-parameter.
 
-### Input Types
+#### Input Types
 -**Text** - input field. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
 -**Raw Text, Raw Textarea** - outdated and not recommended for use. Instead, we recommend using Textarea and Textarea (Mini).
@@ -130,7 +130,7 @@ To create a parameter, click on the link "Items - Settings (TV)" and select "New
 
 -**Date** - date. The first button invokes a calendar that you can use to select a date. The second button erases the date. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
-### Determining TV Parameter Values
+#### Determining TV Parameter Values
 The Possible Values setting defines options for parameters such as DropDown List Menu, Listbox, Check Box, and Radio Options.
 
 The format for determining the values is as follows:
