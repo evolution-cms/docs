@@ -1,13 +1,11 @@
-# Использование шаблона
+# Using a template
+A template in Evolution is the main part of the site page that determines its design. The template does not require special syntax and is a simple HTML code (and possibly XHTML or other) with the call of the necessary chunks, parameters and snippets.
 
-Шаблон в Evolution - основная часть страницы сайта, которая определяет ее оформление. Шаблон не требует особого синтаксиса и представляет собой обычный HTML-код (а возможно XHTML или другой) с вызовом необходимых чанков, параметров и сниппетов.
+The number of templates most often depends on the appearance and functionality of the site. As a rule, templates are created for various sections and pages of the site. For example, it will be logical to create different templates for the product and for the news and attach various TV parameters to them. This will allow the content manager to fill the site faster and more correctly. It will also greatly facilitate the work of a programmer if you need to make some news feeds or products.
 
-Количество шаблонов чаще всего зависит от внешнего вида и функционала сайта. Как правило, для различных разделов и страниц сайта создаются свои шаблоны. Например, будет логичным создать разные шаблоны для товара и для новости и прикрепить к ним различные ТВ-параметры. Это позволит контент-менеджеру быстрей и правильней заполнить сайт. Также это существенно облегчит работу программиста, если потребуется сделать какие-то ленты новостей или товаров.
+It is also worth mentioning that there is a special blank template that does not contain any design and cannot be edited.
 
-Стоит упомянуть также, что существует специальный шаблон blank, который не содержит никакого оформления и не поддается редактированию.
-
-#### Пример шаблона:
-````
+#### Example template:
 <html>
     <head>
         <title>[*pagetitle*]</title>
@@ -27,90 +25,75 @@
         {{Google}}
     </body>
 </html>
-````
+As we can see - this is a completely understandable HTML-markup of the page in which special constructions are used. Among them:
 
-Как мы видим - это вполне понятная HTML-разметка страницы в которой используются специальные конструкции. Среди них:
+Chunky - {{footer}}, {{Google}}
 
-Чанки - ```` {{footer}}, {{Google}}````
+Parameters - [*pagetitle*], [*content*]
 
-Параметры - ````[*pagetitle*], [*content*]````
+Placeholder - [(site_url)]
 
-Плейсхолдер - ````  [(site_url)] ````
+Snippet Call - [[Wayfinder? &startId=`5` &level=`1`]]
 
-Вызов сниппета - ````[[Wayfinder? &startId=`5` &level=`1`]]````
+## Create and edit a template
+All templates are located in the following location:
 
-## Создание и редактирование шаблона
+Resources → Resource Management → Template The list of templates is as follows:
 
-Все шаблоны находятся в следующем месте:
+To create a new template, you need to click on the "New template" link, and to edit an existing one, just click on the link with its name. When you create a template, you can also choose which TV settings it owns and sort them as needed.
 
-Ресурсы → Управление ресурсами → Шаблон
-Список шаблонов выглядит следующим образом:
+### Creating a template in Evolution CMS
+#### Assign fields
+Template name - used in the template selection list. You may also need snippets, plugins, or modules for some operations. You can use both English or Russian, as well as a hyphen, an underscore, and a space.
 
-Для создания нового шаблона необходимо нажать на ссылку "Новый шаблон", а для редактирования существующего достаточно нажать на ссылку с его названием.
-При создании шаблона также можно выбрать, какие TV-параметры ему принадлежат и отсортировать их так, как необходимо.
+**Description** - displayed next to the name of the template in the general list. Used only to describe the purpose of the template and not required.
 
-### Создание шаблона в Evolution CMS
+**Create Category** - allows you to select an existing category in which the template will be placed. A category allows you to separate a template from the rest in the general list. If no category is selected, the template will fall into the general category "Uncategorized".
 
-#### Назначение полей
+**New category** - if there is no suitable category in the list of existing categories, you can create it by simply writing the name in this field.
 
-**Имя шаблона** - используется в списке выбора шаблона. Также может понадобиться для некоторых операций сниппетов, плагинов или модулей. Можно использовать как английский или русский язык, а также дефис, знак подчеркивания и пробел.
+Restrict access to editing a template - if you enable the checkbox, no one except administrators will be able to edit this template.
 
-**Описание** - выводится рядом с названием шаблона в общем списке. Используется только для описания назначения шаблона и для заполнения не обязательно.
+**Template code (html)** - the content of the template itself is placed here.
 
-**Создать категорию** - позволяет выбрать существующую категорию, в которую будет помещен шаблон. Категория позволяет отделить шаблон от остальных в общем списке. Если ни одна категория не выбрана, то шаблон попадет в общую категорию "Без категории".
+### Conservation
+**Save** - creates a new template
 
-**Новая категория** - если в списке существующих категорий нет подходящей, то можно создать ее, просто написав название в этом поле.
+**Undo** - will return us to the list of templates without saving the result.
 
-**Ограничить доступ к редактированию шаблона** - если включить флажок, то никто, кроме администраторов, не сможет редактировать этот шаблон.
+**Make a copy** - appears only in edit mode.
 
-**Код шаблона (html)** - сюда размещается само содержимое шаблона.
+**Delete** - appears only in edit mode.
 
-### Сохранение
+Evolution allows you to define a few more actions after saving the template:
 
-**Сохранить** - создаст новый шаблон
+**Create a new one** - immediately after saving the template, a form will open to create a new one. In this way, you can quickly create a series of templates.
 
-**Отмена** - вернет нас в список шаблонов без сохранения результата.
+**Continue editing** - after saving, the template will open again for editing. In this mode, it is convenient to make small changes and check the final result.
 
-**Сделать копию** - появляется только в режиме редактирования.
+**Close** - after saving, we will return to the general list of templates.
 
-**Удалить** - появляется только в режиме редактирования.
+## Create a copy of a template
+Sometimes it is necessary to create a copy of an existing template. It's very easy to do. To do this, go to the editing of the desired template and click on the "Make a copy" button.
 
-Evolution позволяет определить еще несколько действий после сохранения шаблона:
+This opens a copy of the template for editing. The copy differs in that Duplicate of is added to its name. You just have to correct the name to a more appropriate one and make other necessary changes.
 
-**Создать новый** - сразу после сохранения шаблона откроется форма для создания нового. Таким образом можно быстро создать серию шаблонов.
+A copy is created immediately after confirmation, so if you click Cancel, a copy will still remain in the list of templates.
 
-**Продолжить редактирование** - после сохранения шаблон снова откроется для редактирования. В этом режиме удобно вносить небольшие правки и проверять конечный результат.
+## Delete a template
+To delete, you need to go into the editing mode of the corresponding template and click the "Delete" button.
 
-**Закрыть** - после сохранения мы вернемся в общий список шаблонов.
+**Attention! Templates are deleted completely and there is no way to restore them.**
 
-## Создание копии шаблона
+## Default template
+When you create a document, a default template is automatically suggested. To configure the default template, you must do the following:
 
-Иногда бывает необходимо создать копию существующего шаблона. Сделать это очень просто. Для этого необходимо зайти в редактирование нужного шаблона и нажать на кнопку "Сделать копию".
-
-После этого откроется для редактирования копия шаблона. Копия отличается тем, что к ее названию добавляется Duplicate of. Вам остается только исправить название на более подходящее и внести другие необходимые правки.
-
-Копия создается сразу после подтверждения, поэтому если вы нажмете отмену, то в списке шаблонов копия все равно останется.
-
-## Удаление шаблона
-
-Для удаления необходимо зайти в режим редактирования соответствующего шаблона и нажать кнопку "Удалить".
-
-**Внимание! Шаблоны удаляются полностью и возможности их восстановить нет.**
-
-## Шаблон по умолчанию
-
-При создании документа автоматически предлагается шаблон по умолчанию. Для настройки шаблона по умолчанию необходимо выполнить следующие действия:
-
-Переходим в настройки системы управления:
-Инструменты → Конфигурация → Сайт
-Находим параметр "Шаблон по умолчанию" и меняем на нужный.
-Сохраняем настройки.
+Go to the management system settings: Tools → Configuration → Site Find the "Default Template" parameter and change to the desired one. Save the settings.
 
 ## FAQ
-Есть ли какие-то ограничения на шаблоны дизайна для сайта?
+Are there any restrictions on website design templates?
 
-Абсолютно никаких. Evolution позволяет реализовать любой дизайн.
+Absolutely none. Evolution allows you to implement any design.
 
-## Где можно взять готовые шаблоны?
-
-Evolution позволяет легко использовать любой сверстанный HTML-макет, который можно заказать у специалистов или найти на специализированных сайтах.
+## Where can I get ready-made templates?
+Evolution makes it easy to use any laid out HTML-layout, which can be ordered from specialists or found on specialized sites.
