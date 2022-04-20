@@ -1,16 +1,16 @@
 <ul>
-<li><p>Загрузите <a href="https://github.com/evolution-cms/evolution/releases">последнюю версию системы</a>.</p>
+<li>Download the latest version of the system.</li>
 
-<li><p>Разархивируйте файлы в любую папку на вашем локальном диске.</p>
+  <li>Unzip the files to any folder on your local drive.</li>
 
-<li><p>Подключитесь к сайту по FTP и скопируйте все файлы из локальной директории на сервер.</p>
+  <li>Connect to the site via FTP and copy all the files from the local directory to the server.</li>
 
-<li><p>Evolution использует СУБД MySQL. Вам необходимо знать имя пользователя и пароль доступа к базе данных, либо создать самим базу и пользователя.</p></li>
+<li>Evolution uses mySQL. You need to know the username and password to access the database, or create the database and the user yourself.</li>
 
-<li><p>Наберите в строке вашего браузера имя_вашего_сайта/install/. Вместо «имя_вашего_сайта» введите домен, по которому сайт доступен в сети интернет.</p></li>
+<li>Type your_site_name/install/ in the line of your browser. Instead of "your_site_name", enter the domain by which the site is available on the Internet.</li>
 
-<li><p>Следуйте появившемся на экране инструкциям мастера установки.<BR>
-После завершения работы мастера установки, убедитесь, что папки install на сервере больше не существует. Если это не так, удалите ее вручную.</p></li>
+<li>Follow the on-screen instructions in the Installation Wizard.
+After you complete the Installation Wizard, verify that the install folder on the server no longer exists. If it is not, delete it manually.</li>
 
-<li><p>Опционально: проверьте и измените права доступа к файлу config.inc.php в папке /manager/includes на -0444 (r--r--r--) - это предотвратит ваш сайт от возможной атаки.</p></li>
+<li>Optional: check and change the permissions to the config.inc.php file in the /manager/includes folder to -0444 (r--r--r--) - this will prevent your site from a possible attack.</li>
 </ul>
