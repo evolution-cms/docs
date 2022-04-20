@@ -1,31 +1,26 @@
-## Что такое плагин ###
-Плагины - фрагменты кода, которые привязаны к системными событиям и выполняются, когда это событие наступает.
-## Как работают плагины ##
-При выполнении практически любых действий система генерирует события. Допустим, при публикации ресурса происходит событие OnDocPublished, при авторизации происходит OnManagerLogin и т.д.
+## What is a plugin
+Plugins are snippets of code that are tied to system events and are executed when that event occurs.
 
-Зачастую дополнения сами могут генерировать события. Скажем, дополнение Shopkeeper создаёт больше десятка разных событий, к каждому из которых вы можете привязать свой код и добавить или изменить функционал практически любого события, которое произойдёт на сайте.
+## How plugins work
+When performing almost any action, the system generates events. For example, when a resource is published, the OnDocPublished event occurs, when authorizing, OnManagerLogin occurs, and so on.
 
-**Важно:** плагины работают как для событий внутри панели администрирования, так и для событий на фронте сайта. Полный список событий вы можете посмотреть при создании плагина на вкладке "СИСТЕМНЫЕ СОБЫТИЯ".
+Often, add-ons themselves can generate events. For example, the Shopkeeper add-on creates more than a dozen different events, to each of which you can attach your code and add or change the functionality of almost any event that occurs on the site.
 
-## Примеры плагинов ##
+**Important:** plugins work both for events inside the administration panel and for events on the front of the site. You can see the full list of events when creating the plugin on the "SYSTEM EVENTS" tab.
 
-### Плагин для замены слов ###
+## Examples of plugins
+### Word replacement plugin
+This plugin will work before the contents of the resource are shown to the visitor (OnWebPagePrerender) and replace the words from the array with a stub.
 
-Этот плагин сработает перед тем, как содержимое ресурса будет показано посетителю (OnWebPagePrerender) и заменит слова из массива на заглушку.
-```
 $words = array("плохое слово", "ещё одно"); // слова для фильтации
 $e = &$modx->Event;
 if($e->name == 'OnWebPagePrerender') {//проверяем, то ли это событие, которое нам нужно
 	$out = &$modx->documentOutput; // получаем ссылку на содержимое ресурса
 	$out = str_replace($words,"<b>цензура</b>",$out); // заменяем слова из массива на "заглушку".
 }
-```
+### Plugin to modify the resource tree
+The previous example worked on a custom part of the site. And this plugin will work on the event of the formation of the left menu in the administration panel. It will replace the resource icon with id=3 and create its own context menu for it.
 
-### Плагин для изменения дерева ресурсов ###
-Предыдущий пример работал на пользовательской части сайта.
-А этот плагин сработает на событие формирования левого меню в панели администрирования.
-Он заменит иконку у ресурса с id=3 и создаст для него своё контекстное меню.
-```
 $e = &$modx->Event;
 if($e->name = 'OnManagerNodePrerender'){
 	if($ph['id'] == '3'){
@@ -34,23 +29,23 @@ if($e->name = 'OnManagerNodePrerender'){
 		$ph['icon_folder_close'] = "<i class='fa fa-copy'></i>";	
 		$ph['contextmenu'] = array(
 			'header1' => array(
-				'innerText' => "Это каталог"
+				'innerText' => "This is a catalogue"
 			),
 			'item3' => array(
-				'innerHTML' => '<i class="fa fa-file-o fa-fw fa-lg"></i> Добавить товар',
-				'title' => 'Дочерний ресурс',
+				'innerHTML' => '<i class="fa fa-file-o fa-fw fa-lg"></i> Add product',
+				'title' => 'Child resource',
 				'id' => 'item3',
 				'onclick' => "modx.tree.menuHandler(3);"
 			),
 			'item2' => array(
-				'innerHTML' => '<i class="fa fa-pencil-square-o fa-fw fa-lg"></i> Редактировать',
-				'title' => ' Редактировать',
+				'innerHTML' => '<i class="fa fa-pencil-square-o fa-fw fa-lg"></i> Edit',
+				'title' => ' Edit',
 				'id' => 'item2',
 				'onclick' => "modx.tree.menuHandler(2);"
 			),
 			'item12' => array(
-				'innerHTML' => '<i class="fa fa-eye fa-fw fa-lg"></i> Просмотр',
-				'title' => 'Просмотр',
+				'innerHTML' => '<i class="fa fa-eye fa-fw fa-lg"></i> Scan',
+				'title' => 'Scan',
 				'id' => 'item12',
 				'onclick' => "modx.tree.menuHandler(12);",
 			)
@@ -58,6 +53,4 @@ if($e->name = 'OnManagerNodePrerender'){
 	}
 }
 $e->output(serialize($ph));
-```
-Зачастую дополнения отдают плагинам переменные для изменения.
-Как правило, эти переменные описаны в документации к дополнению.
+Often, add-ons give plugins variables to change. As a rule, these variables are described in the documentation for the addendum.
