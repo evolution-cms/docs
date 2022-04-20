@@ -38,30 +38,30 @@ It is worth mentioning separately that the parameters can be combined. This is e
 
 **[\~[\*parent\*]\~]** - Display a link to the parent of the current document.
 
-Additional
-**[\*alias\*]** - document alias
-**[\*editedby\*]** - id of the user who edited the document
-**[\*editedon\*]** - date of document editing
-**[\*type\*]** - resource type (document, folder or link)
-**[\*contentType\*]** - content type (e.g. text/html)
-**[\*published\*]** - is the document published (1|0)
-**[\*isfolder\*]** - whether the document is a folder (1|0)
-**[\*richtext\*]** - whether the visual editor is used when editing the document
-**[\*template\*]** - number (ID) of the template used for the document
-**[\*menuindex\*]** - serial number of the display in the menu
-**[\*searchable\*]** - is the document searchable (1|0)
-**[\*cacheable\*]** - Is the document cached? (1|0)
-**[\*deleted\*]** - document deleted (1|0)
-**[\*deletedby\*]** - id of the user who deleted the document
-**[\*menutitle\*]** - menu title.
-**[\*donthit\*]** - Tracking the number of visits is disabled (1|0)
-**[\*haskeywords\*]** - The document contains keywords (1|0)
-**[\*hasmetatags\*]** - The document has meta tags (1|0)
-**[\*privateweb\*]** - The document is part of a private group of user documents (1|0)
-**[\*privatemgr\*]** - The document is part of a private group of management documents (1|0)
-**[\*content_dispo\*]** - Content delivery option (1 - to display | 0 - to download)
-**[\*hidemenu\*]** - The document does not appear in the menu (1|0)
-**[\*alias_visible\*]** - Is the document involved in URL generation(1|0)
+#### Additional
+-**[\*alias\*]** - document alias
+-**[\*editedby\*]** - id of the user who edited the document
+-**[\*editedon\*]** - date of document editing
+-**[\*type\*]** - resource type (document, folder or link)
+-**[\*contentType\*]** - content type (e.g. text/html)
+-**[\*published\*]** - is the document published (1|0)
+-**[\*isfolder\*]** - whether the document is a folder (1|0)
+-**[\*richtext\*]** - whether the visual editor is used when editing the document
+-**[\*template\*]** - number (ID) of the template used for the document
+-**[\*menuindex\*]** - serial number of the display in the menu
+-**[\*searchable\*]** - is the document searchable (1|0)
+-**[\*cacheable\*]** - Is the document cached? (1|0)
+-**[\*deleted\*]** - document deleted (1|0)
+-**[\*deletedby\*]** - id of the user who deleted the document
+-**[\*menutitle\*]** - menu title.
+-**[\*donthit\*]** - Tracking the number of visits is disabled (1|0)
+-**[\*haskeywords\*]** - The document contains keywords (1|0)
+-**[\*hasmetatags\*]** - The document has meta tags (1|0)
+-**[\*privateweb\*]** - The document is part of a private group of user documents (1|0)
+-**[\*privatemgr\*]** - The document is part of a private group of management documents (1|0)
+-**[\*content_dispo\*]** - Content delivery option (1 - to display | 0 - to download)
+-**[\*hidemenu\*]** - The document does not appear in the menu (1|0)
+-**[\*alias_visible\*]** - Is the document involved in URL generation(1|0)
 
 ### System Parameters
 Settings that display system data
