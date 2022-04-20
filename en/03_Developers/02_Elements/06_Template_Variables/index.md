@@ -102,33 +102,33 @@ To create a parameter, click on the link "Items - Settings (TV)" and select "New
 - **"Lock" in the parameter name** - if you enable the checkbox, then no one except administrators will be able to edit this TV-parameter.
 
 #### Input Types
--**Text** - input field. The possible values are not used. The default value is automatically written to the field the first time you edit it.
+- **Text** - input field. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
--**Raw Text, Raw Textarea** - outdated and not recommended for use. Instead, we recommend using Textarea and Textarea (Mini).
+- **Raw Text, Raw Textarea** - outdated and not recommended for use. Instead, we recommend using Textarea and Textarea (Mini).
 
--**Textarea and Textarea (Mini)** - text field. The possible values are not used. The default value is automatically written to the field the first time you edit it.
+- **Textarea and Textarea (Mini)** - text field. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
--**RichText** - a field with a visual editor. The possible values are not used. The default value is automatically written to the field the first time you edit it.
+- **RichText** - a field with a visual editor. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
--**DropDown List Menu** - drop-down list. The Possible Values field specifies a list of values and is defined in a special format. For more details, see Determining TV Parameter Values. The default value determines the selected item when you first edit it.
+- **DropDown List Menu** - drop-down list. The Possible Values field specifies a list of values and is defined in a special format. For more details, see Determining TV Parameter Values. The default value determines the selected item when you first edit it.
 
--**Listbox (Single-Select) and Listbox (Multi-Select)** - a list of multiple selections. Single-Select and Multi-Select differ only in that in the first option you can select one value, and in the second several (using Ctrl). The Possible Values field specifies the final list of values and is defined in a special format. For more details, see Determining TV Parameter Values. The default value determines the selected item when you first edit it.
+- **Listbox (Single-Select) and Listbox (Multi-Select)** - a list of multiple selections. Single-Select and Multi-Select differ only in that in the first option you can select one value, and in the second several (using Ctrl). The Possible Values field specifies the final list of values and is defined in a special format. For more details, see Determining TV Parameter Values. The default value determines the selected item when you first edit it.
 
--**Radio Options** - switches. The Possible Values field specifies a finite list of values and is defined in a special format. For more details, see Determining TV Parameter Values. The default value determines the selected item when you first edit it.
+- **Radio Options** - switches. The Possible Values field specifies a finite list of values and is defined in a special format. For more details, see Determining TV Parameter Values. The default value determines the selected item when you first edit it.
 
--**Check Box** - checkboxes. The Possible Values field specifies a finite list of values and is defined in a special format. For more details, see Determining TV Parameter Values. The default value determines the selected item when you first edit it.
+- **Check Box** - checkboxes. The Possible Values field specifies a finite list of values and is defined in a special format. For more details, see Determining TV Parameter Values. The default value determines the selected item when you first edit it.
 
--**Image** - image. When you click the "Insert" button, a file manager opens, which allows you to select the desired image and upload it. The possible values are not used. The default value is automatically written to the field the first time you edit it.
+- **Image** - image. When you click the "Insert" button, a file manager opens, which allows you to select the desired image and upload it. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
--**File** - file. When you click the "Insert" button, a file manager opens, which allows you to select the necessary file and download it. The possible values are not used. The default value is automatically written to the field the first time you edit it.
+- **File** - file. When you click the "Insert" button, a file manager opens, which allows you to select the necessary file and download it. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
--**URL** - link. The possible values are not used. The default value is automatically written to the field the first time you edit it.
+- **URL** - link. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
--**Email** - e-mail. The possible values are not used. The default value is automatically written to the field the first time you edit it.
+- **Email** - e-mail. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
--**Number** - number. The possible values are not used. The default value is automatically written to the field the first time you edit it.
+- **Number** - number. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
--**Date** - date. The first button invokes a calendar that you can use to select a date. The second button erases the date. The possible values are not used. The default value is automatically written to the field the first time you edit it.
+- **Date** - date. The first button invokes a calendar that you can use to select a date. The second button erases the date. The possible values are not used. The default value is automatically written to the field the first time you edit it.
 
 #### Determining TV Parameter Values
 The Possible Values setting defines options for parameters such as DropDown List Menu, Listbox, Check Box, and Radio Options.
