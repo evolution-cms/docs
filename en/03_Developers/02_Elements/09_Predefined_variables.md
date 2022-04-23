@@ -1,8 +1,8 @@
-PHP предоставляет всем скриптам большое количество предопределённых переменных. Эти переменные содержат всё, от внешних данных до переменных среды окружения, от текста сообщений об ошибках до последних полученных заголовков.
+PHP provides all scripts with a large number of predefined variables. These variables contain everything from external data to environment variables, from the text of error messages to the most recently received headers.
 
-Evolution поддерживает вызов в шаблонах и чанках вызов некоторых из них.
+Evolution supports calling in templates and chunks to call some of them.
 
-## Примеры ###
+## Example ###
 ```
 [!$_GET['username'] !]
 [!$_GET['username']:ifempty=<form><input name="username"></form>!]
