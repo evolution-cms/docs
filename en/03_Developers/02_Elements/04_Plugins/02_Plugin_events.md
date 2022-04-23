@@ -1,45 +1,45 @@
 ## Template Service Events ##
-Все события, связанные с отображением страницы
+All events related to the display of the page
 ### OnAfterLoadDocumentObject 
 ### OnBeforeLoadDocumentObject
 ### OnBeforeLoadExtension 
 ### OnBeforeParseParams
 
 ### OnDocPublished
-Запускается при публикации документа
+Runs when a document is published
 ```
 manager/processors/publish_content.processor.php
 ```
-**Возвращает:**
+**Returns:**
 ```
-docid - id документа
+docid - id Document
 ```
 
 ### OnDocUnPublished
-Запускается при снятии документа с публикации
+Runs when a document is unpublished
 ```
 manager/processors/unpublish_content.processor.php
 ```
-**Возвращает:**
+**Returns:**
 ```
-docid - id документа
+docid - id Document
 ```
 
 ### OnLoadDocumentObject
-Запускается после формирования $modx->documentObject
+Runs after formation $modx->documentObject
 ```
 manager/includes/document.parser.class.inc.php
 ```
 
 ### OnLoadWebDocument
-Запускается, если документ был взят из базы
+Runs if the document was taken from the database
 ```
 manager/includes/document.parser.class.inc.php
 ```
 
 
 ### OnLogPageHit 
-Запускается, если стоит настройка "Отслеживать посещения". Это событие вызывается перед загрузкой документа.
+It is launched if the "Track visits" setting is selected. This event is raised before the document is loaded.
 ```
 manager/includes/document.parser.class.inc.php
 ```
@@ -47,7 +47,7 @@ manager/includes/document.parser.class.inc.php
 ### OnMakeDocUrl
 
 ### OnParseDocument
-Запускается перед тем, как будут обработаны ТВ, сниппеты и чанки
+Runs before TV, snippets and chunks are processed
 ```
 manager/includes/document.parser.class.inc.php
 ```
@@ -55,36 +55,36 @@ manager/includes/document.parser.class.inc.php
 ### OnParseProperties
 
 ### OnWebPageComplete
-Запускается, если стоит настройка "Отслеживать посещения"
+Triggered when the "Track visits" setting is worth it
 ```
 manager/includes/document.parser.class.inc.php
 ```
 	
 
 ### OnWebPageInit
-Запускается после того, как кэш был загружен в $modx
+Runs after the cache has been loaded into the $modx
 
 ### OnWebPagePrerender
-Запускается перед тем, как страница будет отдана клиенту. Это последнее событие, вызванное до того, как страница будет отправлена в клиентский браузер.
+Runs before the page is given to the client. This is the last event raised before the page is sent to the client browser.
 ```
 manager/includes/document.parser.class.inc.php
 ```
 
  
 ## Cache Service Events ## 
-События кэширования
+Caching events
 
 ### OnBeforeCacheUpdate 
-Запускается перед обновлением кэша
+Runs before the cache is refreshed
 
 ### OnBeforeSaveWebPageCache
-Запускается после сохранения страницы в кэше
+Runs after the page is cached
 
 ### OnCacheUpdate
-Запускается сразу после записи в кэш
+Runs immediately after being written to the cache
 
 ### OnLoadWebPageCache
-Запускается после загрузки кэшируемой страницы
+Runs after the cached page is loaded
 
 ### OnMakePageCacheKey
  
@@ -136,7 +136,7 @@ Use this event you can add custom widgets to home page of admin panel.
                 'id'        => 'tutorial',
                 'cols'      => 'col-sm-12',
                 'icon'      => 'fab fa-leanpub',
-                'title'     => 'Відео-туторіал',
+                'title'     => 'Video-tutorial',
                 'body'      => '<div class="card-body text-center">
                             <iframe width="500" height="250" src="https://www.youtube.com/embed/videoseries?list=yourplaylist" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>'
@@ -262,12 +262,12 @@ Use this event you can add custom widgets to home page of admin panel.
 ### OnWUsrFormPrerender
 
 ### OnWUsrFormRender 
-Запускается при отображении формы редактирования веб-пользователя
+Runs when the Web user's edit form is displayed
 ```
 manager/actions/mutate_web_user.dynamic.php
 ```
-Возвращает:
+Returns:
 ```
-id - id пользователя
+id - User Id
 ```
 ### OnWUsrFormSave
