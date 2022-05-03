@@ -1,19 +1,17 @@
-##Introduction
-MODxAPI это попытка реализовать паттерн [Data mapper](https://en.wikipedia.org/wiki/Data_mapper_pattern).
-Изначально проектировалось как замена библиотеки DocManager, но в итоге оптимизирован код и заложен потенциал для создания обертки с произвольной логикой для любых таблиц.
+## Introduction MODxAPI 
+is an attempt to implement the Data mapper pattern. It was originally designed as a replacement for the DocManager library, but in the end, the code was optimized and the potential to create a wrapper with arbitrary logic for any tables was laid.
 
-###Поддерживаемые модели
-*modResource* - Документы (данные из таблицы site_content и site_tmplvar_contentvalues)
-*modUsers* - Веб-пользователи (данные из таблиц web_users и web_user_attributes)
-*modCategories* - Категории (данные из таблиц categories)
-*modChunk* - Чанки (данные из таблиц site_htmlsnippets)
-*modModule* - Модули (данные из таблиц site_modules)
-*modPlugin* - Плагины (данные из таблиц site_plugins
-*modSnippet* - Сниппеты (данные из таблиц site_snippets)
-*modTV* - ТВ параметры (данные из таблиц site_tmplvars)
-*modTemplate* - Шаблоны (данные из таблиц site_templates)
+### Supports 
+* modResource models - Documents (data from site_content and site_tmplvar_contentvalues tables) 
+* modUsers - Web users (data from web_users tables and web_user_attributes) 
+* modCategories - Categories (data from categories tables) 
+* modChunk - Chunks (data from tables site_htmlsnippets) 
+* modModule - Modules (data from tables site_modules) 
+* modPlugin - Plugins (data from tables site_plugins 
+* modSnippet - Snippets (data from tables site_snippets) 
+* modTV - TV parameters (data from tables site_tmplvars) modTemplate - Templates (data from tables site_templates)
 
-При желании можно быстро создать свою модель для любой таблицы. Для этого существует заготовка класса autoTable. В самом примитивном случае достаточно указать лишь название вашей таблицы. Взгляните на пример создания модели для таблицы с именем tests:
+If you want, you can quickly create your own model for any table. To do this, there is a preset of the autoTable class. In the most primitive case, it is enough to specify only the name of your table. Take a look at an example of creating a model for a table named tests:
 ```
 <?php
 include_once(MODX_BASE_PATH. "assets/lib/MODxAPI/autoTable.abstract.php");
@@ -22,19 +20,17 @@ class modTests extends autoTable
     protected $table = "tests";
 }
 ```
-
-### Примеры использования
-Методы create, edit, delete, save актуальны для всех моделей. Но в качестве примера будем рассматривать модель modResource.
-
+### Examples
+The create, edit, delete, save methods are relevant for all models. But as an example, we will consider the modResource model.
 ```
 include_once(MODX_BASE_PATH."assets/lib/MODxAPI/modResource.php");
 $doc = new modResource($modx);
 
 /** 
-* Подготовить создание документа со следующими данными:
-* ID шаблона = 10
-* В качестве родителя использовать документ с ID = 1
-* pagetitle заголовок документа = example
+* Prepare the creation of a document with the following data:
+* Template ID = 10
+* As a parent use a document with ID = 1
+* pagetitle document title = example
 */
 $doc->create(array(
 	'pagetitle' => 'example',
@@ -43,86 +39,82 @@ $doc->create(array(
 ));
 
 /** 
-* зменить pagetitle заголовок документа на new title 
+* change the pagetitle title of the document to a new title 
 */
 $doc->set('pagetitle', 'new title');
 
 /*
-* Сохранить документ вызвав события OnBeforeDocFormSave OnDocFormSave,
-* но не производить сброс кеша. 
-* ID нового документа поместить в переменную id
+* Save document by raising the OnBeforeDocFormSave OnDocFormSave event,
+* but do not reset the cache. 
+* Put the ID of the new document in the id variable
 */
 $id = $doc->save(true, false);
 
 /** 
-* Открыть на редактирование документ с ID = 10 
+* Open for editing document with ID = 10 
 */ 
 $doc->edit(10);
 
 /** 
-* Меняем родителя родителя документа
+* Change parent document
 */
 $doc->set('parent', 0);
 
 
 /*
-* Сохраняем документ не вызывая события OnBeforeDocFormSave OnDocFormSave,
-* Но при этом производим соброс кеша.
-* ID документа сохраняется в переменной $id
+* Save the document without raising the OnBeforeDocFormSave OnDocFormSave event,
+* But at the same time we produce a cache.
+* Document ID is stored in a variable $id
 */
 $id = $doc->save(false, true);
 
 /***
-* Удалить все документы помеченые на удаление.
-* При этом вызвать события OnBeforeEmptyTrash и OnEmptyTrash
-* Если значение параметра изменить с true на false, то события вызваны не будут, хотя документы удалятся
+* Delete all documents marked for deletion.
+* This will raise the OnBeforeEmptyTrash and OnEmptyTrash events
+* If you change the parameter value from true to false, no events will be raised, although the documents will be deleted
 */
 $doc->clearTrash(true);
 
 /** 
-* Удалить документ с ID = 5, минуя корзину
-* При этом события OnBeforeEmptyTrash и OnEmptyTrash, будут вызваны.
+* Delete a document with ID = 5, bypassing the cart
+* This will cause the OnBeforeEmptyTrash and OnEmptyTrash events.
 */
 $doc->delete(5, true);
 ```
-
-При помощи модели modUsers можно производить не только запись и получение данных, но еще и производить манипуляции с авторизацией:
+With the help of the modUsers model, you can not only record and receive data, but also manipulate authorization:
 ```
 include_once(MODX_BASE_PATH."assets/lib/MODxAPI/modUsers.php");
 $user = new modUsers($modx);
 
 /**
-* Авторизоваться от имени веб-пользователя с ID = 1
+* Log in as a web user with ID = 1
 */
 $user->authUser(1);
 
 /**
-* Проверить статус блокировки веб-пользователя с ID = 1 
-* Данный метод возвращает значение типа boolean
-* true - заблокирован
-* false - активен
+* Check the status of blocking a web user with ID = 1 
+* This method returns a boolean value
+* true - blocked
+* false - active
 */
 $flag = $user->checkBlock(1);
 
 /**
-* Проверить пароль myPassword для веб-пользвоателя с ID = 1 
-* После чего выполнить проверку статуса блокировки. Если даже пароль указан верный, а пользователь заблокирован, то данный метод вернет значение false. В случае, если изменить значение 3 параметра на false, то статус блокировки проверяться не будет.
-* Данный метод возвращает значение типа boolean
-* true - верный пароль
-* false - пароль не корректен
+* Check myPassword password for web user with ID = 1 
+* Then check the lock status. Even if the password is correct and the user is locked, this method will return false. If you change the value of parameter 3 to false, the lock status will not be checked.
+* This method returns a boolean value
+* true - correct password
+* false - password is not correct
 */
 $flag = $user->testAuth(1, 'myPassword', true);
 
 /**
-* Принудительно разлогинить веб-пользователя
+* Force logout of the web user
 */
 $user->logOut();
 ```
-
-
-###Практическое применение
-*modUsers*
-Следующий плагин для событий OnWebPageInit и OnPageNotFound, позволяет производить моментальное применение блокировки. Это бывает полезно, когда пользователь вроде бы забанен, но продолжает проявлять активность, т.к. сессия не истекла.
+### Practical the use of modUsers 
+The following plugin for the OnWebPageInit and OnPageNotFound events allows you to instantly apply the lock. This is useful when the user seems to be banned, but continues to be active, because the session has not expired.
 ```
 include_once(MODX_BASE_PATH."assets/lib/MODxAPI/modUsers.php");
 $modx->user = new modUsers($modx);
@@ -133,14 +125,12 @@ if($modx->isFrontend() && $modx->getLoginUserID('web')){
 	}
 }
 ```
-
-*modResource*
-Следующий сниппет позволяет последовательно получать значения полей одного и того же документа не выполняя при этом повторый SQL запрос.
+modResource The following snippet allows you to sequentially retrieve the field values of the same document without having to run a retry SQL query.
 ```
 /**
 * <h5>[[DocInfo? &id=`6` &field=`pagetitle`]]</h5>
 * <img src="[[DocInfo? &id=`6` &field=`image`]]" />
-* С данным сниппетом будет выполнен всего 1 SQL запрос
+* Only 1 SQL query will be executed with this snippet
 */
 if(empty($modx->doc)){
 	include_once(MODX_BASE_PATH."assets/lib/MODxAPI/modResource.php");
