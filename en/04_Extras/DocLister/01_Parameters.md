@@ -1,5 +1,50 @@
 ## Parameters
 
+### Parameters at a glance
+| Parameter | Description | Default |
+| --- | --- | --- |
+| controller | Specifies the class to fetch the data | site_content |
+| idType | Type of Documents | parents |
+| parents | Selection of documents based on parental documents | (page_id) |
+| documents | Selection of arbitrary documents | |
+| ignoreEmpty | Allows you to select all the records from the table | 0 |
+| display | Maximum number of documents per query | 0 | 
+| queryLimit | Maximum number of documents per query | 0 |
+| depth | The depth of the query using the parameter **parents** | 0 |
+| offset | Number of documents to skip from the beginning | 0 |
+| start | Number of documents to skipped from the beggining of the query | 0 |
+| total | The maximum number of documents to display | 0 |
+| addWhereList | Additional conditions for retrieving documents | |
+| showParent | The exclusio of documents from which a query was made | 0 | 
+| selectFields | The names of the fields to include in the selection | |
+| groupBy | Group results by any field | |
+| table | The name of the table query | site_content |
+| idField | The name of the primary key field | id |
+| parentField | The name of the field in which the idField values of the parent documents are stored | parent |
+| tvPrefix | Prefix for placeholders created from TV parameters | tv |
+| tvList | List of TV parameter names that should be in the query | |
+| renderTv | TV parameter names to render as per their widget settings | |
+| sortType | Sort type | none |
+| orderBy | A single sort string | id DESC |
+| sortBy | Sorting criterion without sorting direction | |
+| order | Sorting direction | DESC |
+| sortDir | A synonym for **order** parameter | DESC |
+| tvSortType | Rules for converting the types of TV parameter sorting | |
+| tvSortWithDefault | | |
+| showNoPublish | Show unpublished documents in the output | 0 |
+| filters | Rules for filtering documents | |
+| filer_delimiter | Filter separator for **containsOne** mode | |
+| tagsData | The string that defines the source of the tags | |
+| urlScheme | URL generating scheme | |
+| dateSource | The document field in which the date is located. | |
+| dateFormat | Formatting rules for PHP function strftime | %d.%b.%y %H:%M |
+| summary | Text processing rules for the formation of a brief description | |
+| introField | The name of the field for the short text source from the content Field | |
+| contentField | The name of the field in which the main content of the document is stored | |
+| e | Screening of field values | |
+| jotcount | Adds JotX comments number to the section when using the jotcount extender | 0 |
+
+
 ### controller
 
 Specifies the class to fetch the data. Base classes (located in the folder DocLister/core/controller/):
