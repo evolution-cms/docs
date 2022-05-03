@@ -1,26 +1,28 @@
-###Массив значений из заданной колонки
+### Array of values from a given column
 
 mixed getColumn (string $name, $dsq)
 
-**$name** - название колонки
+* **$name** - column name
 
-**$dsq** - результат выполнения запроса или SQL-запрос
+* **$dsq** - query result or SQL query
 
-Этот метод возвращает нумерованный массив значений из заданной колонки в полученных из базы данных. Набор данных может быть получен с помощью запроса SELECT и содержать несколько колонок, одну из которых можно получить методом getColumn.
+This method returns a numbered array of values from the specified column in retrieved from the database. A dataset can be retrieved by using a SELECT query and contain multiple columns, one of which can be retrieved by the getColumn method.
 
 ***
 
-####Пример
+#### Example
+```
+function myColumn() {  
+	global $modx;  
+	$output = '';   
 
-	function myColumn() {  
-		global $modx;  
-		$output = '';   
-	
-		$result = $modx->db->select( 'id, name', 'colors', 'favorite_color = "blue"' );  		$col = $modx->db->getColumn( 'name', $result );   
-		
-		for( $i = 0; $i < count( $col ); $i++ ) {  
-			$output .= $col[$i] . "'s favorite color is blue.<br />";  
-		}  
-		
-		return $output;  
-	}
+	$result = $modx->db->select( 'id, name', 'colors', 'favorite_color = "blue"' ); 
+	$col = $modx->db->getColumn( 'name', $result );   
+
+	for( $i = 0; $i < count( $col ); $i++ ) {  
+		$output .= $col[$i] . "'s favorite color is blue.<br />";  
+	}  
+
+	return $output;  
+}
+```
