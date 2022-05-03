@@ -1,49 +1,49 @@
-<h3>Features</h3> 
-<p>Features of DocLister</p>
-<p>Сниппет для вывода информации из различных таблиц. Изначально разрабатывался как замена сниппета Ditto, но в итоге существенно превзошел его в возможностях, гибкости и производительности. При этом в простых случаях использовать DocLister не сложнее, чем Ditto (многие параметры совпадают).</p>
-<p>Для работы DocLister требуется PHP 5.6 или выше.</p>
-<h3 class="sub-header">Отличительные особенности снипетта DocLister:</h3>
-<ul>
-	<li>легко расширяется;</li>
-	<li>позволяет выводить данные из любых таблиц (в том числе из каталога Shopkeeper);</li>
-	<li>есть возможность вывести данные в json-формате;</li>
-	<li>возможность произвольной обработки данных перед выводом;</li>
-	<li>удобные средства отладки;</li>
-	<li>сортировка по TV-параметрам с преобразованием типов;</li>
-	<li>фильтрация документов, в том числе по TV-параметрам;</li>
-	<li>поддержка лексиконов;</li>
-	<li>загрузка параметров из файлов.</li>
-</ul>
-<p>Класс для вывода информации из таблиц по предопределенным правилам. Если нет правил, то данные отображаются без дополнительной обработки и связи. Т.е. все поля и значения совпадают с базой данных.</p>
-<p>Правила для обработки информации описаны в контроллерах. Главный контроллер - site_content, который определяет связь основных документов site_content с данными в TV-параметрах</p>
-<h3 class="sub-header">На базе класса DocLister сформировано 12 сниппетов:</h3>
-<ul>
-	<li><strong>DocLister</strong> - основной сниппет для вывода информации по принципу сниппетов Ditto и CatalogView</li>
-	<li><a href="sistemnye-parametry/" title="DLcrumbs" target="_blank" class="text-bold">DLcrumbs</a> - для формирования хлебных крошек по принципу сниппета Breadcrumbs</li>
-	<li><strong>DLglossary</strong> - для фильтрации документов по первому символу в определенном поле</li>
-	<li><strong>DLvaluelist</strong> - для замены сниппета DropDownDocs</li>
-	<li><strong>DLTemplate</strong> - для замены $modx-&gt;parseChunk()</li>
-	<li><strong>DLFirstChar</strong> - выборка документов и группировках в блоках по первой букве</li>
-	<li><strong>DLPrevNext</strong> - цикличная навигация вперед/назад между соседними документами</li>
-	<li><a href="dlmenu/" title="DLMenu" target="_blank" class="text-bold">DLMenu</a> - Построение меню неограниченой вложенности</li>
-	<li><strong>DLSitemap</strong> - Построение xml-карты сайта</li>
-	<li><strong>DLReflect</strong> - Построение списка дат</li>
-	<li><strong>DLReflectFilter</strong> - Фильтрация документов по датам</li>
-	<li><strong>DLBeforeAfter</strong> - Пагинация по прошедшим и предстоящим событиями с учетом текущей даты</li>
-</ul>
-<h3 class="sub-header">Компоненты на базе DocLister:</h3>
-<ul>
-	<li><a href="simplegallery/" title="SimpleGallery" target="_blank" class="text-bold">SimpleGallery</a> – вывод галереи на странице</li>
-	<li><a href="simpletube/" title="SimpleTube" target="_blank" class="text-bold">SimpleTube</a> – плагин и сниппет для создания видеогалерей
-</li>
-	<li><a href="simplefiles/" title="SimpleFiles" target="_blank" class="text-bold">SimpleFiles</a> – прикрепляем к странице файлы</li>
-	<li>SimplePolls</li>
-	<li><a href="likedislike/" title="LikeDislike" target="_blank" class="text-bold">LikeDislike</a> – возможность ставить оценки</li>
-	<li><a href="formlister/" title="FormLister" target="_blank" class="text-bold">FormLister</a> - cниппет для работы с формами</li>
-	<li>FastImageTV</li>
-	<li><a href="dlrequest/" title="DLRequest" target="_blank" class="text-bold">DLRequest</a> - запуск сниппетов с параметрами из get/post</li>
-	<li>evoSearch</li>
-	<li>eFilter</li>
-	<li><a href="selector/" title="Selector" target="_blank" class="text-bold">Selector</a> - custom TV для составления списка документов</li>
-</ul>
-<p>Автор: <i class="fa fa-github fa-lg text-primary"></i> <a href="https://github.com/AgelxNash" rel="nofollow" target="_blank">Agel_Nash</a></p>
+## Features
+### Features of DocLister
+
+Snippet for displaying information from various tables. It was originally developed as a replacement for the Ditto snippet, but in the end significantly surpassed it in capability, flexibility and performance. However, in simple cases, using DocLister is no more difficult than Ditto (many parameters are the same).
+
+DocLister requires PHP 5.6 or higher.
+
+## Distinctive features of the DocLister snipette:
+* easy to expand;
+* allows you to display data from any tables (including the Shopkeeper catalog);
+* it is possible to output data in json-format;
+* the possibility of arbitrary data processing before output;
+* convenient debugging tools
+* sorting by TV parameters with type conversion;
+* filtering of documents, including by TV-parameters;
+* lexicon support;
+* load parameters from files.
+A class for displaying information from tables according to predefined rules. If there are no rules, the data is displayed without additional processing and communication. That is, all fields and values are the same as the database.
+
+Rules for information processing are described in controllers. Main Controller - site_content that determines the relationship of the main documents of the site_content with the data in the TV parameters
+
+## On the basis of the DocLister class, 12 snippets have been formed:
+* __DocLister__ - the main snippet for displaying information on the principle of Ditto and CatalogView snippets
+* __DLcrumbs__ - for the formation of bread crumbs on the principle of the Breadcrumbs snippet
+* __DLglossary__ - to filter documents by the first character in a specific field
+* __DLvaluelist__ - to replace the DropDownDocs snippet
+* __DLTemplate__ - to replace $modx->parseChunk()
+* __DLFirstChar__ - fetch documents and groupings in blocks by the first letter
+* __DLPrevNext__ - circular forward/backward navigation between adjacent documents
+* __DLMenu__ - Building a Menu of Unlimited Nesting
+* __DLSitemap__ - Building an xml sitemap
+* __DLReflect__ - Building a list of dates
+* __DLReflectFilter__ - Filter documents by date
+* __DLBeforeAfter__ - Pagination of past and upcoming events taking into account the current date
+
+### Components based on DocLister:
+* __SimpleGallery__ – display the gallery on the page
+* __SimpleTube__ – plugin and snippet for creating video galleries
+* __SimpleFiles__ – attach files to the page
+* __SimplePolls__
+* __LikeDislike__ – ability to rate
+* __FormLister__ - a snippet for working with forms
+* __FastImageTV__
+* __DLRequest__ - run snippets with parameters from get/post
+* __evoSearch__
+* __eFilter__
+* __Selector__ - custom TV for compiling a list of documents
+
+Author: Agel_Nash
