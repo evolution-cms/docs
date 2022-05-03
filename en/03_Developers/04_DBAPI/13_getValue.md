@@ -12,7 +12,8 @@ This function returns the first value from the first column of the query result.
 ```
 function display_rows() {  
 	global $modx;  
-	$count = $modx->db->getValue( $modx->db->select( 'count(*)', 'people' ) );   		if( $count < 1 ) {  
+	$count = $modx->db->getValue( $modx->db->select( 'count(*)', 'people' ) );   		
+	if( $count < 1 ) {  
 		return 'No records found';  
 	}else{  
 		return 'Найдено ' . $count . ' записей в базе.';  
