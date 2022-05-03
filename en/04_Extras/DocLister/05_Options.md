@@ -1,11 +1,11 @@
-##Options
+## Options
 
-###customLang
+### customLang
 
-Загрузка произвольного лексикона.
+Loading an arbitrary lexicon.
 
-Возможные значения - имя php файла из папки /lang/ с ассоциативным массивом $_lang
+The possible values are the name of the php file from the /lang/ folder with the associative array $_lang
 
-Значение по умолчанию - пусто.
+The default value is empty.
 
-При помощи лексикона можно переопределить как стандартные языковые сообщения из папки /core/lang/[(manager_language)]/, так и создавать новые. Для переопределения важно в массиве указывать полные название стандартного языкового ключа (например, core.test или paginate.next). Для использования лексикона достаточно в шаблоне написать тег [%КлючЛексикона%]
+Using the lexicon, you can override both standard language messages from the /core/lang/[(manager_language)]/ folder and create new ones. To override, it is important to specify the full name of the standard language key in the array (for example, core.test or paginate.next). To use the lexicon, it is enough to write the [%Lexicon Key%] tag in the template
