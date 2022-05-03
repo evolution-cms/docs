@@ -21,6 +21,7 @@
 | table | The name of the table query | site_content |
 | idField | The name of the primary key field | id |
 | parentField | The name of the field in which the idField values of the parent documents are stored | parent |
+| debug | Provide debug log for snippet call | 0 |
 | tvPrefix | Prefix for placeholders created from TV parameters | tv |
 | tvList | List of TV parameter names that should be in the query | |
 | renderTv | TV parameter names to render as per their widget settings | |
