@@ -1,23 +1,24 @@
-###Идентификатор добавленной записи
+### ID of the added record
 
 integer getInsertId([$conn])
 
-**$conn** - соединение с базой
+* **$conn** - connection to the database
 
-Возвращает AUTO_INCREMENT-идентификатор для последней записи, которая была добавленна с помощью запроса INSERT. Возвращает 0, если поля AUTO_INCREMENT не создано.
+Returns the AUTO_INCREMENT identifier for the last record that was added by using the INSERT query. Returns 0 if the AUTO_INCREMENT fields are not created.
 
 ***
 
-####Пример
-
-	function insert_user( $fields, $table ) {  
-		if( is_array( $fields ) {  
-			if( $modx->db->insert( $table, $fields ) ) {  
-				return $modx->db->getInsertId();  
-			} else {  
-				return false;  
-			}  
+#### Example
+```
+function insert_user( $fields, $table ) {  
+	if( is_array( $fields ) {  
+		if( $modx->db->insert( $table, $fields ) ) {  
+			return $modx->db->getInsertId();  
 		} else {  
 			return false;  
 		}  
-	}
+	} else {  
+		return false;  
+	}  
+}
+```
