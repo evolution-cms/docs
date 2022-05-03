@@ -2,11 +2,11 @@
 
 resource select($fields , $from [, $where [, $orderby [, $limit]]])
 
-**$fields** - list of required fields from the request
-**$from** - table to select
-**$where** - selection condition
-**$orderby** - field to sort by
-**$limit** - limit on the number of records in the query result
+* **$fields** - list of required fields from the request
+* **$from** - table to select
+* **$where** - selection condition
+* **$orderby** - field to sort by
+* **$limit** - limit on the number of records in the query result
 
 The "select" method allows you to make a regular query to the database to get data that matches the given parameters.
 ***
