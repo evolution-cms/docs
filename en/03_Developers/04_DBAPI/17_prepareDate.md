@@ -1,27 +1,28 @@
-###Форматирование вывода даты
+### Date output formatting
 
 string prepareDate($timestamp, $fieldType)
 
-**$timestamp** - дата в формате Unix timestamp
+**$timestamp** - date in Unix timestamp format
 
-**$fieldType** - вариант форматирования
+**$fieldType** - formatting option
 
-+ DATE - формат вида Y-m-d. Пример: "2007-04-30"
-+ TIME - формат вида H:i:s. Пример: "13:43:27"
-+ YEAR - формат вида Y. Пример: "2007"
-+ DATETIME (по умолчанию) - формат вида Y-m-d H:i:s. Пример: "2007-04-30 13:43:27"
++ DATE - Y-m-d format. Example: "2007-04-30"
++ TIME - H:i:s format. Example: "13:43:27"
++ YEAR - Y format. Example: "2007"
++ DATETIME (default) - Y-m-d H:i:s format. Example: "2007-04-30 13:43:27"
 
 ***
 
-####Пример
-
-	function getEvents( $date ) {  
-		global $modx;  
-		$output = '';  
-		$fulldate = $modx->db->prepareDate( $date, 'DATE' );		
-		//Преобразует дату в удобный для чтения вид   
-		$result = $modx->db->select( 'event_name', 'events', 'timestamp = ' . intval( $date ) );  
-		while( $row = $modx->db->getRow( $result ) ) {  
-			$output .= $row['event_name'] . ' состоится ' . $fulldate . '.';  
-		}  
-	}
+#### Example
+```
+function getEvents( $date ) {  
+	global $modx;  
+	$output = '';  
+	$fulldate = $modx->db->prepareDate( $date, 'DATE' );		
+	// Converts the date to a readable form
+	$result = $modx->db->select( 'event_name', 'events', 'timestamp = ' . intval( $date ) );  
+	while( $row = $modx->db->getRow( $result ) ) {  
+		$output .= $row['event_name'] . ' состоится ' . $fulldate . '.';  
+	}  
+}
+```
