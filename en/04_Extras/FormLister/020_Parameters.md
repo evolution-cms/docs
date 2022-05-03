@@ -2,6 +2,53 @@
 
 These parameters are processed by FormLister core class. Controllers can change parameters purposes.
 
+### Parameters at a glance
+| Parameter | Description | Default |
+| --- | --- | --- |
+| controller | Sets the class extending \FormLister\Core to process data | Form |
+| dir | Folder where controller class is located | assets/snippets/FormLister/core/controller/ | 
+| formid | The name of the form, required parameter | |
+| formMethod | Determines the source of request data | post |
+| disableSubmit | Disables form submission | 0 |
+| config | Loads parameters from json file | |
+| api | Output method | 0 |
+| apiFormat | Output format for api 1 or api 2 mode | json |
+| debug | Output debug information | 0 |
+| saveObject | Saves FormLister object to placeholder, so other snippets can use it. | |
+| removeGpc | Restores data sanitized by MODX as it contains {{ | 0 |
+| defaultsSources | Allows to load data from external sources | array |
+| defaults | Data for the "array" source. | array |
+| keepDefaults | Allows to load external data after the form is sent. | 0 |
+| allowEmptyFields | Allows to set fields with empty values. | 1 |
+| formControls | The list of fields hold by form controls (selects, checkboxes, radio buttons) | |
+| emptyFormControls | This parameter allows to solve the problem of unchecked checkboxes | |
+| fieldAliases | Allows to set field aliases. | |
+| prepare prepareProcess prepareAfterProcess | It's similar to the "prepare" parameter of DocLister. | |
+| filterer |Class name to filter data. Is has to be loaded before snippet call | \FormLister\Filters |
+| filters | Filtering rules array.| |
+| validator | Class name to validate data. Is has to be loaded before snippet call. | \FormLister\Validator |
+| rules | Validation rules array. | |
+| fileValidator | Class name to validate files. This class has to be loaded before snippet call.| \FormLister\FileValidator |
+| fileRules | Files validation rules array. | |
+| formTpl | Form template. It needs to have the required field named "formid" with the same value as "formid" parameter's one. | |
+| arraySplitter | The separator to convert arrays to strings. | ; |
+| {field}.arraySplitter | The separator to convert arrays to strings, but for particular {field}. | |
+| errorTpl | Template for validation messages. | ```@CODE:<div class="error">[+message+]</div>``` |
+| requiredClass errorClass | Class name for empty required fields and wrong filled fields.| |
+| {field}.requiredClass  {field}.errorClass | Allows to set classes mentioned above for particular fields. | |
+| messagesTpl | Template for controller messages. It outputs message groups (messages, required, error). | ```@CODE:<div class="form-messages">[+messages+]</div>``` |
+| messagesOuterTpl | Wrapper template for controller message groups. | ```@CODE: [+messages+]``` |
+| messagesRequiredOuterTpl | Wrapper template for the "required" message group. | ```@CODE: [+messages+]``` |
+| messagesErrorOuterTpl | Wrapper template for the "error" message group. |```@CODE: [+messages+]```|
+| messagesSplitter messagesRequiredSplitter messagesErrorSplitter | Messages separator in groups. | ```<br>``` |
+| removeEmptyPlaceholders | Removes placeholders without values from templates. | 1 |
+| parseDocumentSource | Enables MODX-parser for output post-processing. | 0 |
+| rewriteUrls | Allows to parse links in templates if the "parseDocumentSource" parameter is off. | 0 |
+| skipPrerender | Allows to skip some form fields processing | 0 |
+| prerenderErrors | Allows to process form errors if "skipPrerender" parameter is on. The results are saved to placeholders. | 0 |
+| templatePath templateExtension | Sets template files folder and template files extension. These parameters are needed to use with EvoTwig plugin. | |
+| redirectTo | Target page id to redirect if form is processed successfully.| |
+
 ## Settings
 ### controller
 Sets the class extending \FormLister\Core to process data. 
@@ -57,6 +104,8 @@ Possible values:
 - 1: array with form data;
 - 2: array with form data and html.
 - 3: pure FormLister object;
+
+Default Value: 0
 
 ### apiFormat
 Output format for mode 1 or mode 2.
@@ -147,7 +196,7 @@ Possible values - an array:
 ```
 
 ### fieldAliases
-Allows to set field aliases. For exemplae, "foo" field has "bar" alias:
+Allows to set field aliases. For example, "foo" field has "bar" alias:
 ```
 $FormLister->setField("foo", 10);
 $FormLister->getField("bar"); //10
