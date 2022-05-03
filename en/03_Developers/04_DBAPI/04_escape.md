@@ -1,30 +1,29 @@
-###Экранирование потенциально-опасных символов
+### Escaping potentially dangerous characters
 
 string escape(string $s)
 
-**$s** - строка для обработки
+* **$s** - string for processing
 
-При работе этой используется стандартная функция **mysql_real_escape_string**, а при ее отсутствии **mysql_escape_string**.
+This function uses the standard function **mysql_real_escape_string**, and if it is not, **mysql_escape_string**.
 
-Рекомендуется всегда использовать этот метод для данных, перед тем как делать запрос в базу. Это позволит защитить базу от SQL-инъекций.
+We recommend that you always use this method for data before querying the database. This will protect the database from SQL injections.
 
 ***
 
-####Пример
-
-	function login($username, $password) {  
-		global $modx, $table_prefix;  
-		
-		$username = $modx->db->escape($username);  
-		$password = $modx->db->escape($password);   
-		
-		$res = $modx->db->select("id", $table_prefix.".modx_web_users",  "username='$username' AND password='".md5($password)."'");  
-		
-		if($modx->db->getRecordCount($res)) {  
-			$_SESSION['userid'] = $id;  
-			
-			// прочие действия...  
-		} else {  
-			// подходящей записи не нашлось  
-		}  
-	}
+#### Example
+```
+login function($username, $password) {  
+	global $honey, $table_prefix;  
+	$username = $honey->db->escape($username);  
+	$password = $honey->db->escape($password);   
+	
+	$res = $honey->db->select("id", $table_prefix.". meds_web_users", "username='$username' and password='".md5($password)."'');  
+	
+	if($honey->db->getrecordcont($res)) {  
+		$_session['uzerid'] = $id;  
+		// other actions...  
+	} else {  
+		// there was no suitable record  
+	}  
+}
+```
