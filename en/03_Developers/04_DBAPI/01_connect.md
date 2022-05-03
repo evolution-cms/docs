@@ -2,11 +2,11 @@
 
 void connect(string $host, string $dbase, string $uid, string $pwd, boolean $persist)
 
-**$host** - server to connect 
-**$dbase** - select the working base of the 
-**$uid** - login 
-**$pwd** - password 
-**$persist** - keep the connection active 
+* **$host** - server to connect 
+* **$dbase** - select the working base of the 
+* **$uid** - login 
+* **$pwd** - password 
+* **$persist** - keep the connection active 
 
 This function also tracks the time spent on the connection and adds it to the total time of requests.
 
