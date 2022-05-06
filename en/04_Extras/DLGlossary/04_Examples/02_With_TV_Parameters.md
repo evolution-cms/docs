@@ -13,7 +13,6 @@ You will need to duplicate DLGlossary and make a change to the code in order to 
 #### Snippet: GlossaryList
 ```
 <?php
-// Snippet Call: [[GlossaryList? &parents=`1` &tvList=`tags`]]
 $params['debug'] = &debug;
 $params['parents'] = $parents;
 $params['field'] = 'c.pagetitle';
