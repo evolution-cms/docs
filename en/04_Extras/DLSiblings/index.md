@@ -1,88 +1,107 @@
+## 	DLSiblings: Output neighboring resources with templating
+Output of adjacent resources with templating (multiple ring linking).
+Output adjacent resources with templating (multiple ring linking)
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<h3>DLSiblings: Вывод соседних ресурсов с шаблонизацией </h3>
-Вывод соседних ресурсов с шаблонизацией (множественная кольцевая перелинковка).
-<p>Вывод соседних ресурсов с шаблонизацией (множественная кольцевая перелинковка)</p>
-<p>Автор: <i class="fa fa-github fa-lg text-primary"></i> <a href="https://github.com/Aharito/DLSiblings" rel="nofollow" target="_blank">Aharito</a></p>
-<h2 class="page-header">Параметры сниппета:</h2>
-<h3 class="sub-header text-bold">&amp;idType, &amp;parents, &amp;documents, &amp;ignoreEmpty</h3>
-<p>- как в ДокЛистере.</p>
-<h3 class="sub-header text-bold">&amp;Qty</h3>
-<p>(целое), кол-во предыдущих и следующих соседей. Имеет приоритете над &amp;prevQty и &amp;nextQty.</p>
-<p>Если &amp;Qty=`3`, то общее кол-во будет 6 - то есть 3 перед и 3 после.
-<p>Значение по умолчанию: 2.</p>
-<h3 class="sub-header text-bold">&amp;prevQty</h3>
-<p>Кол-во соседей-предшественников. Приоритет меньше $Qty</p>
-<p>Значение по умолчанию:default 2</p>
-<h3 class="sub-header text-bold">&amp;nextQty</h3>
-<p>Кол-во соседей-последователей. Приоритет меньше $Qty</p>
-<p>Значение по умолчанию: 2</p>
+Author: https://github.com/Aharito/DLSiblings Aharito
 
-<p>Также можно использовать унаследованные от DocLister (такие же, как у него): условия выборки <span class="text-danger">&amp;addWhereList</span> и  <span class="text-danger">&amp;filters</span>, условия сортировки <span class="text-danger">&amp;orderBy</span>, глубина выборки <span class="text-danger">&amp;depth</span>, <span class="text-danger">prepare</span>, многие другие параметры.</p>
-<p>Нужно лишь понимать, имеют ли смысл эти параметры в вызове. Например, если задать <span class="text-bold">&amp;idType=`documents`</span> и <span class="text-bold">&amp;documents=`1,2,3`</span> (всего 3 документа), а <span class="text-bold">&amp;Qty</span> задать как 6, то выводиться все равно будут всегда эти 3 документа - смысла в этом нет.</p>
-<h3>Параметры-исключения:</h3>
-<ul>
-	<li>режим <span class="text-bold">api</span> принудительно устанавливается в 1 (нет смысла задавать в сниппете)</li>
-	<li>режим <span class="text-bold">debug</span> устанавливается в 0 (также нет смысла задавать).</li>
-	<li>параметр <span class="text-bold">&amp;display</span> принудительно устанавливается в &amp;display=`0`, так как за кол-во отвечают параметры <span class="text-bold">&amp;Qty</span>, <span class="text-bold">&amp;prevQty</span> и <span class="text-bold">&amp;nextQty</span>.</li>
-</ul>
-<h3>Шаблоны сниппета</h3>
-<ul>
-	<li><span class="text-bold">&amp;ownerTPL</span>, шаблон-обертка аналогично DocLister, но плейсхолдер НЕ [+dl.wrap+], а [+wrap+]. Значение по умолчанию null (вывод не оборачивается в ownerTPL).</li>
-	<li><span class="text-bold">&amp;tpl</span>, <span class="text-bold">&amp;tplOdd</span> и <span class="text-bold">&amp;tplEven</span>, <span class="text-bold">&amp;tplIdN</span>, <span class="text-bold">&amp;tplFirst</span> и <span class="text-bold">&amp;tplLast</span> Шаблоны элемента как в DocLister в порядке <span class="text-bold">увеличения</span> приоритета.</li>
-	<li><span class="text-bold">&amp;noneTPL</span> Шаблон с информацией, что ничего нет, как в DocLister. По умолчанию - пусто.</li>
-	<li><span class="text-bold">&amp;noneWrapOuter</span> Как в DocLister, оборачивать ли шаблон noneTPL в обёртку ownerTPL. Параметр &amp;noneWrapOuter имеет смысл, только если ничего не нашлось и при этом задан ownerTPL.</li>
-</ul>
-<p>Другие шаблоны DL <span class="text-bold">не используются</span>.  </p>
-<h3 class="text-danger">ВНИМАНИЕ:</h3>
-<p>!!! В шаблонах сниппета <span class="text-bold">плейсхолдеры</span> ТВ-параметров записываются НЕ через точку, а через нижнее подчеркивание. То есть, будет <span class="text-bold">не</span> [+tv.h1+], а [+tv_h1+]. То же самое касается <span class="text-bold">экстендеров</span>, например экстендера e: вместо [+e.title+] пишем [+e_title+].</p>
-<p>В общем, в плейсхолдерах шаблонов (только в них!) все точки <span class="text-bold">меняем</span> на нижнее подчеркивание (см. примеры вызова сниппета ниже).</p>
-<h3>ПРИМЕРЫ</h3>
-<p>Пример 1: Простой вызов сниппета.</p>
-<pre class="brush: html;">
+### Snippet parameters:
+#### &idType, &parents, &documents, &ignoreEmpty
+- As in DocLister.
+
+#### &Qty
+(whole), the number of previous and next neighbors. Takes precedence over &prevQty and &nextQty.
+
+If &Qty='3', then the total number will be 6 - that is, 3 before and 3 after.
+
+The default value is 2.
+
+#### &prevQty
+Number of predecessor neighbors. Priority less than $Qty
+
+Default value:default 2
+
+#### &nextQty
+Number of neighbors-followers. Priority less than $Qty
+
+Default value: 2
+
+You can also use those inherited from DocLister (the same as its): fetch conditions &addWhereList and &filters, sort conditions &orderBy, sample depth &depth, prepare, and many other parameters.
+
+You just need to understand whether these parameters make sense in the call. For example, if you set &idType='documents' and &documents='1,2,3' (3 documents in total), and set &Qty as 6, then these 3 documents will always be displayed - this makes no sense.
+
+### Exclusion parameters:
+* api mode is forcibly set to 1 (it makes no sense to set in the snippet)
+* the debug mode is set to 0 (there is also no point in setting it).
+* the &display parameter is forcibly set to &display='0' because the &Qty, &prevQty, and &nextQty parameters are responsible for the count.
+
+### Snippet Templates
+* &ownerTPL, the wrapper template is similar to DocLister, but the placeholder is NOT [+dl.wrap+], but [+wrap+]. The default value is null (the output does not turn into ownerTPL).
+* &tpl, &tplOdd and &tplEven, &tplIdN, &tplFirst and &tplLast Item templates as in DocLister in ascending order of priority.
+* &noneTPL Template with information that there is nothing like in DocLister. The default is empty.
+* &noneWrapOuter As in DocLister, whether to wrap the noneTPL template into the ownerTPL wrapper. The &noneWrapOuter parameter makes sense only if nothing is found and the ownerTPL is specified.
+No other DL templates are used.
+
+## ATTENTION:
+!!! In snippet templates, TV parameter holders are recorded NOT through a period, but through an underscore. That is, it will not be [+tv.h1+], but [+tv_h1+]. The same applies to extenders, such as extender e: instead of [+e.title+], we write [+e_title+].
+
+In general, in template placeholders (only in them!), all points are changed to underline (see examples of snippet calls below).
+
+### EXAMPLES
+#### Example 1: A simple snippet call.
+```
 [[DLSiblings?
-    &amp;idType=`parents`
-    &amp;parents=`152`
-    &amp;tpl=`@CODE: &lt;a href="[+url+]"&gt;[+tv_h1+]&lt;/a&gt;&lt;br&gt;`
-    &amp;Qty=`2`
-    &amp;tvList=`h1`
-]]</pre>
-<p>Пример 2: Более сложный пример с prepare и превьюшками FastImage</p>
-<pre class="brush: html;">[[DLSiblings?
-    &amp;idType=`parents`
-    &amp;parents=`152`
-    &amp;thumbSnippet=`sgThumb`
-    &amp;thumbOptions=`{"tv.article_intro_img":{"small":"280x160","medium":"700x400"}}`   //Здесь НЕ надо менять точку на подчеркивание (это не шаблон)
-    &amp;ownerTPL=`@CODE:&lt;div class="row latest-news inline-showcase"&gt;[+wrap+]&lt;/div&gt;&lt;hr&gt;`                                       
-    &amp;tpl=`@CODE:
-    &lt;div class="column col-1-1-2-4-4 margin-bottom-30"&gt;   //А здесь везде надо менять (это шаблон)              
-        &lt;div class="article-announce-img"&gt;
-            &lt;img class="img-responsive" src="[+tv_article_intro_img_medium+]" alt="[+e_title+] | [(cfg_company_brand_name)]"&gt;               
-        &lt;/div&gt;
-        &lt;div class="article-announce-content"&gt;
-            &lt;div class="article-announce-header"&gt;
-                &lt;a href="[+url+]"&gt;[+tv_h1+]&lt;/a&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;a href="[+url+]" class="wrapper-link"&gt;&lt;/a&gt;
-    &lt;/div&gt;`
-    &amp;Qty=`2`
-    &amp;tvList=`article_intro_img,h1`
-    &amp;prepare=`FastImagePreviews`
-]]</pre>
-<p><span class="text-bold">Примечание:</span> Это только примеры. Для того, чтобы они заработали на вашем сайте, у вас должны быть такие же TV и такие же prepare-сниппеты.</p>
-<h3>Результат работы примера 2</h3>
-<p><img src="https://cloud.githubusercontent.com/assets/6253807/24569757/ea66affa-1691-11e7-8320-aa726ffd3dbc.png" alt="siblings_demo_1" /></p>
-<h3>Скорость работы</h3>
-<p>1) Кол-во запросов и т.д. при <span class="text-bold">кешированном</span> вызове сниппета на кешированном ресурсе на микро-сайте, выборка 4 из 8 статей с сортировкой</p>
-<pre class="brush: html;">&amp;orderBy=`if(pub_date=0,createdon,pub_date) DESC`</pre>
-<p><img src="https://cloud.githubusercontent.com/assets/6253807/24569985/4e7dedd6-1693-11e7-955c-95574150e8de.png" alt="siblings_requests" /></p>
-<p>2) Кол-во запросов и т.д. при <span class="text-bold">некешированном</span> вызове сниппета на кешированном ресурсе на микро-сайте, выборка 4 из 8 статей с сортировкой</p>
-<pre class="brush: html;">&amp;orderBy=`if(pub_date=0,createdon,pub_date) DESC`</pre>
-<p><img src="https://cloud.githubusercontent.com/assets/6253807/24570665/e1272e60-1696-11e7-8b7d-832009a2be07.png" alt="siblings_requests_nocache" /></p>
-<h3>Недостатки</h3>
-<ul>
-	<li>Длинная JSON-строка, содержащая все поля, в том числе контент (расход памяти)</li>
-	<li>Формирование доп. индексного массива $ids (время)</li>
-	<li>В результате сниппет подойдет для не очень больших выборок (навскидку до 1-2 тыс. ресурсов), для больших сайтов требуется другое решение</li>
-</ul>
+    &idType=`parents`
+    &parents=`152`
+    &tpl=`@CODE: <a href="[+url+]">[+tv_h1+]</a><br>`
+    &Qty=`2`
+    &tvList=`h1`
+]]
+```
+
+#### Example 2: A more complex example with prepare and FastImage previews
+```
+[[DLSiblings?
+    &idType=`parents`
+    &parents=`152`
+    &thumbSnippet=`sgThumb`
+    &thumbOptions=`{"tv.article_intro_img":{"small":"280x160","medium":"700x400"}}`   // There is NO need to change the period to underlining here (this is not a template)
+    &ownerTPL=`@CODE:<div class="row latest-news inline-showcase">[+wrap+]</div><hr>`                                       
+    &tpl=`@CODE:
+    <div class="column col-1-1-2-4-4 margin-bottom-30">   // And here everywhere needs to be changed (this is a template)           
+        <div class="article-announce-img">
+            <img class="img-responsive" src="[+tv_article_intro_img_medium+]" alt="[+e_title+] | [(cfg_company_brand_name)]">               
+        </div>
+        <div class="article-announce-content">
+            <div class="article-announce-header">
+                <a href="[+url+]">[+tv_h1+]</a>
+            </div>
+        </div>
+        <a href="[+url+]" class="wrapper-link"></a>
+    </div>`
+    &Qty=`2`
+    &tvList=`article_intro_img,h1`
+    &prepare=`FastImagePreviews`
+]]
+```
+Note: These are examples only. In order for them to work on your site, you must have the same TVs and the same prepare-snippets.
+
+#### Output of Example 2
+![siblings_demo_1](https://cloud.githubusercontent.com/assets/6253807/24569757/ea66affa-1691-11e7-8320-aa726ffd3dbc.png)
+
+#### Speed of work
+1) Number of requests, etc. when caching a snippet on a cached resource on a micro-site, sampling 4 out of 8 articles with sorting
+```
+&orderBy=`if(pub_date=0,createdon,pub_date) DESC`
+```
+¬[siblings_requests](https://cloud.githubusercontent.com/assets/6253807/24569985/4e7dedd6-1693-11e7-955c-95574150e8de.png)
+
+2) Number of requests, etc. in case of uncushed snippet call on a cached resource on a micro-site, sampling 4 out of 8 articles with sorting
+```
+&orderBy=`if(pub_date=0,createdon,pub_date) DESC`
+```
+¬[siblings_requests_nocache](https://cloud.githubusercontent.com/assets/6253807/24570665/e1272e60-1696-11e7-8b7d-832009a2be07.png)
+
+### Disadvantages
+* Long JSON string containing all fields, including content (memory consumption)
+* Formation of an additional index array $ids (time)
+* As a result, the snippet is suitable for not very large samples (up to 1-2 thousand resources), for large sites a different solution is required.
