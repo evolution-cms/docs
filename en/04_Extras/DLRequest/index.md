@@ -1,27 +1,32 @@
+## DLRequest - run snippets with parameters from get/post
+Snippet is designed to replace Ditto with a request extender at the request of Extremum and at its own expense, for which I thank you very much.
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<h3>DLRequest - запуск сниппетов с параметрами из get/post </h3>
-DLRequest - запуск сниппетов с параметрами из get/post
-<p>Сниппет разработан для замены Ditto с экстендером request по просьбе <a href="http://modx.im/profile/Extremum/" rel="nofollow" target="_blank">Extremum</a> и на его же средства, за что большое спасибо.</p>
-<p>Сниппет принимает значения из post или get-массива и использует их в качестве параметров для запуска другого сниппета. Изначально планировалась работа только с DocLister (отсюда и название), но в итоге можно вызывать любой сниппет. Тем не менее, наличие установленного DocLister'а обязательно.</p>
-<p>DLRequest умеет не только передавать параметры, но и строить форму для управления этими самыми параметрами, без костылей типа:</p>
-<pre class="brush: php;">
-&lt;?php
+A snippet takes values from a post or get array and uses them as parameters to start another snippet. Initially, it was planned to work only with DocLister (hence the name), but in the end you can call any snippet. However, having DocLister installed is mandatory.
+
+DLRequest is able not only to pass parameters, but also to build a form to control these very parameters, without crutches like:
+```
+<?php
 //[!selected? &field=`ditto_id1_sortDir` &value=`DESC`!]
 if ($_REQUEST[$field] == $value) {
 	echo "selected"; 
 }
-</pre>
-<p>Важный момент – возможные значения параметров задаются разработчиком, то есть если в форме для выбора количества документов на странице указано «10, 20, 50, 100», то подставить руками url?display=100500 не получится – такой параметр будет просто проигнорирован.</p>
-<p>Предусмотрена также возможность сохранять значения параметров, которые передаются из браузера для других сниппетов, например, для DocLister это будет параметр page. То есть если в списке документов вы находитесь на странице 5, то после смены, например, направления сортировки, все равно останетесь на странице 5.</p>
-<p>Теперь приведу пример вызова, из которого понятно, как это все работает:</p>
-<pre class="brush: html;">
+```
+
+An important point is that the possible parameter values are set by the developer, that is, if in the form for selecting the number of documents on the page it is indicated "10, 20, 50, 100", then it will not be possible to substitute url?display=100500 with your hands - such a parameter will simply be ignored.
+
+It is also possible to save parameter values that are passed from the browser for other snippets, for example, for DocLister it will be the page parameter. That is, if in the list of documents you are on page 5, then after changing, for example, the direction of sorting, you will still remain on page 5.
+
+Now I'll give you an example of a call that shows how it all works:
+```
 [+paramsForm+]
-&lt;div&gt;
+<div>
 	[!DLRequest? 
 	&runSnippet=`DocLister` 
 	&parents=`2` 
-	&tpl=`@CODE:<p>[+id+]. [+pagetitle+]</p>` 
+	&tpl=`@CODE:
+[+id+]. [+pagetitle+]
+
+` 
 	&paginate=`pages` 
 	&display=`0` 
 	&rqParams=`{
@@ -48,40 +53,41 @@ if ($_REQUEST[$field] == $value) {
 	& paramsForm=`paramsForm`
 	&keepParams=`page`
 	& paramsOwnerTPL=`@CODE:
-		<form method="get" action="%5B~%5B*id*%5D~%5D.html">
+		
 			[+keepParams+]
 			[+params+]
-			<button type="submit">Отправить</button>
-		</form>
+			Отправить
+		
 	`
 	& param.ownerTPL=`@CODE:
-		<label>[+description+]</label>
-		<select name="[+paramName+]">
+		[+description+]
+		
 			[+values+]
-		</select>
+		
 	`
 	& param.tpl=`@CODE:
-		<option value="[+value+]" [+selectedClass+]>
+		
 			[+description+]
-		</option>
+		
 	`
 	&sortBy.tpl=`@CODE:
-		<option value="[+value+]" [+selectedClass+]>
+		
 			[+description+] dfdfdfh
-		</option>
+		
 	`
 	&display.ownerTPL=`@CODE:
-		<label style="color:red;">[+description+]</label>
-		<select name="[+paramName+]">
+		[+description+]
+		
 			[+values+]
-		</select>
+		
 	`
 	&keepTpl=`@CODE:
-		<input name="[+paramName+]" value="[+value+]" type="hidden">
+		
 	`
 	!]
-&lt;/div&gt;
+</div>
 [+pages+]
-</pre>
-<p class="text-warning"><em>После &amp; пробелы стоят, потому что иначе редактор подменяет символы.</em></p>
-<p>Автор: <i class="fa fa-github fa-lg text-primary"></i> <a href="https://github.com/Pathologic/DLRequest" rel="nofollow" target="_blank">Pathologic</a></p>
+```
+After & spaces stand, because otherwise the editor replaces the characters.
+
+Author: Pathologic

@@ -1,20 +1,25 @@
-###Закрывает текущее соединение с базой
+### Closes the current connection to the database
 
-void disconnect()
+void Disconnect()
 
 ***
 
-####Пример
+#### Example
 
-	//Создание соединения  
-	$modx->db->connect('123.45.6.7', 'mydb', 'user', 'password', true);  
-	$res = $modx->db->select('*', 'this_table');  
-	while($tmp = $modx->db->getRow($res, 'assoc')) {  
-	// обработка полученных данных  
-	}  
-	
-	// Отключение  
-	$modx->db->disconnect()  
-	
-	// Повторное соединение  
-	$modx->db->connect();
+Create a connection  
+```
+$honey->db->connect('123.45.6.7', 'midb', 'uzer', 'password', tru);  
+$res = $honey->db->select('*', 'such_table');  
+wild($tmp = $honey->db->getrow($res, 'assok')) {  
+	// processing of received data  
+}  
+```
+
+Shut down  
+```
+$honey->db->disconent();
+```	
+Reconnecting  
+```
+$honey->db->connect();
+```

@@ -1,27 +1,26 @@
+## SimpleGallery - Display gallery on page
+SimpleGallery - Display the gallery on the Evolution CMS page.
+Since such a question did arise, I will show you how to draw a conclusion. The input, I hope, is intuitive (:
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<h3>SimpleGallery - Вывод галереи на странице </h3>
-SimpleGallery - Вывод галереи на странице Evolution CMS.
-<p>Раз такой вопрос все же возник, то покажу, как делать вывод. Ввод, я надеюсь, понятен интуитивно (:</p>
-<h3 class="sub-header">Вывод галереи на странице</h3>
-<p>Важное достоинство DocLister заключается в том, что теперь не нужно городить свои велосипеды для вывода данных из любых таблиц: не нужно придумывать названия параметров (чтобы потом в них путаться), пагинации, сортировки и т.п. Всю нудную работу сделал <a href="http://modx.im/profile/Agel_Nash/" rel="nofollow" target="_blank">Agel_Nash</a> , за что ему в очередной раз спасибо.</p>
-<p>Для работы с произвольными таблицами в DocLister есть контроллер onetable. Все что нужно знать – это название таблицы, названия ее полей, название ключевого поля. Все остальное есть <a href="doclister/index.html" target="_blank">в документации</a>.</p>
-<p>Еще раз приведу названия полей в таблице <span class="text-bold">sg_images</span>:</p>
-<ul>
-	<li><span class="text-bold">sg_id</span> – id картинки, <span class="text-bold">ключевое поле (idField)</span>;</li>
-	<li><span class="text-bold">sg_index</span> – позиция в списке;</li>
-	<li><span class="text-bold">sg_image</span> – ссылка на картинку;</li>
-	<li><span class="text-bold">sg_title</span> – название картинки;</li>
-	<li><span class="text-bold">sg_description</span> – описание картинки;</li>
-	<li><span class="text-bold">sg_properties</span> – здесь в формате json хранится информация о ширине и высоте картинки, а также размере файла, можно еще что-нибудь хранить в этом поле;</li>
-	<li><span class="text-bold">sg_add</span> – дополнительное поле, сейчас уже не помню, зачем оно мне было нужно;</li>
-	<li><span class="text-bold">sg_isactive</span> – флажок, чтобы скрыть какие-то картинки из вывода;</li>
-	<li><span class="text-bold">sg_rid</span> – id ресурса, которому принадлежит картинка (parentField);</li>
-	<li><span class="text-bold">sg_createdon</span> – дата добавления картинки.</li>
-</ul>
+## Display the gallery on the page
+An important advantage of DocLister is that now you do not need to fence your bicycles to output data from any tables: you do not need to come up with the names of the parameters (so that you can then get confused in them), pagination, sorting, etc. All the tedious work was done by [Agel_Nash](http://modx.im/profile/Agel_Nash/), for which he is once again grateful.
 
-<p>Зная это, чтобы вывести картинки из галереи, достаточно сделать такой вызов на странице с галереей:</p>
-<pre class="brush: html;">
+To work with arbitrary tables, DocLister has a onetable controller. All you need to know is the name of the table, the names of its fields, the name of the key field. Everything else is [in the documentation](doclister/index.html).
+
+Once again, I will give the names of the fields in the table sg_images:
+
+* sg_id – image id, key field (idField);
+* sg_index – position in the list;
+* sg_image – link to the picture;
+* sg_title – the name of the picture;
+* sg_description – description of the picture;
+* sg_properties - here in json format information about the width and height of the image, as well as the size of the file, you can store something else in this field;
+* sg_add is an additional field, now i don't remember why i needed it;
+* sg_isactive – checkbox to hide some pictures from the output;
+* sg_rid – the id of the resource to which the image belongs (parentField);
+* sg_createdon is the date the picture was added.
+Knowing this, in order to display pictures from the gallery, it is enough to make such a call on the page with the gallery:
+```
 [[DocLister?
 &controller=`onetable`
 &table=`sg_images`
@@ -32,107 +31,101 @@ SimpleGallery - Вывод галереи на странице Evolution CMS.
 &tpl=`@CODE:[+sg_image+] [+sg_title+]`
 &showParent=`-1`
 ]]
-</pre>
-
-<p>Результат:</p>
-<pre class="brush: html;">
+```
+Result:
+```
 assets/galleries/2/kitty099h.jpg kitty099h
 assets/galleries/2/kitty098p.jpg kitty098p
 assets/galleries/2/kitty096j.jpg kitty096j
 assets/galleries/2/kitty095s.jpg kitty095s
 assets/galleries/2/kitty094c.jpg kitty094c
 assets/galleries/2/kitty093p.jpg kitty093p
-</pre>
-<p>Если на страницу добавить [+pages+], а к вызову добавить &paginate=`pages` &display=`10` – получим пагинацию. </p>
-<p>То есть вывод из своей таблицы не сильно отличается от обычного вывода документов.</p>
-<p>Чтобы не писать каждый раз &controller=`onetable` &table=`sg_images` &idField=`sg_id`, я сделал сниппет-обертку sgLister. <a href="http://modx.im/profile/Agel_Nash/" rel="nofollow" target="_blank">Agel_Nash</a> этот сниппет доработал и теперь при его вызове происходит дополнительная обработка полей, в чанке можно использовать такие плейсхолдеры:</p>
-<ul>
-	<li>[+thumb.sg_image+], [+thumb.width.sg_image+], [+thumb.height.sg_image+] – превьюшка и ее размеры;</li>
-	<li>[+e.sg_title+] и [+e.sg_description+]- значения полей sg_title и sg_description, которые преобразованы в html-сущности (чтобы не поломать случайно верстку кавычками или скобками);</li>
-	<li>[+properties.имя_свойства+] – свойства картинки из поля sg_properties.</li>
-</ul>
-<p>Использовать поле [+thumb.sg_image+] можно, если при вызове добавить параметры:</p>
-<ul>
-	<li><span class="text-bold">&thumbSnippet</span> – имя сниппета, который вернет ссылку на превью, например, phpthumb;</li>
-	<li><span class="text-bold">&thumbOptions</span> – параметры для создания превью, в том виде, в каком их примет указанный сниппет.</li>
-</ul>
-<p>На практике это выглядит так:</p>
-<pre class="brush: html;">
+```
+If you add [+pages+] to the page, and add &paginate='pages' &display='10' to the call, we get a pagination.
+
+That is, the output from your table is not much different from the usual output of documents.
+
+In order not to write &controller='onetable' &table='sg_images' &idField='sg_id' every time, I made a sgLister snippet wrapper. [Agel_Nash](http://modx.im/profile/Agel_Nash/) this snippet has been improved and now when it is called, additional processing of fields occurs, in chunk you can use such placeholders:
+
+* [+thumb.sg_image+], [+thumb.width.sg_image+], [+thumb.height.sg_image+] – preview and its dimensions;
+* [+e.sg_title+] and [+e.sg_description+]- the values of the fields sg_title and sg_description, which are converted into html-entities (so as not to accidentally break the layout with quotation marks or brackets);
+* [+properties.property_name+] – properties of the picture from the sg_properties field.
+You can use the [+thumb.sg_image+] field if you add parameters when calling:
+
+* &thumbSnippet – the name of the snippet that will return a link to the preview, for example, phpthumb;
+* &thumbOptions – parameters for creating previews, in the form in which they will be accepted by the specified snippet.
+In practice, it looks like this:
+```
 [[sgLister? 
 &thumbSnippet=`phpthumb`
 &thumbOptions=`w=150&h=150&zc=1`
 &tpl=`@CODE:
-&lt;a href="[+sg_image+]"&gt;
-	&lt;img src="[+thumb.sg_image+]" class="img-thumbnail" alt="[+e.sg_title+]" title="[+e.sg_description+]"&gt;
-&lt;/a&gt;`
+<a href="[+sg_image+]">
+	<img src="[+thumb.sg_image+]" class="img-thumbnail" alt="[+e.sg_title+]" title="[+e.sg_description+]">
+</a>`
 ]]
-</pre>
+```
+### Display a list of galleries
+This task doesn't come up as often, but it does, so [I've expanded the controller](http://modx.im/blog/docs/2759.html) site_content to be able to add pictures from galleries when displaying a list:
 
-<h3 class="sub-header">Вывод списка галерей</h3>
-<p>Такая задача возникает не так часто, но все же возникает, поэтому я <a href="http://modx.im/blog/docs/2759.html" rel="nofollow" target="_blank">расширил контроллер</a> site_content, чтобы получить возможность добавить картинки из галерей при выводе списка:
-</p>
-<p>Вызов DocLister выглядит так:</p>
-<pre class="brush: html;">
+The DocLister call looks like this:
+```
 [[DocLister? 
 &controller=`sg_site_content`
 &prepare=`prepareImages`
 &sgOrderBy=`sg_id DESC`
 &tpl=`@CODE:
-&lt;div class="page-header"&gt;
-	&lt;h1&gt;&lt;a href="[+url+]"&gt;[+pagetitle+]&lt;/a&gt;&lt;/h1&gt;
-&lt;/div&gt;
+<div class="page-header">
+	<h1><a href="[+url+]">[+pagetitle+]</a></h1>
+</div>
 [+images+]
-&lt;div class="clearfix"&gt;&lt;/div&gt;` 
+<div class="clearfix"></div>` 
 &sgOuterTpl=`@CODE:[+wrapper+]`
 &sgRowTpl=`@CODE:
-&lt;a href="[+sg_image+]"&gt;
-	&lt;img src="[+thumb.sg_image+]" class="img-thumbnail" alt="[+e.sg_title+]" title="[+e.sg_description+]"&gt;
-&lt;/a&gt;`
+<a href="[+sg_image+]">
+	<img src="[+thumb.sg_image+]" class="img-thumbnail" alt="[+e.sg_title+]" title="[+e.sg_description+]">
+</a>`
 &sgDisplay=`5`
 ]]
-</pre>
+```
+That is, the same as a simple output of documents, but additional parameters have been added:
 
-<p>То есть то же самое, что простой вывод документов, но добавлены дополнительные параметры:</p>
-<ul>
-	<li><span class="text-bold">&sgOuterTpl и &sgRowTpl</span> – чанки для вывода картинок;</li>
-	<li><span class="text-bold">&sgOrderBy</span> – параметры сортировки картинок;</li>
-	<li><span class="text-bold">&sgDisplay</span> – сколько картинок выводить, all – чтобы вывести все;</li>
-	<li><span class="text-bold">&sgAddWhereList</span> – здесь можно указать условия для выборки картинок.</li>
-</ul>
-
-<p>Для того, чтобы вывести в чанке документа (&tpl) эти картинки, следует использовать плейсхолдер [+images+]. Однако если просто вписать [+images+], то картинки не выведутся (потому что images – это массив). Нужен prepare-сниппет для дополнительной обработки (назовем его prepareImages):</p>
-<pre class="brush: php;">
-&lt;?php
+* &sgOuterTpl and &sgRowTpl – chunks for displaying pictures;
+* &sgOrderBy – image sorting options;
+* &sgDisplay – how many pictures to output, all – to output everything;
+* &sgAddWhereList – here you can specify the conditions for selecting images.
+In order to display these pictures in the document chunk (&tpl), you should use the placeholder [+images+]. However, if you just enter [+images+], the images will not be displayed (because images are an array). You need a prepare-snippet for additional processing (let's call it prepareImages):
+```
+<?php
 if (isset($data['images'])) {
 	$wrapper= '';
 	foreach ($data['images'] as $image) {
 		$ph = $image;
-		$ph['thumb.sg_image'] = $modx-&gt;runSnippet(
+		$ph['thumb.sg_image'] = $modx->runSnippet(
 			'phpthumb',
 			array(
-				'input' =&gt; $image['sg_image'],
-				'options' =&gt; 'w=150&h=150&zc=1'
+				'input' => $image['sg_image'],
+				'options' => 'w=150&h=150&zc=1'
 			)
 		);
 		//сделали превьюшку
+	$ph['e.sg_title'] = htmlentities($image['sg_title'], ENT_COMPAT, 'UTF-8', false);
+	$ph['e.sg_description'] = htmlentities($image['sg_description'], ENT_COMPAT, 'UTF-8', false);
+	//добавили поля e.sg_title и e.sg_description
 
-		$ph['e.sg_title'] = htmlentities($image['sg_title'], ENT_COMPAT, 'UTF-8', false);
-		$ph['e.sg_description'] = htmlentities($image['sg_description'], ENT_COMPAT, 'UTF-8', false);
-		//добавили поля e.sg_title и e.sg_description
+	$wrapper .= $_DocLister-&gt;parseChunk($_DocLister-&gt;getCFGDef('sgRowTpl'), $ph);
+	//обработали чанк sgRowTpl - для каждой картинки
+}
+$data['images'] = $_DocLister-&gt;parseChunk($_DocLister-&gt;getCFGDef('sgOuterTpl'),array('wrapper'=&gt;$wrapper));
+//обработали чанк sgOuterTpl
 
-		$wrapper .= $_DocLister-&gt;parseChunk($_DocLister-&gt;getCFGDef('sgRowTpl'), $ph);
-		//обработали чанк sgRowTpl - для каждой картинки
-	}
-	$data['images'] = $_DocLister-&gt;parseChunk($_DocLister-&gt;getCFGDef('sgOuterTpl'),array('wrapper'=&gt;$wrapper));
-	//обработали чанк sgOuterTpl
 }
 return $data;
-?&gt;
-</pre>
-
-<p>Prepare-сниппет может пригодиться также для вывода свойств картинки. Это ширина, высота и размер файла – они хранятся в поле sg_properties в виде json. Тут все просто:</p>
-<pre class="brush: php;">
-&lt;?php
+?>
+```
+Prepare-snippet can also be useful for displaying the properties of the picture. These are the width, height and size of the file – they are stored in the sg_properties field as json. It's simple:
+```
+<?php
 if (isset($data['sg_properties'])) {
     $properties = json_decode($data['sg_properties'],true);
     $data['width'] = $properties['width'];
@@ -140,28 +133,28 @@ if (isset($data['sg_properties'])) {
     $data['size'] = $properties['size'];
 }
 return $data;
-?&gt;
-</pre>
-
-<p>С некоторых пор в комплекте имеется сниппет-обертка sgController, который вызывает DocLister с нужными параметрами и не требует отдельного prepare-сниппета:</p>
-<pre class="brush: html;">
+?>
+```
+For some time now, the sgController snippet wrapper is included, which calls the DocLister with the necessary parameters and does not require a separate prepare-snippet:
+```
 [[sgController? 
 &sgOrderBy=`sg_id DESC`
 &thumbSnippet=`phpthumb`
 &thumbOptions=`w=150&h=150&zc=1`
 &tpl=`@CODE:
-&lt;div class="page-header"&gt;
-	&lt;h1&gt;&lt;a href="[+url+]"&gt;[+pagetitle+]&lt;/a&gt;&lt;/h1&gt;
-&lt;/div&gt;
+<div class="page-header">
+	<h1><a href="[+url+]">[+pagetitle+]</a></h1>
+</div>
 [+images+]
-&lt;div class="clearfix"&gt;&lt;/div&gt;` 
+<div class="clearfix"></div>` 
 &sgOuterTpl=`@CODE:[+wrapper+]`
 &sgRowTpl=`@CODE:
-&lt;a href="[+sg_image+]"&gt;
-	&lt;img src="[+thumb.sg_image+]" class="img-thumbnail" alt="[+e.sg_title+]" title="[+e.sg_description+]"&gt;
-&lt;/a&gt;`
+<a href="[+sg_image+]">
+	<img src="[+thumb.sg_image+]" class="img-thumbnail" alt="[+e.sg_title+]" title="[+e.sg_description+]">
+</a>`
 &sgDisplay=`5`
 ]]
-</pre>
-<p>В sgRowTpl можно использовать все плейсхолдеры, предусмотренные сниппетом sgLister.</p>
-<p class="text-bold">Если возникают проблемы, то советую первым делом обновить DocLister <a href="https://github.com/AgexNash" rel="nofollow" target="_blank">с гитхаба</a>.</p>
+```
+In sgRowTpl you can use all the placeholders provided by the sgLister snippet.
+
+If there are problems, I advise you to first update DocLister [from the github](https://github.com/AgexNash).

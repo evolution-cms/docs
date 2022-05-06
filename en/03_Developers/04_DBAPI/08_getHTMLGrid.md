@@ -1,10 +1,9 @@
-###Формирует HTML-таблицу с данными запроса
+### Generates an HTML table with query data
 
 string getHTMLGrid($dsq, $params)
 
-**$dsq** - результат выполнения запроса или SQL-запрос
-
-**$params** - массив настроек вывода HTML-таблицы
+* **$dsq** - query result or SQL query
+* **$params** - an array of HTML table output settings
 
 + columnHeaderClass
 + cssClass
@@ -29,20 +28,21 @@ string getHTMLGrid($dsq, $params)
 + pagerClass
 + pagerStyle
 
-Метод формирует HTML-таблицу на основе данных запроса с учетом обширного списка возможных настроек вывода.
+The method generates an HTML table based on the query data, taking into account an extensive list of possible output settings.
 
 ***
 
-####Пример
-
-	$resource = $modx->db->query('SELECT id,name FROM modx_site_tmplvars order by name');   
-	$result = $modx->db->getHTMLGrid(
-			  $resource,
-			  array('fields'=>'id,name',
-			  		'columns'=>'Number,Name',  
-					'cssClass'=>'sortable resizable editable',  
-					'columnHeaderClass'=>'noedit',  
-					'columnHeaderStyle'=>'color: black; background-color: silver;'  
-			  )
-			);  
-	return $result; 
+#### Example
+```
+$resource = $modx->db->query('SELECT id,name FROM modx_site_tmplvars order by name');   
+$result = $modx->db->getHTMLGrid(
+	$resource,
+	array('fields'=>'id,name',
+		'columns'=>'Number,Name',  
+		'cssClass'=>'sortable resizable editable',  
+		'columnHeaderClass'=>'noedit',  
+		'columnHeaderStyle'=>'color: black; background-color: silver;'  
+		);
+	);  
+return $result; 
+```

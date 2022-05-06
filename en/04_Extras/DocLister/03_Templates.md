@@ -1,211 +1,169 @@
-##Templates
+## Templates
 
-По умоланию считается, что в параметрах шаблона передано имя чанка. Но если имя чанка начинается с символа @, то происходит сверка начального слова в имени шаблона с заранее зарезервироваными правилами загрузки шаблонов. Все последующие слова используется в качестве параметра к выбранному правилу.
+By prayer, it is assumed that the name of the chunk is passed in the parameters of the template. However, if the chunk name begins with the @ symbol, the initial word in the template name is checked against the pre-reserved template loading rules. All subsequent words are used as a parameter to the selected rule.
 
-__@FILE__
-Загрузка шаблона из html файла расположенного в папке или подпапках assets/templates/
+__@FILE__ Loading a template from an html file located in the assets/templates/ folder or subfolders
 
-__@CHUNK__
-Обычная загрузка шаблона из чанка
+__@CHUNK__ Normal template loading from chunk
 
-__@TPL, @CODE__
-Значение параметра используется в роли inline шаблона
+__@TPL__ __@CODE__ parameter value is used in the inline role of the template
 
-__@DOCUMENT, @DOC__
-Шаблон берется из content поля указанного документа
+__@DOCUMENT__ __@DOC__ Template is taken from the content field of the specified document
 
-__@PLH, @PLACEHOLDER__
-Шаблон загружается из глобального плейсхолдера MODX
+__@PLH__ __@PLACEHOLDER__ Template is downloaded from the MODX Global Placeholder
 
-__@CFG, @CONFIG, @OPTIONS__
-Шаблон берется из глобальных настроек текущей установки MODX Evolution
+__@CFG__, __@CONFIG__, __@OPTIONS__ Template is taken from the global settings of the current MODX Evolution installation
 
-Стоит заметить, что даже если начальный символ был @ и после обработки всех правил шаблон все равно оказался пустым, то происходит попытка обнаружить чанк по полному имени шаблона
+It is worth noting that even if the initial character was @ and after processing all the rules the template was still empty, then an attempt is made to detect the chunk by the full name of the template
 
-##Плейсхолдеры
+## Placeholders
 
-Плейсхолдеры в DocLister:
+DocLister Placeholders:
 
-* плейсхолдер таблицы, имя такого плейсхолдера совпадает с названием колонки в таблице;
-* виртуальный плейсхолдер, который стал доступен после запуска экстендера или каких-то вычислений внутри контроллера;
-* глобальный плейсхолдер, который доступен из вне шаблонов передаваемых в сниппет (как правило имеет префикс dl и может быть переопределен при помощи параметров sysKey или id).
+* table placeholder, the name of such a placeholder coincides with the name of the column in the table;
+* virtual placeholder, which became available after starting the extender or some calculations inside the controller;
+* a global placeholder that is accessible from outside the templates passed to the snippet (usually prefixed with dl and can be overridden using the sysKey or id parameters).
 
-> Экстендер в DocLister - это вспомогательный класс для каких-либо обработок, не имеет ничего общего с экстендерами Ditto.
+> The extender in DocLister is a helper class for any processing, has nothing to do with Ditto extenders.
 
-###Плейсхолдеры таблицы
+### Table Placeholders
 
-Если указан контроллер site_content или любой другой его расширяющий, то по умолчанию используется таблица site_content. В случае с контроллером onetable имя таблицы определяется параметром table. Таким образом, получить полный список плейсхолдеров можно открыв таблицу mysql, например, через phpmyadmin и подсмотрев какие в этой таблице имеются поля.
+If you specify a site_content controller or any other controller that extends it, the default site_content table is used. In the case of the onetable controller, the table name is determined by the table parameter. Thus, you can get a complete list of placeholders by opening the mysql table, for example, through phpmyadmin and looking at what fields are in this table.
 
-###Виртуальный плейсхолдер
+### Virtual Placeholder
 
-####Плейсхолдеры устанавливаемые экстендером paginate
+#### Placeholders installed by the paginate extender
 
-__[+параметр_id.pages+]__
-Пагинация
+__[+parameter_id.pages+]__ Pagination
 
-__[+параметр_id.totalPages+]__
-Общее число страниц
+__[+parameter_id.totalPages+]__ Total number of pages
 
-__[+параметр_id.isstop+]__
-1 если текущая страница — последная
+__[+parameter_id.isstop+]__ 1 if the current page is the last page
 
-__[+параметр_idisstart+]__
-1 если текущая страница — первая
+__[+parameter_idisstart+]__ 1 if the current page is the first
 
-####Плейсхолдеры устанавливаемые экстендером jotcount
+#### Placeholder installed by the jotcount extender
 
-Экстендер загружается, если при вызове сниппета задан параметр __&jotcount__.
+The extender loads if the &jotcount parameter is specified when the snippet is invoked.
 
-__[+jotcount+]__
-Число комментариев из сниппета JOT
+__[+jotcount+]__ Number of comments from jot snippet
 
-####Плейсхолдеры устанавливаемые экстендером tv
+#### Placeholder installed by the tv extender
 
-__[+tv.имяТВпараметра+]__
-Значение ТВ параметра
+__[+tv.nameTIntro+]__ Tv parameter value
 
-По умолчанию ко всем ТВ параметрам добавляется префикс tv, но от него можно избавиться или переопределить параметром tvPrefix.
+By default, the tv prefix is added to all TV settings, but you can get rid of it or override it with the tvPrefix parameter.
 
-####Плейсхолдеры устанавливаемые экстендером e
+#### Placeholder installed by extender e
 
-Экстендер загружается, если при вызове сниппета задан параметр __&е=`имена полей через запятую`__
+The extender loads if the parameter &e=comma-separated field names are specified when the snippet is invoked
 
-__[+e.имяПоля+]__
-Экранированное значение поля.
+__[+e.namefield+]__ The escaped value of the field.
 
-####Плейсхолдеры устанавливаемые экстендером summary
+#### Placeholder set by the extender summary
 
-__[+summary+]__
-Аннотация к странице
+__[+summary+]__ Annotation to the page
 
-####Плейсхолдеры устанавливаемые экстендером user
+#### Placeholder set by the user extender
 
-Экстендер необходимо загрузить вручную, указав его имя в параметре &extender. Также должны быть заданы параметры:
-* usertype - возможные значения: manager, mgr, web. Определяет из каких таблиц брать данные пользователей;
-* userFields - названия колонок через запятую, в которых указан id пользователя, например createdby, publishedby.
+The extender must be loaded manually by specifying its name in the &extender parameter. The following parameters must also be specified:
 
-__[+user.id.НазваниеКолонки+]__
-ID пользователя
+* usertype - possible values: manager, mgr, web. Determines which tables to take user data from;
+* userFields - comma-separated column names in which the user id is specified, for example, createdby, publishedby.
 
-__[+user.username.НазваниеКолонки+]__
-Логин пользователя
+__[+user.id.ColumnName+]__ User ID
 
-__[+user.fullname.НазваниеКолонки+]__
-Полное имя пользователя
+__[+user.username.NameColumn+]__ User login
 
-__[+user.role.НазваниеКолонки+]__
-ID роли пользователя
+__[+user.fullname.Columnname+]__ Full username
 
-__[+user.email.НазваниеКолонки+]__
-e-mail
+__[+user.role.NameColumn+]__ User Role ID
 
-__[+user.phone.НазваниеКолонки+]__
-Телефон
+__[+user.email.NameColumn+]__ e-mail
 
-__[+user.mobilephone.НазваниеКолонки+]__
-Мобильный телефон
+__[+user.phone.NameColumn+]__ Phone
 
-__[+user.blocked.НазваниеКолонки+]__
-Статус блокировки
+__[+user.mobilephone.NameColumns+]__ Mobile phone
 
-__[+user.blockeduntil.НазваниеКолонки+]__
-До какого UNIX-времени пользователь будет заблокирован
+__[+user.blocked.ColumnName+]__ Lock Status
 
-__[+user.blockedafter.НазваниеКолонки+]__
-После какого UNIX-времени пользователь будет заблокирован
+__[+user.blockeduntil.Columnname+]__ Until what UNIX-time the user will be locked
 
-__[+user.logincount.НазваниеКолонки+]__
-Общее число авторизаций
+__[+user.blockedafter.NameColumn+]__ After which UNIX-time the user will be blocked
 
-__[+user.lastlogin.НазваниеКолонки+]__
-UNIX-время последней авторизации
+__[+user.logincount.Columnname+]__ Total number of authorizations
 
-__[+user.thislogin.НазваниеКолонки+]__
-UNIX-время текущей авторизации
+__[+user.lastlogin.ColumnName+]__ UNIX last authorization time
 
-__[+user.failedlogincount.НазваниеКолонки+]__
-Число неудачных попыток авторизоваться
+__[+user.thislogin.ColumnName+]__ UNIX time of current authorization
 
-__[+user.lastlogin.НазваниеКолонки+]__
-UNIX-время последней авторизации
+__[+user.failedlogincount.NameColumn+]__ Number of failed login attempts
 
-__[+user.dob.НазваниеКолонки+]__
-Дата рождения
+__[+user.lastlogin.ColumnName+]__ UNIX last authorization time
 
-__[+user.gender.НазваниеКолонки+]__
-Пол
+__[+user.dob.NameColumn+]__ Date of birth
 
-__[+user.country.НазваниеКолонки+]__
-Страна
+__[+user.gender.NameColumn+]__ Gender
 
-__[+user.state.НазваниеКолонки+]__
-Регион
+__[+user.country.NameColumn+]__ Country
 
-__[+user.zip.НазваниеКолонки+]__
-Почтовый индекс
+__[+user.state.Columnname+]__ Region
 
-__[+user.fax.НазваниеКолонки+]__
-Факс
+__[+user.zip.NameColumn+]__ Postal code
 
-__[+user.photo.НазваниеКолонки+]__
-Фотография
+__[+user.fax.NameColumn+]__ Fax
 
-__[+user.comment.НазваниеКолонки+]__
+__[+user.photo.NameColumn+]__ Photo
 
-####Плейсхолдеры устанавливаемые в контроллерах site_content
+__[+user.comment.NameColumn+]__
 
-__[+title+]__
-Название документа для списков. Если menutitle пуст, то используется pagetitle
+#### Placeholder installed in site_content controllers
 
-__[+iteration+]__, __[+ЗначениеПараметраsysKey.full_iteration+]__
-Порядковый номер элемента в списке; порядковый номер в списке с учетом пагинации.
+__[+title+]__ The name of the document for the lists. if menutitle is empty pagetitle is used
 
-**Примечание:** для контроллера **site_content** и для контроллера **shopkeeper** плейсхолдер [+iteration+] выглядит как указано выше - [+iteration+] без префикса, а для контроллера **onetable** - как [+ЗначениеПараметраsysKey.iteration+] с префиксом. Префикс ЗначениеПараметраsysKey по умолчанию равен dl, то есть для **onetable** этот плейсхолдер по умолчанию - [+dl.iteration+].
+__[+iteration+]__, __[+Parameter Value sysKey.full_iteration+]__ The sequence number of an item in the list; serial number in the list taking into account pagination.
 
-__[+url+]__
-Ссылка на документ
+Note: for the site_content controller and for the shopkeeper controller, the placeholder __[+iteration+]__ looks like the above - __[+iteration+]__ without prefix, and for the onetable controller - as __[+ValueSysKey.iteration+]__ with a prefix. The default value of the SysKey parameter is dl, which means that for onetable this default placeholder is __[+dl.iteration+]__.
 
-__[+date+]__
-дата публикации документа сформированая по правилам указаным в параметре dateFormat (по умолчанию %d.%b.%y %H:%M). Помимо этого учитывается server_offset_time в настройках движка.
+__[+url+]__ Link to the document
 
-__[+ЗначениеПараметраsysKey.active+]__
-Флаг определяющий, что обрабатываемый документ совпадает и документ на котором был вызван сниппет это одно и тоже (1 - если правда, 0 если нет)
+__[+date+]__ the date of publication of the document is formed according to the rules specified in the dateFormat parameter (by default%, %d.%b.%y %H:%M). In addition, the server_offset_time in the engine settings is taken into account.
 
-__[+ЗначениеПараметраsysKey.class+]__
-Классы которые могут быть автоматически присвоены документу (first, last, current, odd, even)
+__[+ValueThe parametersysKey.active+]__ Flag indicating that the processed document coincides and the document on which the snippet was called is the same thing (1 - if true, 0 if not)
 
-__[+ЗначениеПараметраsysKey.wrap+]__
-HTML код списка подготовленный для вывода пользователю (используется только для шаблона ownerTPL)
+__[+ValueSYsKey parameter.class+]__ Classes that can be automatically assigned to a document (first, last, current, odd, even)
 
-##Параметры для установки плейсхолдеров
+__[+ValueThe ParametersysKey.wrap+]__ HTML code of the list prepared for display to the user (used only for the ownerTPL template)
 
-###sysKey
+## Options for setting placeholders
 
-Префикс для системных плейсхолдеров.
+### sysKey
 
-Возможные значения - любая строка. На выходе получается плейсхолдер с именем [+sysKey.placeholder+], где sysKey это значение данного параметра
+The prefix for system placeholders.
 
-Значение по умолчанию - dl
+The possible values are any string. The output is a placeholder named __[+sysKey.placeholder+]__, where sysKey is the value of this parameter
 
-###id
+The default value is dl
 
-Префикс для локальных плейсхолдеров.
+### id
 
-Возможные значения - любая строка. Если id указано, то на выходе получается [+id.placeholder+]. Где id это и есть переданое значение. В случае если id не задано, то перед именем плейсхолдера точка не ставится.
+The prefix for local placeholders.
 
-Значение по умолчанию - пусто.
+The possible values are any string. If id is specified, the output is __[+id.placeholder+]__. Where id is the value passed. If the id is not specified, then a period is not put before the name of the placeholder.
 
-##Параметры вывода в шаблоны
+The default value is empty.
 
-###ownerTPL
+## Options output to templates
 
-Шаблон в который оборачивается список результатов. Если подходящих результатов не обнаружено, то по умолчанию результат с шаблоном noneTPL тоже оборачивается в этот шаблон. За подробностями обращайтесь к описанию параметра noneWrapOuter.
+### ownerTPL
 
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister.
+A template in which the list of results is wrapped. If no matching results are found, then by default the result with the noneTPL template is also wrapped in that template. For details, refer to the description of the noneWrapOuter parameter.
 
-Значение по умолчанию - пусто.
+Possible values are the name of the template specified according to the rules for specifying templates in the DocLister.
 
-####Пример:
+The default value is empty.
+
+#### Example:
 ```
 &ownerTPL=`@CODE:
 <ul class="pages-list">
@@ -213,16 +171,15 @@ HTML код списка подготовленный для вывода пол
 </ul>
 `
 ```
+### tpl
 
-###tpl
+Template.
 
-Шаблон. 
+Possible values are the name of the template specified according to the rules for specifying templates in the DocLister. The value of the parameter can be changed from the prepare snippet using the $_DocLister->renderTPL property.
 
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister. Значение параметра может быть изменено из prepare-сниппета c помощью свойства $_DocLister->renderTPL.
+The default value is defined in the controller.
 
-Значение по умолчанию - определяется в контроллере.
-
-####Пример:
+#### Example:
 ```
 &tpl=`@CODE:
 <li>
@@ -231,261 +188,255 @@ HTML код списка подготовленный для вывода пол
 </li>
 `
 ```
+### tplId1, tplId2, ..., tplIdN
 
-###tplId1, tplId2, ..., tplIdN
+A template for issuing a document under the number 1, 2, etc., where the number is the iteration number starting from 1.
 
-Шаблон для оформления документа под номером 1, 2 и т.д., где номер - это номер итерации начиная с 1.
+The default value is taken from the value of the tpl parameter.
 
-Значение по умолчанию берется из значения параметра tpl.
+Note: Please note, the Id in the template names should not mislead you, in fact the number is not the Id of the document, but its number in order in the output (iteration number).
 
-**Примечание:** Обратите внимание, Id в названиях шаблонов не должно вводить вас в заблуждение, на самом деле номер - это не Id документа, а его номер по порядку в выводе (номер итерации).
+### tplOdd, tplEven
 
-###tplOdd, tplEven
+Template for even/odd document formatting.
 
-Шаблон для оформления четного/нечетного документа.
+The default value is taken from the value of the tpl parameter.
 
-Значение по умолчанию берется из значения параметра tpl.
+### tplFirst
 
-###tplFirst
+Template for the design of the first document in the list. The parameter is synonymous with tplId1, but takes precedence.
 
-Шаблон для оформления первого документа в списке. Синоним параметра tplId1, но имеет больший приоритет.
+Possible values are the name of the template specified according to the rules for specifying templates in the DocLister. If not specified, it matches the tpl pattern.
 
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister. Если не задано, то совпадает с шаблоном tpl.
+The default value is empty.
 
-Значение по умолчанию - пусто.
+### tplLast
 
-###tplLast
+Template for the last document in the list.
 
-Шаблон для оформления последнего документа в списке.
+Possible values are the name of the template specified according to the rules for specifying templates in the DocLister. If not specified, it matches the tpl pattern.
 
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister. Если не задано, то совпадает с шаблоном tpl.
+The default value is empty.
 
-Значение по умолчанию - пусто.
+### tplСurrent
 
-###tplСurrent
+A template for formatting the current document in the list of documents.
 
-Шаблон для оформления текущего документа в списке документов. 
+Possible values are the name of the template specified according to the rules for specifying templates in the DocLister. If not specified, it matches the tpl pattern.
 
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister. Если не задано, то совпадает с шаблоном tpl.
+The default value is empty.
 
-Значение по умолчанию - пусто.
+### noneTPL
 
-###noneTPL
+A template with a notification that nothing was detected according to the specified criteria.
 
-Шаблон с уведомлением о том, что по заданным критериям ничего не обнаружено.
+Possible values are the name of the template specified according to the rules for specifying templates in the DocLister.
 
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister.
+The default value is empty.
 
-Значение по умолчанию - пусто.
+### noneWrapOuter
 
-###noneWrapOuter
+Wrap the noneTPL response into the ownerTPL template. The parameter is relevant only if there are no documents to build the list and the ownerTPL is set.
 
-Оборачивать ли ответ noneTPL в шаблон ownerTPL. Параметр актуален только в том случае, если нет документов для построения списка и задан ownerTPL.
+The possible values are 1 or 0.
 
-Возможные значения - 1 или 0.
+The default value is 1.
 
-Значение по умолчанию - 1.
+## Pagination
 
-##Пагинация
+### paginate
 
-###paginate
+Data output with pagination. See placeholders set by the paginate extender.
 
-Вывод данных с пагинацией. Смотрите плейсхолдеры устанавливаемые экстендером paginate.
+Possible values are:
 
-Возможные значения:
+offset - pagination in the style of Ditto;
+pages - pagination with shoots.
+The default value is pages.
 
-* offset - пагинация в стиле Ditto;
-* pages - пагинация с прострелами.
+### TplFirstP
 
-Значение по умолчанию - pages.
+Template for inserting a "first page" link.
 
-###TplFirstP
+Possible values are the name of the template specified according to the rules for specifying templates in the DocLister.
 
-Шаблон для вставки ссылки "первая страница".
+The default value is empty.
 
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister.
+### TplLastP
 
-Значение по умолчанию: пусто.
+A template for inserting a "last page" link.
 
-###TplLastP
+Possible values are the name of the template specified according to the rules for specifying templates in the DocLister.
 
-Шаблон для вставки ссылки "последняя страница".
+The default value is empty.
 
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister.
+### TplNextP
 
-Значение по умолчанию: пусто.
+Template for inserting a "next page" link. Possible values are the name of the template specified according to the rules for specifying templates in the DocLister.
 
-###TplNextP
-
-Шаблон для вставки ссылки "следующая страница".
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister.
-
-Значение по умолчанию:
+The default value is:
 ```
 @CODE: <a href="[+link+]">' . $this->DocLister->getMsg('paginate.next', 'Next') . ' ></a>
 ```
+There are no placeholders to substitute data from the language pack yet.
 
-Плейсхолдеров для подстановки данных из языкового пакета пока нет.
+### TplPrevP
 
-###TplPrevP
+Template for inserting a previous page link.
 
-Шаблон для вставки ссылки "предыдущая страница".
+Possible values are the name of the template specified according to the rules for specifying templates in the DocLister.
 
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister.
-
-Значение по умолчанию:
+The default value is:
 ```
 @CODE: <a href="[+link+]">< ' . $this->DocLister->getMsg('paginate.prev', 'Prev') . '</a>
 ```
+There are no placeholders to substitute data from the language pack yet.
 
-Плейсхолдеров для подстановки данных из языкового пакета пока нет.
+### TplPage
 
-###TplPage
+A template for inserting a page number into a paginator.
 
-Шаблон для вставки номера страницы в пагинатор.
+Possible values are the name of the template specified according to the rules for specifying templates in the DocLister.
 
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister.
-
-Значение по умолчанию:
+The default value is:
 ```
 @CODE: <a href="[+link+]" class="page">[+num+]</a>
 ```
 
-###TplCurrentPage  
+### TplCurrentPage
 
-Шаблон оформления текущей страницы в пагинаторе 
+Current page design template in paginator
 
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister.
+Possible values are the name of the template specified according to the rules for specifying templates in the DocLister.
 
-Значение по умолчанию:
+The default value is:
 ```
 @CODE: <b class="current">[+num+]</b>
 ```
 
-###TplWrapPaginate 
+### TplWrapPaginate
 
-Шаблон контейнер для обертки страниц пагинации.
+Template container for wrapping pages pagination.
 
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister.
+Possible values are the name of the template specified according to the rules for specifying templates in the DocLister.
 
-Значение по умолчанию:
+The default value is:
 ```
 @CODE: <div class="[+class+]">[+wrap+]</div>
 ```
 
-###pageLimit
+### pageLimit
 
-Число страниц отображаемое в пагинаторе.
+The number of pages displayed in the paginator.
 
-Возможные значения - целое число больше ноля.
+The possible values are an integer greater than zero.
 
-Значение по умолчанию - 1.
+The default value is 1.
 
-###pageAdjacents
+### pageAdjacents
 
-Максимальное число страниц слева и справа относительно текущей страницы.
+The maximum number of pages on the left and right relative to the current page.
 
-Возможные значения - целое число больше ноля.
+The possible values are an integer greater than zero.
 
-Значение по умолчанию - 4.
+The default value is 4.
 
-###PaginateClass
+### PaginateClass
 
-Класс для контейнера в который будут вложены страницы пагинации.
+The class for the container in which the pagination pages will be nested.
 
-Возможные значения - любая строка сформированная по правилам для подстановки в HTML аттрибут тегов class.
+Possible values - any string generated according to the rules for substitution in HTML attributes of class tags.
 
-Значение по умолчанию - paginate.
+The default value is paginate.
 
-###PrevNextAlwaysShow
+### PrevNextAlwaysShow
 
-Всегда показывать "следующая страница" и "предыдущая страница".
+Always show "next page" and "previous page".
 
-Возможные значения - 1 или 0.
+The possible values are 1 or 0.
 
-Значение по умолчанию - 0.
+The default value is 0.
 
-###TplFirstI
+### TplFirstI
 
-Шаблон для вставки ссылки "первая страница", используется совместно с PrevNextAlwaysShow.
+A template for inserting a "first page" link is used in conjunction with PrevNextAlwaysShow.
 
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister.
+Possible values are the name of the template specified according to the rules for specifying templates in the DocLister.
 
-Значение по умолчанию: пусто.
+The default value is empty.
 
-###TplLastI
+### TplLastI
 
-Шаблон для вставки ссылки "последняя страница", используется совместно с PrevNextAlwaysShow.
+A template for inserting a "last page" link is used in conjunction with PrevNextAlwaysShow.
 
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister.
+Possible values are the name of the template specified according to the rules for specifying templates in the DocLister.
 
-Значение по умолчанию: пусто.
+The default value is empty.
 
-###TplNextI
+### TplNextI
 
-Шаблон для вставки неактивной ссылки "следующая страница", используется совместно с PrevNextAlwaysShow. 
+A template for inserting an inactive "next page" link is used in conjunction with PrevNextAlwaysShow.
 
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister.
+Possible values are the name of the template specified according to the rules for specifying templates in the DocLister.
 
-Значение по умолчанию:
+The default value is:
 ```
 @CODE: [%paginate.next%] >
 ```
 
-###TplPrevI
+### TplPrevI
 
-Шаблон для вставки неактивной ссылки "предыдущая страница", используется совместно с PrevNextAlwaysShow. 
+A template for inserting an inactive "previous page" link is used in conjunction with PrevNextAlwaysShow.
 
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister.
+Possible values are the name of the template specified according to the rules for specifying templates in the DocLister.
 
-Значение по умолчанию:
+The default value is:
 ```
 @CODE: < [%paginate.prev%]
 ```
+### TplDotsPage
 
-###TplDotsPage
+Shooting template.
 
-Шаблон прострела.
+Possible values are the name of the template specified according to the rules for specifying templates in the DocLister.
 
-Возможные значения - имя шаблона указанное по правилам задания шаблонов в DocLister.
-
-Значение по умолчанию:
+The default value is:
 ```
 @CODE: ...
 ```
 
-###noRedirect
+### noRedirect
 
-Запрещает переадресацию при запросе несуществующей страницы.
+Prevents redirects when a page that does not exist is requested.
 
-Возможные значения - 0 или 1.
+The possible values are 0 or 1.
 
-Значение по умолчанию - 0.
+The default value is 0.
 
-##Вывод в плейсхолдеры
+## Inference to placeholders
 
-###contentPlaceholder
+### contentPlaceholder
 
-Установка значений документов в персонализованные плейсхолдеры.
+Set document values in personalized placeholders.
 
-Возможные значения - 0, 1. Если значение параметра равно 1, то DocLister создает плейсхолдеры вида [+id.item[x]+]. Где x это порядковый номер документа в списке, а id это значение параметра id (см. описание параметра id).
+The possible values are 0, 1. If the parameter value is 1, DocLister creates placeholders of the form [+id.item[x]+]. Where x is the sequence number of the document in the list and id is the value of the id parameter (see the id parameter description).
 
-Значение по умолчанию - 0
+The default value is 0
 
-##API-режим
+## API Mode
 
-###api
+### api
 
-Используется для формирования выдачи в формате JSON. 
+Used to generate output in JSON format.
 
-Возможные значения - 0, 1 или список полей выбираемых документов.
+The possible values are 0, 1 or the list of selectable document fields.
 
-Значение по умолчанию - 0.
+The default value is 0.
 
-###JSONformat
+### JSONformat
 
-По какому принципу формировать JSON-ответ.
+On what principle to form a JSON-response.
 
-Возможные значения - old, new. В формате old ответ выглядит в виде обычного массива. В формате new ответ заворачивается в rows секцию + добавляется примесь total в которой указано общее число учавствующих в выборке
+The possible values are old, new. In the old format, the response looks like a regular array. In the new format, the answer is wrapped in a rows section + an admixture total is added in which the total number of participants in the sample is indicated
 
-Значение по умолчанию - old.
+The default value is old.

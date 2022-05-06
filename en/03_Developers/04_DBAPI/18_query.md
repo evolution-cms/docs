@@ -1,23 +1,24 @@
-### Прямой запрос в базу данных
+### Direct database query
 
 mixed query($sql)
 
-**$sql** - строка с SQL-запросом
+**$sql** - string with SQL query
 
-Различные методы DBAPI делают в конечном итоге запрос в базу с помощью метода "query". Если не хватает стандартных возможностей специальных методов, то можно сделать любой SQL-запрос напрямую.
+Various DBAPI methods end up querying the database using the "query" method. If the standard features of special methods are not enough, then you can make any SQL query directly.
 
 ***
 
-#### Пример
+#### Example
+```
+$output = '';  
+$result = $modx->db->query('SELECT id, name, joined FROM ' . $modx->getFullTableName('user_table') . ' GROUP BY `member_type` ORDER BY name ASC');   
 
-	$output = '';  
-	$result = $modx->db->query('SELECT id, name, joined FROM ' . $modx->getFullTableName('user_table') . ' GROUP BY `member_type` ORDER BY name ASC');   
-	
-	while( $row = $modx->db->getRow( $result ) ) {  
-		$output .=  '<br> Идентификатор: ' . $row['id'] . 
-					'<br> Имя: ' . $row['name'] . 
-					'<br> Участие: ' . $row['joined']  . 
-					'<br>---------<br>';  
-	}  
-	
-	echo $output;
+while( $row = $modx->db->getRow( $result ) ) {  
+	$output .=  '<br> ID: ' . $row['id'] . 
+			'<br> Name: ' . $row['name'] . 
+			'<br> Joined: ' . $row['joined']  . 
+			'<br>---------<br>';  
+}  
+
+echo $output;
+```

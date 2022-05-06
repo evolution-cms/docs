@@ -1,89 +1,78 @@
-##Filters
+## Filters
 
-В комплекте следующие фильтры:
+The following filters are included:
 
-* content - для фильтрации по полям таблицы site_content, можно заменить параметром addWhereList;
-* tv - для фильтрации по TV-параметрам;
-* tvd - для фильтрации по TV-параметрам с учетом значений по умолчанию;
-* private - для фильтрации документов с учетом прав доступа.
-
-##Построение фильтра
-####Пример
+* content - to filter by the fields of the table, site_content can be replaced with the addWhereList parameter;
+* tv - for filtering by TV-parameters;
+* tvd - to filter by TV-parameters taking into account the default values;
+* private - to filter documents taking into account access rights.
+* 
+# filter 
+## Construction 
+#### Example
 ```
 OR(AND(filter:field:operator:value;filter2:field:operator:value);(...))
 ```
+## Operators 
 
-##Операторы
-###=, eq, is
+### =, eq, is
+Equally.
 
-Равно.
+### !=, no, isnot
+Not equal.
 
-###!=, no, isnot
+### >, gt
+More than.
 
-Не равно.
+### <, lt
+Less than.
 
-###>, gt
+### <=, elt
+Less than or equal.
 
-Больше.
+### >=, egt 
+Greater than or equal to.
 
-###<, lt
+### %, like 
+Contains a string.
 
-Меньше.
+### like-r 
+Starts with a string.
 
-###<=, elt
+### like-l
+Ends with a string.
 
-Меньше или равно.
+### regexp Fetch using REGEXP regular expressions.
 
-###>=, egt
-Больше или равно.
+### against Full-text search. 
+#### Example
 
-###%, like
-Содержит строку.
-
-###like-r
-Начинается строкой.
-
-###like-l
-Заканчивается строкой.
-
-###regexp
-Выборка с использованием регулярных выражений [REGEXP](https://dev.mysql.com/doc/refman/5.5/en/regexp.html).
-
-###against
-Полнотекстовый поиск.
-####Пример
 ```
-[[DocLister? &filters=`AND(content:pagetitle,description,content,introtext:against:искомая строка)`]]
+[[DocLister? &filters=`AND(content:pagetitle,description,content,introtext:against:search string)`]]
 ```
-Из данного примера предполагается, что в базе данных имеется FULLTEXT индекс по полям pagetitle,description,content,introtext
+This example assumes that the database has a FULLTEXT index on the fields pagetitle,description,content,introtext
 
-###containsOne
-Поиск любого слова или его части в тексте при помощи LIKE.
-####Примера:
+### containsOne 
+Search for any word or part of it in text using LIKE. 
+
+#### Example:
 ```
-[[DocLister? &filters=`AND(content:content:containsOne:когда,наступит,мир)`]]
+[[DocLister? &filters=`AND(content:content:containsOne:when,will come,peace)`]]
 ```
-Будет построен SQL запрос вида
-```
-(content LIKE '%когда%' OR content LIKE '%наступит%' OR content LIKE '%мир%')
-```
-Т.е. в конечном счете из базы будут выбраны документы в тексте которых используется слова "когда" или "наступит" или "мир".
-Из примера вызова видно, что слова разделены запятой. Это поведение можно переопределить параметром ___filter_delimiter___.
+A SQL query of the form will be built
 
-###in
-Входит в множество.
+(content LIKE '%when%' OR content LIKE '%will come%' OR content LIKE '%peace%')
+That is, in the end, documents will be selected from the database in the text of which the words "when" or "will come" or "peace" are used. From the sample call, you can see that the words are separated by a comma. You can override this behavior with the filter_delimiter parameter.
 
-###notin
-Не входит в множество.
+### in Included in the set.
 
-####Пример вызова с фильтрацией по цене от 0 до 300:
+### notin Not included in the set.
 
+#### Example of a call with filtering at a price from 0 to 300:
 ```
 [[DocLister? &filters=`AND(tv:price:gt:0;tv:price:lt:300)`]]
 ```
-
-А теперь тоже самое, только с учетом значений по умолчанию
-
+And now it's the same, only taking into account the default values
 ```
 [[DocLister? &filters=`AND(tvd:price:gt:0;tvd:price:lt:300)`]]
 ```

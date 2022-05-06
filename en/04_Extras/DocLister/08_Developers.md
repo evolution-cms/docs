@@ -1,22 +1,22 @@
-##Controllers
+## Controllers
 
-Имя класса расположенного в файле php файле должно заканчиваться на DocLister, а сам класс должен быть унаследован от абстрактного класса DocLister.
+The class name located in the php file must end in DocLister, and the class itself must be inherited from the abstract DocLister class.
 
-В параметре dir можно указать пусть от корня сайта к папке с контроллером.
+In the dir parameter, you can specify let from the site root to the folder with the controller.
 
-##Экстендеры
+## Extenders
 
-Экстендеры могут загружаться из контроллера или с помощью параметра extenders, в котором перечислены имена файлов *.extender.inc из папки /core/extender/
+Extenders can be loaded from the controller or by using the extenders parameter, which lists the *.extender.inc file names from the /core/extender/ folder
 
-Загружаемый экстендер должен быть классом имя которого должно начинаться с имени экстендера и заканчиваться на _DL_Extender. Помимо этого, загружаемый экстендер должен быть унаследован от абстрактного класса extDocLister.
+The extender to be loaded must be a class whose name must begin with the name of the extender and end with the _DL_Extender. In addition, the loadable extender must inherit from the abstract extDocLister class.
 
-##Фильтры
+## Filters
 
-Правила фильтрации можно найти в файле *.filter.php по имени фильтра из папки /core/filter/. Класс в файле должен быть унаследован от абстрактного гласса filterDocLister, а само имя должно заканчиваться на _DL_filter.
+Filtering rules can be found in the *.filter file.php by filter name from the /core/filter/ folder. The class in the file must inherit from the abstract glass filterDocLister, and the name itself must end in _DL_filter.
 
-##Приведение типов TV-параметров
+## Reproduction of tv parameter types
 
-####Пример в контроллере site_content:
+#### Example in the site_content controller:
 ```
 public function changeSortType($field, $type)
     {
@@ -36,11 +36,9 @@ public function changeSortType($field, $type)
     }
 ```
 
+## Construction of the DocLister object
 
-##Сохранение объекта DocLister
-
-Это может быть удобно, когда один и тот же список необходимо шаблонизировать 2 раза.
-
+This can be handy when the same list needs to be templated 2 times.
 ```
 $out1 = $modx->runSnippet('DocLister', array(
     'idType' => 'parents',
@@ -54,16 +52,14 @@ $out2 = $_DL->docsCollection()->reduce(function($out, $data) use ($_DL, $modx){
     $data['url'] = $modx->makeUrl($data['id']);
     return $out.$_DL->parseChunk('@CODE: [+title+]<br />', $data);
 });
-/** Либо через подмену конфига, чтобы задействовать экстендеры и штатную подготовку плейсхолдеров */
+/** Or through the substitution of the config to use extenders and full-time training of placeholders */
 $_DL->setConfig(array(
    'tpl' => '@CODE: [+title+]<br />'
 ));
 $out2 = $_DL->render();
 return implode("<hr />", array($out1, $out2));
 ```
-
-Или, например, нужно получить массив ID документов, которые задействованы в выводе
-
+Or, for example, you need to get an array of IDs of documents that are involved in the output
 ```
 $out = $modx->runSnippet('DocLister', array(
     'saveDLObject' => '_DL'
@@ -75,23 +71,19 @@ $ids = $_DL->docsCollection()->map(function($val){
     return $val['id'];
 })->toArray();
 ```
+## Use of the DocLister template engine in your snippets By connecting the DLTemplate class, you can already use a template engine that:
 
-##Использование шаблонизатора DocLister в своих сниппетах
-Подключив класс DLTemplate вы уже можете пользоваться шаблонизатором, который:
+* Understands inline templates
+* Able to create placeholders from multidimensional arrays
+* Automatically activates phx when needed
+* Allows you to render a document using any template (both with and without the use of events)
 
- - Понимает inline шаблоны
- - Умеет создавать плейсхолдеры из многомерных массивов
- - Автоматически активирует phx при необходимости
- - Позволяет отрендерить документ применив любой шаблон (как с применением событий, так и без них)
-
- 
-Наиболее удачная практика - создание шаблонизатора в переменной tpl у объекта $modx. Чтобы не делать это постоянно, лучше всего воспользоваться небольшим плагином на событиях OnWebPageInit и OnPageNotFound
+The most successful practice is to create a templating device in the tpl variable on the object $modx. To avoid doing this all the time, it's best to use a small plugin on the OnWebPageInit and OnPageNotFound events.
 ```
 require_once(MODX_BASE_PATH.'assets/snippets/DocLister/lib/DLTemplate.class.php');
 $modx->tpl = DLTemplate::getInstance($modx);
 ```
-
-###Обычная шаблонизация 
+### Standard templating
 ```
 $data = array(
     array('id' => 1, 'text' => 'hello', 
@@ -113,17 +105,15 @@ foreach($data as $item){
 }
 return $out;
 ```
+### Substition template for the document 
+The most successful example is the printable version. Sometimes it is easier to make a minimal template of each type and customize the output as needed than to play with CSS.
 
-###Подмена шаблона у документа
-Наиболее удачный пример - версия для печати. Порой бывает проще сделать минимальный шаблон каждого типа и настроить вывод так, как нужно, нежели играться с CSS.
+To simplify the perception, the whole process of setting up TV parameters will be missed. So let's imagine that we have:
 
-Для упрощения восприятия, весь процесс настройки ТВ параметров будет упущен. Поэтому представим, что у нас имеется:
-
- - Плагин cfgTV с префиксом для настроек cfg_.
- - ТВ параметр со списком ID возможных шаблонов для печати (для каждого документа можно выбрать свой шаблон)
- - Ссылки на версию для печати выводятся в виде [~[*id*]~]?save=print
- 
-Создаем плагин для событий OnLoadWebDocument и OnLoadWebPageCache
+* CfgTV plugin with prefix for cfg_ settings.
+* TV option with a list of IDs of possible templates for printing (for each document you can choose a different template)
+* Links to the printable version are displayed as [[id]]?save=print
+Creating a plugin for the OnLoadWebDocument and OnLoadWebPageCache events
 ```
 if(isset($modx->print)) return;
 
@@ -148,4 +138,4 @@ if($modx->print){
     $modx->sendErrorPage();
 }
 ```
-Использовать подмену шаблонов может быть удобно, если вы редактируете сайт на горячую (без разворачивания девелоперских версий).
+Using template substitution can be convenient if you are editing the site hot (without deploying development versions).
