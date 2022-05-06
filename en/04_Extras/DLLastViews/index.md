@@ -1,20 +1,16 @@
+## DLLastViews: Most Recently Viewed Documents
+A snippet to display the most recently viewed documents, for example, you can display viewed products for stores.
+There are two parameters in the snippet properties:
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<h3>DLLastViews: последние просмотренные документы </h3>
-Сниппет для вывода последних просмотренных документов, например можно для магазинов выводить просмотренные товары.
-<p>В свойствах сниппета есть два параметра:</p>
-<ol>
-	<li>Время хранения cookie. Задается в секундах, по умолчанию 30 дней</li>
-	<li>Сколько документов запоминать? По умолчанию: 5</li>
-</ol>
-<p>Автор: <i class="fa fa-modx text-iners"></i> <a href="http://modx.im/profile/media_kot/" rel="nofollow" target="_blank">Максим</a></p>
-<h3 class="sub-header">Установка:</h3>
-<ol>
-	<li>Создать новый сниппет и вставить туда код</li>
-	<li>Поставить галочку «Анализировать DocBlock» и сохранить</li>
-</ol>
-<pre class="brush: php;">
-&lt;?php
+* Cookie storage time. Set in seconds, default 30 days
+* How many documents should I remember? Default: 5
+Author: Maxim
+
+### Installation:
+* Create a new snippet and paste the code there
+* Tick "Analyze DocBlock" and save
+```
+<?php
 /**
  * DLLastViews
  *
@@ -29,45 +25,54 @@
  * 
  * @lastupdate  04/09/2017
  */
-
 if (!isset($params['mode'])) $params['mode'] = 'register';
-if (!isset($params['tpl'])) $params['tpl'] = '@CODE: <a href=""></a>';
+if (!isset($params['tpl'])) $params['tpl'] = '@CODE: ';
 $maxDocs = isset($maxDocs) ? $maxDocs : 5;
 $expired = isset($expired) ? $expired  : 2592000;
 $params['idType'] = 'documents';
 $item = array();
 
+
 if (isset($_COOKIE['last_view']) and $_COOKIE['last_view'] != '') {
-    $params['documents'] = $_COOKIE['last_view'];   
-        $item = explode(',', $_COOKIE['last_view']);   
+$params['documents'] = $_COOKIE['last_view'];
+
+$item = explode(',', $_COOKIE['last_view']);
+
 }
 
+
 switch ($params['mode']) {
-    case 'register':
-        if (!in_array($modx->documentIdentifier, $item)) {
-            array_unshift($item, $modx->documentIdentifier);
-            array_slice($item, 0, $maxDocs - 1);
-            setcookie('last_view', implode(',', $item), time()+$expired, '/');
-        }
-    break;
-    
-    case 'show':      
-        if (!empty($item)) {
-                        return $modx->runSnippet('DocLister',$params);
-                }
-    break;
-        default:
-        break;
+case 'register':
+if (!in_array($modx->documentIdentifier, $item)) {
+array_unshift($item, $modx->documentIdentifier);
+array_slice($item, 0, $maxDocs - 1);
+setcookie('last_view', implode(',', $item), time()+$expired, '/');
 }
-</pre>
-<h3 class="sub-header">Использование:</h3>
-<p>На страницах, которые нужно запоминать написать не кэшируемый вызов без параметров</p>
-<pre class="brush: html;">[!DLLastViews!]</pre>
-<p>Там где нужно выводить список просмотренных документов написать некэшируемы вызов с параметрами. Все параметры, как у DocLister'а (кроме idType, он жестко задан в сниппете) и добавить параметр <span class="text-bold">&mode=`show`</span></p>
-<pre class="brush: html;">
+break;
+
+
+case 'show':      
+    if (!empty($item)) {
+                    return $modx->runSnippet('DocLister',$params);
+            }
+break;
+    default:
+    break;
+
+}
+```
+### Use:
+On pages that you want to remember, write a non-cached call without parameters
+```
+[!DLLastViews!]
+```
+Where you need to display a list of viewed documents, write a non-cached call with parameters. All parameters like The DocLister (except idType, it is hard-coded in the snippet) and add the parameter &mode='show'
+```
 [!DLLastViews? 
     &mode=`show`
-    &ownerTPL=`<ul>[+dl.wrap+]</ul>`
-    &tpl=`@CODE: &lt;li>&lt;a href="[+url+]">[+title+]&lt;/a>&lt;/li>`
+    &ownerTPL=`
+[+dl.wrap+]
+`
+    &tpl=`@CODE: <li><a href="[+url+]">[+title+]</a></li>`
 !]
-</pre>
+````
