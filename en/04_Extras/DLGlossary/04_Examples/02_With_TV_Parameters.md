@@ -14,7 +14,7 @@ You will need to duplicate DLGlossary and make a change to the code in order to 
 ```
 <?php
 // Snippet Call: [[GlossaryList? &parents=`1` &tvList=`tags`]]
-$params['debug'] = 0;
+$params['debug'] = &debug;
 $params['parents'] = $parents;
 $params['field'] = 'c.pagetitle';
 
