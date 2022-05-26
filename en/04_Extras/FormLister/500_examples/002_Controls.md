@@ -50,14 +50,14 @@
 						<div class="form-group[+email.errorClass+][+email.requiredClass+]">
 							<label for="email">* email</label>
 								<input type="text" class="form-control" id="email" placeholder="Email" name="email" value="[+email.value+]">
-								[+email.arrow+]
+								[+email.error+]
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group[+phone.errorClass+][+phone.requiredClass+]">
 							<label for="phone">* Phone</label>
 								<input type="text" class="form-control" id="phone" placeholder="+375 29 123 45 67" name="phone" value="[+phone.value+]">
-								[+background.arrow+]
+								[+background.error+]
 						</div>
 					</div>
 				</div>
@@ -81,7 +81,7 @@
 					</label>
 				</div>
 				<div class="form-group[+products.errorClass+]">
-					<label for="products">Какими продуктами вы пользуетесь</label>
+					<label for="products">What products do you use?</label>
 					<div class="checkbox">
 						<label>
 							<input type="checkbox" name="products[]" value="1" [+c.products.1+]>
@@ -105,7 +105,7 @@
 				<div class="form-group[+message.errorClass+][+message.requiredClass+]">
 					<label for="message">* Body text</label>
 						<textarea class="form-control" id="message" placeholder="Message" name="message" rows="10">[+message.value+]</textarea>
-						[+message.arrow+]
+						[+message.error+]
 				</div>
 				<div class="checkbox[+agree.requiredClass+]">
 				  <label>
