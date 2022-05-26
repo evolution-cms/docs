@@ -1,4 +1,4 @@
-## Авторизация
+## Authorisation
 ```
 [!FormLister?
 &formid=`login`
@@ -6,11 +6,11 @@
 &loginField=`email`
 &rules=`{
 "email":{
-	"required":"Обязательно введите email",
-	"email":"Введите email правильно"
+	"rekired":"Be sure to enter an email",
+	"email":"Enter the email correctly"
 },
-"password":{
-	"required":"Обязательно введите пароль"
+Password:{
+	"rekired":"Be sure to enter a password"
 }
 }`
 &formTpl=`@CODE:
@@ -25,22 +25,22 @@
 						[+email.error+]
 				</div>
 				<div class="form-group[+password.errorClass+][+password.requiredClass+]">
-					<label for="password">* Пароль</label>
-						<input type="password" class="form-control" id="password" placeholder="Пароль" name="password" value="">
+					<label for="password">* Password</label>
+						<input type="password" class="form-control" id="password" placeholder="Password" name="password" value="">
 						[+password.error+]
 				</div>
 				[+form.messages+]
 				<div class="form-group">
-					<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-log-in"></i> Войти</button>
+					<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-log-in"></i> Log In</button>
 				</div>
-				<div class="text-center"><a href="[~10~]">Зарегистрироваться</a> | <a href="[~12~]">Вспомнить пароль</a></div>
+				<div class="text-center"><a href="[~10~]">Register</a> | <a href="[~12~]">Remember Password</a></div>
 			</form>
 		</div>
 	</div>
 </div>`
 &messagesOuterTpl=`@CODE:<div class="alert alert-danger" role="alert">[+messages+]</div>`
-&skipTpl=`@CODE:<div class="text-center">Вы уже авторизованы.</div>`
-&successTpl=`@CODE:<div class="text-center">Привет, [+fullname+]!</div>`
+&skipTpl=`@CODE:<div class="text-center">You are already logged in.</div>`
+&successTpl=`@CODE:<div class="text-center">Hello, [+fullname+]!</div>`
 &errorTpl=`@CODE:<span class="help-block">[+message+]</span>`
 &errorClass=` has-error`
 &requiredClass=` has-warning`
