@@ -1,4 +1,4 @@
-## Активация учетной записи
+## Account Activation
 ```
 [!FormLister?
 &controller=`Activate`
@@ -6,8 +6,8 @@
 &protectSubmit=`0`
 &rules=`{
 "email":{
-	"required":"Обязательно введите email",
-	"email":"Введите email правильно"
+	"rekired":"Be sure to enter an email",
+	"email":"Enter the email correctly"
 }
 }`
 &formTpl=`@CODE:
@@ -30,11 +30,11 @@
 	</div>
 </div>`
 &messagesOuterTpl=`@CODE:<div class="alert alert-danger" role="alert">[+messages+]</div>`
-&successTpl=`@CODE:<div class="text-center">На указанный вами при регистрации email отправлено письмо с дальнейшими инструкциями!</div>`
-&subject=`Активация учетной записи`
-&reportTpl=`@CODE:<p>Для активации учетной записи перейдите по ссылке <a href="[+activate.url+]">[+activate.url+]</a></p>`
-&activateReportTpl=`@CODE:<p>Здравствуйте, [+fullname.value+]!</p><p>Ваша учетная запись успешно активирована.</p>`
-&activateSuccessTpl=`@CODE:<div class="text-center">Ваша учетная запись успешно активирована!</div>`
+&successTpl='@CODE:<div class="text-center">On the email you specified during registration, an email has been sent with further instructions!</div> `
+&subject='Account Activation'
+&reportTpl='@CODE:<p>To activate your account, go to <a href="[+activate.url+]">[+activate.url+]</a></p>'
+&activateReportTpl='@CODE:<p>Hello, [+fullname.value+]!</p> <p>Your account has been successfully activated.</p> `
+&activateSuccessTpl='@CODE:<div class="text-center">You account has been successfully activated!</div> `
 &errorTpl=`@CODE:<span class="help-block">[+message+]</span>`
 &errorClass=` has-error`
 &requiredClass=` has-warning`
