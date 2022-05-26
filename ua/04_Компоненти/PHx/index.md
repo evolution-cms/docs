@@ -1,29 +1,28 @@
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<h3>PHx Дополнительные возможности для тегов MODX Evolution</h3>
-Дополнительные возможности для отображения плейсхолдеров, тегов MODx (включая TV параметры) и теги настроек сайта.
-<p>PHx (Placeholders Xtended) добавляет новые возможности для отображения плейсхолдеров, тегов MODx (включая TV параметры) и теги настроек сайта. Рекурсивный парсер позволяет использовать вложенные теги. Возможно создавать свои модификаторы, путем создания сниппетов.</p>
-<p>PHx поддерживает следующие теги MODx:</p>
+<h3>PHx Додаткові можливості для тегів MODX Evolution</h3>
+Додаткові можливості для відображення плейсхолдерів, тегів MODx (включаючи параметри TV) і теги налаштувань сайту.
+<p>PHx (Placeholders Xtended) додає нові можливості для відображення плейсхолдерів, тегів MODx (включаючи TV параметри) та теги налаштувань сайту. Рекурсивний парсер дає змогу використовувати вкладені теги. Можна створювати свої модифікатори шляхом створення сніппетів.</p>
+<p>PHx підтримує такі теги MODx:</p>
 <pre class="brush: html;">
 [+placeholder+]
-[*теги содержимого*] ([*content*], [*pagetitle*], например)
-[*TV параметры*]
-[(теги настройки)] (например, [(base_url)], [(site_name)] и другие)
+[*теги вмісту*] ([*content*], [*pagetitle*], наприклад)
+[*TV параметри*]
+[(теги налаштування)] (наприклад, [(base_url)], [(site_name)] та інші)
 </pre>
-<h3 class="sub-header text-bold">Использование</h3>
-<p>Обычный плейсхолдер вида <code>[+placeholder+]</code> легко превращается в плейсхолдер PHx: <code>[+placeholder:esc+]</code>. Тоже самое вы можете сделать с тегом содержимого:</p>
+<h3 class="sub-header text-bold">Використання</h3>
+<p>Звичайний плейсхолдер виду <code>[+placeholder+]</code> легко перетворюється на плейсхолдер PHx: <code>[+placeholder:esc+]</code>. Те саме можна зробити з тегом вмісту:</p>
 <p><code>[*createdby*]</code></p>
-<p>Добавляем модификатор:</p>
+<p>Додаємо модифікатор:</p>
 <pre class="brush: html;">[*createdby:date=`%a %B %d, %Y at %H:%M`*]</pre>
-<p>Также можно использовать несколько модификаторов сразу. Они будут обработаны слева направо:</p>
+<p>Також можна використовувати кілька модифікаторів одразу. Вони будуть оброблені ліворуч:</p>
 <pre class="brush: html;">somevar:esc:nl2br:strip</pre>
-<h4>Расширенное применение</h4>
-<p>Наличие специального плейсхолдера "phx" позволяет использовать синтаксис PHx без наличия реальной переменной.</p>
-<pre class="brush: html;">[+phx:if=`[+this+]`:is=`[+that+]`:then=`do this`:else=`do that`+]</pre>
-<p>С некоторыми модифиакторами этот плейсхолдер приобретает определенное значение. В случае с модификатором "userinfo" он возвращает соответствующее значение из информации о текущем пользователе:</p>
+<h4>Розширене застосування</h4>
+<p>Наявність спеціального плейсхолдера "phx" дозволяє використовувати синтаксис PHx без реальної змінної.</p>
+<pre class="brush: html;">[+phx:if=`[+this+]`:is=`[+that+]`:then=`do this`:else=`do that`+]</ pre>
+<p>З деякими модифіакторами цей плейсхолдер набуває певного значення. У випадку модифікатора "userinfo" він повертає відповідне значення з інформації про поточного користувача:</p>
 <p><code>[+phx:userinfo=`username`+]</code></p>
 <h5>Синтаксис</h5>
-<p>Хотя это и кажется логичным, но на этом стоит заострить внимание. Избегайте использования следующих конструкций в шаблоне, если они не являются частью тега MODx:</p>
+<p>Хоч це і здається логічним, але на цьому варто загострити увагу. Уникайте використання наступних конструкцій у шаблоні, якщо вони не є частиною тегу MODx:</p>
 <pre class="brush: html;">
 [+
 [*
@@ -33,152 +32,152 @@
 )]
 ]]
 </pre>
-<p>Парсер попытается их обработать и MODx выдаст ошибку. Обычно такой проблемы не возникает. Но в случае с JavaScript у вас может быть конструкция, похожая на эту:</p>
+<p>Парсер спробує їх обробити та MODx видасть помилку. Зазвичай такої проблеми немає. Але у випадку з JavaScript у вас може бути конструкція, подібна до цієї:</p>
 <code>array[counter++]</code>
-<p>которая спровоцирует странное поведени из-за +].</p>
-<p>Также закрывающий тег CDATA может создать проблемы.</p>
+<p>що спровокує дивну поведінку через +].</p>
+<p>Також CDATA, що закриває тег, може створити проблеми.</p>
 <code>/* ]]&gt; */</code>
-<p>Помните, что вы не сможете потерять данные вашего сайта, используя неправильный синтаксис PHx. Худшее, что может случится - ваш шаблон неправильно отобразится.</p>
+<p>Пам'ятайте, що ви не зможете втратити дані вашого сайту, використовуючи неправильний синтаксис PHx. Найгірше, що може статися, - ваш шаблон неправильно відобразиться.</p>
 
-<h2 class="page-header">Модификаторы</h2>
+<h2 class="page-header">Модифікатори</h2>
 <h3 class="sub-header text-bold"><span class="text-bold">lcase</span></h3>
-<p>- Возвращает строку, приведенную к нижнему регистру.</p>
+<p>- Повертає рядок, наведений до нижнього регістру.</p>
 <pre class="brush: html;">[+string:lcase+]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">ucase</span></h3>
-<p>- Приведет все символы строки к верхнему регистру.</p>
+<p>- Приведе всі символи рядка до верхнього регістру.</p>
 <pre class="brush: html;">[+ucase:lcase+]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">ucfirst</span></h3>
-<p>- Первая буква в строке станет заглавной.</p>
+<p>- Перша літера в рядку стане великою.</p>
 <pre class="brush: html;">[+ucfirst:lcase+]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">ellipsis</span></h3>
-<p>- Обрежет строку.</p>
+<p>- Обрізає рядок.</p>
 <pre class="brush: html;">[+description:ellipsis=`150`]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">length | len</span></h3>
-<p>- Возвратит длину строки.</p>
+<p>- Поверне довжину рядка.</p>
 <pre class="brush: html;">[+string:len+]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">notags</span></h3>
-<p>- Вырежет все HTML теги из строки.</p>
+<p>- Виріже всі HTML теги з рядка.</p>
 <pre class="brush: html;">[+string:notags+]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">esc</span></h3>
-<p>- Удаляет html теги и разрывы строк</p>
+<p>- Видаляє html теги та розриви рядків</p>
 <pre class="brush: html;">[+string:esc+]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">htmlent</span></h3>
-<p>- Конвертирует исходную переменную в html сущности. Аналог htmlentities() в PHP.</p>
+<p>- Конвертує вихідну змінну в html сутності. Аналог htmlentities() у PHP.</p>
 <pre class="brush: html;">[+string:htmlent+]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">nl2br</span></h3>
-<p>- Конвертирует символы перевода строки в теги.</p>
+<p>- Конвертує символи перекладу рядка на теги.</p>
 <pre class="brush: html;">[+string:nl2br+]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">strip</span></h3>
-<p>- Удалит символы новой строки(\n), табуляторы(\t), идущие подряд пробелы.</p>
+<p>- Видалити символи нового рядка(\n), табулятори(\t), що йдуть пробіли підряд.</p>
 <pre class="brush: html;">[+string:strip+]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">reverse</span></h3>
-<p>- Перевернет задом наоборот буквы.</p>
+<p>- Переверне задом навпаки літери.</p>
 <pre class="brush: html;">[+string:reverse+]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">wordwrap</span></h3>
-<p>- Устанавливает переносы в зависимости от кол-ва символов слова, аналогично функции php (По умолчанию: 70).</p>
+<p>- Встановлює переноси в залежності від кількості символів слова, аналогічно функції php (За замовчуванням: 70).</p>
 <pre class="brush: html;">[*pagetitle:wordwrap=`10`*]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">limit</span></h3>
-<p>- Возвратит первые X символов от текущего значения (По умолчанию: 100).</p>
+<p>- Поверне перші символи X від поточного значення (За замовчуванням: 100).</p>
 <pre class="brush: html;">[*pagetitle:limit=`50`*]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">date</span></h3>
-<p>- Преобразует метку времени unix timestamps в соответствии с заданным форматом.</p>
+<p>- Перетворює мітку часу unix timestamps відповідно до заданого формату.</p>
 <pre class="brush: html;">[*createdon:date=`%d.%m.%Y`*]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">md5</span></h3>
-<p>- Создает MD5-хэш текущего значения.</p>
+<p>- Створює MD5-хеш поточного значення.</p>
 <pre class="brush: html;">[*pagetitle:md5*]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">userinfo</span></h3>
-<p>- Возвращает запрошенные модификаторов данные о пользователе.</p>
+<p>- Повертає запитані модифікатори дані про користувача.</p>
 <pre class="brush: html;">[+phx:userinfo=`username`+]</pre>
 <ul>
-	<li><span class="text-bold">cachepwd</span>&nbsp;: Cache password</li>
-	<li><span class="text-bold">comment</span>&nbsp;: Comment</li>
-	<li><span class="text-bold">country</span>&nbsp;: Страна</li>
-	<li><span class="text-bold">dob</span>&nbsp;: Дата рождения в формате времени UNIX</li>
-	<li><span class="text-bold">email</span>&nbsp;: Email</li>
-	<li><span class="text-bold">fax</span>&nbsp;: Факс</li>
-	<li><span class="text-bold">fullname</span>&nbsp;: Полное имя</li>
-	<li><span class="text-bold">gender</span>&nbsp;: Пол</li>
-	<li><span class="text-bold">internalKey</span>&nbsp;: User internal key</li>
-	<li><span class="text-bold">lastlogin</span>&nbsp;: Last login, in UNIX time format</li>
-	<li><span class="text-bold">logincount</span>&nbsp;: Number of logins</li>
-	<li><span class="text-bold">mobilephone</span>&nbsp;: Мобильный телефон</li>
-	<li><span class="text-bold">password</span>&nbsp;: Пароль</li>
-	<li><span class="text-bold">phone</span>&nbsp;: Телефон</li>
-	<li><span class="text-bold">photo</span>&nbsp;: Фотография</li>
-	<li><span class="text-bold">role</span>&nbsp;: Роль</li>
-	<li><span class="text-bold">state</span>&nbsp;: Статус</li>
-	<li><span class="text-bold">thislogin</span>&nbsp;: This login, in UNIX time format</li>
-	<li><span class="text-bold">username</span>&nbsp;: Логин</li>
-	<li><span class="text-bold">zip</span>&nbsp;: Почтовый индекс</li>
+<li><span class="text-bold">cachepwd</span>&nbsp;: Cache password</li>
+<li><span class="text-bold">comment</span>&nbsp;: Comment</li>
+<li><span class="text-bold">country</span>&nbsp;: Країна</li>
+<li><span class="text-bold">dob</span>&nbsp;: Дата народження у форматі часу UNIX</li>
+<li><span class="text-bold">email</span>&nbsp;: Email</li>
+<li><span class="text-bold">fax</span>&nbsp;: Факс</li>
+<li><span class="text-bold">fullname</span>&nbsp;: Повне ім'я</li>
+<li><span class="text-bold">gender</span>&nbsp;: Пол</li>
+<li><span class="text-bold">internalKey</span>&nbsp;: User internal key</li>
+<li><span class="text-bold">lastlogin</span>&nbsp;: Last login, in UNIX time format</li>
+<li><span class="text-bold">logincount</span>&nbsp;: Number of logins</li>
+<li><span class="text-bold">mobilephone</span>&nbsp;: Мобільний телефон</li>
+<li><span class="text-bold">password</span>&nbsp;: Пароль</li>
+<li><span class="text-bold">phone</span>&nbsp;: Телефон</li>
+<li><span class="text-bold">photo</span>&nbsp;: Фотографія</li>
+<li><span class="text-bold">role</span>&nbsp;: Роль</li>
+<li><span class="text-bold">state</span>&nbsp;: Статус</li>
+<li><span class="text-bold">thislogin</span>&nbsp;: Цей сайт, в UNIX time format</li>
+<li><span class="text-bold">username</span>&nbsp;: Логін</li>
+<li><span class="text-bold">zip</span>&nbsp;: Поштовий індекс</li>
 </ul>
 
 <h3 class="sub-header text-bold"><span class="text-bold">math</span></h3>
-<p>- Использовать вычисления, такие, как - * + /.</p>
-<p>"?" символ заменяется текущим значением расширения, но вы также можете использовать вложенные теги.</p>
+<p>- Використовувати обчислення, такі, як - * + /.</p>
+<p>"?" символ замінюється поточним значенням розширення, але також можна використовувати вкладені теги.</p>
 <pre class="brush: html;">[+price:math=`?*[+curs+]`+] </pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">ifempty</span></h3>
-<p>- Использовать "другое значение" если значение placeholder или templatevar пустое.</p>
+<p>- Використовувати "інше значення" якщо значення placeholder або templatevar порожнє.</p>
 <pre class="brush: html;">[*longtitle:ifempty=`[*pagetitle*]`*]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">select</span></h3>
-<p>- Принимает значение, в зависимости от значений placeholder или templatevar.</p>
+<p>- Приймає значення, залежно від значень placeholder або templatevar.</p>
 <pre class="brush: html;">[+placeholder:select=`0=OFF&1=ON&2=UNKNOWN`+]</pre>
 
-<h3 class="sub-header text-bold">Условные выражения</h3>
-<h3 class="sub-header text-bold"><span class="text-bold">is - равно (==)</span></h3>
-<p>- алиасы: eq</p>
-<h3 class="sub-header text-bold"><span class="text-bold">ne - не равно (!=)</span></h3>
-<p>- алиасы: isnot, isnt</p>
-<h3 class="sub-header text-bold"><span class="text-bold">eg - больше или равно (>=)</span></h3>
-<p>- алиасы: isgt</p>
-<h3 class="sub-header text-bold"><span class="text-bold">el - меньше или равно (<=)</span></h3>
-<p>- алиасы: islt</p>
-<h3 class="sub-header text-bold"><span class="text-bold">gt - больше (>)</span></h3>
-<p><span class="text-bold">lt - меньше (<)</span> </h3>
+<h3 class="sub-header text-bold">Умовні вирази</h3>
+<h3 class="sub-header text-bold"><span class="text-bold">is - одно (==)</span></h3>
+<p>- аліаси: eq</p>
+<h3 class="sub-header text-bold"><span class="text-bold">ne - не одно (!=)</span></h3>
+<p>- аліаси: isnot, isnt</p>
+<h3 class="sub-header text-bold"><span class="text-bold">eg - більше або одно (>=)</span></h3>
+<p>- аліаси: isgt</p>
+<h3 class="sub-header text-bold"><span class="text-bold">el - менше або одно (<=)</span></h3>
+<p>- аліаси: islt</p>
+<h3 class="sub-header text-bold"><span class="text-bold">gt - більше (>)</span></h3>
+<p><span class="text-bold">lt - менше (<)</span> </h3>
 
 <h3 class="sub-header text-bold"><span class="text-bold">mo=`Webgroups`</span></h3>
-<p>- алиасы: isinrole, ir, memberof</p>
-<p>Принимает в качестве параметра разделенный запятыми список веб-групп и возвращает значение true/false в зависимости от того, принадлежит текущий пользователь к какой-либо из этих групп или нет (заменяет собой модификатор <b>"inrole"</b>, который необходимо было сочетать с условным оператором).</p>
-<pre class="brush: html;">[+phx:mo=`Администраторы`:then=`Я админ`:else=`Я простой смертный`+]</pre>
+<p>- аліаси: isinrole, ir, memberof</p>
+<p>Приймає як параметр розділений комами список веб-груп і повертає значення true/false залежно від того, чи належить поточний користувач до будь-якої з цих груп чи ні (замінює собою модифікатор <b>"inrole"</b> , який необхідно було поєднувати з умовним оператором).</p>
+<pre class="brush: html;">[+phx:mo=`Адміністратори`:then=`Я адмін`:else=`Я простий смертний`+]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">if=`value`</span></h3>
-<p>- Принимает в качестве параметра переменную для сравнения. Также может быть использовано в сочетании с <code>:or</code> или <code>:and</code>.</p>
-<pre class="brush: html;">[+phx:if=`[+price+]`:gt=`0`:then=`Цена: [+price+]`+]</pre>
+<p>- Приймає як параметр змінну для порівняння. Також може бути використане у поєднанні з <code>:or</code> або <code>:and</code>.</p>
+<pre class="brush: html;">[+phx:if=`[+price+]`:gt=`0`:then=`Ціна: [+price+]`+]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">or</span></h3>
-<p>- Логическое ИЛИ (проверяется, верно ли первое или второе условие).</p>
-<pre class="brush: html;">[+phx:if=`[*id*]`:is=`2`:or:is=`3`:then=`{{Chunk}}`:else=`{{OtherChunk}}`+]</pre>
+<p>- Логічне АБО (перевіряється, чи вірна перша чи друга умова).</p>
+<pre class="brush: html;">[+phx:if=`[*id*]`:is=`2`:or:is=`3`:then=`{{Chunk}}`:else =`{{OtherChunk}}`+]</pre>
 
 <h3 class="sub-header text-bold"><span class="text-bold">and</span></h3>
-<p>- Логическое И (проверяется, верны ли оба условия).</p>
-<pre class="brush: html;">[+phx:if=`[!UltimateParent!]`:is=`1`:and:isnot=`[*id*]`:then=`{{ChildChunk}}`:else=`{{ParentChunk}}`+]</pre>
+<p>- Логічне І (перевіряється, чи правильні обидві умови).</p>
+<pre class="brush: html;">[+phx:if=`[!UltimateParent!]`:is=`1`:and:isnot=`[*id*]`:then=`{{ChildChunk} }`:else=`{{ParentChunk}}`+]</pre>
 
-<h3 class="sub-header text-bold"><span class="text-bold">then =`template`</span></h3>
-<p>- Значение <span class="text-bold">template</span> отображается, когда все условия верны. Здесь можно указать вызов <code>{{чанка}}</code>, <code>[[сниппета]]</code> или же чистый HTML.</p>
-<h3 class="sub-header text-bold"><span class="text-bold">else =`template`</span></h3>
-<p>- Значение <span class="text-bold">template</span> отображается, когда все условия не верны. Здесь можно указать вызов <code>{{чанка}}</code>, <code>[[сниппета]]</code> или же чистый HTML.</p>
+<h3 class="sub-header text-bold"><span class="text-bold">then=`template`</span></h3>
+<p>- Значення <span class="text-bold">template</span> відображається, коли всі умови правильні. Тут можна вказати виклик <code>{{чанка}}</code>, <code>[[сніппета]]</code> або чистий HTML.</p>
+<h3 class="sub-header text-bold"><span class="text-bold">else=`template`</span></h3>
+<p>- Значення <span class="text-bold">template</span> відображається, коли всі умови не правильні. Тут можна вказати виклик <code>{{чанка}}</code>, <code>[[сніппета]]</code> або чистий HTML.</p>
 
 <h3 class="sub-header text-bold"><span class="text-bold">show</span></h3>
-<p>- Используется подобно then, но в качестве шаблона для вывода используется исходное значение. Выполняется, если условия верны.</p>
+<p>- Використовується подібно до then, але як шаблон для виведення використовується вихідне значення. Виконується, якщо умови правильні.</p>
 <pre class="brush: html;">[+myplaceholder:len:gt=`3`:show+]</pre>
 
-<h2 class="page-header">Примеры</h2>
+<h2 class="page-header">Приклади</h2>
 <pre class="brush: html;">
 [+myplaceholder:is=`myvalue`:then=`Правильно`:else=`Неправильно`+]
 </pre>
