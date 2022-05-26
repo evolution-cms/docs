@@ -1,50 +1,50 @@
-## Отправка файлов
+## Upload Files
 ```
 [!FormLister?
 &formid=`basic`
 &rules=`{
 "name":{
-	"required":"Обязательно введите имя"
+	"required":"Be sure to enter a name"
 },
 "email":{
-	"required":"Обязательно введите email",
-	"email":"Введите email правильно"
+	"required":"Be sure to enter your email",
+	"email":"Enter email correctly"
 },
 "message":{
-	"required":"Обязательно введите сообщение"
+	"required":"Be sure to enter a message"
 }
 }`
 &attachments=`first,second`
 &attachFiles=`{"userfile":{"filepath":"assets/images/logo.png","filename":"logo.png"}}`
 &fileRules=`{
 "first":{
-	"required":"Приложите документ",
+	"required":"Attach the document",
 	"allowed":{
 		"params": [ ["doc","docx","pdf"] ],
-		"message": "Разрешены только документы Word и Pdf"
+		"message": "Only Word and Pdf documents are allowed"
 	},
 	"maxSize" : {
 		"params": 100,
-		"message": "Размер файла не должен превышать 100 кб"
+		"message": "File size should not exceed 100 kb"
 	}
 },
 "second":{
-	"required":"Приложите 2 картинки",
+	"required":"Attach 2 pictures",
 	"maxSize" : {
 		"params": 1024,
-		"message": "Размер файла не должен превышать 1 мб"
+		"message": "File size should not exceed 1 mb"
 	},
 	"allowed": {
 		"params": [ ["jpg","jpeg","png","gif"] ],
-		"message" : "Разрешены только картинки"
+		"message" : "Only images allowed"
 	},
 	"maxCount":{
 		"params" : 4,
-		"message" : "Не больше 4 картинок"
+		"message" : "No more than 4 pictures"
 	},
 	"minCount":{
 		"params" : 2,
-		"message" : "Не меньше 2 картинок"
+		"message" : "At least 2 pictures"
 	}
 }
 }`
@@ -57,7 +57,7 @@
 				<div class="form-group[+name.errorClass+][+name.requiredClass+]">
 					<label for="name" class="col-sm-2 control-label">* Имя</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="name" placeholder="Имя" name="name" value="[+name.value+]">
+						<input type="text" class="form-control" id="name" placeholder="Name" name="name" value="[+name.value+]">
 						[+name.error+]
 					</div>
 				</div>
@@ -69,21 +69,21 @@
 					</div>
 				</div>
 				<div class="form-group[+message.errorClass+][+message.requiredClass+]">
-					<label for="message" class="col-sm-2 control-label">* Сообщение</label>
+					<label for="message" class="col-sm-2 control-label">* Message</label>
 					<div class="col-sm-10">
-						<textarea class="form-control" id="message" placeholder="Ваше сообщение" name="message" rows="10">[+message.value+]</textarea>
+						<textarea class="form-control" id="message" placeholder="Your Message" name="message" rows="10">[+message.value+]</textarea>
 						[+message.error+]
 					</div>
 				</div>
 				<div class="form-group[+first.errorClass+][+first.requiredClass+]">
-					<label for="first" class="col-sm-2 control-label">* Приложите документ (Word или Pdf)</label>
+					<label for="first" class="col-sm-2 control-label">* Attach a document (Word or Pdf)</label>
 					<div class="col-sm-10">
 						<input type="file" class="form-control" id="first" name="first">
 						[+first.error+]
 					</div>
 				</div>
 				<div class="form-group[+second.errorClass+][+second.requiredClass+]">
-					<label for="second" class="col-sm-2 control-label">* Приложите 2-4 картинки</label>
+					<label for="second" class="col-sm-2 control-label">* Attach 2-4 pictures</label>
 					<div class="col-sm-10">
 						<input type="file" class="form-control" id="second" name="second[]" multiple>
 						[+second.error+]
@@ -92,7 +92,7 @@
 				[+form.messages+]
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-envelope"></i> Отправить</button>
+						<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-envelope"></i> Submit</button>
 					</div>
 				</div>
 			</form>
@@ -111,7 +111,7 @@
 `
 &errorClass=` has-error`
 &requiredClass=` has-warning`
-&subject=`Новое сообщение`
+&subject=`New Message`
 &messagesOuterTpl=`@CODE:<div class="alert alert-danger" role="alert">[+messages+]</div>`
 &errorTpl=`@CODE:<span class="help-block">[+message+]</span>`
 !]
