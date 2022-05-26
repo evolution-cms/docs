@@ -10,7 +10,7 @@
 	"email":"Enter the email correctly"
 },
 Password:{
-	"rekired":"Be sure to enter a password"
+	"required":"Be sure to enter a password"
 }
 }`
 &formTpl=`@CODE:
