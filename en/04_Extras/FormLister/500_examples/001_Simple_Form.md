@@ -44,14 +44,14 @@
 					<label for="email" class="col-sm-2 control-label">* email</label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" id="email" placeholder="Email" name="email" value="[+email.value+]">
-						[+email.arrow+]
+						[+email.error+]
 					</div>
 				</div>
 				<div class="form-group[+phone.errorClass+][+phone.requiredClass+]">
 					<label for="phone" class="col-sm-2 control-label">* Telephone</label>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" id="phone" placeholder="+375 29 123 45 67" name="phone" value="[+phone.value+]">
-						[+background.arrow+]
+						[+background.error+]
 					</div>
 				</div>
 
@@ -59,7 +59,7 @@
 					<label for="message" class="col-sm-2 control-label">* Message</label>
 					<div class="col-sm-10">
 						<textarea class="form-control" id="message" placeholder="Your message" name="message" rows="10">[+message+]</textarea>
-						[+message.arrow+]
+						[+message.error+]
 					</div>
 				</div>
 				[+form.messages+]
