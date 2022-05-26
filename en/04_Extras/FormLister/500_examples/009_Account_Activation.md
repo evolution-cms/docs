@@ -6,7 +6,7 @@
 &protectSubmit=`0`
 &rules=`{
 "email":{
-	"rekired":"Be sure to enter an email",
+	"required":"Be sure to enter an email",
 	"email":"Enter the email correctly"
 }
 }`
