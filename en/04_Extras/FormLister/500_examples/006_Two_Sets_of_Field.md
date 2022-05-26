@@ -1,41 +1,41 @@
-## Два набора полей
-В зависимости от значения поля type используются разные правила валидации и шаблоны письма.
+## Two Sets of Fields
+Depending on the value of the type field, different validation rules and email templates can be used.
  
-### Вызов FormLister
+### FormLister Call
 ```
 [!FormLister?
 &formid=`basic`
 &rules=`{
 "name":{
-	"required":"Обязательно введите имя"
+	"required":"Be sure to enter a name"
 },
 "email":{
-	"required":"Обязательно введите email",
-	"email":"Введите email правильно"
+	"required":"Be sure to enter your email",
+	"email":"Enter email correctly"
 },
 "phone":{
-	"required":"Обязательно введите номер телефона",
-	"phone":"Введите номер правильно"
+	"required":"Be sure to enter your phone number",
+	"phone":"Enter the number correctly"
 }
 }`
 &entRules=`{
 "entname":{
-	"required":"Обязательно введите имя"
+	"required":"Be sure to enter a name"
 },
 "entemail":{
-	"required":"Обязательно введите email",
-	"email":"Введите email правильно"
+	"required":"Be sure to enter your email",
+	"email":"Enter email correctly"
 },
 "entphone":{
-	"required":"Обязательно введите номер телефона",
-	"phone":"Введите номер правильно"
+	"required":"Be sure to enter your phone number",
+	"phone":"Enter the number correctly"
 },
 "entaddress":{
-	"required":"Обязательно введите адрес"
+	"required":"Be sure to enter the address"
 }
 }`
 &formControls=`type`
-&defaults=`{"type":"Физическое лицо"}`
+&default='{"type":"Natural person"}'
 &formTpl=`@CODE:
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
@@ -44,17 +44,17 @@
 				<input type="hidden" name="formid" value="basic">
 				<div class="form-group">
 					<label class="radio-inline">
-						<input type="radio" name="type" value="Физическое лицо" [+c.type.Физическое лицо+]> Физическое лицо
+						<input type="radio" name="type" value="Natural person" [+c.type.Natural person+]> Natural person
 					</label>
 					<label class="radio-inline">
-						<input type="radio" name="type" value="Юридическое лицо" [+c.type.Юридическое лицо+]> Юридическое лицо
+						<input type="radio" name="type" value="Legal entity" [+c.type.Legal entity+]> Legal entity
 					</label>
 				</div>
-				<h3>Заполняется только физлицами</h3>
+				<h3>To be filled in only by individuals</h3>
 				<div class="form-group[+name.errorClass+][+name.requiredClass+]">
-					<label for="name">* Имя</label>
+					<label for="name">* Name</label>
 
-						<input type="text" class="form-control" id="name" placeholder="Имя" name="name" value="[+name.value+]">
+						<input type="text" class="form-control" id="name" placeholder="Name" name="name" value="[+name.value+]">
 						[+name.error+]
 
 				</div>
@@ -70,7 +70,7 @@
 					</div>
 					<div class="col-md-6">
 						<div class="form-group[+phone.errorClass+][+phone.requiredClass+]">
-							<label for="phone">* Телефон</label>
+							<label for="phone">* Telephone</label>
 
 								<input type="text" class="form-control" id="phone" placeholder="+375 29 123 45 67" name="phone" value="[+phone.value+]">
 								[+phone.error+]
@@ -78,10 +78,10 @@
 						</div>
 					</div>
 				</div>
-				<h3>Заполняется только юрлицами</h3>
+				<h3>To be filled in only by legal entities</h3>
 				<div class="form-group[+entname.errorClass+][+entname.requiredClass+]">
-					<label for="name">* Название предприятия</label>
-						<input type="text" class="form-control" id="entname" placeholder="Название предприятия" name="entname" value="[+entname.value+]">
+					<label for="name">* Name of the company</label>
+						<input type="text" class="form-control" id="entname" placeholder="Name of the company" name="entname" value="[+entname.value+]">
 						[+entname.error+]
 
 				</div>
@@ -95,21 +95,21 @@
 					</div>
 					<div class="col-md-6">
 						<div class="form-group[+entphone.errorClass+][+entphone.requiredClass+]">
-							<label for="phone">* Телефон</label>
+							<label for="phone">* Telephone</label>
 								<input type="text" class="form-control" id="entphone" placeholder="+375 29 123 45 67" name="entphone" value="[+entphone.value+]">
 								[+entphone.error+]
 						</div>
 					</div>
 				</div>
 				<div class="form-group[+entaddress.errorClass+][+entaddress.requiredClass+]">
-					<label for="name">* Юридический адрес</label>
-						<input type="text" class="form-control" id="entaddress" placeholder="Юридический адрес" name="entaddress" value="[+entaddress.value+]">
+					<label for="name">* Legal address</label>
+						<input type="text" class="form-control" id="entaddress" placeholder="Legal address" name="entaddress" value="[+entaddress.value+]">
 						[+entaddress.error+]
 
 				</div>
 				[+form.messages+]
 				<div class="form-group">
-						<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-envelope"></i> Отправить</button>
+						<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-envelope"></i> Submit</button>
 				</div>
 			</form>
 		</div>
@@ -123,10 +123,10 @@
 <p>Email: <a href="mailto:[+email.value+]">[+email.value+]</a></p>
 `
 &reportEntTpl=`@CODE:
-<p>Название предприятия: [+entname.value+]</p>
-<p>Телефон: [+entphone.value+]</p>
+<p>Company name: [+entname.value+]</p>
+<p>Phone: [+entphone.value+]</p>
 <p>Email: <a href="mailto:[+entemail.value+]">[+entemail.value+]</a></p>
-<p>Юридический адрес: [+entaddress.value+]</p>
+<p>Registered office: [+entaddress.value+]</p>
 `
 &prepare=`typeSelector`
 &errorClass=` has-error`
@@ -135,7 +135,7 @@
 &errorTpl=`@CODE:<span class="help-block">[+message+]</span>`
 !]
 ```
-### Prepare-сниппет typeSelector
+### Prepare-snippet typeSelector
 ```
 if ($FormLister->getField('type') == 'Юридическое лицо') {
 	$FormLister->config->setConfig(array(
@@ -143,6 +143,6 @@ if ($FormLister->getField('type') == 'Юридическое лицо') {
 		'reportTpl'=>$FormLister->getCFGDef('reportEntTpl')
 	));
 } else {
-	$FormLister->setField('type','Физическое лицо');
+	$FormLister->setField('type','Natural person');
 }
 ```
