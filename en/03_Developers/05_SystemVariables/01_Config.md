@@ -1,20 +1,20 @@
-###Системные настройки
+## System Settings
 
-array config
+### Array Config
 
-Содержит информацию о системных настройках в виде ассоциативного массива. Использовать напрямую его не рекомендуется и для получения информации существует метод API - getConfig
+Contains information about system settings in the form of an associative array. It is not recommended to use it directly and to get information there is an API method - getConfig
 
-####Пример
+#### Exmaple
 ````
 echo $modx->config['modx_charset'];
 ````
-Можно посмотреть все возможные элементы настроек
+You can see all the possible elements of the settings
 
 ````
 var_dump($modx->config);
 ````
     
-Вернёт:
+Returns:
 
 ````
 array(162) {
