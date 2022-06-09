@@ -1,14 +1,14 @@
-### Данные текущего ресурса
+### Current resource data
 
 array documentObject
 
-Содержит полный набор данных для текущей страницы в виде ассоциативного массива. В том числе в этот массив попадает информация о TV-параметрах. Все данные могут быть доступны с помощью тегов вида .
+Contains the complete dataset for the current page as an associative array. Including this array gets information about TV-parameters. All data can be accessed using tags of the form .
 
-Подходящего метода API для получения данных из documentObject нет.
+There is no suitable API method for retrieving data from a documentObject.
 
-#### Пример
+#### Example
 
     <?php  
         echo $modx->documentObject['pagetitle'];  
-        // Выведет заголовок страницы  
+        // Displays the page title
     ?>
