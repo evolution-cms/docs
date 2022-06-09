@@ -1,16 +1,15 @@
-###Метод получения ресурса
+### Method to get a resource
 
 string documentMethod
 
-Возможные значения:
+Possible Values:
 
-**alias** - получено с помощью переданного псевдонима
+**alias** - obtained using the passed alias
 
-**id** - получено с помощью переданного идентификатора
-none - метод не определен
+**id** - received using the passed identifier none - method not defined
 
-Содержит информацию о методе, которым было получена страница. Даже если был использован псевдоним, то после определения идентификатора ресурса, метод автоматически меняется на id.
+Contains information about the method by which the page was retreived.  Even if an alias was used, after the resource identifier is determined, the method automatically changed to id.
 
-####Пример
+#### Пример
 
     <?php  echo "Метод: " . $modx->documentMethod;  ?>
