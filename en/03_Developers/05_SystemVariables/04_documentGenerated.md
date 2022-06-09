@@ -1,15 +1,15 @@
-### Страница была сгенерирована
+### Page has been generated
 
 bool documentGenerated
 
-Возможные значения:
+Possible values are:
 
-**1** - страница была сгенерирована
+**1** - page was generated
 
-**0** - страница была получена из кеша
+**0** - the page was obtained from the cache
 
-Содержит информацию о том, был ли документ сгенерирован, или взят из cache.
+Contains information about the whether the document was generated, or taken from cache.
 
-#### Пример
+#### Example
 
     <?php  echo $modx->documentGenerated;  ?>
