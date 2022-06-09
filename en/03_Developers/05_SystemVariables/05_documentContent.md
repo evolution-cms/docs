@@ -1,9 +1,9 @@
-### Содержимое страницы
+### Contents
 
 string documentContent
 
-Содержит полное содержимое страницы. В процессе генерации содержимое поэтапно изменяется и записывается в эту переменную.
+Contains the full content of the page. During the generation process, the content gradually changed and written to this variable.
 
-#### Пример
+#### Example
 
     <?php  echo $modx->documentContent;  ?>
