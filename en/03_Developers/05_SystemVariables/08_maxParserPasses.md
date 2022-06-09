@@ -1,9 +1,9 @@
-### Максимальное количество проходов парсера
+### Maximum number of parser passes
 
 int maxParserPasses
 
-Содержит максимальное число обработки парсером содержимого.
+Contains the maximum number of times the parser processes content.
 
-#### Пример
+#### Example
 
     <?php  echo $modx->maxParserPasses;  ?>
