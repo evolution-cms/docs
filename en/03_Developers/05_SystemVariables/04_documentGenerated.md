@@ -1,4 +1,4 @@
-###Страница была сгенерирована
+### Страница была сгенерирована
 
 bool documentGenerated
 
@@ -10,6 +10,6 @@ bool documentGenerated
 
 Содержит информацию о том, был ли документ сгенерирован, или взят из cache.
 
-####Пример
+#### Пример
 
     <?php  echo $modx->documentGenerated;  ?>
