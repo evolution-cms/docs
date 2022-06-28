@@ -18,8 +18,8 @@ Download here: https://github.com/Pathologic/SimpleFiles
 - Storage folder – the folder where the files are stored, by default assets/storage/;
 - Icons folder – the folder where the icons of files are stored, by default assets/snippets/simplefiles/icons/;
 - Allowed files – extensions of files allowed for download, separated by commas; if you do not specify, the system setting will be used;
+- Maximum file size – file size limit, in megabytes.
 
-Maximum file size – file size limit, in megabytes.
 Icons should be named as _file_extension_lowercase.png_
 
 The file.png icon is substituted if there is no suitable one.
