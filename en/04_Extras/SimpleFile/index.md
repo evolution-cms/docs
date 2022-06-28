@@ -25,7 +25,7 @@ Icons should be named as _file_extension_lowercase.png_
 The file.png icon is substituted if there is no suitable one.
 
 ## Display records
-According to the output of the entries, we read about [SimpleGallery]:https://github.com/BBloke/docs/blob/master/en/04_Extras/SimpleFile/simplegallery/index.html [SimpleGallery].
+According to the output of the entries, we read about https://github.com/BBloke/docs/blob/master/en/04_Extras/SimpleFile/simplegallery/index.html
 
 When withdrawing through snippets-wrappers, sfLister and sfController additional virtual placeholders are available:
 
