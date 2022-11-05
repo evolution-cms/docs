@@ -24,7 +24,7 @@
 | debug | Provide debug log for snippet call | 0 |
 | tvPrefix | Prefix for placeholders created from TV parameters | tv |
 | tvList | List of TV parameter names that should be in the query | |
-| renderTv | TV parameter names to render as per their widget settings | |
+| renderTV | TV parameter names to render as per their widget settings | |
 | sortType | Sort type | none |
 | orderBy | A single sort string | id DESC |
 | sortBy | Sorting criterion without sorting direction | |
