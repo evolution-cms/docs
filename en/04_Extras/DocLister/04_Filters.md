@@ -6,7 +6,7 @@ The following filters are included:
 * tv - for filtering by TV-parameters;
 * tvd - to filter by TV-parameters taking into account the default values;
 * private - to filter documents taking into account access rights.
-* 
+
 # filter 
 ## Construction 
 #### Example
