@@ -20,6 +20,16 @@ Equally.
 
 ### !=, no, isnot
 Not equal.
+NB: By design this creates a WHERE call which will include IS NULL.  This may produce undesired results when trying to filter for empty values.
+#### Example: 
+AND(tv:images:!=;)
+Would show all records.  Please use isnull
+
+### isnull
+empty records
+
+### isnotnull
+records containing something
 
 ### >, gt
 More than.
