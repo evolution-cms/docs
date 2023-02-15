@@ -1,5 +1,4 @@
-Полезные ссылки
--------------------------
+# External Links
 
 [evo-cms.com)](http://evo-cms.com)  - Community Edition EvolutionCMS
 
