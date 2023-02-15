@@ -1,6 +1,6 @@
 Полезные ссылки
 -------------------------
 
-[MODX.im](http://modx.im)  - Сообщество по MODX
+[evo-cms.com)](http://evo-cms.com)  - Community Edition EvolutionCMS
 
 [code.divandesign.ru](http://code.divandesign.ru) - Репозиторий студии «Диван.Дизайн».
