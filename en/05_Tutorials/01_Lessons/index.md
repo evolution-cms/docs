@@ -1,84 +1,87 @@
-<h2 style=margin-top:0px>Уроки</h2>
-<p>Для тех кто только знакомится с MODX EVO очень рекомендую пройтись по ссылкам ниже, сразу отпадут многие вопросы.</p>
-<h3>Видео уроки по созданию сайта на MODX EVO</h3>
-<ul>
-<li><a href="http://vimeo.com/29422796">Видео урок</a>&nbsp; (<a style="line-height: 1.5;" href="http://a42.ru/site/tutorial-cash.html">доп материалы и ссылки с видео</a>)</li>
-<li><a href="http://www.youtube.com/watch?v=WDBsCL9Xfx8">Видео урок 2</a></li>
+<div id="readme" class="Box-body readme blob js-code-block-container p-5 p-xl-6 gist-border-0">
+    <article class="markdown-body entry-content container-lg" itemprop="text"><h2 dir="auto"><a id="user-content-уроки" class="anchor" aria-hidden="true" href="#уроки"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><font _mstmutation="1" _msttexthash="98293" _msthash="303">Lessons</font></h2>
+<p dir="auto" _msttexthash="11532365" _msthash="304">For those who are just getting acquainted with MODX EVO, I highly recommend following the links below, many questions will immediately disappear.</p>
+<h3 dir="auto"><a id="user-content-видео-уроки-по-созданию-сайта-на-modx-evo" class="anchor" aria-hidden="true" href="#видео-уроки-по-созданию-сайта-на-modx-evo"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><font _mstmutation="1" _msttexthash="1427842" _msthash="305">Video tutorials on creating a website on MODX EVO</font></h3>
+<ul dir="auto">
+<li><font _mstmutation="1" _msttexthash="2252640" _msthash="306"><a href="http://vimeo.com/29422796" rel="nofollow" _mstmutation="1" _istranslated="1">Video lesson</a> (<a href="http://a42.ru/site/tutorial-cash.html" rel="nofollow" _mstmutation="1" _istranslated="1">additional materials and links from the video</a></font>)</li>
+<li><a href="http://www.youtube.com/watch?v=WDBsCL9Xfx8" rel="nofollow" _msttexthash="190827" _msthash="307">Video Lesson 2</a></li>
 </ul>
-<h3>Уроки с сайта Я--гу.ру</h3>
-<ul class="unstyled sidebarPadding scroll-pane">
-<li><a title="Сайт за один день? Это реально!" href="http://i--gu.ru/vstuplenie">Вступление - Сайт за один день? Это реально!</a></li>
-<li><a title="Установка локального сервера XAMPP" href="http://i--gu.ru/urok-1">Урок 1 - Установка локального сервера XAMPP</a></li>
-<li><a title="Установка MODx Evolution" href="http://i--gu.ru/urok-2">Урок 2 - Установка MODx Evolution</a></li>
-<li><a title="Знакомство с MODx Evolution" href="http://i--gu.ru/urok-3">Урок 3 - Знакомство с MODx Evolution</a></li>
-<li><a title="Интеграция шаблона в MODx. Разбиение на чанки" href="http://i--gu.ru/urok-4">Урок 4 - Интеграция шаблона в MODx. Разбиение на чанки</a></li>
-<li><a title="Создание динамического меню в MODx" href="http://i--gu.ru/urok-5">Урок 5 - Создание динамического меню в MODx</a></li>
-<li><a title="Изменяем шапку сайта, чанк HEADER" href="http://i--gu.ru/urok-6">Урок 6 - Изменяем шапку сайта, чанк HEADER</a></li>
-<li><a title="Редактируем чанк COLUMN" href="http://i--gu.ru/urok-7">Урок 7 - Редактируем чанк COLUMN</a></li>
-<li><a title="Редактируем чанк WRAPPER и FOOTER" href="http://i--gu.ru/urok-8">Урок 8 - Редактируем чанк WRAPPER и FOOTER</a></li>
-<li><a title="Выводим галерею с помощью сниппета Ditto" href="http://i--gu.ru/urok-9">Урок 9 - Выводим галерею с помощью сниппета Ditto</a></li>
-<li><a title="Делаем новостную ленту" href="http://i--gu.ru/urok-10">Урок 10 - Делаем новостную ленту</a></li>
-<li><a title="Настраиваем блог. Система комментариев DISQUS" href="http://i--gu.ru/urok-11">Урок 11 - Настраиваем блог. Система комментариев DISQUS</a></li>
-<li><a title="Форма обратной связи. Сниппет eForm" href="http://i--gu.ru/urok-12">Урок 12 - Форма обратной связи. Сниппет eForm</a></li>
-<li><a title="Перенос сайта на хостинг" href="http://i--gu.ru/urok-13">Урок 13 - Перенос сайта на хостинг</a></li>
-<li><a title="Общие итоги курса. Дальнейшие рекомендации." href="http://i--gu.ru/zaklyuchenie">Заключение - Общие итоги курса. Дальнейшие рекомендации.</a></li>
-<li><a title="Интернет-магазин на MODx" href="http://i--gu.ru/shopkeeper">Shopkeeper - Интернет-магазин на MODx</a></li>
-<li><a title="Устанавливаем форум на MODx Evolution" href="http://i--gu.ru/phpbb-i-modxbb">phpBB и MODxBB - Устанавливаем форум на MODx Evolution</a></li>
-<li><a title="Изменяем внешний вид административной панели" href="http://i--gu.ru/managerwelcome">ManagerWelcome - Изменяем внешний вид административной панели</a></li>
-<li><a title="Ditto и экстендер request" href="http://i--gu.ru/sortirovka-ditto">Сортировка документов - Ditto и экстендер request</a></li>
-<li><a title="Модули, плагины, сниппеты" href="http://i--gu.ru/poleznyie-ssyilki">Полезные ссылки - Модули, плагины, сниппеты</a></li>
-<li><a title="Ответы на популярные вопросы по MODx Evolution" href="http://i--gu.ru/sprashivali-otvechaem">Спрашивали? Отвечаем - Ответы на популярные вопросы по MODx Evolution</a></li>
+<h3 dir="auto"><a id="user-content-уроки-с-сайта-я--гуру" class="anchor" aria-hidden="true" href="#уроки-с-сайта-я--гуру"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><font _mstmutation="1" _msttexthash="687479" _msthash="308">Lessons from the site Ya--gu.ru</font></h3>
+<ul dir="auto">
+<li><a title="Сайт за один день? Это реально!" href="http://i--gu.ru/vstuplenie" rel="nofollow" _msttexthash="1219348" _msthash="309">Introduction - Website in one day? It's real!</a></li>
+<li><a title="Установка локального сервера XAMPP" href="http://i--gu.ru/urok-1" rel="nofollow" _msttexthash="1165762" _msthash="310">Tutorial 1 - Installing a Local XAMPP Server</a></li>
+<li><a title="Установка MODx Evolution" href="http://i--gu.ru/urok-2" rel="nofollow" _msttexthash="896818" _msthash="311">Lesson 2 - Installing MODx Evolution</a></li>
+<li><a title="Знакомство с MODx Evolution" href="http://i--gu.ru/urok-3" rel="nofollow" _msttexthash="1123720" _msthash="312">Lesson 3 - Introduction to MODx Evolution</a></li>
+<li><a title="Интеграция шаблона в MODx. Разбиение на чанки" href="http://i--gu.ru/urok-4" rel="nofollow" _msttexthash="2488447" _msthash="313">Lesson 4 - Integrating a template into MODx. Breaking into chunks</a></li>
+<li><a title="Создание динамического меню в MODx" href="http://i--gu.ru/urok-5" rel="nofollow" _msttexthash="1016028" _msthash="314">Lesson 5 - Creating a Dynamic Menu in MODx</a></li>
+<li><a title="Изменяем шапку сайта, чанк HEADER" href="http://i--gu.ru/urok-6" rel="nofollow" _msttexthash="1081665" _msthash="315">Lesson 6 - Changing the Header, Chunk HEADER</a></li>
+<li><a title="Редактируем чанк COLUMN" href="http://i--gu.ru/urok-7" rel="nofollow" _msttexthash="681993" _msthash="316">Lesson 7 - Editing column chunk</a></li>
+<li><a title="Редактируем чанк WRAPPER и FOOTER" href="http://i--gu.ru/urok-8" rel="nofollow" _msttexthash="1120535" _msthash="317">Lesson 8 - Editing wrapper and FOOTER chunk</a></li>
+<li><a title="Выводим галерею с помощью сниппета Ditto" href="http://i--gu.ru/urok-9" rel="nofollow" _msttexthash="1993394" _msthash="318">Lesson 9 - Displaying the Gallery using the Ditto Snippet</a></li>
+<li><a title="Делаем новостную ленту" href="http://i--gu.ru/urok-10" rel="nofollow" _msttexthash="548327" _msthash="319">Lesson 10 - Making a News Feed</a></li>
+<li><a title="Настраиваем блог. Система комментариев DISQUS" href="http://i--gu.ru/urok-11" rel="nofollow" _msttexthash="1531465" _msthash="320">Lesson 11 - Setting up a blog. DISQUS Comment System</a></li>
+<li><a title="Форма обратной связи. Сниппет eForm" href="http://i--gu.ru/urok-12" rel="nofollow" _msttexthash="1024829" _msthash="321">Lesson 12 - Feedback form. eForm Snippet</a></li>
+<li><a title="Перенос сайта на хостинг" href="http://i--gu.ru/urok-13" rel="nofollow" _msttexthash="1157819" _msthash="322">Lesson 13 - Moving your website to hosting</a></li>
+<li><a title="Общие итоги курса. Дальнейшие рекомендации." href="http://i--gu.ru/zaklyuchenie" rel="nofollow" _msttexthash="2952547" _msthash="323">Conclusion - General results of the course. Further recommendations.</a></li>
+<li><a title="Интернет-магазин на MODx" href="http://i--gu.ru/shopkeeper" rel="nofollow" _msttexthash="740584" _msthash="324">Shopkeeper - Online Store on MODx</a></li>
+<li><a title="Устанавливаем форум на MODx Evolution" href="http://i--gu.ru/phpbb-i-modxbb" rel="nofollow" _msttexthash="1930175" _msthash="325">phpBB and MODxBB - Installing the forum on MODx Evolution</a></li>
+<li><a title="Изменяем внешний вид административной панели" href="http://i--gu.ru/managerwelcome" rel="nofollow" _msttexthash="2987699" _msthash="326">ManagerWelcome - Changing the appearance of the administrative panel</a></li>
+<li><a title="Ditto и экстендер request" href="http://i--gu.ru/sortirovka-ditto" rel="nofollow" _msttexthash="1367769" _msthash="327">Document Sorting - Ditto and Request Extender</a></li>
+<li><a title="Модули, плагины, сниппеты" href="http://i--gu.ru/poleznyie-ssyilki" rel="nofollow" _msttexthash="1183377" _msthash="328">Useful links - Modules, plugins, snippets</a></li>
+<li><a title="Ответы на популярные вопросы по MODx Evolution" href="http://i--gu.ru/sprashivali-otvechaem" rel="nofollow" _msttexthash="2642380" _msthash="329">Asked? Answer - Answers to popular questions about MODx Evolution</a></li>
 </ul>
-<h3>Уроки по созданию сайта от Виктора Ефимова</h3>
-<ul>
-<li><a title="Инструкция по созданию сайта на MODx. Урок 1 &mdash; Вступительный" href="http://efimov.ws/main/develop/modx/instrukcziya-po-sozdaniyu-sajta-urok1.html">Урок 1 &mdash; Вступительный</a></li>
-<li><a title="Инструкция по созданию сайта на MODx. Урок 2 &mdash; Установка MODx CMS" href="http://efimov.ws/main/develop/modx/instrukcziya-po-sozdaniyu-sajta-urok-2.html">Урок 2 &mdash; Установка MODx CMS</a></li>
-<li><a title="Инструкция по созданию сайта на MODx. Урок 3 &mdash; Первоначальная настройка системы" href="http://efimov.ws/main/develop/modx/instrukcziya-po-sozdaniyu-sajta-na-modx-3.html">Урок 3 &mdash; Первоначальная настройка системы</a></li>
-<li><a title="Интеграция дизайна в систему управления" href="http://efimov.ws/main/develop/modx/instrukcziya-po-sozdaniyu-sajta-na-modx-urok-4.html">Урок 4 &mdash; Интеграция дизайна в систему управления</a></li>
-<li><a title="Настройка шаблона, разбиение на чанки" href="http://efimov.ws/main/develop/modx/instrukcziya-po-sozdaniyu-sajta-na-modx-urok-5.html">Урок 5 &mdash; Настройка шаблона, разбиение на чанки</a></li>
-<li><a title="Дерево документов и создание страниц" href="http://efimov.ws/main/develop/modx/sajt-na-modxsozdanie-stranicz.html">Урок 6 &mdash; Дерево документов и создание страниц</a></li>
-<li><a title="Реализация динамического меню" href="http://efimov.ws/main/develop/modx/menu-wayfinder-MODx.html">Урок 7 &mdash; Реализация динамического меню</a></li>
-<li><a title="Создание шаблонов и вывод содержимого страниц" href="http://efimov.ws/main/develop/modx/instrukcziya-MODx-urok-8.html">Урок 8 &mdash; Создание шаблонов и вывод содержимого страниц</a></li>
-<li><a title="абота со специальными тегами MODx" href="http://efimov.ws/main/develop/modx/tags-MODx.html">Урок 9 &mdash; Работа со специальными тегами MODx</a></li>
-<li><a title="Работа с визуальным редактором в MODx" href="http://efimov.ws/main/develop/modx/tinymce-set-modx.html">Урок 10 &mdash; Работа с визуальным редактором в MODx</a></li>
-<li><a title="Реализация цепочки навигации &laquo;Хлебные крошки&raquo;. Сниппет Breadcrumbs" href="http://efimov.ws/main/develop/modx/breadcrumbs-MODx.html">Урок 11 &mdash; Реализация цепочки навигации &laquo;Хлебные крошки&raquo;</a></li>
-<li><a title="Создание ленты новостей. Сниппет Ditto" href="http://efimov.ws/main/develop/modx/ditto-modx-newsline.html">Урок 12 &mdash; Создание ленты новостей. Сниппет Ditto</a></li>
-<li><a title="Урок 13 &mdash; Постраничное разбиение новостной ленты" href="http://efimov.ws/main/develop/modx/MODx-pagination-Ditto.html">Урок 13 &mdash; Постраничное разбиение новостной ленты</a></li>
-<li><a title="Урок 14 &mdash; TV параметры MODx. Добавление изображений ресурсам" href="http://efimov.ws/main/develop/modx/MODx-TV-parametrs.html">Урок 14 &mdash; TV параметры MODx. Добавление изображений ресурсам</a></li>
-<li><a title="Урок 15 &mdash; Форма обратной связи в MODx. Сниппет eForm" href="http://efimov.ws/main/develop/modx/eForm-MODx.html">Урок 15 &mdash; Форма обратной связи в MODx. Сниппет eForm</a></li>
-<li><a title="Урок 16 &mdash; Реализация вспомогательного меню на странице" href="http://efimov.ws/main/develop/modx/modx-wayfinder.html">Урок 16 &mdash; Реализация вспомогательного меню на странице</a></li>
-<li><a title="Урок 17 &mdash; Вывод слайд-шоу на главной странице с помощью сниппета Ditto" href="http://efimov.ws/main/develop/modx/jQuery-gallery-with-MODx.html">Урок 17 &mdash; Вывод слайд-шоу на главной странице с помощью сниппета Ditto</a></li>
-<li><a title="Урок 18 &mdash;  Вывод ключевых слов в MODx" href="http://efimov.ws/main/develop/modx/meta-tags-keywords-modx.html">Урок 18 &mdash; Вывод ключевых слов в MODx</a></li>
-<li><a title="Урок 19 &mdash; Организация поиска по сайту. Сниппет AjaxSearch" href="http://efimov.ws/main/develop/modx/snippet-ajaxsearch-modx-poisk.html">Урок 19 &mdash; Организация поиска по сайту. Сниппет AjaxSearch</a></li>
-<li><a title="Урок 19.1 &mdash;  Вывод изображения, прикрепленного с помощью TV параметра, в результатах поиска AjaxSearch" href="http://efimov.ws/main/develop/modx/img-tv-parametrs-ajaxsearch.html">Урок 19.1 &mdash; Вывод изображения, прикрепленного с помощью TV параметра, в результатах поиска AjaxSearch</a></li>
-<li><a title="Урок 20 &mdash; Карта сайта для посетителей и поисковых машин" href="http://efimov.ws/main/develop/modx/sitemap-for-modx-xml.html">Урок 20 &mdash; Карта сайта для посетителей и поисковых машин</a></li>
-<li><a title=" Урок 21 &mdash; Реализация галереи изображений" href="http://efimov.ws/main/develop/modx/gallery-modx.html">Урок 21 &mdash; Реализация галереи изображений</a></li>
-<li><a title=" Урок 22 &mdash; Перенос готового MODx сайта на хостинг" href="http://efimov.ws/main/develop/modx/hosting-modx.html">Урок 22 &mdash; Перенос готового MODx сайта на хостинг</a></li>
-<li><a title=" Урок 23 &mdash; Скачать готовый MODx сайт, соответствующий веб-стандартам" href="http://efimov.ws/main/develop/modx/skachat-gotovyij-modx-sajt.html">Урок 23 &mdash; Скачать готовый MODx сайт, соответствующий веб-стандартам</a></li>
+<h3 dir="auto"><a id="user-content-уроки-по-созданию-сайта-от-виктора-ефимова" class="anchor" aria-hidden="true" href="#уроки-по-созданию-сайта-от-виктора-ефимова"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><font _mstmutation="1" _msttexthash="1523210" _msthash="330">Lessons on creating a website from Victor Efimov</font></h3>
+<ul dir="auto">
+<li><a title="Инструкция по созданию сайта на MODx. Урок 1 — Вступительный" href="http://efimov.ws/main/develop/modx/instrukcziya-po-sozdaniyu-sajta-urok1.html" rel="nofollow" _msttexthash="1931904" _msthash="331">Lesson 1 – Introductory</a></li>
+<li><a title="Инструкция по созданию сайта на MODx. Урок 2 — Установка MODx CMS" href="http://efimov.ws/main/develop/modx/instrukcziya-po-sozdaniyu-sajta-urok-2.html" rel="nofollow" _msttexthash="2055976" _msthash="332">Lesson 2 – Installing MODx CMS</a></li>
+<li><a title="Инструкция по созданию сайта на MODx. Урок 3 — Первоначальная настройка системы" href="http://efimov.ws/main/develop/modx/instrukcziya-po-sozdaniyu-sajta-na-modx-3.html" rel="nofollow" _msttexthash="2163148" _msthash="333">Lesson 3 – Initial System Setup</a></li>
+<li><a title="Интеграция дизайна в систему управления" href="http://efimov.ws/main/develop/modx/instrukcziya-po-sozdaniyu-sajta-na-modx-urok-4.html" rel="nofollow" _msttexthash="3313934" _msthash="334">Lesson 4 – Integrating Design into a Management System</a></li>
+<li><a title="Настройка шаблона, разбиение на чанки" href="http://efimov.ws/main/develop/modx/instrukcziya-po-sozdaniyu-sajta-na-modx-urok-5.html" rel="nofollow" _msttexthash="3610867" _msthash="335">Lesson 5 – Customizing the Template, Splitting into Chunks</a></li>
+<li><a title="Дерево документов и создание страниц" href="http://efimov.ws/main/develop/modx/sajt-na-modxsozdanie-stranicz.html" rel="nofollow" _msttexthash="2582580" _msthash="336">Lesson 6 – Document Tree and Page Creation</a></li>
+<li><a title="Реализация динамического меню" href="http://efimov.ws/main/develop/modx/menu-wayfinder-MODx.html" rel="nofollow" _msttexthash="2433379" _msthash="337">Lesson 7 – Implementing a Dynamic Menu</a></li>
+<li><a title="Создание шаблонов и вывод содержимого страниц" href="http://efimov.ws/main/develop/modx/instrukcziya-MODx-urok-8.html" rel="nofollow" _msttexthash="3509129" _msthash="338">Lesson 8 – Creating Templates and Displaying Page Content</a></li>
+<li><a title="абота со специальными тегами MODx" href="http://efimov.ws/main/develop/modx/tags-MODx.html" rel="nofollow" _msttexthash="2513069" _msthash="339">Lesson 9 – Working with Special MODx Tags</a></li>
+<li><a title="Работа с визуальным редактором в MODx" href="http://efimov.ws/main/develop/modx/tinymce-set-modx.html" rel="nofollow" _msttexthash="3035903" _msthash="340">Lesson 10 – Working with the Visual Editor in MODx</a></li>
+<li><a title="Реализация цепочки навигации «Хлебные крошки». Сниппет Breadcrumbs" href="http://efimov.ws/main/develop/modx/breadcrumbs-MODx.html" rel="nofollow" _msttexthash="3674970" _msthash="341">Lesson 11 – Implementing the Breadcrumbs Navigation Chain</a></li>
+<li><a title="Создание ленты новостей. Сниппет Ditto" href="http://efimov.ws/main/develop/modx/ditto-modx-newsline.html" rel="nofollow" _msttexthash="2893774" _msthash="342">Lesson 12 – Creating a News Feed. Ditto Snippet</a></li>
+<li><a title="Урок 13 — Постраничное разбиение новостной ленты" href="http://efimov.ws/main/develop/modx/MODx-pagination-Ditto.html" rel="nofollow" _msttexthash="2522286" _msthash="343">Lesson 13 – Pagination of the News Feed</a></li>
+<li><a title="Урок 14 — TV параметры MODx. Добавление изображений ресурсам" href="http://efimov.ws/main/develop/modx/MODx-TV-parametrs.html" rel="nofollow" _msttexthash="3471156" _msthash="344">Lesson 14 – TV PARAMETERS MODx. Adding Images to Resources</a></li>
+<li><a title="Урок 15 — Форма обратной связи в MODx. Сниппет eForm" href="http://efimov.ws/main/develop/modx/eForm-MODx.html" rel="nofollow" _msttexthash="2939690" _msthash="345">Lesson 15 – Feedback form in MODx. eForm Snippet</a></li>
+<li><a title="Урок 16 — Реализация вспомогательного меню на странице" href="http://efimov.ws/main/develop/modx/modx-wayfinder.html" rel="nofollow" _msttexthash="3108001" _msthash="346">Lesson 16 – Implementing a Secondary Menu on a Page</a></li>
+<li><a title="Урок 17 — Вывод слайд-шоу на главной странице с помощью сниппета Ditto" href="http://efimov.ws/main/develop/modx/jQuery-gallery-with-MODx.html" rel="nofollow" _msttexthash="4520490" _msthash="347">Lesson 17 – Display a slideshow on the homepage using the Ditto snippet</a></li>
+<li><a title="Урок 18 —  Вывод ключевых слов в MODx" href="http://efimov.ws/main/develop/modx/meta-tags-keywords-modx.html" rel="nofollow" _msttexthash="2378883" _msthash="348">Lesson 18 – Output Keywords in MODx</a></li>
+<li><a title="Урок 19 — Организация поиска по сайту. Сниппет AjaxSearch" href="http://efimov.ws/main/develop/modx/snippet-ajaxsearch-modx-poisk.html" rel="nofollow" _msttexthash="3508440" _msthash="349">Lesson 19 – Organizing a site search. AjaxSearch Snippet</a></li>
+<li><a title="Урок 19.1 —  Вывод изображения, прикрепленного с помощью TV параметра, в результатах поиска AjaxSearch" href="http://efimov.ws/main/develop/modx/img-tv-parametrs-ajaxsearch.html" rel="nofollow" _msttexthash="6825923" _msthash="350">Lesson 19.1 – Displaying an image attached using the TV parameter in AjaxSearch search results</a></li>
+<li><a title="Урок 20 — Карта сайта для посетителей и поисковых машин" href="http://efimov.ws/main/develop/modx/sitemap-for-modx-xml.html" rel="nofollow" _msttexthash="3188458" _msthash="351">Lesson 20 – Sitemap for Visitors and Search Engines</a></li>
+<li><a title=" Урок 21 — Реализация галереи изображений" href="http://efimov.ws/main/develop/modx/gallery-modx.html" rel="nofollow" _msttexthash="2687308" _msthash="352">Lesson 21 – Implementing an Image Gallery</a></li>
+<li><a title=" Урок 22 — Перенос готового MODx сайта на хостинг" href="http://efimov.ws/main/develop/modx/hosting-modx.html" rel="nofollow" _msttexthash="3881163" _msthash="353">Lesson 22 – Transferring the finished MODx site to the hosting</a></li>
+<li><a title=" Урок 23 — Скачать готовый MODx сайт, соответствующий веб-стандартам" href="http://efimov.ws/main/develop/modx/skachat-gotovyij-modx-sajt.html" rel="nofollow" _msttexthash="5091554" _msthash="354">Lesson 23 – Download a Ready-Made MODx Website That Complies with Web Standards</a></li>
 </ul>
-<h3>Уроки по созданию блога от Виктора Ефимова</h3>
-<ul>
-<li><a title="Вступительный урок по созданию блога на MODx" href="http://efimov.ws/main/develop/modx/sozdanie-bloga-na-modx-vstuplenie.html">Вступительный урок</a></li>
-<li><a title="Установка и первоначальная настройка системы управления" href="http://efimov.ws/main/develop/modx/sozdanie-bloga-na-modx-ustanovka.html">Урок 1. Установка и первоначальная настройка системы управления</a></li>
-<li><a title="Урок 2. Интеграция дизайна в систему управления" href="http://efimov.ws/main/develop/modx/sozdanie-bloga-na-modx-iintegracziya-dizajna-v-modx.html">Урок 2. Интеграция дизайна в систему управления</a></li>
-<li><a title="Урок 3.  Реализация навигации и работа со специальными тегами MODx" href="http://efimov.ws/main/develop/modx/sozdanie-bloga-na-modx-menu-i-tegi-modx.html">Урок 3. Реализация навигации и работа со специальными тегами MODx</a></li>
-<li><a title="Вывод анонсов заметок на страницах категорий" href="http://efimov.ws/main/develop/modx/sozdanie-bloga-na-modx-urok-4.html">Урок 4. Вывод анонсов заметок на страницах категорий</a></li>
-<li><a title="Урок 5. Оформление правой колонки: облако тегов, случайные заметки" href="http://efimov.ws/main/develop/modx/modx-urok-oblako-tegov-sluchajnie-zametki.html">Урок 5. Оформление правой колонки: облако тегов, случайные заметки</a></li>
-<li><a title="Создание блога на MODx. Урок 6 &mdash; Поиск по сайту, контактная форма, XML и HTML карты, RSS рассылка" href="http://efimov.ws/main/develop/modx/modx-blog-sitemap-forma-poisk.html">Урок 6. Поиск по сайту, контактная форма, XML и HTML карты, RSS рассылка</a></li>
-<li><a title=" Создание блога на MODx. Урок 7 &mdash; Оформление внутренних страниц блога и подключение комментариев" href="http://efimov.ws/main/develop/modx/modx-blog-comments-page-inside.html">Урок 7. Оформление внутренних страниц блога и подключение комментариев</a></li>
-<li><a title=" Создание блога на MODx. Урок 8 &mdash; Устранение дублирования контента, оформление футера и другие настройки" href="http://efimov.ws/main/develop/modx/sozdanie-bloga-na-modx-urok-8.html">Урок 8. Устранение дублирования контента, оформление футера и другие настройки</a></li>
+<h3 dir="auto"><a id="user-content-уроки-по-созданию-блога-от-виктора-ефимова" class="anchor" aria-hidden="true" href="#уроки-по-созданию-блога-от-виктора-ефимова"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><font _mstmutation="1" _msttexthash="1453400" _msthash="355">Tutorials on creating a blog from Victor Efimov</font></h3>
+<ul dir="auto">
+<li><a title="Вступительный урок по созданию блога на MODx" href="http://efimov.ws/main/develop/modx/sozdanie-bloga-na-modx-vstuplenie.html" rel="nofollow" _msttexthash="399685" _msthash="356">Introductory lesson</a></li>
+<li><a title="Установка и первоначальная настройка системы управления" href="http://efimov.ws/main/develop/modx/sozdanie-bloga-na-modx-ustanovka.html" rel="nofollow" _msttexthash="3158493" _msthash="357">Lesson 1. Installation and initial configuration of the control system</a></li>
+<li><a title="Урок 2. Интеграция дизайна в систему управления" href="http://efimov.ws/main/develop/modx/sozdanie-bloga-na-modx-iintegracziya-dizajna-v-modx.html" rel="nofollow" _msttexthash="1974414" _msthash="358">Lesson 2. Integration of design into the control system</a></li>
+<li><a title="Урок 3.  Реализация навигации и работа со специальными тегами MODx" href="http://efimov.ws/main/develop/modx/sozdanie-bloga-na-modx-menu-i-tegi-modx.html" rel="nofollow" _msttexthash="2359162" _msthash="359">Lesson 3. Implement navigation and work with special MODx tags</a></li>
+<li><a title="Вывод анонсов заметок на страницах категорий" href="http://efimov.ws/main/develop/modx/sozdanie-bloga-na-modx-urok-4.html" rel="nofollow" _msttexthash="2029209" _msthash="360">Lesson 4. Display notes announcements on category pages</a></li>
+<li><a title="Урок 5. Оформление правой колонки: облако тегов, случайные заметки" href="http://efimov.ws/main/develop/modx/modx-urok-oblako-tegov-sluchajnie-zametki.html" rel="nofollow" _msttexthash="1818466" _msthash="361">Lesson 5. Right column design: tag cloud, random notes</a></li>
+<li><a title="Создание блога на MODx. Урок 6 — Поиск по сайту, контактная форма, XML и HTML карты, RSS рассылка" href="http://efimov.ws/main/develop/modx/modx-blog-sitemap-forma-poisk.html" rel="nofollow" _msttexthash="2129946" _msthash="362">Lesson 6. Site search, contact form, XML and HTML maps, RSS feed</a></li>
+<li><a title=" Создание блога на MODx. Урок 7 — Оформление внутренних страниц блога и подключение комментариев" href="http://efimov.ws/main/develop/modx/modx-blog-comments-page-inside.html" rel="nofollow" _msttexthash="2081703" _msthash="363">Lesson 7. Design internal blog pages and connect comments</a></li>
+<li><a title=" Создание блога на MODx. Урок 8 — Устранение дублирования контента, оформление футера и другие настройки" href="http://efimov.ws/main/develop/modx/sozdanie-bloga-na-modx-urok-8.html" rel="nofollow" _msttexthash="3591666" _msthash="364">Lesson 8. Elimination of duplicate content, footer design and other settings</a></li>
 </ul>
-<h3>Статьи по разработке сайтов на MODX</h3>
-<ul>
-<li><a title="Разработка на MODx с нуля" href="http://modx.ru/blog/modx-development-from-scratch/">Разработка на MODx с нуля</a></li>
-<li><a title="Подготовка к работе" href="http://modx.ru/blog/first-step-work-preparing/">Шаг 1: Подготовка к работе</a></li>
-<li><a title="Импорт готового дизайна" href="http://modx.ru/blog/import-ready-design-modx/">Шаг 2: Импорт готового дизайна</a></li>
-<li><a title="Организация структуры документов в MODx" href="http://modx.ru/blog/organization-structure-modx-documents/">Шаг 3: Организация структуры документов в MODx</a></li>
-<li><a title="Программируем верхнее меню на MODx" href="http://modx.ru/blog/modx-programming-top-menu/">Шаг 4: Программируем верхнее меню на MODx</a></li>
-<li><a title="Вывод содержимого активной страницы" href="http://modx.ru/blog/modx-page-content/">Шаг 5: Вывод содержимого активной страницы</a></li>
-<li><a title="Добавление и вывод статей на сайте" href="http://modx.ru/blog/modx-adding-articles/">Шаг 6.1: Добавление и вывод статей на сайте</a></li>
-<li><a title="Постраничное разбиение (навигация) статей" href="http://modx.ru/blog/modx-pagination/">Шаг 6.2: Постраничное разбиение (навигация) статей</a></li>
-<li><a title="Использование @-привязки в TV-параметрах" href="http://modx.ru/blog/bindings-easy2/">Использование @-привязки в TV-параметрах</a></li>
-<li><a title="О привязке форумов к MODx" href="http://modx.ru/blog/modx-forum/">О привязке форумов к MODx</a></li>
-<li><a title="Исправление форума &quot;кривыми&quot; руками" href="http://modx.ru/blog/modx-forum-correction/">Исправление форума "кривыми" руками</a></li>
+<h3 dir="auto"><a id="user-content-статьи-по-разработке-сайтов-на-modx" class="anchor" aria-hidden="true" href="#статьи-по-разработке-сайтов-на-modx"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a><font _mstmutation="1" _msttexthash="1061489" _msthash="365">Articles on website development on MODX</font></h3>
+<ul dir="auto">
+<li><a title="Разработка на MODx с нуля" href="http://modx.ru/blog/modx-development-from-scratch/" rel="nofollow" _msttexthash="703508" _msthash="366">MoDx development from scratch</a></li>
+<li><a title="Подготовка к работе" href="http://modx.ru/blog/first-step-work-preparing/" rel="nofollow" _msttexthash="301795" _msthash="367">Step 1: Get started</a></li>
+<li><a title="Импорт готового дизайна" href="http://modx.ru/blog/import-ready-design-modx/" rel="nofollow" _msttexthash="821912" _msthash="368">Step 2: Import the finished design</a></li>
+<li><a title="Организация структуры документов в MODx" href="http://modx.ru/blog/organization-structure-modx-documents/" rel="nofollow" _msttexthash="1430052" _msthash="369">Step 3: Organize the document structure in MODx</a></li>
+<li><a title="Программируем верхнее меню на MODx" href="http://modx.ru/blog/modx-programming-top-menu/" rel="nofollow" _msttexthash="802425" _msthash="370">Step 4: Program the top menu on MODx</a></li>
+<li><a title="Вывод содержимого активной страницы" href="http://modx.ru/blog/modx-page-content/" rel="nofollow" _msttexthash="1387074" _msthash="371">Step 5: Display the contents of the active page</a></li>
+<li><a title="Добавление и вывод статей на сайте" href="http://modx.ru/blog/modx-adding-articles/" rel="nofollow" _msttexthash="1702532" _msthash="372">Step 6.1: Adding and displaying articles on the site</a></li>
+<li><a title="Постраничное разбиение (навигация) статей" href="http://modx.ru/blog/modx-pagination/" rel="nofollow" _msttexthash="2125864" _msthash="373">Step 6.2: Page-by-page splitting (navigation) of articles</a></li>
+<li><a title="Использование @-привязки в TV-параметрах" href="http://modx.ru/blog/bindings-easy2/" rel="nofollow" _msttexthash="765973" _msthash="374">Using @-binding in TV parameters</a></li>
+<li><a title="О привязке форумов к MODx" href="http://modx.ru/blog/modx-forum/" rel="nofollow" _msttexthash="597168" _msthash="375">About linking forums to MODx</a></li>
+<li><a title="Исправление форума &quot;кривыми&quot; руками" href="http://modx.ru/blog/modx-forum-correction/" rel="nofollow" _msttexthash="797212" _msthash="376">Fix the forum with "crooked" hands</a></li>
 </ul>
+</article>
+  </div>
