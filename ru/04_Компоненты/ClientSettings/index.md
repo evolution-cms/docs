@@ -29,7 +29,7 @@ return [
 ];
 ```
 
-Типы полей описаны <a href="/info/terminology-2/chto_takoe_parametr.html">здесь</a>.
+Типы полей описаны <a href="[/info/terminology-2/chto_takoe_parametr.html](/03_develop/02_elements.html)">здесь</a>.
 
 Помимо стандартных полей можно использовать тип `divider` для разделения списка полей на группы:
 ```php
