@@ -1,20 +1,19 @@
-###Смена пароля для WEB-пользователя
-
-*Замечание: при возникновении ошибок метод возвращает информацию об ошибке на английском языке.*
+#### Changing the password for the WEB-user
+Note: If errors occur, the method returns error information in English.
 
 mixed changeWebUserPassword(string $oldPwd, string $newPwd);
 
-**$oldPwd** - старый пароль
-**$newPwd** - новый пароль
+**$oldPwd** - old password
+**$newPwd** - new password
 
 
 
-####Пример:
+#### Example:
 
 ````php
 $txt = $modx->changeWebUserPassword('oldpassword','newpassword');
 print_r($txt);
-// полученный результат: true
+// result: true
 ````
 
 

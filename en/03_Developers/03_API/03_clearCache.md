@@ -1,27 +1,22 @@
-###Очистка кэша сайта
+### Clear the site cache
 
 boolean clearCache([string $type]);
 
-**$type** - используем с значением *full* если нужно очистить весь кеш с учетом индексных файлов
+$type - use with a value of full if you need to clear the entire cache taking into account index files
 
-***
-
-####Пример
-
-````php
-//Очистит кэш сайта.
+#### Example
+```php
+// Clears the site cache.
 $modx->clearCache();
 
-//Очистит кэш сайта с учетом индексных файлов(доступно с версии 1.0.13).
+Clears the site cache based on index files (available since version 1.0.13).
 $modx->clearCache('full');
-````
-*Замечание: Выполнение функции без параметра 'type' очищает не весь кэш. При использовании этой функции удаляются файлы с кэшем всех документов, но индексный файл кэша не изменяется. Из-за этого документы, которые были созданы программным путем, могут на сайте отсутствовать.*
+```
 
-***
+Note: Running a function without the 'type' parameter does not clear the entire cache. When you use this feature, the files that contain the cache of all documents are deleted, but the index cache file is not modified. Because of this, documents that were created programmatically may not be available on the site.
 
-####Полная очистка кэша для версий < 1.0.13
-
-````php
+### Full cache clear for < versions 1.0.13
+```php
 function clearCache() {
     global $modx;
     $modx->clearCache();
@@ -31,4 +26,4 @@ function clearCache() {
     $sync->setReport(false);
     $sync->emptyCache();
 }
-````
+```
