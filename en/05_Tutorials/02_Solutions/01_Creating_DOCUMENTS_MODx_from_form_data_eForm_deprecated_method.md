@@ -76,8 +76,8 @@ To make it easier for visitors to create articles, you can use the visual editor
  // General Settings
  language : 'en',
  mode : "textareas",
- theme : "advanced",
- plugins : "emotions,preview,searchreplace,contextmenu,paste,fullscreen,visualchars",
+ theme : "modern",
+ plugins : "emoticons,preview,searchreplace,contextmenu,paste,fullscreen,visualchars",
  // Theme Settings
  theme_advanced_buttons1 : "code,|,undo,redo,|,bold,italic,underline,strikethrough,|,removeformat,cut,copy,paste,|,bullist,numlist,|,link,unlink,|,image,|,sub,sup,|,charmap,formatselect",
  theme_advanced_buttons2 : "",
