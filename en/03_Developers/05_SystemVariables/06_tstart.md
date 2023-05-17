@@ -1,13 +1,13 @@
-###Время начала работы MODX
+### EvoCMS start time
 
 float tstart
 
-Содержит время начала работы MODX в формате "unix time", позволяя оценить время генерации страницы.
+Contains the start time of EvoCMS in the "unix time" format, allowing you to estimate the page generation time.
 
-####Пример
+#### Example
 
     <?php  
     $time = $modx->tstart;  
     echo strftime("%H:%M:%S", $time);  
-    // выведет что-то вроде "17:56:10"  
+    // returns "17:56:10"  
     ?>

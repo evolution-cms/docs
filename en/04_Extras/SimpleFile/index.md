@@ -1,49 +1,51 @@
+## SimpleFiles - attach files to the page
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<h3>SimpleFiles - прикрепляем к странице файлы </h3>
-SimpleFiles - прикрепляем к странице файлы Evolution CMS.
-<p>Еще одно дополнение на базе DocLister и EasyUI. На этот раз к странице прикрепляются файлы и редактируются в таблице</span> – как в MultiFiles, но немного удобнее (особенно если речь идет о большом количестве файлов) (:</p>
-<p>Для работы необходимо наличие <a href="https://github.com/AgelxNash/DocLister" rel="nofollow" target="_blank">DocLister и MODxAPI</a>, а также PHP не меньше 5.6.</p>
-<p>Скачивать здесь: <i class="fa fa-github fa-lg text-primary"></i> <a href="https://github.com/Pathologic/SimpleFiles" rel="nofollow" target="_blank">Pathologic</a></p>
-<h3 class="sub-header">Настройки плагина</h3>
-<ul>
-	<li><span class="text-bold">Tab name</span> – название вкладки;</li>
-	<li><span class="text-bold">Controller class</span> – класс контроллера отличный от стандартного;</li>
-	<li><span class="text-bold">Templates</span> – id шаблонов, с которыми работает плагин, <strong>обязательно</strong>;</li>
-	<li><span class="text-bold">Documents</span> – то же самое, но для отдельных ресурсов;</li>
-	<li><span class="text-bold">Ignore Documents</span> – id исключаемых ресурсов;</li>
-	<li><span class="text-bold">Roles</span> – id разрешенных ролей;</li>
-	<li><span class="text-bold">Storage folder</span> – папка, где хранятся файлы, по умолчанию assets/storage/;</li>
-	<li><span class="text-bold">Icons folder</span> – папка, в которой хранятся иконки файлов, по умолчанию assets/snippets/simplefiles/icons/;</li>
-	<li><span class="text-bold">Allowed files</span> – расширения файлов, разрешенных для загрузки, через запятую; если не указывать, то будет использована системная настройка;</li>
-</ul>
-<p>Maximum file size</span> – ограничение размера файла, в мегабайтах.</p>
-<p>Иконки должны именоваться как <em>расширение_файла_строчными_буквами.png</em></p>
-<p>Иконка file.png подставляется, если не нашлось подходящей.</p>
+### SimpleFiles - attach Evolution CMS files to the page.
 
-<h3 class="sub-header">Вывод записей</h3>
-<p>По выводу записей читаем про <a href="simplegallery/index.html" rel="nofollow" target="_blank">SimpleGallery</a>.</p>
-<p>При выводе через сниппеты-обертки sfLister и sfController доступны дополнительно виртуальные плейсхолдеры:</p>
-<ul>
-	<li><span class="text-bold">[+icon+]</span> – иконка;</li>
-	<li><span class="text-bold">[+fSize+]</span> – отформатированное значение размера;</li>
-	<li><span class="text-bold">[+mime+]</span> – MIME-тип файла;</li>
-	<li><span class="text-bold">[+ext+]</span> – расширение файла;</li>
-	<li><span class="text-bold">[+filename+]</span> – имя файла без расширения;</li>
-	<li><span class="text-bold">[+basename+]</span> – имя файла с расширением;</li>
-	<li><span class="text-bold">[+e.sf_title+]</span> – название файла с экранированием символов;</li>
-	<li><span class="text-bold">[+e.sf_description+]</span> – описание файла с экранированием символов.</li>
-</ul>
+Another addition based on DocLister and EasyUI. This time, files are attached to the page and edited in a table - as in MultiFiles, but a little more convenient (especially if we are talking about a large number of files) (:
 
-<h3 class="sub-header">Поля в таблице sf_files:</h3>
-<ul>
-	<li><span class="text-bold">sf_id</span> – id файла (idField);</li>
-	<li><span class="text-bold">sf_index</span> – позиция в списке;</li>
-	<li><span class="text-bold">sf_title</span> – название файла;</li>
-	<li><span class="text-bold">sf_description</span> – описание файла;</li>
-	<li><span class="text-bold">sf_file</span> – ссылка на файл;</li>
-	<li><span class="text-bold">sf_size</span> – размер файла;</li>
-	<li><span class="text-bold">sf_isactive</span> – флажок, чтобы скрыть какие-то файлы из вывода;</li>
-	<li><span class="text-bold">sf_rid</span> – id ресурса, которому принадлежит файл (parentField);</li>
-	<li><span class="text-bold">sf_createdon</span> – дата добавления файла.</li>
-</ul>
+To work, you need a https://github.com/AgelxNash/DocLister, as well as PHP at least 5.6.
+
+Download here: https://github.com/Pathologic/SimpleFiles
+
+## Plugin settings
+- Tab name – Tab Name;
+- Controller class – controller class other than standard;
+- Templates – the id of the templates with which the plugin works is mandatory;
+- Documents – the same, but for individual resources;
+- Ignore Documents – excluded ID resources;
+- Roles – Allowed Roles;
+- Storage folder – the folder where the files are stored, by default assets/storage/;
+- Icons folder – the folder where the icons of files are stored, by default assets/snippets/simplefiles/icons/;
+- Allowed files – extensions of files allowed for download, separated by commas; if you do not specify, the system setting will be used;
+- Maximum file size – file size limit, in megabytes.
+
+Icons should be named as _file_extension_lowercase.png_
+
+The file.png icon is substituted if there is no suitable one.
+
+## Display records
+According to the output of the entries, we read about https://github.com/BBloke/docs/blob/master/en/04_Extras/SimpleFile/simplegallery/index.html
+
+When withdrawing through snippets-wrappers, sfLister and sfController additional virtual placeholders are available:
+
+- [+icon+] – icon;
+- [+fSize+] – formatted size value;
+- [+mime+] – MIME-type of the file;
+- [+ext+] – file extension;
+- [+filename+] – file name without extension;
+- [+basename+] – file name with extension;
+- [+e.sf_title+] – the name of the file with character shielding;
+- [+e.sf_description+] – description of the file with character escape.
+
+## Fields in the _sf_files_ table
+
+- sf_id – File id (idField);
+- sf_index – position in the list;
+- sf_title – file name;
+- sf_description – file description;
+- sf_file – link to the file;
+- sf_size – file size;
+- sf_isactive – checkbox to hide some files from output;
+- sf_rid – the id of the resource to which the file belongs (parentField);
+- sf_createdon is the date the file was added.

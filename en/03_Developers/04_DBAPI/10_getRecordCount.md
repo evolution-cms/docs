@@ -1,26 +1,26 @@
-### Количество записей в результате запроса
+### Number of records in the query result
 
 integer getRecordCount ($data_set)
 
-**$data_set** - соединение с базой
+* **$data_set** - connection to the database
 
-Возвращает количество записей, которое было получено в результате запроса SELECT.
+Returns the number of records that were retrieved as a result of a SELECT query.
 
 ***
 
-#### Пример
+#### Example
 ````
 $output = '';  
 $result = $modx->db->select('make, model, color, year', 'cars', 'year > 2001');  	
 $total_rows = $modx->db->getRecordCount( $result );   
 	
 if( $total_rows >= 1 ) {  
-	$output .= $total_rows . ' машин новее 2001 года:<br />';  
+	$output .= $total_rows . ' cars newer than 2001:<br />';  
 	while( $row = $modx->db->getRow( $result ) ) {  
-		$output .= 'Производитель: ' . $row['make'] . ' | Модель: ' . $row['model'] .  ' | Цвет: ' . $row['color'] . ' | Год: ' . $row['year'] . '<br />';  
+		$output .= 'Manufacturer: ' . $row['make'] . ' | Model: ' . $row['model'] .  ' | Цвет: ' . $row['color'] . ' | Год: ' . $row['year'] . '<br />';  
 	}  
 }else{  
-	$output = 'Нет машин новее 2001 года!';  
+	$output = 'There are no cars newer than 2001!';  
 }  
 echo $output;
 ````

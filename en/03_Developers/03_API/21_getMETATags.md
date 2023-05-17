@@ -11,7 +11,7 @@ array getMETATags(int $id);
 	Array ( 
 		[Автор] => Array ( 
 			[tag] => author 
-			[tagvalue] => modx-cms.ru 
+			[tagvalue] => evo.im 
 			[http_equiv] => 0 
 		) 
 	)

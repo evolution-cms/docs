@@ -1,16 +1,18 @@
-###Удаление данных из базы
+### Delete data from the database
 
 bool delete(string $from [, string $where [, string $fields]])
 
-**$from** - таблица, в которой необходимо удалить данные
-**$where** - условие, по которому необходимо удалить данные
-**$fields** - список полей, которые требуется удалить. Если не указан, то удаляется весь ряд
+* **$from** - table in which you want to delete data
+* **$where** - condition under which it is necessary to delete data
+* **$fields** - list of fields that you want to delete. if not specified the entire row is deleted
 
 ***
 
-####Пример
+#### Example
 
-	//Удаление пользователя из базы по идентификатору  
-	global $modx, $table_prefix;  
-	$id = $modx->db->escape($id);  
-	$modx->db->delete($table_prefix.".modx_web_users", "id = $id");
+Deleting a user from the database by ID  
+```
+global $modx, $table_prefix;  
+$id = $modx->db->escape($id);  
+$modx->db->delete($table_prefix.".modx_web_users", "id = $id");
+```

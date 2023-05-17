@@ -1,9 +1,9 @@
-###Минимальное количество проходов парсера
+### Minimum number of parser passes
 
 int minParserPasses
 
-Содержит минимальное число проходов парсером.
+Contains the minimum number of passes by the parser.
 
-####Пример
+#### Example
 
     <?php  echo $modx->minParserPasses;  ?>

@@ -1,101 +1,88 @@
-##Filters
+## Filters
 
-В комплекте следующие фильтры:
+The following filters are included:
 
-* content - для фильтрации по полям таблицы site_content, можно заменить параметром addWhereList;
-* tv - для фильтрации по TV-параметрам;
-* tvd - для фильтрации по TV-параметрам с учетом значений по умолчанию;
-* private - для фильтрации документов с учетом прав доступа.
+* content - to filter by the fields of the table, site_content can be replaced with the addWhereList parameter;
+* tv - for filtering by TV-parameters;
+* tvd - to filter by TV-parameters taking into account the default values;
+* private - to filter documents taking into account access rights.
 
-##Построение фильтра
-####Пример
+# filter 
+## Construction 
+#### Example
 ```
 OR(AND(filter:field:operator:value;filter2:field:operator:value);(...))
 ```
+## Operators 
 
-##Операторы
-###=, eq, is
+### =, eq, is
+Equally.
 
-Равно.
+### !=, no, isnot
+Not equal.
+NB: By design this creates a WHERE call which will include IS NULL.  This may produce undesired results when trying to filter for empty values.
+#### Example: 
+AND(tv:images:!=;)
+Would show all records.  Please use isnull
 
-###!=, no, isnot
+### isnull
+empty records
 
-Не равно.
+### isnotnull
+records containing something
 
-###>, gt
+### >, gt
+More than.
 
-Больше.
+### <, lt
+Less than.
 
-###<, lt
+### <=, elt
+Less than or equal.
 
-Меньше.
+### >=, egt 
+Greater than or equal to.
 
-###<=, elt
+### %, like 
+Contains a string.
 
-Меньше или равно.
+### like-r 
+Starts with a string.
 
-###>=, egt
-Больше или равно.
+### like-l
+Ends with a string.
 
-###%, like
-Содержит строку.
+### regexp Fetch using REGEXP regular expressions.
 
-###like-r
-Начинается строкой.
+### against Full-text search. 
+#### Example
 
-###like-l
-Заканчивается строкой.
-
-###regexp
-Выборка с использованием регулярных выражений [REGEXP](https://dev.mysql.com/doc/refman/5.5/en/regexp.html).
-
-###against
-Полнотекстовый поиск.
-####Пример
 ```
-[[DocLister? &filters=`AND(content:pagetitle,description,content,introtext:against:искомая строка)`]]
+[[DocLister? &filters=`AND(content:pagetitle,description,content,introtext:against:search string)`]]
 ```
-Из данного примера предполагается, что в базе данных имеется FULLTEXT индекс по полям pagetitle,description,content,introtext
+This example assumes that the database has a FULLTEXT index on the fields pagetitle,description,content,introtext
 
-###containsOne
-Поиск любого слова или его части в тексте при помощи LIKE.
-####Пример:
-```
-[[DocLister? &filters=`AND(content:content:containsOne:когда,наступит,мир)`]]
-```
-Будет построен SQL запрос вида
-```
-(content LIKE '%когда%' OR content LIKE '%наступит%' OR content LIKE '%мир%')
-```
-Т.е. в конечном счете из базы будут выбраны документы в тексте которых используется слова "когда" или "наступит" или "мир".
-Из примера вызова видно, что слова разделены запятой. Это поведение можно переопределить параметром ___filter_delimiter___.
+### containsOne 
+Search for any word or part of it in text using LIKE. 
 
-
-###containsAll
-Поиск всех слов в тексте при помощи LIKE.
-####Пример:
+#### Example:
 ```
-[[DocLister? &filters=`AND(content:content:containsAll:все,эти,слова,должны,присутствовать)`]]
+[[DocLister? &filters=`AND(content:content:containsOne:when,will come,peace)`]]
 ```
-Будет построен SQL запрос вида
-```
-(content LIKE '%все%' AND content LIKE '%эти%' AND content LIKE '%слова%' AND content LIKE '%должны%' AND content LIKE '%присутствовать%')
-```
+A SQL query of the form will be built
 
-###in
-Входит в множество.
+(content LIKE '%when%' OR content LIKE '%will come%' OR content LIKE '%peace%')
+That is, in the end, documents will be selected from the database in the text of which the words "when" or "will come" or "peace" are used. From the sample call, you can see that the words are separated by a comma. You can override this behavior with the filter_delimiter parameter.
 
-###notin
-Не входит в множество.
+### in Included in the set.
 
-####Пример вызова с фильтрацией по цене от 0 до 300:
+### notin Not included in the set.
 
+#### Example of a call with filtering at a price from 0 to 300:
 ```
 [[DocLister? &filters=`AND(tv:price:gt:0;tv:price:lt:300)`]]
 ```
-
-А теперь тоже самое, только с учетом значений по умолчанию
-
+And now it's the same, only taking into account the default values
 ```
 [[DocLister? &filters=`AND(tvd:price:gt:0;tvd:price:lt:300)`]]
 ```

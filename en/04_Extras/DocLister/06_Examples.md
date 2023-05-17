@@ -1,4 +1,4 @@
-##A simple example without pagination
+## A simple example without pagination
 
 ```
 [!DocLister? 
@@ -31,7 +31,7 @@ For clarity, dl-list-item chunk:
 </div>
 ```
 
-##Using configs
+## Using configs
 
 ```
 [!DocLister? 
@@ -55,7 +55,7 @@ Then create the JSON file test.json in the /config/custom/ snippet subfolder wit
 
 The result of this call will be identical to the previous example.
 
-##Using lexicon
+## Using lexicon
 
 ```
 [!DocLister?
@@ -77,7 +77,7 @@ return $_lang;
 
 Now in the example chunk you can use the tag [%newsTitle%] and it will automatically be replaced with the "Latest News" message.
 
-##A complex example with pagination
+## A complex example with pagination
 
 ```
 [!DocLister? 
@@ -122,7 +122,7 @@ For clarity, dl-list-item chunk
 </div>
 ```
 
-##Example of displaying information from a table other than site_content
+## Example of displaying information from a table other than site_content
 
 ```
 [!DocLister? 

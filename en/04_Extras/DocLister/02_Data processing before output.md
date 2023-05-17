@@ -1,34 +1,31 @@
+Most often, the data obtained are not displayed in pure form. For example, it is required to fulfill when displaying any conditions or treatments (displaying a preview for a picture, recalculating the price, formatting values).
 
-Чаще всего полученные данные выводятся не в чистом виде. Например, требуется выполнение при выводе каких-либо условий или обработок (вывод превью для картинки, пересчет цены, форматирование значений). 
+The traditional way in MODX is to invoke snippets in output patterns or use modifiers (phx). This approach is often used by beginners because of its simplicity, but it increases the load on the parser and the database.
 
-Традиционным способом в MODX является вызов сниппетов в шаблонах вывода или использование модификаторов (phx). Такой подход часто используется новичками в силу простоты, но при этом увеличивается нагрузка на парсер и базу данных.
+DocLister provides the ability to preprocess data using php using the prepare parameter.
 
-В DocLister предусмотрена возможность предварительной обработки данных средствами PHP с помощью параметра prepare.
+The value of the prepare parameter can be:
 
-Значением параметра prepare может быть:
+ * snippet name
+ * call a method of a preloaded class.
+ * anonymous function.
 
-* имя сниппета;
-* вызов метода заранее загруженного класса;
-* анонимная функция.
+You can specify multiple values for sequential processing.
 
-Можно задавать несколько значений для последовательных обработок.
+## Using Snippets
+The snippet processes array values $data returns an array $data or false after processing. In the latter case, the data will not be displayed, i.e. you can use prepare in this way to filter the data.
 
-## Использование сниппетов
+You can also use the $_DocLister and $_extDocLister objects in the snippet.
 
-Сниппет обрабатывает значения массива $data после обработки возвращает массив $data или false. В последнем случае данные выводиться не будут, т.е. можно использовать prepare таким образом для фильтрации данных.
-
-Также в сниппете можно использовать объекты $_DocLister и $_extDocLister.
-
-Объект $_DocLister дает возможность обращаться к методам и свойствам контроллера. Например, можно подменить текущий шаблон вывода:
+The $_DocLister object enables you to access the methods and properties of the controller. For example, you can replace the current output template:
 
 ```
 $_DocLister->renderTPL = "@CODE:[+pagetitle+]";
 ```
 
-В объекте $_extDocLister доступны методы getStore и setStore. setStore сохраняет, а getStore, соответственно, извлекает данные из памяти. Как только DocLister завершил свою работу, сохраненные блоки удаляются из памяти.
+The getStore and setStore methods are available in the $_extDocLister object. setStore stores, and getStore, respectively, retrieves data from memory. Once The DocLister has finished its work, the saved blocks are removed from memory.
 
-## Использование методов класса
-
+## Using Class Methods
 ```
 class DLprepare {
     public static function prepare(array $data = array(), DocumentParser $modx, $_DL, prepare_DL_Extender $_extDocLister) {
@@ -36,34 +33,27 @@ class DLprepare {
     }
 }
 ```
-Значение параметра в этом случае: DLprepare::prepare
+Parameter value in this case: DLprepare::p repare
 
-Аналогичным образом можно использовать анонимные функции.
+Similarly, you can use anonymous functions.
 
-## Примеры из блога Agel Nash
-
-### Пример 1
-
-Итак, представим, что у нас есть некий вызов DocLister'a:
-
+## Examples from the Agel Nash blog
+### Example 1
+So, let's imagine that we have some kind of DocLister call:
 ```
 [[DocLister? &tpl=`tplChunk` &parents=`1`]]
 ```
-
-Где tplChunk это ни что иное, как:
-
+Where tplChunk is none other than:
 ```
 <a href="[+url+]">[[if? &is=`[+longtitle+]:notempty` &then=`[+longtitle+]` &else=`[[snippet? &text=`[+pagetitle+]`]]`]]</a>
 ```
+Inside the tplChunk chunk, there is a nested if call (let's say the one that was specified at the beginning of the topic). What do we do?
 
-Внутри чанка tplChunk имеется вложенный вызов if (допустим тот, что был указан в начале топика). Что мы делаем?
+Add the &prepare= parameter to the DocLister call (you can use any other value instead of a test).test
 
-Добавляем к вызову DocLister параметр &prepare=`test` (можно и не тест, а любое другое значение). 
+Create a snippet named test (or the name that was specified in the prepare parameter)
 
-Создаем сниппет с именем test (ну или с тем именем, которое было указано в параметре prepare)
-
-В сниппете пишем такой код:
-
+In the snippet we write this code:
 ```
 <?php
 if(!empty($data['longtitle'])){
@@ -71,30 +61,24 @@ if(!empty($data['longtitle'])){
 }
 return $data;
 ```
-
-Вы конечно можете вместо runSnippet написать и:
-
+Of course, you can instead of runSnippet write and:
 ```
 $data['longtitle'] = "[[snippet? &text=`".$data['pagetitle']."`]]";
 ```
-Но еще раз вспомним почему это плохо: pagetitle может содержать символы об которые запнется парсер modx. Так можно написать только в том случае, если pagetitle может содержать вызов сниппета (но это оооочень редкий случай + есть другие способы для обработки вложенных modx тегов)! Но вернемся к нашим баранам.
+But once again, let's remember why this is bad: pagetitle can contain characters that the modx parser will stumble on. This can only be written if the pagetitle can contain a snippet call (but this is a very rare case + there are other ways to handle nested modx tags)! But back to our rams.
 
-Избавившись от вложенного сниппета теперь можно спокойно избавиться от чанка tplChunk и вынести шаблон прямо в вызов DocLister'a:
-
+After getting rid of the embedded snippet, you can now safely get rid of the tplChunk chunk and put the template directly into the DocLister call:
 ```
 [[DocLister? &tpl=`@CODE:<a href="[+url+]">[+longtitle+]</a>` &parents=`1`]]
 ```
+Now you can summarize: Checking conditions with php (using the prepare snippet) avoids unnecessary calls to nested snippets (nested calls occur only when the condition is true). And yet, in my humble opinion, inline templates are very convenient, because you can clearly see both the call and the template - all in 1 place.
 
-Теперь можно подвести итог: Проверка условий средствами php (при помощи сниппета prepare) позволяет избежать ненужных вызовов вложенных сниппетов (вложенных вызов происходит только тогда, когда условие true). А еще, на мой скромный взгляд, inline шаблоны это очень удобно, т.к. наглядно виден и сам вызов и шаблон - все в 1 месте.
+### Example No 2
+This example will be harder to understand. But it demonstrates even more clearly the advantage of the prepare parameter.
 
-### Пример №2
+The site has several groups of products (phones, TVs, tape recorders). Each group has its own items, which the user adds to the cart. On the checkout page, all selected items must still have a signature (to which product group they belong). In addition, each product in the cart has characteristics such as the number of goods ordered, the cost of the goods and the total cost taking into account the quantity. You also need to calculate the total TOTAL in the form of the full amount of the order.
 
-Этот пример будет сложнее для понимания. Но он еще более наглядно демонстрирует преимущество параметра prepare.
-
-На сайте имеются несколько групп товаров (телефоны, телевизоры, магнитофоны). В каждой группе соответственно свои позиции, которые пользователь добавляет в корзину. На странице оформления заказа все выбранные позиции должны еще иметь подпись (к какой группе товаров они принадлежат). Помимо каждый товар в корзине имеет такие характеристики, как кол-во заказываемого товара, стоимость товара и общая стоимость с учетом количества. Так же нужно посчитать общее ИТОГО в виде полной суммы заказа.
-
-Упростим немного эту задачку переместив в TV-параметр count заказываемое количество позиций. А саму корзину выведем точным перечислением ID документов. Таким образом вызов принимает следующий вид:
-
+Let's simplify this task a little by moving the ordered number of positions to the TV-parameter count. And the basket itself will be displayed by the exact listing of the ID of the documents. Therefore, the call takes the following form:
 ```
 [!DocLister? 
   &documents=`5133, 5132, 5135, 5131, 5136` 
@@ -104,9 +88,7 @@ $data['longtitle'] = "[[snippet? &text=`".$data['pagetitle']."`]]";
   &ownerTPL=`@CODE:<table class="table table-hover params"><tr><td>Категория</td><td>Позиция</td><td>Остаток</td><td>Стоимость</td><td>Общая стоимость</td></tr>[+dl.wrap+]</table>`
 !]
 ```
-
-А чанк ListShop содержит такой код:
-
+And Chunk ListShop contains the following code:
 ```
 <tr>
   <td>[[DocInfo? &docid=`[+parent+]` &field=`pagetitle`]]</td>
@@ -116,9 +98,7 @@ $data['longtitle'] = "[[snippet? &text=`".$data['pagetitle']."`]]";
   <td>[[FullPrice? &price=`[+tv.price+]` &count=`[+tv.count+]`]] руб.</td>
 </tr>
 ```
-
-Если сниппет DocInfo всем знаком, то сниппет FullPrice это ни что иное, как банальное перемножение двух чисел:
-
+If the DocInfo snippet is familiar to everyone, then the FullPrice snippet is nothing more than a banal multiplication of two numbers:
 ```
 <?php
 $count = isset($count) ? (int)$count : 0;
@@ -126,13 +106,11 @@ $price = isset($price) ? (int)$price : 0;
 return $count*$price;
 ?>
 ```
+To make it clearer, this is what the resource tree looks like:
 
-Чтобы стало понятнее, вот так выглядит дерево ресурсов:
+Resource tree
 
-Дерево ресурсов
-
-Добьем последний штрих - посчитаем на какую сумму у нас всего товаров в корзине. Для этого потребуется накидать небольшой сниппет, который пробежится опять по всем документам и посчитает общую сумму FullPrice. Назовем этот сниппет totalFullPrice (где 27 и 26 это ID тв-параметров с ценой и количеством):
-
+Let's finish off the last touch - let's calculate for how much we have all the goods in the basket. To do this, you will need to throw a small snippet, which will run again through all the documents and calculate the total amount of FullPrice. Let's call this snippet totalFullPrice (where 27 and 26 are TV parameter ID with price and quantity):
 ```
 <?php
 //Получаем те же самые данные только для упрощения работы используем json формат. в целом не важно как это происходит, главное получить тут список нужны id документов
@@ -156,11 +134,9 @@ foreach($out as $id=>$data){
 return $price;
 ?>
 ```
+Since this is a basket, we make all calls to snippets unclassified and look at the result (I am interested in the total number of queries): 12 SQL queries to solve such a plough problem.
 
-Т.к. это корзина, то все вызовы сниппетов делаем не кешированными и смотрим на результат (меня интересует общее число запросов): 12 SQL запросов для решения такой плевой задачи.
-
-Пробуем теперь сделать тоже самое при помощи prepare сниппета.
-
+Now let's try to do the same thing with the prepare snippet.
 ```
 [!DocLister? 
 &documents=`5133, 5132, 5135, 5131, 5136` 
@@ -170,9 +146,7 @@ return $price;
 &tvList=`price,count`   
 &ownerTPL=`@CODE:<table class="table table-hover params"><tr><td>Категория</td><td>Позиция</td><td>Остаток</td><td>Стоимость</td><td>Общая стоимость</td></tr>[+dl.wrap+]</table>`!]
 ```
-
-Как видите, в этом случае мы опять отказались от чанка в пользу inline шаблона в котором используются 2 непонятных плейсхолдера - category и fullPrice. Давайте посмотрим на код сниппета prepare, чтобы стало понятнее:
-
+As you can see, in this case we again abandoned the chunk in favor of the inline template in which 2 incomprehensible placeholders are used - category and fullPrice. Let's take a look at the prepare snippet code to make it clearer:
 ```
 <?php
 $data['fullPrice'] = $data['tv.count'] * $data['tv.price'];
@@ -190,27 +164,25 @@ $modx->setPlaceholder($key,$price);
  
 return $data;
 ?>
-
 ```
-fullPrice это ни что иное, как банальное перемножение 2 числе (цены и количества). Согласитесь, нет необходимости для такой банальной операции создавать/вызывать еще 1 сниппет, когда можно произвести расчет прямо как говорится "не отходя от кассы".
+fullPrice is nothing more than a banal multiplication of 2 numbers (price and quantities). Agree, there is no need for such a banal operation to create / call another 1 snippet, when you can make a calculation directly as they say "without departing from the cash register".
 
-category запускает тот же самый DocInfo при помощи runSnippet (т.е. ничего не поменялось).
+category runs the same DocInfo using runSnippet (i.e. nothing has changed).
 
-А теперь самое главное! Создается глобальный плейсхолдер totalFullPrice, который можно уже использовать вне чанков DocLister'a! Если его нет - то устанавливается значение 0. Если есть, то к нему прибавляется fullPrice. Таким образом, мы избавляемся от необходимости делать повторную выборку тех же самых данных только ради того, чтобы посчитать общую стоимость. Т.е. считаем все и сразу. Соответственно вызов [!totalFullPrice!] на странице заменяется на [+totalFullPrice+] (я еще ни разу не встречал, чтобы подобные данных получали при помощи сниппета вложенного в чанк ListShop. Как правило их получают именно при помощи сниппета похожего на totalFullPrice.)
+And now the most important thing! A global totalFullPrice placement holder is being created, which can already be used outside of DocLister's chunks! If it is not present, the value is set to 0. If there is, then fullPrice is added to it. In this way, we get rid of the need to re-sample the same data just to calculate the total cost. That is, we count everything at once. Accordingly, the call [!totalFullPrice!] on the page is replaced by [+totalFullPrice+] (I have never seen such data obtained using a snippet nested in the ListShop chunk. As a rule, they are obtained using a snippet similar to totalFullPrice.)
 
-Проверяем результат - 9 SQL запросов.
+Check the result - 9 SQL queries.
 
-Давайте опять подведем итог: Благодаря prepare сниппету получилось избавиться от необходимости повторной обработки тех же самых данных, которые нужны для получения и вывода какой-то другой информации в произвольном месте этой же страницы.
+Let's summarize again: Thanks to prepare, the snippet was able to get rid of the need to re-process the same data that is needed to obtain and display some other information at any place on the same page.
 
-### Пример №3
-Этот пример еще сложнее, но одновременно с этим еще более полезней и интересней.
+### Example No 3
+This example is even more complicated, but at the same time even more useful and interesting.
 
-Итак, если посмотреть внимательно на скриншот дерева ресурсов и список ID документов которые мы выводим, то можно заметить, что из разделов телевизоры и магнитофоны выводится по 2 документа. Таким образом, parents у документов 5135, 5131 и 5136, 5132 будут одинаковыми соответственно. Т.е. у первой пары parents будет 5638, а у второй 5639. Что нам это дает? А это дает вот что - мы целых 2 раза вызываем DocInfo просто так. Представьте, вы получили pagetitle документа 5638 и запомнили его. Если он понадобился вам опять - то вы не повторно его запрашиваете, а сразу используете.
+So, if you look carefully at the screenshot of the resource tree and the list of IDs of documents that we display, you can see that 2 documents are displayed from the TV and tape recorders sections. Thus, the parents of documents 5135, 5131 and 5136, 5132 will be the same respectively. That is, the first pair of parents will have 5638, and the second 5639. What does this give us? And this gives this - we call DocInfo as many as 2 times just like that. Imagine you received the pagetitle of document 5638 and remembered it. If you need it again, then you do not re-request it, but immediately use it.
 
-Именно для этой цели в DocLister, а если быть точнее в экстендере prepare есть 2 метода: getStore и setStore. Один сохраняет, а второй соответственно извлекает данные из памяти. Как только DocLister завершил свою работу, сохраненные блоки удаляются из памяти (массив автоматически очищается) и все работает дальше без каких-либо глюков, как это могло бы быть, если бы мы сохраняли временные данные в глобальный массив плейсхолдеров. Более того, при таком подходе и больших объемах потребовалось бы очень много памяти...
+It is for this purpose that docLister, or to be more precise, the prepare extender, has 2 methods: getStore and setStore. One stores, and the second, respectively, retrieves data from memory. Once DocLister has finished its work, the saved blocks are deleted from memory (the array is automatically cleared) and everything runs on without any glitches, as it might be if we saved the temporary data to a global array of placeholders. Moreover, with this approach and large volumes, a lot of memory would be required...
 
-Ладно, хватит лирики. Давайте посмотрим как можно переписать сниппет prepare с учетом getStore и setStore:
-
+Okay, enough lyrics. Let's see how you can rewrite the prepare snippet with getStore and setStore in mind:
 ```
 if(($data['category']=$_extDocLister->getStore('currentParents'.$data['parent'])) === null){
     //[[DocInfo? &docid=`[+parent+]` &field=`pagetitle`]]
@@ -218,15 +190,14 @@ if(($data['category']=$_extDocLister->getStore('currentParents'.$data['parent'])
     $_extDocLister->setStore('currentParents'.$data['parent'], $data['category']);
 }
 ```
+I didn't copy-paste the entire source, I just quoted the modified part. But I think it's clear that we've wrapped up calling the DocInfo snippet into these 2 functions. And as a unique key, they specified currentParents[+parent+]. Thus, modx needed only 7 SQL queries to generate the same page.
 
-Я не стал копипастить весь исходник, а только процитировал измененную часть. Но думаю тут и так понятно, что мы "обернули" вызов сниппета DocInfo в эти 2 функции. А в качестве уникального ключа указали currentParents[+parent+]. Таким образом, для формирований этой же страницы MODX-у потребовалось всего 7 SQL запросов.
+Thus: the prepare snippet allows not only to process data, but also to exclude useless re-execution of code.
 
-Таким образом: сниппет prepare позволяет не только обрабатывать данные, но и исключить бесполезное повторное выполнение кода.
+## Process a wrapper template
+After each document is processed, DocLister attempts to apply the ownerTPL wrapper. Sometimes it is necessary to further process this wrapper and it is possible to replace it depending on various conditions (number of documents to be displayed, dates, etc.).
 
-## Обработка шаблона обертки
-После того, как каждый документ обработан, DocLister пытается применить обертку ownerTPL. Порой бывает необходимо эту обертку дополнительно обработать и возможно подменить в зависимости от различных условий (кол-во выводимых документов, даты и т.п.).
-
-### Вывод 3 блоков с равномерным наполнением за 1 вызов 
+### Output of 3 blocks with uniform filling in 1 call
 ```
 return $modx->runSnippet('DocLister', array(
 	'ownerTPL' => '@CODE: <div class="mini-slider clearfix">
@@ -267,7 +238,7 @@ return $modx->runSnippet('DocLister', array(
 	}
 ));
 ```
-### Подстановка данных в шаблон обертку для меню определенного уровня
+### Lookup data into a template wrapper for a specific level of menu
 ```
 return $modx->runSnippet('DLBuildMenu', array(
     'idType' => 'parents',
