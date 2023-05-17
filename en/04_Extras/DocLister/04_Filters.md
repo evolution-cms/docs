@@ -59,7 +59,7 @@ OR(AND(filter:field:operator:value;filter2:field:operator:value);(...))
 
 ###containsOne
 Поиск любого слова или его части в тексте при помощи LIKE.
-####Примера:
+####Пример:
 ```
 [[DocLister? &filters=`AND(content:content:containsOne:когда,наступит,мир)`]]
 ```
@@ -69,6 +69,18 @@ OR(AND(filter:field:operator:value;filter2:field:operator:value);(...))
 ```
 Т.е. в конечном счете из базы будут выбраны документы в тексте которых используется слова "когда" или "наступит" или "мир".
 Из примера вызова видно, что слова разделены запятой. Это поведение можно переопределить параметром ___filter_delimiter___.
+
+
+###containsAll
+Поиск всех слов в тексте при помощи LIKE.
+####Пример:
+```
+[[DocLister? &filters=`AND(content:content:containsAll:все,эти,слова,должны,присутствовать)`]]
+```
+Будет построен SQL запрос вида
+```
+(content LIKE '%все%' AND content LIKE '%эти%' AND content LIKE '%слова%' AND content LIKE '%должны%' AND content LIKE '%присутствовать%')
+```
 
 ###in
 Входит в множество.
