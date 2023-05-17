@@ -83,7 +83,7 @@ When registering, the user is added to the opt group. Two letters are sent - to 
 		</div>
 	</div>
 </div>`
-&to=`info@sitename.com`
+&to=`info@sitename.ru`
 &reportTpl='@CODE:New user [+fullname.value+] ([+id.value+])'
 &ccSender=`1`
 &ccSenderField=`email`

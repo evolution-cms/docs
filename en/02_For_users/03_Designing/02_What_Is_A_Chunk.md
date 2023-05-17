@@ -9,7 +9,7 @@ The second most common use of chunk is snippet templates. Thanks to this, there 
 #### Example chunk contents with placeholders:
 
 [+wf.linktext+]
-This is a template that is used for menu items in evo.im. And respectively , [+wf.classes+] and [+wf.linktext+] are placeholders that will be replaced by the Wayfinder snippet on the CSS class used and the name of the menu item.
+This is a template that is used for menu items in MODx-cms.ru. And respectively , [+wf.classes+] and [+wf.linktext+] are placeholders that will be replaced by the Wayfinder snippet on the CSS class used and the name of the menu item.
 In addition to these two options, the chunk can be used to store some special information. For example, you can store a set of parameters for a snippet (for example, a list of files), which can be generated manually or by other MEANS of MODx.
 
 Creating and Editing Chunk
@@ -22,7 +22,7 @@ List of Chunks in MODX EVO
 
 To create, you need to click on the New Chunk link, and to edit an existing Chunk, just click on the link with its name. The following form appears:
 
-New chunk in MODX EVO
+New chunk in MODX EVo
 
 Assign fields:
 
