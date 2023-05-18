@@ -1,5 +1,4 @@
-# Using a template
-A template in Evolution is the main part of the site page that determines its design. The template does not require special syntax and is a simple HTML code (and possibly XHTML or other) with the call of the necessary chunks, parameters and snippets.
+A template in Evolution CMS is the main part of the site page, which determines its design. The template does not require special syntax and is a regular HTML code (or possibly XHTML or another) with the call of the necessary chunks, parameters and snippets.
 
 The number of templates most often depends on the appearance and functionality of the site. As a rule, templates are created for various sections and pages of the site. For example, it will be logical to create different templates for the product and for the news and attach various TV parameters to them. This will allow the content manager to fill the site faster and more correctly. It will also greatly facilitate the work of a programmer if you need to make some news feeds or products.
 
@@ -36,14 +35,25 @@ Placeholder - [(site_url)]
 Snippet Call - [[Wayfinder? &startId=`5` &level=`1`]]
 
 ## Create and edit a template
+
 All templates are located in the following location:
 
 Resources → Resource Management → Template The list of templates is as follows:
 
 To create a new template, you need to click on the "New template" link, and to edit an existing one, just click on the link with its name. When you create a template, you can also choose which TV settings it owns and sort them as needed.
 
+### Blade
+
+Starting with the Evolution CMS 2.0 version, it became possible to use the Blade template generator to create site templates.
+
+To get the ability to use Blade for your selected template, you should add a nickname to it in the editing mode of the template, and then check the "Create a template file when saving" checkbox.
+
+All created templates will be placed in the /views/ folder at the root of the site. After that, you can work with the template using your favorite code editor.
+
 ### Creating a template in Evolution CMS
+
 #### Assign fields
+
 Template name - used in the template selection list. You may also need snippets, plugins, or modules for some operations. You can use both English or Russian, as well as a hyphen, an underscore, and a space.
 
 **Description** - displayed next to the name of the template in the general list. Used only to describe the purpose of the template and not required.
@@ -57,6 +67,7 @@ Restrict access to editing a template - if you enable the checkbox, no one excep
 **Template code (html)** - the content of the template itself is placed here.
 
 ### Conservation
+
 **Save** - creates a new template
 
 **Undo** - will return us to the list of templates without saving the result.
@@ -74,6 +85,7 @@ Evolution allows you to define a few more actions after saving the template:
 **Close** - after saving, we will return to the general list of templates.
 
 ## Create a copy of a template
+
 Sometimes it is necessary to create a copy of an existing template. It's very easy to do. To do this, go to the editing of the desired template and click on the "Make a copy" button.
 
 This opens a copy of the template for editing. The copy differs in that Duplicate of is added to its name. You just have to correct the name to a more appropriate one and make other necessary changes.
@@ -81,19 +93,23 @@ This opens a copy of the template for editing. The copy differs in that Duplicat
 A copy is created immediately after confirmation, so if you click Cancel, a copy will still remain in the list of templates.
 
 ## Delete a template
+
 To delete, you need to go into the editing mode of the corresponding template and click the "Delete" button.
 
 **Attention! Templates are deleted completely and there is no way to restore them.**
 
 ## Default template
+
 When you create a document, a default template is automatically suggested. To configure the default template, you must do the following:
 
 Go to the management system settings: Tools → Configuration → Site Find the "Default Template" parameter and change to the desired one. Save the settings.
 
 ## FAQ
+
 Are there any restrictions on website design templates?
 
 Absolutely none. Evolution allows you to implement any design.
 
 ## Where can I get ready-made templates?
+
 Evolution makes it easy to use any laid out HTML-layout, which can be ordered from specialists or found on specialized sites.
