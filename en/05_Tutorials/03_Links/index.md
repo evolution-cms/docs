@@ -1,5 +1,5 @@
 # External Links
 
-[evo-cms.com)](http://evo-cms.com)  - Community Edition EvolutionCMS
+[evo.im)](https://evo.im) - Evolution CMS
 
 [code.divandesign.ru](http://code.divandesign.ru) - Repository of the studio "Divan.Design".
