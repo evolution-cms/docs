@@ -11,7 +11,7 @@ The website will be updated automatically after merging your branch with master.
 
 Документація Evolution CMS 
 =========
-Це репозиторій докумнтації [Evolution CMS](https://evo.im/).
+Це репозиторій документації [Evolution CMS](https://evo.im/).
 
 Допоможи нам розробити гарну документацію за допомогою pull-request та відкриттям issues.
 
