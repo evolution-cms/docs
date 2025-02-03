@@ -1,4 +1,4 @@
-> [!WARNING]
+> [!IMPORTANT]
 > Commands are not executed automatically if the site is put into maintenance mode (Configuration -> Site -> Site Status -> Offline).
 
 In order for the commands to be executed automatically on the server side without the involvement of the developer, the Schedule is used.
