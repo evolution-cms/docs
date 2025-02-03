@@ -1,3 +1,6 @@
+> [!УВАГА]  
+> Команди не виконуються в автоматичному режимі якщо сайт переведено в режим обслуговування (Конфігурація -> Сайт -> Статус сайта -> Оффлайн).
+
 Щоб команди виконувались в автоматичному режимі на стороні сервера без участі розробника використовується Розклад.
 
 Для налаштування розкладу, потрібно в файл команди додати метод `schedule()`.
@@ -35,7 +38,7 @@ if (count($this->commands)) {
 protected function defineConsoleSchedule()
 {
     $this->app->singleton(Schedule::class, function ($app) {
-        return tap(new Schedule('Europe/Kyiv'), function ($schedule) {
+        return tap(new Schedule(now()->timezoneName), function ($schedule) {
             $this->schedule($schedule->useCache('file'));
         });
     });

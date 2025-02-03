@@ -1,3 +1,6 @@
+> [!WARNING]
+> Commands are not executed automatically if the site is put into maintenance mode (Configuration -> Site -> Site Status -> Offline).
+
 In order for the commands to be executed automatically on the server side without the involvement of the developer, the Schedule is used.
 
 To configure the schedule, you need to add the `schedule()` method to the command file.
@@ -35,7 +38,7 @@ Add the necessary methods to the service provider's file
 protected function defineConsoleSchedule()
 {
     $this->app->singleton(Schedule::class, function ($app) {
-        return tap(new Schedule('Europe/Kyiv'), function ($schedule) {
+        return tap(new Schedule(now()->timezoneName), function ($schedule) {
             $this->schedule($schedule->useCache('file'));
         });
     });
