@@ -15,7 +15,7 @@ This list contains only those Blade directives registered with Evolution CMS. To
 
 ### @makeUrl()
 
-The directory `@makeUrl($id)` in the Blade template corresponds to the `UrlProcessor::makeUrl($id);` method call in the PHP code.
+The directive `@makeUrl($id)` in the Blade template corresponds to the `UrlProcessor::makeUrl($id);` method call in the PHP code.
 
 Accepts only one argument - resource ID.
 
@@ -27,7 +27,7 @@ Accepts only one argument - resource ID.
 
 ### @evoRole()
 
-The `@evoRole($role)` directory in the Blade template is responsible for displaying content depending on the user's role.
+The `@evoRole($role)` directive in the Blade template is responsible for displaying content depending on the user's role.
 
 Accepts only one argument - the role key, or nothing.
 
@@ -49,7 +49,14 @@ Accepts only one argument - the role key, or nothing.
 * Prefix: empty
 * Suffix: empty
 
-#### evoConfig
+### evoConfig
+
+The `@evoConfig($name, $default)` directive in the Blade template corresponds to the `evo()->getConfig($name, $default);` method call in PHP code.
+
+Takes one or two arguments:
+
+- The first argument (required) is the name of the configuration.
+- The second argument (optional) is the value if the config returned nothing.
 
 * Has parameter = YES
 * Prefix: <?php echo evo()->getConfig(
