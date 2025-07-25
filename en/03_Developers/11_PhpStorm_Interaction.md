@@ -48,3 +48,9 @@ Accepts only one argument - the role key, or nothing.
 * Has parameter = NO
 * Prefix: empty
 * Suffix: empty
+
+#### evoConfig
+
+* Has parameter = YES
+* Prefix: <?php echo evo()->getConfig(
+* Suffix: , "");?>
