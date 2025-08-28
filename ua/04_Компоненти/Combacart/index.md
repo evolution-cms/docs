@@ -28,22 +28,24 @@
 
 PHP 7.4 та вище
 
-Composer 
+Composer
 
 EVO CMS 1.4+ [Evolution CMS 1.4](https://github.com/evolution-cms/evolution/tree/1.4.x)
-або 
+або
 Evolution CMS 3.+ [Evolution CMS 3](https://github.com/evolution-cms/evolution/tree/3.2.x)
-
 
 ## Важливо! ## 
 Використовуйте пакет [combacart-extras](https://github.com/zatomant/combacart-extras) для зручного встановлення плагіну CombaCart через модуль Extras в EVO 1.4+ та Evolution CMS 3+ [github.com](https://github.com/evolution-cms/evolution)    
 Extras пакет в автоматичному режимі створює шаблони, сніпети, ТВ та плагін для роботи CombaCart.  
 Крок 5 стадії встановлення оновлює CombaCart та його залежності до актуальної версії.  
 
-Детальна інформація саме про CombaCart [github.com](https://github.com/zatomant/combacart)  
+Детальна інформація саме про CombaCart [github.com](https://github.com/zatomant/combacart)
 
 ## Встановлення ##
-  
+
+Для нового встановлення рекомендую використовувати пакет CombaCart extras, якій підготовлено як файл для модуля Extras в Evolution CMS.  
+Щоб дізнатись подробиці перейдіть на сторінку CombaCart extras [combacart-extras](https://github.com/zatomant/combacart-extras)
+
 Кроки:  
 1. завантажте останній реліз "CombaCart extras" з [github.com](https://github.com/zatomant/combacart-extras/archive/refs/heads/main.zip)
 2. авторизуйтесь в адміністративній частині Evolution CMS ( /manager )
@@ -81,3 +83,195 @@ private const COMPOSER_PATH = '/usr/bin/composer';
 ```
 private const COMPOSER_PATH = 'php8.1 /usr/bin/composer';
 ```
+
+## Оновлення CombaCart ##  
+
+**Варіант 1 - Автоматично через браузер**:  
+відкрийте в браузері сторінку
+```
+ваш_сайт/assets/plugins/combacart/update/
+```
+
+**Варіант 2 - Автоматично через консоль веб сервера**:  
+виконайте в консолі
+```
+cd _коренева_тека_вашого_сайту_/assets/plugins/combacart/update/
+
+php process.php
+```  
+_Варіант 1 та 2 для автоматичної роботи оновлення потребує видалення файлу блокування в теці /combacart/update/_.
+
+
+**Варіант 3 - Ручне оновлення файлів**:
+- завантажте крайній реліз CombaCart [github.com](https://github.com/zatomant/combacart) та перезапишіть файли в /assets/plugins/combacart
+- в теці /assets/plugins/combacart виконайте **composer update** для оновлення залежностей
+
+Файл composer.json містить перелік компонентів що використовується в CombaCart.
+Ви можете прибрати зайві, на ваш розсуд, залежності та модифікувати шаблони за потреби.
+
+
+## Налаштування ##  
+
+Рекомендую задати свій "секрет" у файлі /assets/custom/Config/secret.php або у файлі .env вашого змінного середовища.  
+Інакше секрет сформується автоматично і його значення буде залежіть від налаштувань серверу.
+
+**файл /src/Config/**
+* містить налаштування маркетплейсу за замовчуванням. не змінюйте в цій теці нічого.
+
+**тека /assets/custom/Config/**
+* містить файли з вашими перевизначеними налаштуваннями згідно [Правила оновлення налаштувань](https://github.com/zatomant/combacart/docs/override_settings.md)
+* наприклад, розмістить тут ваші налаштування маркетплейса та дані аутентифікації до стороніх сервисів:
+    - НоваПошта (*на травень 2025 р., для трекінга відправлень Новапошта можна не застосовувати API ключ*)
+    - LiqPay
+    - monobank (наразі, потребує тестування callback)
+    - смс провайдер AlphaSMS
+    - та інші
+
+
+**файл /src/Bundle/Standalone/Server.php**
+* містить клас автономного локального Comba сервера для керування Замовленнями:
+1. метод marketplace()
+    - повертає загальні налаштування інтернет магазину
+
+2. метод sellers()
+    - повертає дані по Продавцях (публічні дані)
+    - Продавці крім основних параметрів містять посилання на Отримувачів оплат
+
+3. метод payee()
+    - повертає дані Отримувачів оплат
+    - Отримувачі оплат це юридичні особи або ФОПм з варіантами оплат які вони підтримують
+
+4. метод delivery()
+    - повертає перелік варіантів доставки
+
+5. метод payment()
+    - повертає перелік варіантів оплат
+
+
+
+## Перші кроки після закінчення інсталяції та налаштувань ##
+
+1. Необов'язковий пункт, але з ним легше.  
+   На сторінці адміністрування CMS Evolution відкрийти `Конфігурація -> Дружні URL та відключить "Використовувати вкладені URL"`  
+   Використовувати вкладені URL: Ні
+
+2. При інсталяції через Extras [combacart-extras](https://github.com/zatomant/combacart-extras) будуть автоматично створені необхідні елементи (інакше доведеться створити це вручну), а саме :
+
+    * шаблон для Сторінки товару goods_tmplt
+    * шаблон для сторінки Оформлення замовлення checkout_tmplt
+    * шаблон для інших сторінок blank_tmplt
+
+    * tv
+        - goods_avail ознака чи доступний товар до замовлення
+        - goods_code актикул товару (sku)
+        - goods_price ціна товару
+        - goods_price_old стара ціна товару
+        - goods_weight вага товару
+        - goods_isnewproduct ознака "новий товар"
+        - goods_isondemand ознака "товар під замовлення"
+        - goods_seller Продавець товару
+        - goods_inbalances ознака залежності товару від залишків
+        - goods_images містить перелік зображень, детально про [Зображення](https://github.com/zatomant/combacart/docs/images.md)
+        - goods_goods містить перелік видів товару (опціонально), використовує multiTV
+
+    * сніпети:
+        - CombaHeader
+        - CombaFooter
+        - CombaHelper
+        - CombaFunctions
+
+    * плагін CombaHelper
+
+3. Створіть нову сторінку (документ), задайте їй шаблон goods_tmplt.  
+   Це буде ваш перший товар.
+   Код товару (артикул) має бути унікальним в контексті сторінки (документа).  
+   Детально [Товари](https://github.com/zatomant/combacart/docs/product.md)
+
+4. Створіть сторінку з псевдонімом (alias) checkout та задайте їй шаблон checkout_tmplt  
+   Це буде сторінка Оформлення замовлення.
+   Якщо використовуєте інший псевдонім, то перевизначить 'PAGE_CHECKOUT'
+
+5. Опціонально: створіть сторінку з псевдонімом (alias) tnx на яку буде перенаправлено Покупця після створення замовлення.
+   Якщо використовуєте інший псевдонім, то перевизначить 'PAGE_TNX'
+   У разі відсутності такої сторінки буде перехвачено та оброблено modx event 'OnPageNotFound'
+
+6. Створіть сторінку з псевдонімом (alias) cabinet, задайте шаблон blank_tmplt та вставте в вміст ресурсу ```[!CombaFunctions? &fnct=`cabinet`!]```  
+   Детально [Персональний кабінет покупця](https://github.com/zatomant/combacart/docs/cabinet.md)
+
+7. Опціонально: створіть сторінку з псевдонімом (alias) t - це буде сторінка відстеження замовлення.
+   Детально [Відстеження Замовлень](https://github.com/zatomant/combacart/docs/tracking.md)
+
+8. Опціонально: створіть сторінку з псевдонімом (alias) p - це буде сторінка з варіантами оплат замовлення.
+   Детально [Оплата Замовлень](https://github.com/zatomant/combacart/docs/payment.md)
+
+
+
+## Обробка замовлень ##
+
+Після того як Покупець сформував Замовлення (Кошик з товарами відправлено до обробки менеджерами Макретплейса), його можна подивитись на сторінці керування.
+Доступ до сторінки має будь-якій користувач з ролю 'manager' що пройшов авторизацію через адміністративну сторінку EVO (http(s)://ваш_сайт/manager).
+Після авторизації, відкрийте сторінку керування замовленнями за посиланням http(s)://назва_сайту/comba
+На сторінці можна:
+- передивлятись перелік замовлень за будь-який час
+- вести пошук замовлень за номером, Замовником та його електронною поштою
+- редагувати замовлення
+- друкувати замовлення
+- надсилати електронні листи, смс повідомлення та формувати тексти для подальшого використання в месенджерах.
+
+Присутня можливість зміни мови та теми інтерфейсу.
+
+
+## Залежності та вимоги до налаштувань ##
+
+0. якщо отримуєте помилку Class 'IntlDateFormatter' not found  
+   встановіть та активуйте extension php_intl
+
+1. **twig** (необхідно) https://twig.symfony.com/  
+   *наявно в composer.json  
+   CombaCart використовує twig для шаблонів (після обробки даних парсером Modx/Evo)
+
+2. **boostrap, bootstrap-icon** (необхідно, опціонально) https://getbootstrap.com/  
+   *наявно в composer.json  
+   верстка CombaCart заснована на Bootstrap 5  
+   якщо маєте наявну копію bootstrap змінить шляхи до вашого bootstrap в файлі snippetGoodsFooter.php
+
+3. bootbox.js (опціонально) [bootboxjs](https://github.com/bootboxjs/bootbox)  
+   *наявно в пакеті інсталяції  
+   для роботи з діалоговими формами bootstrap
+
+4. ~~phpthumb~~  
+   вирішив відмовитись від цього на користь більш активної, в плані оновлення, Intervention/image
+
+5. Intervention\Image (необхідно) [github](https://github.com/Intervention/image)  
+   *наявно в composer.json
+   якщо користуєтесь іншим обробником зображень ніж phpthumb змінить клас ModxImage під свої потреби.
+
+6. multiTV (опціонально) [multiTV](https://github.com/extras-evolution/multiTV)  
+   *встановлюється з extras
+    - використовується для списків зображень в TV goods_images. замість списків можете використовувати TV goods_images як "строка" для одного зображення
+    - використовується для списків підвидів товару в TV goods_goods
+
+   Щоб виправити помилку з розташуванням вікна редагування властивостей зображення після встановлення multiTV    
+   замініть у файлі assets/tvs/multitv/css/colorbox.css
+   рядок 5  
+   ```#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; z1-index:9999; overflow:hidden;}```
+   на цей  
+   ```#colorbox, #cboxOverlay, #cboxWrapper{position:absolute; top:0; left:0; overflow:hidden;}```
+
+7. cropper.js (опціонально, компонент з multiTV)  
+   *наявно в пакеті інсталяції CombaCart extras
+   Опис по налаштуванню cropper [multiTV](https://github.com/extras-evolution/multiTV)
+   використовується разом з multiTV для списків зображень
+
+8. venobox (опціонально) [VenoBox](https://github.com/nicolafranchini/VenoBox)  
+   *наявно в пакеті інсталяції  
+   використовується для роботи з діалоговими формами зображень
+
+9. reCaptcha (опціонально)  
+   внесіть свої ключі для провайдера 'reCaptcha' у файл перевизначень /assets/custom/Config/provider.php якщо бажаете використовати капчу при перевірці оформлення замовлення
+
+
+## Інше ##  
+
+За замовчуванням, для підтримки багатомовності на сайті та в панелі керування замовленнями, використовується вбудований "перекладач".
+Детально про [Багатомовність в шаблонах](https://github.com/zatomant/combacart/docs/template.md)
