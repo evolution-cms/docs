@@ -3,16 +3,14 @@ Evolution CMS Documentation
 
 This is a repository of [Evolution CMS](https://evo.im/) documentation. 
 
-Help us develop a good documentation with your feedback (open issues) and new edits (pull-requests)!
+If you are submitting documentation for the **current stable** release, submit it to the corresponding branch. For example, documentation for Evolution CMS 3 would be submitted to the `3.x` branch.
 
-The website will be updated automatically after merging your branch with master.
-
-
+Documentation intended for the next release of Evolution CMS should be submitted to the `master` branch.
 
 Документація Evolution CMS 
 =========
 Це репозиторій документації [Evolution CMS](https://evo.im/).
 
-Допоможи нам розробити гарну документацію за допомогою pull-request та відкриттям issues.
+Якщо ви надсилаєте документацію для **поточного стабільного релізу**, надішліть її до відповідної гілки. Наприклад, документацію для Evolution CMS 3 буде надіслано до гілки `3.x`.
 
-Сайт документації буде автоматично оновлено після вливання вашої гілки в мастер-гілку.
+Документацію, призначену для наступного релізу Evolution CMS, слід надіслати до гілки `master`.
