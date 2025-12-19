@@ -16,3 +16,4 @@ The website will be updated automatically after merging your branch with master.
 Допоможи нам розробити гарну документацію за допомогою pull-request та відкриттям issues.
 
 Сайт документації буде автоматично оновлено після вливання вашої гілки в мастер-гілку.
+
