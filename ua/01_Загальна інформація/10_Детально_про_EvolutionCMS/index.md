@@ -41,4 +41,4 @@ Evolution CMS поширюється під ліцензією GNU / GPL, що �
 
 ## Вимоги ##
 
-PHP 5.6 або старше. MySQL 4.1.x або старше.
+PHP починаючи з 8.3. SQLite, або MySQL 8+, або PostgreSQL 13+.
