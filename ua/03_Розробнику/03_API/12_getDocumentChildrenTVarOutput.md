@@ -2,7 +2,9 @@
 
 *Примітка: якщо не задано список необхідних параметрів, то метод поверне пустий масив.*
 
-string getDocumentChildrenTVars(int $parentid, array $tvidnames[, int $published[, string $docsort[, string $docsortdir]]]);
+*Продуктивність: метод виконує окремі запити для кожного дочірнього документа (N+1). Для списків, де в кожного документа виводиться кілька TV (картки, ціни товарів), використовуйте [getTemplateVarValues](69_getTemplateVarValues.md) - він читає вказані TV усіх документів одним запитом.*
+
+array getDocumentChildrenTVarOutput(int $parentid, array $tvidnames[, int $published[, string $docsort[, string $docsortdir[, string $where[, string $resultKey]]]]]);
 
 **$parentid** - ідентифікатор батьківського документа
 
@@ -20,6 +22,13 @@ string getDocumentChildrenTVars(int $parentid, array $tvidnames[, int $published
 ASC - за зростанням
 DESC - за спаданням
 за замовчуванням: ASC
+
+**$where** - додаткова SQL-умова WHERE (лише поля документа, не TV)
+За замовчуванням: порожній рядок
+
+**$resultKey** - поле, значення якого стають ключами масиву результату
+false - ключі масиву нумеруються по порядку
+За замовчуванням: id
 
 ***
 
