@@ -1,33 +1,42 @@
-###Получение списка дочерних документов, для указанного документа со значениями основных и дополнительных параметров, которые указаны, эта функция получает ТВ с учетом примененных виджетов.
+###Getting the child documents of a document with the values of the requested document fields and TVs; the TVs are returned with their widgets applied.
 
-*Замечание: если не задан список требуемых параметров, то метод вернет пустой массив.*
+*Note: when no fields are requested, the method returns an empty array.*
 
-string getDocumentChildrenTVars(int $parentid, array $tvidnames[, int $published[, string $docsort[, string $docsortdir]]]);
+*Performance: the method runs separate queries for every child document (N+1). For listings that show a few TVs per document (cards, product prices), use [getTemplateVarValues](69_getTemplateVarValues.md) - it reads the named TVs of all documents in one query.*
 
-**$parentid** - идентификатор родительского документа
+array getDocumentChildrenTVarOutput(int $parentid, array $tvidnames[, int $published[, string $docsort[, string $docsortdir[, string $where[, string $resultKey]]]]]);
 
-**$tvidnames** - массив с требуемыми TV-параметрами
+**$parentid** - id of the parent document
 
-**$published** - опубликованы ли документы
-0 - документы не опубликованы
-1 - документы опубликованы
-По умолчанию: 1
+**$tvidnames** - array of the requested fields and TVs
 
-**$docsort** - поле по которому сортируются документы
-По умолчанию: menuindex
+**$published** - document publication status
+0 - unpublished documents
+1 - published documents
+Default: 1
 
-**$docsortdir** - правило сортировки документов
-ASC - в порядке возрастания
-DESC - в порядке убывания
-по умолчанию: ASC
+**$docsort** - field the documents are sorted by
+Default: menuindex
+
+**$docsortdir** - sort direction of the documents
+ASC - ascending
+DESC - descending
+Default: ASC
+
+**$where** - additional SQL WHERE condition (document fields only, not TVs)
+Default: empty string
+
+**$resultKey** - field whose values become the keys of the result array
+false - the result array keys are numbered in order
+Default: id
 
 ***
 
-####Формат данных результата:
+####Result format:
 
 	Array ( 
 		[16] => Array ( 
-			[МойПараметр] => Это мой текст 
+			[MyParameter] => This is my text 
 			[id] => 16 
 			[type] => document 
 		) ... 
@@ -35,18 +44,18 @@ DESC - в порядке убывания
 
 ***
 
-####Пример
+####Example
 
-	/**Структура документов:
-	-Статьи (1)
-	--Недвижимость (11)
-	---Эконом(111)
-	---Элитная(112)
-	--Авто (12)
+	/**Document tree:
+	-Articles (1)
+	--Real estate (11)
+	---Budget (111)
+	---Premium (112)
+	--Cars (12)
 	**/
 	
-	$txt = $modx->getDocumentChildrenTVarOutput(11,array('id','type','МойПараметр'));
+	$txt = evo()->getDocumentChildrenTVarOutput(11, array('id', 'type', 'MyParameter'));
 	
-	//вернет информацию по основным параметрам id, type 
-	//и дополнительному параметру 	МойПараметр 
-	//для документов 111 и 112.
+	//returns the document fields id, type 
+	//and the TV MyParameter 
+	//of documents 111 and 112.

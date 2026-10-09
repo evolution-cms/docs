@@ -1,60 +1,63 @@
-####Получение списка дочерних документов, для указанного документа со значениями основных и дополнительных параметров, которые указаны
+####Getting the child documents of a document with the values of the requested document fields and TVs
 
-*Замечание: если не задан список требуемых параметров, то метод вернет пустой массив.*
+*Note: when no fields are requested, the method returns an empty array.*
 
-string getDocumentChildrenTVars(int $parentid, array $tvidnames[, int $published[, string $docsort[, string $docsortdir[,string $tvfields[, string $tvsort[, string $tvsortdir]]]]]]);
+*Performance: the method runs separate queries for every child document (N+1). For listings that show a few TVs per document
+(cards, product prices), use [getTemplateVarValues](69_getTemplateVarValues.md) - it reads the named TVs of all documents in one query.*
 
-**$parentid** - идентификатор родительского документа
+array getDocumentChildrenTVars(int $parentid, array $tvidnames[, int $published[, string $docsort[, string $docsortdir[,string $tvfields[, string $tvsort[, string $tvsortdir]]]]]]);
 
-**$tvidnames** - массив с требуемыми TV-параметрами
+**$parentid** - id of the parent document
 
-**$published** - опубликованы ли документы
-0 - документы не опубликованы
-1 - документы опубликованы
-По умолчанию: 1
+**$tvidnames** - array of the requested fields and TVs
 
-**$docsort** - поле по которому сортируются документы
-По умолчанию: menuindex
+**$published** - document publication status
+0 - unpublished documents
+1 - published documents
+Default: 1
 
-**$docsortdir** - правило сортировки документов
-ASC - в порядке возрастания
-DESC - в порядке убывания
-по умолчанию: ASC
+**$docsort** - field the documents are sorted by
+Default: menuindex
 
-**$tvfields** - список параметров, которые нужно возвращаться для дополнительных TV- параметров.
-Список параметров через запятую
-* - возвращаться все параметры
-По умолчанию: *
+**$docsortdir** - sort direction of the documents
+ASC - ascending
+DESC - descending
+Default: ASC
 
-**$tvsort** - поле по которому сортируются дополнительные параметры
-По умолчанию: rank
+**$tvfields** - columns to return for every TV
+Comma-separated list of columns
+* - all columns
+Default: *
 
-**$tvsortdir** - правило сортировки дополнительных TV-параметров
-ASC - в порядке возрастания
-DESC - в порядке убывания
-по умолчанию: ASC
+**$tvsort** - field the TVs are sorted by
+Default: rank
+
+**$tvsortdir** - sort direction of the TVs
+ASC - ascending
+DESC - descending
+Default: ASC
 
 ***
 
-####Формат данных результата:
+####Result format:
 
 	Array ( 
 		[0] => Array ( 
 			[0] => Array ( 
 				[id] => 4 
 				[type] => text 
-				[name] => МойПараметр 
-				[caption] => Заголовок 
-				[description] => Описание 
+				[name] => MyParameter 
+				[caption] => Caption 
+				[description] => Description 
 				[editor_type] => 0 
 				[category] => 0 
 				[locked] => 0 
-				[elements] => Текст 
+				[elements] => Text 
 				[rank] => 0 
 				[display] =>  
 				[display_params] =>  
 				[default_text] =>  
-				[value] => Это мой текст 
+				[value] => This is my text 
 			) 
 			[1] => Array ( 
 				[name] => id 
@@ -69,16 +72,16 @@ DESC - в порядке убывания
 
 ***
 
-####Пример
+####Example
 
-	/**Структура документов:
-	-Статьи (1)
-	--Недвижимость (11)
-	---Эконом(111)
-	---Элитная(112)
-	--Авто (12)
+	/**Document tree:
+	-Articles (1)
+	--Real estate (11)
+	---Budget (111)
+	---Premium (112)
+	--Cars (12)
 	**/
 	
-	$txt = $modx->getDocumentChildrenTVars(11,array('id','type','МойПараметр'));
-	//вернет информацию по основным параметрам id, type и дополнительному параметру 
-	//МойПараметр для документов 111 и 112.
+	$txt = evo()->getDocumentChildrenTVars(11, array('id', 'type', 'MyParameter'));
+	//returns the document fields id, type and the TV 
+	//MyParameter of documents 111 and 112.
